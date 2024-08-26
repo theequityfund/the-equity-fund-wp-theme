@@ -13,7 +13,6 @@ module.exports = env => ({
       'core-js/stable',
       'regenerator-runtime/runtime',
       path.resolve(__dirname, 'static/js/app.js'),
-      path.resolve(__dirname, 'static/scss/app.scss'),
     ],
     admin: [
       path.resolve(__dirname, 'static/js/admin.js'),
