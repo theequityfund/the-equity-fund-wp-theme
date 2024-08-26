@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b676253b4d867c77d3b92816c7289955",
+    "content-hash": "41bd19eb638250adb838206823c4cf00",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1050,10 +1050,10 @@
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.2.10",
+            "version": "6.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.2.10"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?p=pro&t=6.3.5"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
