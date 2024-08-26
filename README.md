@@ -1,8 +1,4 @@
-# WordPress Starter Kit
-
-Upstatement's WordPress Starter Kit is can get you set up with a locally running WordPress site in minutes.
-
-If you're using this repo as a template for a new project, update this section with some information about the project.
+# The Equity Fund
 
 ## Table of Contents
 
@@ -106,7 +102,7 @@ You'll also need a way to run a LAMP/LEMP (Linux, Apache/nginx, MySQL, PHP) stac
       > docker compose up -d
       > ```
 
-3.  Duplicate the `auth.json.sample` file and rename it to `auth.json`. Find `Wordpress Starter Kit auth.json` on 1PW and copy its contents into this file.
+3.  Duplicate the `auth.json.sample` file and rename it to `auth.json`. Find `The Equity Fund auth.json` on 1PW and copy its contents into this file.
 
 4.  If you're using the Starter Kit as a template for another project, you will want run the rename theme command and follow the prompt, which will set up the project with your desired theme name and metadata:
 
