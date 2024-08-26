@@ -1,5 +1,5 @@
 {
-  "name": "@upstatement/wordpress-starter-kit",
+  "name": "@upstatement/the-equity-fund",
   "version": "0.0.3",
   "description": "",
   "author": "Upstatement",
@@ -7,7 +7,7 @@
   "license": "ISC",
   "testing": {
     "urls": {
-      "local": "http://wsk.ups.dock",
+      "local": "http://the-equity-fund.ups.dock",
       "staging": "",
       "production": ""
     },
@@ -28,11 +28,11 @@
   },
   "bundlesize": [
     {
-      "path": "./themes/wsk/dist/static/app.js",
+      "path": "./themes/the-equity-fund/dist/static/app.js",
       "maxSize": "10 kB"
     },
     {
-      "path": "./themes/wsk/dist/static/vendor.js",
+      "path": "./themes/the-equity-fund/dist/static/vendor.js",
       "maxSize": "110 kB"
     }
   ],
@@ -41,15 +41,15 @@
     "last 2 versions"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --config ./themes/wsk/webpack.config.js  --progress --mode production && npm run build:wp-blocks",
-    "build:wp-blocks": "wp-scripts build ./themes/wsk/blocks/index.js --output-path=themes/wsk/dist/blocks",
-    "start": "NODE_ENV=development webpack --config ./themes/wsk/webpack.config.js --watch --mode development & npm run start:wp-blocks",
-    "start:ups-dock": "NODE_ENV=development webpack --config ./themes/wsk/webpack.config.js --watch --mode development --env platform=ups-dock & npm run start:wp-blocks",
-    "start:wp-blocks": "wp-scripts start ./themes/wsk/blocks/index.js --output-path=themes/wsk/dist/blocks",
-    "lint:scripts": "eslint ./themes/wsk/static/js/**/*.js --cache",
-    "lint:php": "./themes/wsk/vendor/bin/phpcs --standard=phpcs.xml.dist --error-severity=1 --warning-severity=8 -p",
-    "fix:php": "./themes/wsk/vendor/bin/phpcbf",
-    "phpstan": "./themes/wsk/vendor/bin/phpstan analyze --memory-limit 512M",
+    "build": "NODE_ENV=production webpack --config ./themes/the-equity-fund/webpack.config.js  --progress --mode production && npm run build:wp-blocks",
+    "build:wp-blocks": "wp-scripts build ./themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
+    "start": "NODE_ENV=development webpack --config ./themes/the-equity-fund/webpack.config.js --watch --mode development & npm run start:wp-blocks",
+    "start:ups-dock": "NODE_ENV=development webpack --config ./themes/the-equity-fund/webpack.config.js --watch --mode development --env platform=ups-dock & npm run start:wp-blocks",
+    "start:wp-blocks": "wp-scripts start ./themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
+    "lint:scripts": "eslint ./themes/the-equity-fund/static/js/**/*.js --cache",
+    "lint:php": "./themes/the-equity-fund/vendor/bin/phpcs --standard=phpcs.xml.dist --error-severity=1 --warning-severity=8 -p",
+    "fix:php": "./themes/the-equity-fund/vendor/bin/phpcbf",
+    "phpstan": "./themes/the-equity-fund/vendor/bin/phpstan analyze --memory-limit 512M",
     "test:bundlesize": "bundlesize",
     "test:a11y": "node tests/pa11y.js",
     "prepare": "husky install",

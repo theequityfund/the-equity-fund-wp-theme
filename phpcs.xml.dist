@@ -11,9 +11,9 @@
   <!-- Where to sniff -->
   <file>./themes/wsk</file>
   <exclude-pattern>*.twig</exclude-pattern>
-  <exclude-pattern>./themes/wsk/vendor</exclude-pattern>
-  <exclude-pattern>./themes/wsk/node_modules</exclude-pattern>
-  <exclude-pattern>./themes/wsk/dist</exclude-pattern>
+  <exclude-pattern>./themes/the-equity-fund/vendor</exclude-pattern>
+  <exclude-pattern>./themes/the-equity-fund/node_modules</exclude-pattern>
+  <exclude-pattern>./themes/the-equity-fund/dist</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.scss</exclude-pattern>

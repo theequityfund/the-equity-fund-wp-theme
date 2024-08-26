@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["themes/wsk/static/js/*"]
+      "@src/*": ["themes/the-equity-fund/static/js/*"]
     }
   }
 }
