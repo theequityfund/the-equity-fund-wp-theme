@@ -12,18 +12,16 @@
 
   {% include "components/articles/toppers/topper--" ~ (article.topper_type|default('text_only')) ~ ".twig" %}
 
-  <article class="article-body gutenberg-layout">
+  <article>
     {% include "components/articles/byline.twig" %}
     {% include "components/articles/share-tools.twig" %}
 
-    <div class="article-body-width gutenberg-content js-hang-punc">
-
+    <div class="gutenberg rich-text">
       {{ article.content }}
-
     </div>
+
     {% include "components/articles/article-footer.twig" %}
   </article>
 
   {% include "components/articles/modal-gallery.twig" %}
-
 {% endblock %}
