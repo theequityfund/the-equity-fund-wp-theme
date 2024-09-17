@@ -1,3 +1,368 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-sans;
+  }
+
+  a,
+  strong,
+  em {
+    font-family: inherit;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+
+  .rich-text,
+  .wp-block-column {
+    .is-layout-flow > * {
+      margin-block-start: 0;
+    }
+
+    /*
+     * This selector is complicated but allows us to target elements
+     * in Gutenberg rich text but not in custom blocks ([data-block]).
+     *
+     * We want our custom blocks to be completely isolated from the Gutenberg styling
+     * for better control and maintainability.
+     */
+    :not(:is([data-block] *)), /* Target elements that are NOT in [data-block] */
+    :is([data-block] .rich-text *) /* Target elements in [data-block] only if inside a nested .rich-text class */ {
+      &:is(h1, h2, h3, h4, h5, h6) {
+        @apply mb-4 mt-8;
+      }
+
+      &:is(h1) {
+        @apply h1;
+      }
+
+      &:is(h2) {
+        @apply h2;
+      }
+
+      &:is(h3) {
+        @apply h3;
+      }
+
+      &:is(h4) {
+        @apply h4;
+      }
+
+      &:is(h5) {
+        @apply h5;
+      }
+
+      &:is(h6) {
+        @apply h6;
+      }
+
+      &:is(strong):not(:is(.rich-text > [data-block] *)) {
+        @apply font-medium;
+      }
+
+      &:is(em) {
+        @apply italic;
+      }
+
+      &:is(a):not(.wp-element-button):not(.button) {
+        @apply text-black hover:text-gray-500 bg-gradient-to-r from-black to-black bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
+      }
+
+      &:is(p, li, ul, ol, blockquote) {
+        @apply leading-snug paragraph;
+      }
+
+      &:is(blockquote) {
+        @apply border-l-4 border-black pl-4;
+
+        cite {
+          @apply h6 normal-case not-italic block mt-4;
+        }
+      }
+
+      &:is(hr) {
+        @apply h-px bg-black border-0;
+      }
+
+      &:is(ul) {
+        @apply mt-4;
+
+        ul {
+          @apply !ml-0 !mb-0 !mr-0;
+        }
+
+        > li {
+          @apply ml-4 pl-4;
+
+          &::marker {
+            @apply text-black;
+            content: '●';
+          }
+
+          > ul > li {
+            &::marker {
+              content: '○';
+            }
+
+            > ul > li::marker {
+              content: '■';
+            }
+          }
+        }
+      }
+
+      &:is(ol) {
+        @apply mt-4;
+        counter-reset: number;
+
+        ol {
+          @apply !ml-0 !mb-0 !mr-0;
+        }
+
+        > li {
+          @apply ml-4 pl-4;
+          counter-increment: number;
+
+          &::marker {
+            @apply text-black;
+            content: counter(number);
+          }
+
+          > ol > li {
+            &::marker {
+              content: counter(number, lower-alpha);
+            }
+
+            > ol > li::marker {
+              content: counter(number, lower-roman);
+            }
+          }
+        }
+      }
+
+      &:is(li + li) {
+        @apply mt-2;
+      }
+
+      &:is(.rich-text > *:not([data-block]) + *),
+      &:is(.rich-text > * + *:not([data-block])) {
+        @apply mt-4;
+      }
+    }
+  }
+
+  .gutenberg {
+    > *:not([data-block]) {
+      @apply mx-content-gutter max-w-article;
+    }
+
+    /*
+     * Table
+     */
+    figure.wp-block-table {
+      @apply overflow-scroll;
+
+      table {
+        @apply w-full border-collapse table-fixed border border-black min-w-[500px];
+      }
+
+      thead {
+        @apply h6 p-2 bg-gray-800;
+      }
+
+      th,
+      td {
+        @apply text-left py-2 px-3;
+
+        &:not(:first-child) {
+          @apply border-l border-black;
+        }
+      }
+
+      tr {
+        @apply border-b border-black;
+      }
+    }
+
+    /*
+     * Code
+     */
+    pre.wp-block-code {
+      @apply bg-black p-6 rounded-lg;
+
+      code {
+        @apply text-white;
+      }
+    }
+
+    /*
+     * Buttons
+     */
+    .wp-block-buttons {
+      @apply gap-2;
+    }
+
+    .wp-element-button {
+      @apply button;
+
+      .is-style-outline & {
+        @apply button-outline;
+      }
+    }
+
+    /*
+     * Image
+     */
+    figure.wp-block-image {
+      img {
+        @apply w-full h-auto;
+      }
+    }
+
+    /*
+     * Video
+     */
+    figure.wp-block-video {
+      video {
+        @apply w-full h-auto;
+      }
+    }
+
+    /*
+     * Embed
+     */
+    figure.wp-block-embed {
+      .wp-block-embed__wrapper,
+      iframe {
+        @apply w-full h-full;
+      }
+
+      &.wp-embed-aspect-16-9 {
+        @apply aspect-video;
+      }
+    }
+
+    /*
+     * File
+     */
+    .wp-block-file {
+      @apply flex flex-wrap gap-4 items-center;
+    }
+
+    /*
+     * Figure captions
+     */
+    .wp-element-caption {
+      @apply caption mt-2;
+    }
+
+    /*
+     * Inline images
+     */
+    .wp-rich-text-inline-image {
+      @apply inline h-7 !w-auto;
+    }
+
+    /*
+     * Columns
+     */
+    .wp-block-columns {
+      @apply max-md:flex-col items-start;
+
+      .wp-block-column {
+        @apply flex-1;
+      }
+    }
+
+    /*
+     * Alignment options
+     */
+    .alignfull {
+      @apply max-w-none;
+    }
+
+    .alignwide {
+      @apply max-w-article-wide;
+    }
+
+    .alignleft {
+      @apply sm:clear-left sm:float-left sm:max-w-1/3 sm:m-4;
+      margin-left: theme('spacing.content-gutter');
+
+      @media (min-width: theme('screens.sm')) {
+        width: calc(theme('maxWidth.article') / 3);
+      }
+    }
+
+    .alignright {
+      @apply sm:clear-right sm:float-right sm:max-w-1/3 sm:m-4;
+      margin-right: max(
+        theme('spacing.content-gutter'),
+        calc(100% - theme('maxWidth.article') - theme('spacing.content-gutter'))
+      );
+
+      @media (min-width: theme('screens.sm')) {
+        width: calc(theme('maxWidth.article') / 3);
+      }
+    }
+  }
+}
+
+@layer components {
+  .h1 {
+    @apply font-serif text-5xl lg:text-6xl 2xl:text-7xl;
+  }
+
+  .h2 {
+    @apply font-serif text-4xl lg:text-5xl;
+  }
+
+  .h3 {
+    @apply font-serif font-medium text-2xl lg:text-3xl;
+  }
+
+  .h4 {
+    @apply font-serif text-2xl font-medium;
+  }
+
+  .h5 {
+    @apply font-serif text-lg md:text-xl font-medium;
+  }
+
+  .h6 {
+    @apply font-sans text-sm font-medium uppercase;
+  }
+
+  .paragraph {
+    @apply font-sans font-normal text-xl;
+  }
+
+  .caption {
+    @apply font-sans text-base;
+  }
+
+  .text-link {
+    @apply bg-gradient-to-r from-black to-black bg-no-repeat transition-all bg-left-bottom;
+    background-size: 0 1px;
+
+    &:hover,
+    &[aria-current='page'] {
+      background-size: 100% 1px;
+    }
+  }
+
+  .button {
+    @apply bg-black text-white w-fit text-xs uppercase font-medium rounded-md px-3 pb-2 pt-2 md:pt-2.5  inline-block transition-all;
+    @apply hover:bg-black hover:text-white;
+  }
+
+  .button-outline {
+    @apply bg-transparent text-black border border-black;
+    @apply hover:bg-black hover:text-white;
+  }
+}
