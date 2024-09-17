@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       spacing: {
         'site-padding': 'clamp(1rem, 5vw, 2rem)',
-        'content-gutter': 'max(clamp(1rem, 5vw, 2rem), calc((100vw - 1920px) / 2))',
       },
 
       maxWidth: {
