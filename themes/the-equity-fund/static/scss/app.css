@@ -3,6 +3,94 @@
 @tailwind utilities;
 
 @layer base {
+  /* Judge font */
+  @font-face {
+    font-family: 'Judge';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../../static/fonts/judge/F37Judge-MediumCondensed.woff') format('woff'),
+      url('../../static/fonts/judge/F37Judge-MediumCondensed.woff2') format('woff2');
+  }
+
+  /* Feature Deck font */
+  @font-face {
+    font-family: 'Feature Deck';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/feature-deck/FeatureDeckCondensed-Regular-Web.woff') format('woff'),
+      url('../../static/fonts/feature-deck/FeatureDeckCondensed-Regular-Web.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Deck';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/feature-deck/FeatureDeckCondensed-RegularItalic-Web.woff')
+        format('woff'),
+      url('../../static/fonts/feature-deck/FeatureDeckCondensed-RegularItalic-Web.woff2')
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Deck';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/feature-deck/FeatureDeckCondensed-Bold-Web.woff') format('woff'),
+      url('../../static/fonts/feature-deck/FeatureDeckCondensed-Bold-Web.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Deck';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/feature-deck/FeatureDeckCondensed-BoldItalic-Web.woff')
+        format('woff'),
+      url('../../static/fonts/feature-deck/FeatureDeckCondensed-BoldItalic-Web.woff2')
+        format('woff2');
+  }
+
+  /* Feature Deck font */
+  @font-face {
+    font-family: 'Feature Text';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/feature-text/FeatureText-Regular-Web.woff') format('woff'),
+      url('../../static/fonts/feature-text/FeatureText-Regular-Web.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Text';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/feature-text/FeatureText-RegularItalic-Web.woff') format('woff'),
+      url('../../static/fonts/feature-text/FeatureText-RegularItalic-Web.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Text';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/feature-text/FeatureText-Bold-Web.woff') format('woff'),
+      url('../../static/fonts/feature-text/FeatureText-Bold-Web.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Feature Text';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/feature-text/FeatureText-BoldItalic-Web.woff') format('woff'),
+      url('../../static/fonts/feature-text/FeatureText-BoldItalic-Web.woff2') format('woff2');
+  }
+
   * {
     @apply font-sans;
   }
