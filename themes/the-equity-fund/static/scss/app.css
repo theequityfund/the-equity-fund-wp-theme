@@ -455,3 +455,30 @@
     @apply hover:bg-black hover:text-white;
   }
 }
+
+@layer utilities {
+  .theme-yellow {
+    --c-primary: theme('colors.maroon');
+    --c-background: theme('colors.yellow');
+  }
+
+  .theme-maroon {
+    --c-primary: theme('colors.lavender');
+    --c-background: theme('colors.maroon');
+  }
+
+  .theme-lavender {
+    --c-primary: theme('colors.maroon');
+    --c-background: theme('colors.lavender');
+  }
+
+  .theme-cream {
+    --c-primary: theme('colors.maroon');
+    --c-background: theme('colors.cream');
+  }
+
+  .theme-teal {
+    --c-primary: theme('colors.black');
+    --c-background: theme('colors.teal');
+  }
+}
