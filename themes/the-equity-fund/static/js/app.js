@@ -3,6 +3,8 @@ import LazySizes from 'lazysizes';
 import Unveilhooks from 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 /* eslint-enable */
 
+import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
 import { onDocumentReady } from '@src/utils';
 
 // Components
@@ -51,4 +53,9 @@ onDocumentReady(() => {
   //        this.process = new Process();
   //      });
   //  }
+  //
+
+  window.Alpine = Alpine;
+  Alpine.plugin(focus);
+  Alpine.start();
 });
