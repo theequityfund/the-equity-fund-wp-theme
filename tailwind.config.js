@@ -35,6 +35,7 @@ module.exports = {
 
       fontSize: {
         h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
+        h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
       },
 
       maxWidth: {
