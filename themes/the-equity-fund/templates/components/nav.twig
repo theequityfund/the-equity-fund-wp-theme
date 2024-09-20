@@ -12,7 +12,9 @@
 
       {% for item in nav_pages_menu.items %}
       <li class="max-md:hidden">
-        <a class="text-h5 font-serif" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">{{ item.name }}</a>
+        <a class="text-h5 font-serif border border-transparent hocus:border-primary px-3 pb-2 py-1.5 box-border" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
+          {{ item.name }}
+        </a>
       </li>
       {% endfor %}
     </ul>

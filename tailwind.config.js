@@ -45,5 +45,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addVariant }) {
+      addVariant('hocus', ['&:hover', '&:focus']);
+      addVariant('group-hocus', [':merge(.group):hover &', ':merge(.group):focus &']);
+    },
+  ],
 };
