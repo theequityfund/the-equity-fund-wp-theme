@@ -1,77 +1,63 @@
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__primary">
-      <a href="{{ site.url }}" class="footer__logo-link">
-        <svg class="footer__logo">
-          <use xlink:href="#logo"></use>
-        </svg>
-      </a>
-      <div class="footer__primary-nav">
-        <ul class="footer__primary-nav__list">
-          {% for item in primary_footer_menu.items %}
-          <li class="footer__primary-nav__item">
-            <a href="{{ item.url }}" class="footer__primary-nav__item-link {% if item.current %}active{% endif %}">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+{% set socials = {
+  'Vimeo': options.social.vimeo,
+  'LinkedIn': options.social.linkedin,
+  'Twitter': options.social.twitter,
+  'Instagram': options.social.instagram,
+  'Facebook': options.social.facebook,
+} %}
 
-    <div class="footer__secondary">
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="https://www.facebook.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Facebook</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#facebook"></use>
-            </svg>
-          </a>
+<footer class="p-site-padding theme-maroon bg-background">
+  <a class="block w-fit" href="{{ site.url }}">
+    <span class="sr-only">Home</span>
+    <svg class="w-48 h-20" aria-hidden="true">
+      <use xlink:href="#logo"></use>
+    </svg>
+  </a>
+
+  <div class="grid md:grid-cols-2 gap-gutter mb-16 md:mb-24">
+    {% if options.footer.mission_statement %}
+    <p class="max-w-2xl">{{ options.footer.mission_statement|striptags('<em><strong><a>') }}</p>
+    {% endif %}
+
+    {% if nav_footer_menu.items|length %}
+    <ul class="sm:columns-2">
+      {% for item in nav_footer_menu.items %}
+      <li class="mb-2">
+        <a class="font-serif text-h3" href="{{ item.url }}">{{ item.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <div class="pt-4 flex max-md:flex-col md:items-center gap-y-2 gap-x-6 border-t-2 border-foreground">
+    <p class="text-sm">© {{ 'now'|date('Y') }} The Climate & Clean Energy Equity Fund.</p>
+
+    {% if nav_legal_menu.items|length %}
+    <nav aria-label="Legal">
+      <ul class="flex items-center gap-4">
+        {% for item in nav_legal_menu.items %}
+        <li class="leading-none">
+          <a class="text-sm" href="{{ item.url }}">{{ item.name }}</a>
         </li>
-        <li class="footer__social-item">
-          <a href="https://instagram.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Instagram</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://linkedin.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">LinkedIn</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#linkedin"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://reddit.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Reddit</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#reddit"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://twitter.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Twitter</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://tiktok.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Tik Tok</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#tiktok"></use>
-            </svg>
-          </a>
-        </li>
+        {% endfor %}
       </ul>
+    </nav>
+    {% endif %}
 
-      <p class="footer__copyright"><a href="https://google.com/">Parent Company LLC</a> &copy; {{ now|date('Y') }}</p>
-    </div>
+    <nav class="flex items-center gap-3 md:ml-auto" aria-label="Social">
+      <span class="text-sm">Follow us:</span>
 
+      {% for type, url in socials %}
+        {% if url %}
+        <a href="{{ url }}">
+          <span class="sr-only">{{ type }}</span>
+          <svg class="aspect-square h-8 w-8" aria-hidden="true">
+            <use xlink:href="#{{ type|lower }}"></use>
+          </svg>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
   </div>
 </footer>

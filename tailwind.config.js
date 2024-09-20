@@ -11,7 +11,7 @@ module.exports = {
 
     extend: {
       colors: {
-        primary: 'var(--c-primary)',
+        foreground: 'var(--c-foreground)',
         background: 'var(--c-background)',
 
         white: '#FFFFFF',
@@ -31,10 +31,12 @@ module.exports = {
         'site-padding': 'clamp(1rem, 5vw, 2rem)',
         'topper-margin': '120px',
         'wp-admin-bar': 'var(--wp-admin--admin-bar--height)',
+        gutter: '2rem',
       },
 
       fontSize: {
         h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
+        h3: ['clamp(1.5rem, 5vw, 2rem)', '1.2'],
         h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
       },
 
