@@ -3,7 +3,7 @@
 
 {% include "layouts/includes/head.twig" %}
 
-<body class="{{ body_class }}{% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
+<body class="theme-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
 
   <a
     class="[&:not(:focus)]:sr-only absolute top-4 left-4 bg-cream px-4 py-3 flex justify-center"
@@ -17,12 +17,12 @@
   {% include "layouts/includes/svgs.twig" %}
   {% include "layouts/includes/grid.twig" %}
 
-  <div class="layout--base">
+  <div class="bg-background">
 
     {# {% include "components/nav.twig" %} #}
     {# {% include "components/menu.twig" %} #}
 
-    <main id="content" class="content {% block custom_content_classes %}{% endblock %}" tabindex="-1">
+    <main id="content" class="{% block custom_content_classes %}{% endblock %}" tabindex="-1">
       {% block pageBody %}
       {% endblock %}
     </main>
