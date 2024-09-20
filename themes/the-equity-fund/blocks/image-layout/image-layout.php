@@ -16,7 +16,6 @@
  */
 
 use Timber\Timber;
-use Timber\Image as TimberImage;
 
 $context['layout']             = get_field( 'imageLayoutLayout' );
 $context['crop_to_same_ratio'] = get_field( 'imageLayoutCrop' );
@@ -27,7 +26,7 @@ $images = get_field( 'imageLayoutImages' );
 if ( is_array( $images ) ) {
 	$context['images'] = array_map(
 		function ( array $image ) {
-			return new TimberImage( $image['id'] );
+			return Timber::get_image( $image['id'] );
 		},
 		$images
 	);

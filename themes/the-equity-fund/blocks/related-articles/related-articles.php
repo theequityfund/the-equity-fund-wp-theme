@@ -13,7 +13,6 @@
  */
 
 use Timber\Timber;
-use Timber\PostQuery;
 
 $context                            = Timber::context();
 $context['related_articles_header'] = get_field( 'header_text' );
@@ -35,7 +34,7 @@ if ( is_array( $related_articles ) && ! empty( $related_articles ) ) {
 			'orderby'     => 'post__in',
 		);
 
-		$context['related_articles'] = new PostQuery( $args );
+		$context['related_articles'] = Timber::get_posts( $args );
 	}
 }
 

@@ -53,7 +53,7 @@ if ( is_day() ) {
 }
 
 /* Set the posts that should appear on the archive page. */
-$_posts = new PostQuery( $query_args, 'TheEquityFund\Models\Post' );
+$_posts = Timber::get_posts( $query_args );
 
 $context['posts']      = $_posts;
 $context['pagination'] = $_posts->pagination( array( 'mid_size' => 2 ) );
