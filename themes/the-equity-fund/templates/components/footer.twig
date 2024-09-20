@@ -24,10 +24,10 @@
     <p class="text-sm">© {{ 'now'|date('Y') }} The Climate & Clean Energy Equity Fund.</p>
 
     {% if nav_legal_menu.items|length %}
-    <nav class="mr-auto" aria-label="Legal">
-      <ul class="flex gap-4">
+    <nav aria-label="Legal">
+      <ul class="flex items-center gap-4">
         {% for item in nav_legal_menu.items %}
-        <li>
+        <li class="leading-none">
           <a class="text-sm" href="{{ item.url }}">{{ item.name }}</a>
         </li>
         {% endfor %}
