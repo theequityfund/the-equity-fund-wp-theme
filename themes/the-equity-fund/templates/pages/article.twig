@@ -1,27 +1,37 @@
 {% extends "layouts/base.twig" %}
 
-{%- block custom_body_classes -%}
-  {{ article.is_light_nav ? 'light-nav' }}
-{%- endblock -%}
-
-{%- block custom_content_classes -%}
-  js-modal-gallery article
-{%- endblock -%}
-
 {% block pageBody %}
+  {% set solution = article.terms('solution')|first %}
+  {% set bylines = article.bylines %}
 
-  {% include "components/articles/toppers/topper--" ~ (article.topper_type|default('text_only')) ~ ".twig" %}
+  <header class="theme-yellow bg-background px-site-padding pb-24 pt-topper-margin">
+    <div class="flex flex-col items-center gap-12 max-w-6xl mx-auto">
+      {% include 'templates/components/lazy-img.twig' with {
+        class: 'w-full',
+        img: article.thumbnail,
+      } %}
 
-  <article>
-    {% include "components/articles/byline.twig" %}
-    {% include "components/articles/share-tools.twig" %}
+      <h1 class="font-serif text-primary text-h2 text-center">{{ article.title }}</h1>
 
-    <div class="gutenberg rich-text">
-      {{ article.content }}
+      {% if solution or bylines|length %}
+      <div class="text-primary flex items-center max-md:flex-col md:gap-6">
+        {% if solution %}
+        <a class="font-bold" href="{{ solution.link }}">{{ solution.title }}</a>
+        {% endif %}
+
+        {% if solution and bylines|length %}
+        <span aria-hidden="true">――</span>
+        {% endif %}
+
+        {% if bylines|length %}
+        <p>By {% for byline in article.bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
+        {% endif %}
+      </div>
+      {% endif %}
     </div>
+  </header>
 
-    {% include "components/articles/article-footer.twig" %}
+  <article class="gutenberg rich-text mt-16">
+    {{ article.content }}
   </article>
-
-  {% include "components/articles/modal-gallery.twig" %}
 {% endblock %}

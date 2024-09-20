@@ -34,7 +34,7 @@ $dotenv = Dotenv::createImmutable( WP_CONTENT_DIR )->safeLoad();
  */
 define( 'WP_ENV', getenv( 'WP_ENV' ) ? getenv( 'WP_ENV' ) : 'production' );
 
-$timber          = new Timber();
+$timber          = Timber::init();
 Timber::$dirname = array( 'templates', 'blocks' );
 
 $managers = array(

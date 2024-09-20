@@ -45,7 +45,7 @@
   "require": {
     "wpackagist-plugin/wp-environment-indicator": "^1.0",
     "vlucas/phpdotenv": "^5.4",
-    "timber/timber": "^1.22",
+    "timber/timber": "^2.1",
     "wpengine/advanced-custom-fields-pro": "^6.3"
   },
   "require-dev": {
