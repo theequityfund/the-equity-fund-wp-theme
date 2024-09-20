@@ -5,8 +5,8 @@ module.exports = {
     fontFamily: {
       display: ['Judge', 'sans-serif'],
       sans: ['Inter', 'sans-serif'],
-      serif: ['Feature Deck', 'serif'],
-      'serif-text': ['Feature Text', 'serif'],
+      serif: ['Feature Text', 'serif'],
+      'serif-deck': ['Feature Deck', 'serif'],
     },
 
     extend: {
@@ -29,6 +29,7 @@ module.exports = {
 
       spacing: {
         'site-padding': 'clamp(1rem, 5vw, 2rem)',
+        'topper-margin': '120px',
       },
 
       maxWidth: {
