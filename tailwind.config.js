@@ -32,6 +32,10 @@ module.exports = {
         'topper-margin': '120px',
       },
 
+      fontSize: {
+        h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
+      },
+
       maxWidth: {
         article: '800px',
         'article-wide': '1200px',
