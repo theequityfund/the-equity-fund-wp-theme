@@ -3,7 +3,7 @@
   x-data="{ isMenuOpen: false }"
   @keydown.escape.window="isMenuOpen = false"
 >
-  <nav class="group flex justify-between items-center border-b-2 border-primary">
+  <nav class="group flex justify-between items-center border-b-2 border-primary" aria-label="Header">
     <ul class="flex justify-between w-full items-center">
       <li>
         <a href="{{ site.url }}">

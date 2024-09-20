@@ -1,77 +1,46 @@
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__primary">
-      <a href="{{ site.url }}" class="footer__logo-link">
-        <svg class="footer__logo">
-          <use xlink:href="#logo"></use>
+<footer class="p-site-padding theme-maroon bg-background">
+  <a href="{{ site.url }}">
+    <span class="sr-only">Home</span>
+    <svg class="w-48 h-20" aria-hidden="true">
+      <use xlink:href="#logo"></use>
+    </svg>
+  </a>
+
+  <div class="grid grid-cols-2 gap-gutter mb-24">
+    <p class="max-w-2xl">We invests in the leadership and organizing of diverse communities, including Black, Latinx, AAPI, Indigenous peoples, immigrants and other communities bearing the brunt of the fossil-fuel economy. We engage voters in these communities through year-round nonpartisan civic engagement and voter participation campaigns.</p>
+
+    <ul class="columns-2">
+      {% for link in ['Approach', 'Grantees', 'Our team', 'Careers', 'Resources', 'Blog', 'Contact us'] %}
+      <li class="mb-2">
+        <a class="font-serif text-h3" href="#">{{ link }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="pt-4 flex items-center gap-6 border-t-2 border-primary">
+    <p>© 2024 The Climate & Clean Energy Equity Fund.</p>
+
+    <nav class="flex gap-4 mr-auto" aria-label="Legal">
+      <a href="#">Privacy Policy</a>
+    </nav>
+
+    <nav class="flex items-center gap-3" aria-label="Social">
+      <span>Follow us:</span>
+
+      <a href="#">
+        <span class="sr-only">Vimeo</span>
+        <svg class="aspect-square h-8 w-8" aria-hidden="true">
+          <use xlink:href="#linkedin"></use>
         </svg>
       </a>
-      <div class="footer__primary-nav">
-        <ul class="footer__primary-nav__list">
-          {% for item in primary_footer_menu.items %}
-          <li class="footer__primary-nav__item">
-            <a href="{{ item.url }}" class="footer__primary-nav__item-link {% if item.current %}active{% endif %}">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
 
-    <div class="footer__secondary">
-      <ul class="footer__social-list">
-        <li class="footer__social-item">
-          <a href="https://www.facebook.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Facebook</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://instagram.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Instagram</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#instagram"></use>
-            </svg>
-          </a>
-        </li>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://linkedin.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">LinkedIn</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#linkedin"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://reddit.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Reddit</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#reddit"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://twitter.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Twitter</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#twitter"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="footer__social-item">
-          <a href="https://tiktok.com/" class="footer__social-item__link" target="_blank" rel="noopener noreferrer">
-            <span class="footer__social-item__text visually-hidden">Tik Tok</span>
-            <svg class="footer__social-item__icon">
-              <use xlink:href="#tiktok"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-
-      <p class="footer__copyright"><a href="https://google.com/">Parent Company LLC</a> &copy; {{ now|date('Y') }}</p>
-    </div>
-
+      <a href="#">
+        <span class="sr-only">LinkedIn</span>
+        <svg class="aspect-square h-8 w-8" aria-hidden="true">
+          <use xlink:href="#github"></use>
+        </svg>
+      </a>
+    </nav>
   </div>
 </footer>
