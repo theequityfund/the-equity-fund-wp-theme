@@ -8,7 +8,7 @@
 use Timber\Timber;
 
 $context = Timber::context();
-$_page = Timber::get_post();
+$_page   = Timber::get_post();
 
 $context['page'] = $_page;
 

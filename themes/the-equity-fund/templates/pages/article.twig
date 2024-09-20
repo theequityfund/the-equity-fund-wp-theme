@@ -12,8 +12,11 @@
 
       <div class="text-primary flex items-center max-md:flex-col md:gap-6">
         <a class="font-bold" href="#">Community Solar</a>
+
+        {% if article.bylines|length %}
         <span aria-hidden="true">――</span>
-        <p>By Jillian Du and Deborah Behles</p>
+        <p>By {% for byline in article.bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
+        {% endif %}
       </div>
     </div>
   </header>
