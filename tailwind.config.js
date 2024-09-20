@@ -30,6 +30,7 @@ module.exports = {
       spacing: {
         'site-padding': 'clamp(1rem, 5vw, 2rem)',
         'topper-margin': '120px',
+        'wp-admin-bar': 'var(--wp-admin--admin-bar--height)',
       },
 
       fontSize: {

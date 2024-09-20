@@ -5,7 +5,14 @@
 
 <body class="{{ body_class }}{% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
 
-  <a href="#content" class="skip-to-content" tabindex="0">Skip to content</a>
+  <a
+    class="[&:not(:focus)]:sr-only absolute top-4 left-4 bg-cream px-4 py-3 flex justify-center"
+    href="#content"
+    tabindex="0"
+  >
+    <span class="text-maroon text-md text-center">Skip to content</span>
+  </a>
+
 
   {% include "layouts/includes/svgs.twig" %}
   {% include "layouts/includes/grid.twig" %}
