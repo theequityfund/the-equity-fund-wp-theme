@@ -7,7 +7,9 @@
   </a>
 
   <div class="grid md:grid-cols-2 gap-gutter mb-16 md:mb-24">
-    <p class="max-w-2xl">We invests in the leadership and organizing of diverse communities, including Black, Latinx, AAPI, Indigenous peoples, immigrants and other communities bearing the brunt of the fossil-fuel economy. We engage voters in these communities through year-round nonpartisan civic engagement and voter participation campaigns.</p>
+    {% if options.footer.mission_statement %}
+    <p class="max-w-2xl">{{ options.footer.mission_statement|striptags('<em><strong><a>') }}</p>
+    {% endif %}
 
     {% if nav_footer_menu.items|length %}
     <ul class="sm:columns-2">
