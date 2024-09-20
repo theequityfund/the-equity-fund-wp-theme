@@ -6,11 +6,11 @@
     </svg>
   </a>
 
-  <div class="grid grid-cols-2 gap-gutter mb-24">
+  <div class="grid md:grid-cols-2 gap-gutter mb-16 md:mb-24">
     <p class="max-w-2xl">We invests in the leadership and organizing of diverse communities, including Black, Latinx, AAPI, Indigenous peoples, immigrants and other communities bearing the brunt of the fossil-fuel economy. We engage voters in these communities through year-round nonpartisan civic engagement and voter participation campaigns.</p>
 
     {% if nav_footer_menu.items|length %}
-    <ul class="columns-2">
+    <ul class="sm:columns-2">
       {% for item in nav_footer_menu.items %}
       <li class="mb-2">
         <a class="font-serif text-h3" href="{{ item.url }}">{{ item.name }}</a>
@@ -20,7 +20,7 @@
     {% endif %}
   </div>
 
-  <div class="pt-4 flex items-center gap-6 border-t-2 border-foreground">
+  <div class="pt-4 flex max-md:flex-col md:items-center gap-y-2 gap-x-6 border-t-2 border-foreground">
     <p class="text-sm">© {{ 'now'|date('Y') }} The Climate & Clean Energy Equity Fund.</p>
 
     {% if nav_legal_menu.items|length %}
@@ -35,7 +35,7 @@
     </nav>
     {% endif %}
 
-    <nav class="flex items-center gap-3 ml-auto" aria-label="Social">
+    <nav class="flex items-center gap-3 md:ml-auto" aria-label="Social">
       <span class="text-sm">Follow us:</span>
 
       <a href="#">
