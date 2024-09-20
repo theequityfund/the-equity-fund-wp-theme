@@ -1,5 +1,5 @@
 <header class="px-site-padding absolute top-wp-admin-bar inset-x-0">
-  <nav class="flex justify-between border-b-2 border-primary text-primary">
+  <nav class="group flex justify-between border-b-2 border-primary text-primary">
     <ul class="flex justify-between w-full items-center">
       <li>
         <a href="{{ site.url }}">
@@ -12,7 +12,7 @@
 
       {% for item in nav_pages_menu.items %}
       <li class="max-md:hidden">
-        <a class="text-h5 font-serif border border-transparent hocus:border-primary px-3 pb-2 py-1.5 box-border" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
+        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-primary aria-current:border-primary group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5 box-border" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
           {{ item.name }}
         </a>
       </li>

@@ -43,6 +43,10 @@ module.exports = {
         'article-wide': '1200px',
         '1/3': '33.333333%',
       },
+
+      aria: {
+        current: 'current=page',
+      },
     },
   },
   plugins: [
