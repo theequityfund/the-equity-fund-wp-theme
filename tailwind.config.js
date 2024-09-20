@@ -35,6 +35,7 @@ module.exports = {
 
       fontSize: {
         h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
+        h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
       },
 
       maxWidth: {
@@ -42,7 +43,16 @@ module.exports = {
         'article-wide': '1200px',
         '1/3': '33.333333%',
       },
+
+      aria: {
+        current: 'current=page',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addVariant }) {
+      addVariant('hocus', ['&:hover', '&:focus']);
+      addVariant('group-hocus', [':merge(.group):hover &', ':merge(.group):focus &']);
+    },
+  ],
 };
