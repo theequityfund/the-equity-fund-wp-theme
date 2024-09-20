@@ -32,5 +32,45 @@
     >
       Menu
     </button>
+
+    <template x-teleport="body">
+      <div
+        id="menu"
+        class="fixed inset-x-0 bottom-0 top-wp-admin-bar h-screen w-full bg-background"
+        x-show="isMenuOpen"
+        x-trap.noscroll="isMenuOpen"
+        :aria-hidden="!isMenuOpen"
+        aria-modal="true"
+        aria-labelledby="menu-label"
+        role="dialog"
+      >
+        <h2 id="menu-label" class="sr-only">Menu</h2>
+
+        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col justify-between gap-10">
+          <div class="flex justify-between items-center">
+            <a href="{{ site.url }}">
+              <span class="sr-only">Home</span>
+              <svg class="w-48 h-20" aria-hidden="true">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+
+            <button class="md:hidden text-h5 font-serif border border-primary px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+              Close
+            </button>
+          </div>
+
+          <ul class="flex flex-col gap-4">
+            {% for item in nav_pages_menu.items %}
+            <li>
+              <a class="text-h2 font-serif" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
+                {{ item.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </template>
   </nav>
 </header>
