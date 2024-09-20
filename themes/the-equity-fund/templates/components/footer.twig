@@ -1,3 +1,11 @@
+{% set socials = {
+  'Vimeo': options.social.vimeo,
+  'LinkedIn': options.social.linkedin,
+  'Twitter': options.social.twitter,
+  'Instagram': options.social.instagram,
+  'Facebook': options.social.facebook,
+} %}
+
 <footer class="p-site-padding theme-maroon bg-background">
   <a class="block w-fit" href="{{ site.url }}">
     <span class="sr-only">Home</span>
@@ -40,19 +48,16 @@
     <nav class="flex items-center gap-3 md:ml-auto" aria-label="Social">
       <span class="text-sm">Follow us:</span>
 
-      <a href="#">
-        <span class="sr-only">Vimeo</span>
-        <svg class="aspect-square h-8 w-8" aria-hidden="true">
-          <use xlink:href="#vimeo"></use>
-        </svg>
-      </a>
-
-      <a href="#">
-        <span class="sr-only">LinkedIn</span>
-        <svg class="aspect-square h-8 w-8" aria-hidden="true">
-          <use xlink:href="#linkedin"></use>
-        </svg>
-      </a>
+      {% for type, url in socials %}
+        {% if url %}
+        <a href="{{ url }}">
+          <span class="sr-only">{{ type }}</span>
+          <svg class="aspect-square h-8 w-8" aria-hidden="true">
+            <use xlink:href="#{{ type|lower }}"></use>
+          </svg>
+        </a>
+        {% endif %}
+      {% endfor %}
     </nav>
   </div>
 </footer>

@@ -39,6 +39,104 @@
           "delay": 0
         }
       ]
+    },
+    {
+      "key": "field_66edfbb41641b",
+      "label": "Social",
+      "name": "social",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_66edfbbd1641c",
+          "label": "Vimeo",
+          "name": "vimeo",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfbeb1641d",
+          "label": "Facebook",
+          "name": "facebook",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfbfa1641e",
+          "label": "LinkedIn",
+          "name": "linkedin",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfc0b1641f",
+          "label": "Instagram",
+          "name": "instagram",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfcbbbf4ee",
+          "label": "Twitter",
+          "name": "twitter",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        }
+      ]
     }
   ],
   "location": [
@@ -59,5 +157,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1726872392
+  "modified": 1726872770
 }
