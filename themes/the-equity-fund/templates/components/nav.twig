@@ -3,7 +3,7 @@
   x-data="{ isMenuOpen: false }"
   @keydown.escape.window="isMenuOpen = false"
 >
-  <nav class="group flex justify-between items-center border-b-2 border-primary" aria-label="Header">
+  <nav class="group flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
     <ul class="flex justify-between w-full items-center">
       <li>
         <a href="{{ site.url }}">
@@ -16,7 +16,7 @@
 
       {% for item in nav_pages_menu.items %}
       <li class="max-md:hidden">
-        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-primary aria-current:border-primary group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
+        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-foreground aria-current:border-foreground group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
           {{ item.name }}
         </a>
       </li>
@@ -24,7 +24,7 @@
     </ul>
 
     <button
-      class="md:hidden text-h5 font-serif border border-primary px-3 pb-2 py-1.5 h-fit"
+      class="md:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -55,7 +55,7 @@
               </svg>
             </a>
 
-            <button class="md:hidden text-h5 font-serif border border-primary px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="md:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
               Close
             </button>
           </div>
