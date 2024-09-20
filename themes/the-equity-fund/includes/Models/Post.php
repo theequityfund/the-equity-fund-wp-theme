@@ -17,6 +17,8 @@ class Post extends TimberPost {
 	 * @return array
 	 */
 	public function bylines(): array {
+		// phpcs:ignore
+		/** @var array $authors */
 		$authors = $this->meta( 'authors' );
 
 		if ( empty( $authors ) ) {
