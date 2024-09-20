@@ -1,0 +1,70 @@
+{
+  "key": "group_66ecfb87b986f",
+  "title": "Blog",
+  "fields": [
+    {
+      "key": "field_66ecfb87357cd",
+      "label": "Authors",
+      "name": "authors",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "(Recommended) Include one or more authors.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "row",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "field_66ecfbdb357ce",
+      "button_label": "Add author",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_66ecfbdb357ce",
+          "label": "Name",
+          "name": "name",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_66ecfb87357cd"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "side",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1726807176
+}
