@@ -1,5 +1,9 @@
-<header class="px-site-padding absolute top-wp-admin-bar inset-x-0">
-  <nav class="group flex justify-between border-b-2 border-primary">
+<header
+  class="px-site-padding absolute top-wp-admin-bar inset-x-0 theme-{{ theme|default('cream') }}"
+  x-data="{ isMenuOpen: false }"
+  @keydown.escape.window="isMenuOpen = false"
+>
+  <nav class="group flex justify-between items-center border-b-2 border-primary">
     <ul class="flex justify-between w-full items-center">
       <li>
         <a href="{{ site.url }}">
@@ -12,15 +16,61 @@
 
       {% for item in nav_pages_menu.items %}
       <li class="max-md:hidden">
-        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-primary aria-current:border-primary group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5 box-border" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
+        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-primary aria-current:border-primary group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
           {{ item.name }}
         </a>
       </li>
       {% endfor %}
     </ul>
 
-    <button class="nav__menu-trigger js--menu-toggle">
-      <span class="nav__hamburger"></span>
+    <button
+      class="md:hidden text-h5 font-serif border border-primary px-3 pb-2 py-1.5 h-fit"
+      @click="isMenuOpen = !isMenuOpen"
+      :aria-expanded="isMenuOpen"
+      aria-haspopup="true"
+      aria-controls="menu"
+    >
+      Menu
     </button>
+
+    <template x-teleport="body">
+      <div
+        id="menu"
+        class="fixed inset-x-0 bottom-0 top-wp-admin-bar h-screen w-full bg-background theme-{{ theme|default('cream') }}"
+        x-show="isMenuOpen"
+        x-trap.noscroll="isMenuOpen"
+        :aria-hidden="!isMenuOpen"
+        aria-modal="true"
+        aria-labelledby="menu-label"
+        role="dialog"
+      >
+        <h2 id="menu-label" class="sr-only">Menu</h2>
+
+        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col justify-between gap-10">
+          <div class="flex justify-between items-center">
+            <a href="{{ site.url }}">
+              <span class="sr-only">Home</span>
+              <svg class="w-48 h-20" aria-hidden="true">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+
+            <button class="md:hidden text-h5 font-serif border border-primary px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+              Close
+            </button>
+          </div>
+
+          <ul class="flex flex-col gap-4">
+            {% for item in nav_pages_menu.items %}
+            <li>
+              <a class="text-h2 font-serif" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
+                {{ item.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </template>
   </nav>
 </header>

@@ -1,5 +1,7 @@
 {% extends "layouts/base.twig" %}
 
+{% set topperTheme = 'yellow' %}
+
 {% block pageBody %}
   {% set solution = article.terms('solution')|first %}
   {% set bylines = article.bylines %}
