@@ -8,9 +8,9 @@
       <a href="{{ state.link }}">
         <h3>{{ state.title }}</h3>
 
-        {% if state.state %}
+        {% if state.handle %}
         <svg aria-hidden="true">
-          <use xlink:href="#state-{{ state.state }}"></use>
+          <use xlink:href="#state-{{ state.handle }}"></use>
         </svg>
         {% endif %}
       </a>

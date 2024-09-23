@@ -102,7 +102,7 @@ class State extends TimberPost {
 	 *
 	 * @return string|null
 	 */
-	public function state(): string|null {
+	public function handle(): string|null {
 		if ( $this->meta( 'state' ) ) {
 			return $this->meta( 'state' );
 		}
