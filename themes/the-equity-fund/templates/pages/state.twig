@@ -9,7 +9,7 @@
       <h1 class="font-display uppercase text-giant text-center">{{ state.meta('headline') }}</h1>
 
       <svg class="text-cream h-48" aria-hidden="true">
-        <use xlink:href="#state-{{ state.title|lower }}"></use>
+        <use xlink:href="#state-{{ state.title|lower|replace({ ' ': '-' }) }}"></use>
       </svg>
 
       {% if state.meta('introduction') %}
