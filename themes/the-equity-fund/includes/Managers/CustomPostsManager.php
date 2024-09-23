@@ -33,7 +33,8 @@ class CustomPostsManager {
 	 */
 	public function add_custom_post_classmap( $classmap ) {
 		$custom_classmap = array(
-			'post' => Post::class,
+			'post'  => Post::class,
+			'state' => State::class,
 		);
 
 		return array_merge( $classmap, $custom_classmap );

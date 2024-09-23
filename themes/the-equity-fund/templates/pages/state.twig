@@ -8,9 +8,11 @@
       <span class="uppercase font-bold">State-based grantees</span>
       <h1 class="font-display uppercase text-giant text-center">{{ state.meta('headline') }}</h1>
 
+      {% if state.state %}
       <svg class="text-cream h-48" aria-hidden="true">
-        <use xlink:href="#state-{{ state.title|lower|replace({ ' ': '-' }) }}"></use>
+        <use xlink:href="#state-{{ state.state }}"></use>
       </svg>
+      {% endif %}
 
       {% if state.meta('introduction') %}
         <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
