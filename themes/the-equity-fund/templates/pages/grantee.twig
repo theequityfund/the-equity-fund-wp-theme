@@ -3,10 +3,12 @@
 {% set palette = 'maroon' %}
 
 {% block pageBody %}
+  {% set state = post.states|first %}
+
   {% include 'templates/components/toppers/article.twig' with {
     title: post.title,
     thumbnail: post.thumbnail,
-    tag: solution,
+    tag: state,
     palette: 'maroon',
   } %}
 

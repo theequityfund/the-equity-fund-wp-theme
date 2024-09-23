@@ -34,8 +34,8 @@ class CustomPostsManager {
 	 */
 	public function add_custom_post_classmap( $classmap ) {
 		$custom_classmap = array(
-			'post'  => Post::class,
-			'state' => State::class,
+			'post'    => Post::class,
+			'state'   => State::class,
 			'grantee' => Grantee::class,
 		);
 
