@@ -1,19 +1,21 @@
 {% extends "layouts/base.twig" %}
 
-{% set topperTheme = 'yellow' %}
+{% set topperTheme = 'maroon' %}
 
 {% block pageBody %}
-  <header>
-    <span class="uppercase font-bold">State-based grantees</span>
-    <h1 class="font-display uppercase">{{ state.meta('headline') }}</h1>
+  <header class="theme-maroon text-foreground bg-background grid grid-cols-2 gap-gutter pt-topper-margin px-site-padding pb-site-padding">
+    <div class="flex flex-col items-center justify-center gap-8 max-w-2xl mx-auto">
+      <span class="uppercase font-bold">State-based grantees</span>
+      <h1 class="font-display uppercase text-giant text-center">{{ state.meta('headline') }}</h1>
 
-    <svg aria-hidden="true">
-      <use xlink:href="#state-{{ state.title|lower }}"></use>
-    </svg>
+      <svg class="text-cream h-48" aria-hidden="true">
+        <use xlink:href="#state-{{ state.title|lower }}"></use>
+      </svg>
 
-    {% if state.excerpt %}
-      <p><span class="font-bold">{{ state.title }}</span> — {{ state.excerpt }}</p>
-    {% endif %}
+      {% if state.excerpt %}
+        <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.excerpt }}</p>
+      {% endif %}
+    </div>
 
     {% if state.thumbnail %}
       {% include 'templates/components/lazy-img.twig' with {
