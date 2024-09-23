@@ -3,7 +3,7 @@
 
 {% include "layouts/includes/head.twig" %}
 
-<body class="theme-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
+<body class="palette-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
   <a
     class="[&:not(:focus)]:sr-only absolute top-4 left-4 bg-cream px-4 py-3 flex justify-center"
     href="#content"
@@ -18,7 +18,7 @@
   <div class="bg-background">
 
     {% include "components/nav.twig" with {
-      theme: topperTheme|default('cream')
+      palette: palette|default('cream')
     } %}
 
     {# {% include "components/menu.twig" %} #}
