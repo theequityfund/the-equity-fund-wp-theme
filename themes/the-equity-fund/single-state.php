@@ -10,7 +10,7 @@ use Timber\Timber;
 $context = Timber::context();
 
 // Fetch the current post using default query and the theme's Post model.
-$_post = Timber::get_post( false, 'TheEquityFund\Models\State' );
+$_post = Timber::get_post( false );
 
 // If post is password protected, render password page.
 if ( post_password_required( $_post->ID ) ) {

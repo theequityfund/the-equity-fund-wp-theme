@@ -1,0 +1,50 @@
+{
+  "key": "group_66f1f6984e15d",
+  "title": "Taxonomy: State",
+  "fields": [
+    {
+      "key": "field_66f1f698891a7",
+      "label": "States",
+      "name": "states",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "(Recommended) Include relevant states. This content will be shown on the states' pages. The first state is considered the \"primary\" state.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["state"],
+      "post_status": "",
+      "taxonomy": "",
+      "filters": ["search", "taxonomy"],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "grantee"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1727133490
+}

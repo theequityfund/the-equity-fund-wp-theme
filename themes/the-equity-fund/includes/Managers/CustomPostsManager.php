@@ -20,7 +20,7 @@ class CustomPostsManager {
 	 *
 	 * @return void
 	 */
-	public function run() {
+	public function run(): void {
 		add_action( 'init', array( $this, 'register_post_types' ), 1 );
 
 		add_filter( 'timber/post/classmap', array( $this, 'add_custom_post_classmap' ) );
@@ -34,7 +34,8 @@ class CustomPostsManager {
 	 */
 	public function add_custom_post_classmap( $classmap ) {
 		$custom_classmap = array(
-			'post' => Post::class,
+			'post'    => Post::class,
+			'state'   => State::class,
 			'grantee' => Grantee::class,
 		);
 

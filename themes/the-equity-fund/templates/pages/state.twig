@@ -8,9 +8,11 @@
       <span class="uppercase font-bold">State-based grantees</span>
       <h1 class="font-display uppercase text-giant text-center">{{ post.meta('headline') }}</h1>
 
+      {% if post.handle %}
       <svg class="text-cream h-48" aria-hidden="true">
-        <use xlink:href="#state-{{ post.title|lower|replace({ ' ': '-' }) }}"></use>
+        <use xlink:href="#state-{{ post.handle }}"></use>
       </svg>
+      {% endif %}
 
       {% if post.meta('introduction') %}
         <p class="text-center mt-12"><span class="font-bold">{{ post.title }}</span> — {{ post.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
@@ -26,6 +28,6 @@
   </header>
 
   <article class="gutenberg rich-text mt-16">
-    {{ article.content }}
+    {{ post.content }}
   </article>
 {% endblock %}

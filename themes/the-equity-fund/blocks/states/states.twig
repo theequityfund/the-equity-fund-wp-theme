@@ -1,0 +1,31 @@
+{% if states|length %}
+<section class="theme-cream text-foreground" data-block="states" aria-label="{{ headline|default('Grantee states') }}">
+  <h2 class="font-serif">{{ headline }}</h2>
+
+  {% if cta %}
+  <a href="{{ cta.url }}">{{ cta.title }}</a>
+  {% endif %}
+
+  <ul>
+    {% for state in states %}
+      {% set grantees = state.grantees %}
+
+      <li>
+        <a href="{{ state.link }}">
+          <h3>{{ state.title }}</h3>
+
+          {% if grantees|length %}
+            <p>{{ grantees|length }} grantees</p>
+          {% endif %}
+
+          {% if state.handle %}
+          <svg aria-hidden="true">
+            <use xlink:href="#state-{{ state.handle }}"></use>
+          </svg>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

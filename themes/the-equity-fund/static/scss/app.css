@@ -521,27 +521,29 @@
   }
 }
 
-.palette-yellow {
-  --c-foreground: theme('colors.maroon');
-  --c-background: theme('colors.yellow');
-}
+@layer utilities {
+  .palette-yellow {
+    --c-foreground: theme('colors.maroon');
+    --c-background: theme('colors.yellow');
+  }
 
-.palette-maroon {
-  --c-foreground: theme('colors.lavender');
-  --c-background: theme('colors.maroon');
-}
+  .palette-maroon {
+    --c-foreground: theme('colors.lavender');
+    --c-background: theme('colors.maroon');
+  }
 
-.palette-lavender {
-  --c-foreground: theme('colors.maroon');
-  --c-background: theme('colors.lavender');
-}
+  .palette-lavender {
+    --c-foreground: theme('colors.maroon');
+    --c-background: theme('colors.lavender');
+  }
 
-.palette-cream {
-  --c-foreground: theme('colors.maroon');
-  --c-background: theme('colors.cream');
-}
+  .palette-cream {
+    --c-foreground: theme('colors.maroon');
+    --c-background: theme('colors.cream');
+  }
 
-.palette-teal {
-  --c-foreground: theme('colors.black');
-  --c-background: theme('colors.teal');
+  .palette-teal {
+    --c-foreground: theme('colors.black');
+    --c-background: theme('colors.teal');
+  }
 }

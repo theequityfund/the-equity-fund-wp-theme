@@ -85,9 +85,9 @@ class ThemeManager {
 	public function register_menus() {
 		register_nav_menus(
 			array(
-				'nav_pages_menu' => 'Navigation Pages Menu',
+				'nav_pages_menu'  => 'Navigation Pages Menu',
 				'nav_footer_menu' => 'Navigation Footer Menu',
-				'nav_legal_menu' => 'Navigation Legal Menu',
+				'nav_legal_menu'  => 'Navigation Legal Menu',
 			)
 		);
 	}
