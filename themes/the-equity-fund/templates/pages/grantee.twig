@@ -1,0 +1,39 @@
+{% extends "layouts/base.twig" %}
+
+{% set topperTheme = 'yellow' %}
+
+{% block pageBody %}
+  {% set solution = article.terms('solution')|first %}
+  {% set bylines = article.bylines %}
+
+  <header class="theme-yellow bg-background px-site-padding pb-24 pt-topper-margin">
+    <div class="flex flex-col items-center gap-12 max-w-6xl mx-auto">
+      {% include 'templates/components/lazy-img.twig' with {
+        class: 'w-full',
+        img: article.thumbnail,
+      } %}
+
+      <h1 class="font-serif text-foreground text-h2 text-center">{{ article.title }}</h1>
+
+      {% if solution or bylines|length %}
+      <div class="text-foreground flex items-center max-md:flex-col md:gap-6">
+        {% if solution %}
+        <a class="font-bold" href="{{ solution.link }}">{{ solution.title }}</a>
+        {% endif %}
+
+        {% if solution and bylines|length %}
+        <span aria-hidden="true">――</span>
+        {% endif %}
+
+        {% if bylines|length %}
+        <p>By {% for byline in article.bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <article class="gutenberg rich-text mt-16">
+    {{ article.content }}
+  </article>
+{% endblock %}
