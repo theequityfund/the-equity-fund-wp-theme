@@ -92,7 +92,7 @@
   }
 
   * {
-    @apply font-sans text-foreground;
+    @apply font-sans;
   }
 
   a,
@@ -248,7 +248,7 @@
     @apply px-site-padding;
 
     > *:not([data-block]) {
-      @apply mx-auto max-w-article;
+      @apply mx-auto max-w-article text-foreground;
     }
 
     /*

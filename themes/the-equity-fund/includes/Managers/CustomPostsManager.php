@@ -8,6 +8,7 @@
 namespace TheEquityFund\Managers;
 
 use TheEquityFund\Models\Post;
+use TheEquityFund\Models\State;
 
 
 /** Class */
@@ -45,5 +46,6 @@ class CustomPostsManager {
 	 * @return void
 	 */
 	public function register_post_types() {
+		State::register();
 	}
 }

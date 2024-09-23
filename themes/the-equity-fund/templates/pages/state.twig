@@ -1,0 +1,31 @@
+{% extends "layouts/base.twig" %}
+
+{% set topperTheme = 'maroon' %}
+
+{% block pageBody %}
+  <header class="theme-maroon text-foreground bg-background grid md:grid-cols-2 md:items-center auto-rows-auto gap-gutter pt-topper-margin px-site-padding pb-site-padding">
+    <div class="flex flex-col items-center justify-center gap-8 max-w-2xl mx-auto">
+      <span class="uppercase font-bold">State-based grantees</span>
+      <h1 class="font-display uppercase text-giant text-center">{{ state.meta('headline') }}</h1>
+
+      <svg class="text-cream h-48" aria-hidden="true">
+        <use xlink:href="#state-{{ state.title|lower }}"></use>
+      </svg>
+
+      {% if state.meta('introduction') %}
+        <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+      {% endif %}
+    </div>
+
+    {% if state.thumbnail %}
+      {% include 'templates/components/lazy-img.twig' with {
+        class: 'w-full',
+        img: state.thumbnail,
+      } %}
+    {% endif %}
+  </header>
+
+  <article class="gutenberg rich-text mt-16">
+    {{ article.content }}
+  </article>
+{% endblock %}
