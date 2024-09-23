@@ -46,6 +46,22 @@
       "elements": "",
       "bidirectional": 0,
       "bidirectional_target": []
+    },
+    {
+      "key": "field_66f1fb606f37a",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
     }
   ],
   "location": [
@@ -66,5 +82,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727133574
+  "modified": 1727134609
 }

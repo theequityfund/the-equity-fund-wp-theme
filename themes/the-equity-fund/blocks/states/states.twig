@@ -2,6 +2,10 @@
 <section class="theme-cream text-foreground" data-block="states" aria-label="{{ headline|default('Grantee states') }}">
   <h2 class="font-serif">{{ headline }}</h2>
 
+  {% if cta %}
+  <a href="{{ cta.url }}">{{ cta.title }}</a>
+  {% endif %}
+
   <ul>
     {% for state in states %}
       {% set grantees = state.grantees %}
