@@ -91,8 +91,73 @@
       url('../../static/fonts/feature-text/FeatureText-BoldItalic-Web.woff2') format('woff2');
   }
 
+  /* Metrify Narrow font */
+  @font-face {
+    font-family: 'Metrify Narrow';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Reg.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBNarrow-Reg.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Metrify Narrow';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Italic.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBNarrow-Italic.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Metrify Narrow';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Bld.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBNarrow-Bld.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Metrify Narrow';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff2') format('woff2');
+  }
+
+  /* Metrify font */
+  @font-face {
+    font-family: 'Metrify';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBStd-Reg.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBStd-Reg.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Metrify';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Metrify';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../static/fonts/metrify/NaNMetrifyBStd-Bld.woff') format('woff'),
+      url('../../static/fonts/metrify/NaNMetrifyBStd-Bld.woff2') format('woff2');
+  }
+
   * {
-    @apply font-sans;
+    @apply font-sans-narrow;
   }
 
   a,
