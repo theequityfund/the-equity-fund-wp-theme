@@ -30,6 +30,8 @@ class BlockManager {
 	 * @return void
 	 */
 	public function register_blocks() {
+		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/states' );
+
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/image-layout' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/related-articles' );
 	}
@@ -112,6 +114,7 @@ class BlockManager {
 			'acf/related-articles',
 			'acf/image-layout',
 			'wsk/static-native-block',
+			'acf/states',
 		);
 	}
 }

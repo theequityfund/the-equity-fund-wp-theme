@@ -1,0 +1,14 @@
+{
+  "name": "acf/states",
+  "title": "States",
+  "description": "List out grantee states.",
+  "category": "widgets",
+  "icon": {
+    "src": "editor-table"
+  },
+  "keywords": ["states", "grantee", "table"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "states.php"
+  }
+}
