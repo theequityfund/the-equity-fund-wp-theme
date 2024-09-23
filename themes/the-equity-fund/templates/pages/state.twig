@@ -7,6 +7,10 @@
     <span class="uppercase font-bold">State-based grantees</span>
     <h1 class="font-display uppercase">{{ state.meta('headline') }}</h1>
 
+    <svg aria-hidden="true">
+      <use xlink:href="#state-{{ state.title|lower }}"></use>
+    </svg>
+
     {% if state.excerpt %}
       <p><span class="font-bold">{{ state.title }}</span> — {{ state.excerpt }}</p>
     {% endif %}
