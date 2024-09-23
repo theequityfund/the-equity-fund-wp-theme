@@ -1,3 +1,21 @@
-<section>
-  <h2>HELLo</h2>
+{% if states|length %}
+<section class="theme-cream text-foreground" data-block="states" aria-label="{{ headline|default('Grantee states') }}">
+  <h2 class="font-serif">{{ headline }}</h2>
+
+  <ul>
+    {% for state in states %}
+    <li>
+      <a href="{{ state.link }}">
+        <h3>{{ state.title }}</h3>
+
+        {% if state.state %}
+        <svg aria-hidden="true">
+          <use xlink:href="#state-{{ state.state }}"></use>
+        </svg>
+        {% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
+{% endif %}
