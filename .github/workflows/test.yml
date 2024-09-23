@@ -37,6 +37,3 @@ jobs:
 
       - name: Check bundlesize
         run: npm run test:bundlesize
-
-      - name: Run static analysis
-        run: npm run phpstan

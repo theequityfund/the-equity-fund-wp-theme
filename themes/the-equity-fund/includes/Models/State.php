@@ -126,11 +126,11 @@ class State extends TimberPost {
 	public function grantees(): PostCollectionInterface|null {
 		return Timber::get_posts(
 			array(
-				'post_type' => Grantee::POST_TYPE,
+				'post_type'  => Grantee::POST_TYPE,
 				'meta_query' => array(
 					array(
-						'key' => 'states',
-						'value' => $this->ID,
+						'key'     => 'states',
+						'value'   => $this->ID,
 						'compare' => 'LIKE',
 					),
 				),
