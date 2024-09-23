@@ -157,7 +157,7 @@
   }
 
   * {
-    @apply font-sans;
+    @apply font-sans-narrow;
   }
 
   a,
