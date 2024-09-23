@@ -4,17 +4,23 @@
 
   <ul>
     {% for state in states %}
-    <li>
-      <a href="{{ state.link }}">
-        <h3>{{ state.title }}</h3>
+      {% set grantees = state.grantees %}
 
-        {% if state.handle %}
-        <svg aria-hidden="true">
-          <use xlink:href="#state-{{ state.handle }}"></use>
-        </svg>
-        {% endif %}
-      </a>
-    </li>
+      <li>
+        <a href="{{ state.link }}">
+          <h3>{{ state.title }}</h3>
+
+          {% if grantees|length %}
+            <p>{{ grantees|length }} grantees</p>
+          {% endif %}
+
+          {% if state.handle %}
+          <svg aria-hidden="true">
+            <use xlink:href="#state-{{ state.handle }}"></use>
+          </svg>
+          {% endif %}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </section>

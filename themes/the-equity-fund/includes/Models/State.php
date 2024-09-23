@@ -8,6 +8,8 @@
 namespace TheEquityFund\Models;
 
 use Timber\Post as TimberPost;
+use Timber\PostCollectionInterface;
+use Timber\Timber;
 
 /** Class */
 class State extends TimberPost {
@@ -114,5 +116,26 @@ class State extends TimberPost {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Get the grantees related to this state.
+	 *
+	 * @return PostCollectionInterface|null
+	 */
+	public function grantees(): PostCollectionInterface|null {
+		return Timber::get_posts(
+			array(
+				'post_type' => Grantee::POST_TYPE,
+				'meta_query' => array(
+					array(
+						'key' => 'states',
+						'value' => $this->ID,
+						'compare' => 'LIKE',
+					),
+				),
+			)
+		);
+
 	}
 }
