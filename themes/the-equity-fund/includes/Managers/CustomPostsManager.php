@@ -7,6 +7,7 @@
 
 namespace TheEquityFund\Managers;
 
+use TheEquityFund\Models\Grantee;
 use TheEquityFund\Models\Post;
 use TheEquityFund\Models\State;
 
@@ -34,6 +35,7 @@ class CustomPostsManager {
 	public function add_custom_post_classmap( $classmap ) {
 		$custom_classmap = array(
 			'post' => Post::class,
+			'grantee' => Grantee::class,
 		);
 
 		return array_merge( $classmap, $custom_classmap );
@@ -47,5 +49,6 @@ class CustomPostsManager {
 	 */
 	public function register_post_types() {
 		State::register();
+		Grantee::register();
 	}
 }

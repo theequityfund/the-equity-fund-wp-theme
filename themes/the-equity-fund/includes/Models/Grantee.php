@@ -1,6 +1,6 @@
 <?php
 /**
- * State post type.
+ * Grantee post type.
  *
  * @package TheEquityFund
  */
@@ -10,8 +10,8 @@ namespace TheEquityFund\Models;
 use Timber\Post as TimberPost;
 
 /** Class */
-class State extends TimberPost {
-	const POST_TYPE = 'state';
+class Grantee extends TimberPost {
+	const POST_TYPE = 'grantee';
 
 	/**
 	 * Register the post type.
@@ -20,11 +20,11 @@ class State extends TimberPost {
 	 */
 	public static function register(): void {
 		$labels = array(
-			'name'          => 'States',
-			'singular_name' => 'State',
-			'not_found'     => 'No States Found',
-			'add_new'       => 'Add New State',
-			'add_new_item'  => 'Add New State',
+			'name'          => 'Grantees',
+			'singular_name' => 'Grantee',
+			'not_found'     => 'No Grantees Found',
+			'add_new'       => 'Add New Grantee',
+			'add_new_item'  => 'Add New Grantee',
 		);
 
 		$args = array(
@@ -32,7 +32,7 @@ class State extends TimberPost {
 			'public'             => true,
 			'publicly_queryable' => true,
 			'menu_position'      => 21,
-			'menu_icon'          => 'dashicons-location-alt',
+			'menu_icon'          => 'dashicons-groups',
 			'show_in_rest'       => true,
 			'show_in_menu'       => true,
 			'show_in_ui'         => true,

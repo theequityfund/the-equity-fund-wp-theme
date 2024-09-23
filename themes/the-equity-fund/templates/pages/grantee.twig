@@ -1,17 +1,13 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'yellow' %}
+{% set palette = 'maroon' %}
 
 {% block pageBody %}
-  {% set solution = post.terms('solution')|first %}
-  {% set bylines = post.bylines %}
-
   {% include 'templates/components/toppers/article.twig' with {
     title: post.title,
     thumbnail: post.thumbnail,
-    bylines: bylines,
     tag: solution,
-    palette: palette,
+    palette: 'maroon',
   } %}
 
   <article class="gutenberg rich-text mt-16">
