@@ -12,8 +12,8 @@
         <use xlink:href="#state-{{ state.title|lower }}"></use>
       </svg>
 
-      {% if state.excerpt %}
-        <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.excerpt }}</p>
+      {% if state.meta('introduction') %}
+        <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
       {% endif %}
     </div>
 
