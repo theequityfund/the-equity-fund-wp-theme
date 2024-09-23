@@ -1,12 +1,12 @@
 {% extends "layouts/base.twig" %}
 
-{% set topperTheme = 'maroon' %}
+{% set palette = 'maroon' %}
 
 {% block pageBody %}
-  <header class="theme-maroon text-foreground bg-background grid md:grid-cols-2 md:items-center auto-rows-auto gap-gutter pt-topper-margin px-site-padding pb-site-padding">
+  <header class="palette-maroon text-foreground bg-background grid md:grid-cols-2 md:items-center auto-rows-auto gap-gutter pt-topper-margin px-site-padding pb-site-padding">
     <div class="flex flex-col items-center justify-center gap-8 max-w-2xl mx-auto">
       <span class="uppercase font-bold">State-based grantees</span>
-      <h1 class="font-display uppercase text-giant text-center">{{ state.meta('headline') }}</h1>
+      <h1 class="font-display uppercase text-giant text-center">{{ post.meta('headline') }}</h1>
 
       {% if state.state %}
       <svg class="text-cream h-48" aria-hidden="true">
@@ -14,15 +14,15 @@
       </svg>
       {% endif %}
 
-      {% if state.meta('introduction') %}
-        <p class="text-center mt-12"><span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+      {% if post.meta('introduction') %}
+        <p class="text-center mt-12"><span class="font-bold">{{ post.title }}</span> — {{ post.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
       {% endif %}
     </div>
 
-    {% if state.thumbnail %}
+    {% if post.thumbnail %}
       {% include 'templates/components/lazy-img.twig' with {
         class: 'w-full',
-        img: state.thumbnail,
+        img: post.thumbnail,
       } %}
     {% endif %}
   </header>

@@ -521,29 +521,27 @@
   }
 }
 
-@layer utilities {
-  .theme-yellow {
-    --c-foreground: theme('colors.maroon');
-    --c-background: theme('colors.yellow');
-  }
+.palette-yellow {
+  --c-foreground: theme('colors.maroon');
+  --c-background: theme('colors.yellow');
+}
 
-  .theme-maroon {
-    --c-foreground: theme('colors.lavender');
-    --c-background: theme('colors.maroon');
-  }
+.palette-maroon {
+  --c-foreground: theme('colors.lavender');
+  --c-background: theme('colors.maroon');
+}
 
-  .theme-lavender {
-    --c-foreground: theme('colors.maroon');
-    --c-background: theme('colors.lavender');
-  }
+.palette-lavender {
+  --c-foreground: theme('colors.maroon');
+  --c-background: theme('colors.lavender');
+}
 
-  .theme-cream {
-    --c-foreground: theme('colors.maroon');
-    --c-background: theme('colors.cream');
-  }
+.palette-cream {
+  --c-foreground: theme('colors.maroon');
+  --c-background: theme('colors.cream');
+}
 
-  .theme-teal {
-    --c-foreground: theme('colors.black');
-    --c-background: theme('colors.teal');
-  }
+.palette-teal {
+  --c-foreground: theme('colors.black');
+  --c-background: theme('colors.teal');
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post / article.
+ * Single grantee.
  *
  * @package TheEquityFund
  */
@@ -9,8 +9,7 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-// Fetch the current post using default query and the theme's Post model.
-$_post = Timber::get_post( false, 'TheEquityFund\Models\Post' );
+$_post = Timber::get_post( false );
 
 // If post is password protected, render password page.
 if ( post_password_required( $_post->ID ) ) {
@@ -21,5 +20,5 @@ if ( post_password_required( $_post->ID ) ) {
 	Timber::render( 'pages/password.twig', $context );
 } else {
 	$context['post'] = $_post;
-	Timber::render( 'pages/article.twig', $context );
+	Timber::render( 'pages/grantee.twig', $context );
 }

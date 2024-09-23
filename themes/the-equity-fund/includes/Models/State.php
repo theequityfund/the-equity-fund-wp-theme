@@ -67,7 +67,7 @@ class State extends TimberPost {
 	);
 
 	/**
-	 * Register the State post type.
+	 * Register the post type.
 	 *
 	 * @return void
 	 */
