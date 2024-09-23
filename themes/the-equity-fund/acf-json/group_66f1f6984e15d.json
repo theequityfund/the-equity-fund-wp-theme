@@ -1,34 +1,14 @@
 {
-  "key": "group_66f1e755d1032",
-  "title": "Block: States",
+  "key": "group_66f1f6984e15d",
+  "title": "Taxonomy: State",
   "fields": [
     {
-      "key": "field_66f1e75510738",
-      "label": "Headline",
-      "name": "headline",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "(Recommended)",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
-      "key": "field_66f1e78810739",
+      "key": "field_66f1f698891a7",
       "label": "States",
       "name": "states",
       "aria-label": "",
       "type": "relationship",
-      "instructions": "Specify the states to display. If not provided, this block will automatically pull all of the states.",
+      "instructions": "(Recommended) Include relevant states. This content will be shown on the states' pages. The first state is considered the \"primary\" state.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -51,14 +31,14 @@
   "location": [
     [
       {
-        "param": "block",
+        "param": "post_type",
         "operator": "==",
-        "value": "acf/states"
+        "value": "grantee"
       }
     ]
   ],
   "menu_order": 0,
-  "position": "normal",
+  "position": "acf_after_title",
   "style": "default",
   "label_placement": "top",
   "instruction_placement": "label",
@@ -66,5 +46,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727133574
+  "modified": 1727133490
 }

@@ -8,9 +8,9 @@
       <span class="uppercase font-bold">State-based grantees</span>
       <h1 class="font-display uppercase text-giant text-center">{{ post.meta('headline') }}</h1>
 
-      {% if state.state %}
+      {% if post.state %}
       <svg class="text-cream h-48" aria-hidden="true">
-        <use xlink:href="#state-{{ state.state }}"></use>
+        <use xlink:href="#state-{{ post.state }}"></use>
       </svg>
       {% endif %}
 
@@ -28,6 +28,6 @@
   </header>
 
   <article class="gutenberg rich-text mt-16">
-    {{ state.content }}
+    {{ post.content }}
   </article>
 {% endblock %}

@@ -13,13 +13,13 @@ $context = Timber::context();
 
 $context['headline'] = get_field( 'headline' );
 
-$provided_states = get_field( 'states' );
+$provided_states_ids = get_field( 'states' );
 
 $states = Timber::get_posts(
 	array(
 		'post_type'      => State::POST_TYPE,
 		'post_status'    => 'publish',
-		'post__in'       => $provided_states && count( $provided_states ) > 0 ? array_column( $provided_states, 'ID' ) : false,
+		'post__in'       => $provided_states_ids && count( $provided_states_ids ) > 0 ? $provided_states_ids : false,
 		'posts_per_page' => -1,
 		'orderby'        => 'post__in',
 	)
