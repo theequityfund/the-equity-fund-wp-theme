@@ -1,0 +1,25 @@
+{% extends "layouts/base.twig" %}
+
+{% set topperTheme = 'yellow' %}
+
+{% block pageBody %}
+  <header>
+    <span class="uppercase font-bold">State-based grantees</span>
+    <h1 class="font-display uppercase">{{ state.meta('headline') }}</h1>
+
+    {% if state.excerpt %}
+      <p><span class="font-bold">{{ state.title }}</span> — {{ state.excerpt }}</p>
+    {% endif %}
+
+    {% if state.thumbnail %}
+      {% include 'templates/components/lazy-img.twig' with {
+        class: 'w-full',
+        img: state.thumbnail,
+      } %}
+    {% endif %}
+  </header>
+
+  <article class="gutenberg rich-text mt-16">
+    {{ article.content }}
+  </article>
+{% endblock %}
