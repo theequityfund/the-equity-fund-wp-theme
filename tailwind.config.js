@@ -1,5 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  safelist: [
+    'palette-yellow',
+    'palette-maroon',
+    'palette-lavender',
+    'palette-teal',
+    'palette-cream',
+  ],
+
   content: ['./themes/the-equity-fund/**/*.twig', './themes/the-equity-fund/**/*.js'],
   theme: {
     fontFamily: {
