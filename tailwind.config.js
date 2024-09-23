@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['Judge', 'sans-serif'],
-      sans: ['Inter', 'sans-serif'],
+
+      sans: ['Metrify', 'sans-serif'],
+      'sans-narrow': ['Metrify Narrow', 'sans-serif'],
+
       serif: ['Feature Text', 'serif'],
       'serif-deck': ['Feature Deck', 'serif'],
     },
