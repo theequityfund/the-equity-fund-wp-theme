@@ -2,10 +2,10 @@
 
 <header class="palette-{{ palette }} bg-background px-site-padding pb-24 pt-topper-margin">
   <div class="flex flex-col items-center gap-12 max-w-6xl mx-auto">
-    {% if thumbnail %}
+    {% if image %}
       {% include 'templates/components/lazy-img.twig' with {
         class: 'w-full',
-        img: thumbnail,
+        img: image,
       } %}
     {% endif %}
 
