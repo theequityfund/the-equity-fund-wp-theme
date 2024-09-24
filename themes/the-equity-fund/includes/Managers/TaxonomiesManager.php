@@ -7,6 +7,9 @@
 
 namespace TheEquityFund\Managers;
 
+use TheEquityFund\Models\Solution;
+
+
 /** Class */
 class TaxonomiesManager {
 
@@ -17,6 +20,21 @@ class TaxonomiesManager {
 	 */
 	public function run() {
 		add_action( 'init', array( $this, 'register_taxonomies' ), 1 );
+		add_filter( 'timber/term/classmap', array( $this, 'add_custom_taxonomy_classmap' ) );
+	}
+
+	/**
+	 * Add custom classmap for taxonomies
+	 *
+	 * @param array $classmap The classmap.
+	 * @return array
+	 */
+	public function add_custom_taxonomy_classmap( $classmap ) {
+		$custom_classmap = array(
+			'solution' => Solution::class,
+		);
+
+		return array_merge( $classmap, $custom_classmap );
 	}
 
 	/**
@@ -25,23 +43,6 @@ class TaxonomiesManager {
 	 * @return void
 	 */
 	public function register_taxonomies(): void {
-		register_taxonomy(
-			'solution',
-			array( 'post' ),
-			array(
-				'labels'             => array(
-					'name'          => 'Solution',
-					'singular_name' => 'Solution',
-					'not_found'     => 'No Solutions Found',
-					'add_new'       => 'Add New Solution',
-					'add_new_item'  => 'Add New Solution',
-				),
-				'public'             => true,
-				'publicly_queryable' => true,
-				'show_in_rest'       => true,
-				'show_in_menu'       => true,
-
-			)
-		);
+		Solution::register();
 	}
 }
