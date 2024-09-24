@@ -6,7 +6,7 @@
   {% set solution = post.terms('solution')|first %}
   {% set bylines = post.bylines %}
 
-  {% include 'templates/components/toppers/article.twig' with {
+  {% include 'templates/components/toppers/article-topper.twig' with {
     title: post.title,
     thumbnail: post.thumbnail,
     bylines: bylines,

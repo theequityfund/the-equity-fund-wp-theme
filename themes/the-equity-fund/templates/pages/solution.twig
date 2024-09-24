@@ -1,0 +1,12 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'maroon' %}
+
+{% block pageBody %}
+  {% include 'templates/components/toppers/split-topper.twig' with {
+    overline: 'Solutions',
+    title: term.title,
+    thumbnail: post.thumbnail,
+    description: term.description,
+  } %}
+{% endblock %}
