@@ -1,5 +1,12 @@
+{% set limit = 1 %}
+
 {% if states|length %}
-<section class="theme-cream text-foreground" data-block="states" aria-label="{{ headline|default('Grantee states') }}">
+<section
+  class="theme-cream text-foreground"
+  aria-label="{{ headline|default('Grantee states') }}"
+  data-block="states"
+  x-data="{ expanded: false }"
+>
   <h2 class="font-serif">{{ headline }}</h2>
 
   {% if cta %}
@@ -10,7 +17,7 @@
     {% for state in states %}
       {% set grantees = state.grantees %}
 
-      <li>
+      <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
         <a href="{{ state.link }}">
           <h3>{{ state.title }}</h3>
 
@@ -27,5 +34,15 @@
       </li>
     {% endfor %}
   </ul>
+
+  {% if states|length > limit %}
+    <button
+      class="md:hidden"
+      @click="expanded = !expanded"
+      x-text="expanded ? 'View less' : 'View all'"
+    >
+      View all
+    </button>
+  {% endif %}
 </section>
 {% endif %}
