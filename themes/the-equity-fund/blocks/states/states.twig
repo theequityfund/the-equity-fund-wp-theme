@@ -20,9 +20,9 @@
       {% set grantees = state.grantees %}
 
       <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
-        <a class="flex gap-3 justify-between items-center px-6 py-4 border border-maroon border-dotted hover:bg-yellow" href="{{ state.link }}">
+        <a class="flex gap-3 justify-between items-center px-6 py-4 border border-maroon border-dotted hover:bg-yellow h-full" href="{{ state.link }}">
           <div>
-            <h3 class="text-h3 font-serif">{{ state.title }}</h3>
+            <h3 class="text-h5 xl:text-h3 font-serif">{{ state.title }}</h3>
 
             {% if grantees|length %}
               <p class="text-sm font-medium">{{ grantees|length }} grantees</p>
