@@ -222,6 +222,12 @@ You can use the following script to bump the version numbers in this project's `
 
 By default, running the script with no arguments will result in a patch version bump (so, from `1.0.1` to `1.0.2`). The script utilizes [`npm-version`](https://docs.npmjs.com/cli/v7/commands/npm-version) behind the scenes to define the new version number; see [those docs](https://docs.npmjs.com/cli/v7/commands/npm-version) for more information on the available version options.
 
+Manually run the deployment script:
+
+```
+./bin/deploy [SFTP_HOST] [SFTP_USER] [SFTP_PORT]
+```
+
 ## 🔄 Object-Oriented Approach
 
 This theme utilizes an simple but structured object-oriented approach.
