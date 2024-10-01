@@ -10,6 +10,11 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['headline'] = 'Tease block';
+$context['overline']    = get_field( 'overline' );
+$context['headline']    = get_field( 'headline' );
+$context['description'] = get_field( 'description' );
+$context['cta']         = get_field( 'cta' );
+$context['image']       = Timber::get_image( get_field( 'image' ) );
+$context['palette']     = get_field( 'palette' );
 
 Timber::render( basename( __DIR__ ) . '/tease.twig', $context );
