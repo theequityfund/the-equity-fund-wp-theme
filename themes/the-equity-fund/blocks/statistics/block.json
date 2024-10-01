@@ -1,0 +1,14 @@
+{
+  "name": "acf/statistics",
+  "title": "Statistics",
+  "description": "Feature statistics.",
+  "category": "widgets",
+  "icon": {
+    "src": "editor-insertmore"
+  },
+  "keywords": ["statistics", "stats", "numbers"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "statistics.php"
+  }
+}
