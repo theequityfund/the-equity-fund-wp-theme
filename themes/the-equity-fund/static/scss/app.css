@@ -310,10 +310,8 @@
   }
 
   .gutenberg {
-    @apply px-site-padding;
-
     > *:not([data-block]) {
-      @apply mx-auto max-w-article text-foreground;
+      @apply mx-auto max-w-article text-foreground px-site-padding;
     }
 
     /*
