@@ -10,4 +10,9 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-Timber::render( basename( __DIR__ ) . '/Statistics.twig', $context );
+$context['headline']    = get_field( 'headline' );
+$context['cta']         = get_field( 'cta' );
+$context['statistics']  = get_field( 'statistics' );
+$context['palette']     = get_field( 'palette' );
+
+Timber::render( basename( __DIR__ ) . '/statistics.twig', $context );
