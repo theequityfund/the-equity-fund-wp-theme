@@ -1,18 +1,13 @@
 {% extends "layouts/base.twig" %}
 
-{%- block custom_body_classes -%}
-  {{ article.is_light_nav ? 'light-nav' }}
-{%- endblock -%}
-
-{%- block custom_content_classes -%}
-  basic-page
-{%- endblock -%}
+{% set palette = 'cream' %}
 
 {% block pageBody %}
+  {% include 'templates/components/toppers/page-topper--default.twig' with {
+    title: post.title,
+  } %}
 
-  {% include 'components/page-topper.twig' with { title: page.title } %}
-
-  <div class="gutenberg rich-text">
-    {{ page.content }}
-  </div>
+  <article class="gutenberg rich-text">
+    {{ post.content }}
+  </article>
 {% endblock %}
