@@ -1,0 +1,192 @@
+{
+  "key": "group_66fc1de8b6b28",
+  "title": "Block: Statistics",
+  "fields": [
+    {
+      "key": "field_66fc1de8b8ff5",
+      "label": "Content",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_66fc1de8b9850",
+      "label": "Headline",
+      "name": "headline",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "(Recommended) Introduce the statistics with a headline.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_66fc1e3d33e5d",
+      "label": "Statistics",
+      "name": "statistics",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "pagination": 0,
+      "min": 1,
+      "max": 8,
+      "collapsed": "field_66fc1e5833e5e",
+      "button_label": "Add Statistic",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_66fc1e5833e5e",
+          "label": "Figure",
+          "name": "figure",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Include a statistic figure.",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_66fc1e3d33e5d"
+        },
+        {
+          "key": "field_66fc1e7533e5f",
+          "label": "Description",
+          "name": "description",
+          "aria-label": "",
+          "type": "wysiwyg",
+          "instructions": "Describe the statistic figure.",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "tabs": "visual",
+          "toolbar": "basic",
+          "media_upload": 0,
+          "delay": 0,
+          "parent_repeater": "field_66fc1e3d33e5d"
+        }
+      ]
+    },
+    {
+      "key": "field_66fc1de8b9ff5",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    },
+    {
+      "key": "field_66fc1de8ba819",
+      "label": "Settings",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_66fc1de8babd8",
+      "label": "Palette",
+      "name": "palette",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Change the color palette for this block.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "cream": "Cream",
+        "maroon": "Maroon",
+        "teal": "Teal",
+        "yellow": "Yellow",
+        "lavender": "Lavender"
+      },
+      "default_value": "cream",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/statistics"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1727799037
+}
