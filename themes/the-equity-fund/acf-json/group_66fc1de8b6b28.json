@@ -168,6 +168,32 @@
       "ui": 1,
       "ajax": 0,
       "placeholder": ""
+    },
+    {
+      "key": "field_66fc2c10cd662",
+      "label": "Size",
+      "name": "size",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Prefer \"Small\" if placed under another block of text.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "large": "Large",
+        "small": "Small"
+      },
+      "default_value": "large",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
     }
   ],
   "location": [
@@ -188,5 +214,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727799037
+  "modified": 1727802485
 }

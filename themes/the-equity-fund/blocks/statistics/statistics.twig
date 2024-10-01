@@ -1,6 +1,6 @@
 {% if statistics|length %}
 <section
-  class="palette-{{ palette|default('cream') }} bg-background text-foreground"
+  class="palette-{{ palette|default('cream') }} size-{{ size|default('large') }} bg-background text-foreground"
   {% if headline %}aria-label="{{ headline }}"{% endif %}
   data-block="statistics"
 >
