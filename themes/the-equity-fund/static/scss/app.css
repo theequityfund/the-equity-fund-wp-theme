@@ -247,7 +247,7 @@
       }
 
       &:is(hr) {
-        @apply h-px border-maroon border-b border-t-0 border-dotted;
+        @apply h-px border-foreground border-b border-t-0 border-dotted;
       }
 
       &:is(ul) {
@@ -259,18 +259,18 @@
           @apply ml-4 pl-4;
 
           &::marker {
-            @apply text-maroon text-sm;
+            @apply text-foreground text-sm;
             content: '●';
           }
 
           > ul > li {
             &::marker {
-              @apply text-maroon;
+              @apply text-foreground;
               content: '○';
             }
 
             > ul > li::marker {
-              @apply text-maroon;
+              @apply text-foreground;
               content: '■';
             }
           }
@@ -289,18 +289,18 @@
           counter-increment: number;
 
           &::marker {
-            @apply text-maroon font-bold text-base;
+            @apply text-foreground font-bold text-base;
             content: counter(number) '.';
           }
 
           > ol > li {
             &::marker {
-              @apply text-maroon;
+              @apply text-foreground;
               content: counter(number, lower-alpha) '.';
             }
 
             > ol > li::marker {
-              @apply text-maroon;
+              @apply text-foreground;
               content: counter(number, lower-roman) '.';
             }
           }
@@ -330,7 +330,7 @@
      */
 
     .has-drop-cap {
-      @apply first-letter:text-7xl first-letter:text-maroon
+      @apply first-letter:text-7xl first-letter:text-foreground
   first-letter:mr-3 first-letter:float-left first-letter:font-serif;
     }
 
@@ -340,7 +340,7 @@
 
     .wp-block-quote {
       p {
-        @apply border-l-2 border-maroon pl-4 font-sans;
+        @apply border-l-2 border-foreground pl-4 font-sans;
       }
 
       cite {
@@ -353,10 +353,10 @@
      */
 
     .wp-block-pullquote {
-      @apply relative !my-14 after:content-[''] after:block after:w-full after:border-b after:border-dotted after:border-maroon;
+      @apply relative !my-14 after:content-[''] after:block after:w-full after:border-b after:border-dotted after:border-foreground;
 
       blockquote {
-        @apply pl-0 md:pl-14 border-t-2 border-maroon py-6 md:py-9;
+        @apply pl-0 md:pl-14 border-t-2 border-foreground py-6 md:py-9;
 
         p {
           @apply !font-serif tracking-tight !text-blockquote before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:left-0 before:!leading-[0.9];
