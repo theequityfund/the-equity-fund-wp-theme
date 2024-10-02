@@ -235,7 +235,7 @@
       }
 
       &:is(a):not(.wp-element-button):not(.button) {
-        @apply text-maroon hover:text-cream hover:bg-maroon bg-gradient-to-r from-maroon to-maroon bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
+        @apply text-foreground hover:text-background hover:bg-foreground bg-gradient-to-r from-foreground to-foreground bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
       }
 
       &:is(p, li, ul, ol, blockquote) {
