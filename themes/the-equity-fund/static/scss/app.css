@@ -250,12 +250,6 @@
         @apply h-px border-maroon border-b border-t-0 border-dotted;
       }
 
-      /* &:is(blockquote) {
-        p {
-          @apply font-serif tracking-tight md:text-h3;
-        }
-      } */
-
       &:is(ul) {
         ul {
           @apply !ml-0 !mb-0 !mr-0;
