@@ -226,6 +226,14 @@
         @apply mt-3 md:mt-5;
       }
 
+      &:is(h1, h2, h3, h4) + &:is(p) {
+        @apply mt-3 md:mt-5;
+      }
+
+      &:is(h5, h6) + &:is(p) {
+        @apply mt-1 md:mt-3;
+      }
+
       &:is(a):not(.wp-element-button):not(.button) {
         @apply text-maroon hover:text-cream hover:bg-maroon bg-gradient-to-r from-maroon to-maroon bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
       }
@@ -234,23 +242,21 @@
         @apply leading-snug paragraph;
       }
 
-      &:is(p, li, ul, ol) {
+      &:is(p, li, ul, ol):not(blockquote > p) {
         @apply text-base md:text-[1.25rem] leading-[1.4] font-sans-narrow;
       }
 
       &:is(hr) {
-        @apply h-px bg-maroon border-0;
+        @apply h-px border-maroon border-b border-t-0 border-dotted;
       }
 
-      &:is(blockquote) {
+      /* &:is(blockquote) {
         p {
-          @apply font-serif tracking-tight md:text-h3 before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:top-8 before:left-0;
+          @apply font-serif tracking-tight md:text-h3;
         }
-      }
+      } */
 
       &:is(ul) {
-        @apply mt-4;
-
         ul {
           @apply !ml-0 !mb-0 !mr-0;
         }
@@ -278,7 +284,6 @@
       }
 
       &:is(ol) {
-        @apply mt-4;
         counter-reset: number;
 
         ol {
@@ -312,20 +317,37 @@
         @apply mt-2;
       }
 
-      &:is(.rich-text > *:not([data-block]) + *),
+      /* &:is(.rich-text > *:not([data-block]) + *),
       &:is(.rich-text > * + *:not([data-block])) {
-        @apply mt-10;
-      }
+        @apply mt-6 md:mt-10;
+      } */
     }
   }
 
   .gutenberg {
+    @apply space-y-8 md:space-y-10 px-site-padding;
+
     > *:not([data-block]) {
-      @apply mx-auto max-w-article text-foreground px-site-padding;
+      @apply mx-auto max-w-article text-foreground;
     }
 
+    /*
+     * Drop cap
+     */
+
+    .has-drop-cap {
+      @apply first-letter:text-7xl first-letter:text-maroon
+  first-letter:mr-3 first-letter:float-left first-letter:font-serif;
+    }
+
+    /*
+     * Drop Quote
+     */
+
     .wp-block-quote {
-      @apply border-l-2 border-maroon pl-4;
+      p {
+        @apply border-l-2 border-maroon pl-4 font-sans;
+      }
 
       cite {
         @apply h6 normal-case not-italic block mt-4;
@@ -337,13 +359,13 @@
      */
 
     .wp-block-pullquote {
-      @apply relative pl-0 md:pl-14 border-t-2 border-maroon border-b py-6 md:py-9;
+      @apply relative !my-14 after:content-[''] after:block after:w-full after:border-b after:border-dotted after:border-maroon;
 
       blockquote {
-        @apply pl-0;
+        @apply pl-0 md:pl-14 border-t-2 border-maroon py-6 md:py-9;
 
         p {
-          @apply font-serif tracking-tight md:text-h3 before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:top-8 before:left-0;
+          @apply !font-serif tracking-tight !text-blockquote before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:left-0 before:!leading-[0.9];
         }
       }
 
@@ -354,23 +376,27 @@
 
     .wp-block-pullquote.alignleft,
     .wp-block-pullquote.alignright {
-      @apply pl-0;
-
       blockquote {
-        @apply pl-0 md:pl-11;
+        @apply pl-0 md:pl-8;
         p {
-          @apply text-2xl before:text-7xl;
+          @apply !text-xl before:text-5xl;
         }
       }
     }
 
-    .wp-block-pullquote.alignfull {
-      @apply pl-0;
+    .wp-block-pullquote.alignleft {
+      @apply pr-0;
+    }
 
+    .wp-block-pullquote.alignright {
+      @apply pl-0;
+    }
+
+    .wp-block-pullquote.alignfull {
       blockquote {
-        @apply pl-0 md:pl-14;
+        @apply pl-0 md:pl-16;
         p {
-          @apply text-blockquoteLg before:text-8xl before:h-[50px];
+          @apply !text-blockquoteLg before:text-8xl before:h-[60px];
         }
       }
     }
@@ -382,7 +408,7 @@
       @apply overflow-scroll;
 
       table {
-        @apply w-full border-collapse table-fixed min-w-[500px] border-b border-maroon;
+        @apply w-full border-collapse table-fixed min-w-[500px];
       }
 
       thead {

@@ -55,6 +55,7 @@ module.exports = {
         h4: ['clamp(1.375rem, 5vw, 1.75rem)', '1.2'],
         h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
         blockquoteLg: ['clamp(1.5rem, 5vw + 1rem, 4.5rem)', '1.1'],
+        blockquote: ['clamp(1.5rem, 2vw + 1rem, 2.25rem)', '1.1'],
       },
 
       maxWidth: {
