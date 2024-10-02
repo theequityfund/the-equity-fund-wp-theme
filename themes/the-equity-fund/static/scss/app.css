@@ -396,7 +396,7 @@
       blockquote {
         @apply pl-0 md:pl-16;
         p {
-          @apply !text-blockquoteLg before:text-8xl before:h-[60px];
+          @apply !text-blockquote-lg before:text-8xl before:h-[60px];
         }
       }
     }
