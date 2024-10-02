@@ -222,24 +222,30 @@
         @apply italic;
       }
 
+      &:is(h1, h2, h3, h4, h5, h6) + &:is(h1, h2, h3, h4, h5, h6) {
+        @apply mt-3 md:mt-5;
+      }
+
       &:is(a):not(.wp-element-button):not(.button) {
-        @apply text-black hover:text-gray-500 bg-gradient-to-r from-black to-black bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
+        @apply text-maroon hover:text-cream hover:bg-maroon bg-gradient-to-r from-maroon to-maroon bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
       }
 
       &:is(p, li, ul, ol, blockquote) {
         @apply leading-snug paragraph;
       }
 
-      &:is(blockquote) {
-        @apply border-l-4 border-black pl-4;
-
-        cite {
-          @apply h6 normal-case not-italic block mt-4;
-        }
+      &:is(p, li, ul, ol) {
+        @apply text-base md:text-[1.25rem] leading-[1.4] font-sans-narrow;
       }
 
       &:is(hr) {
-        @apply h-px bg-black border-0;
+        @apply h-px bg-maroon border-0;
+      }
+
+      &:is(blockquote) {
+        p {
+          @apply font-serif tracking-tight md:text-h3 before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:top-8 before:left-0;
+        }
       }
 
       &:is(ul) {
@@ -253,16 +259,18 @@
           @apply ml-4 pl-4;
 
           &::marker {
-            @apply text-black;
+            @apply text-maroon text-sm;
             content: '●';
           }
 
           > ul > li {
             &::marker {
+              @apply text-maroon;
               content: '○';
             }
 
             > ul > li::marker {
+              @apply text-maroon;
               content: '■';
             }
           }
@@ -282,17 +290,19 @@
           counter-increment: number;
 
           &::marker {
-            @apply text-black;
-            content: counter(number);
+            @apply text-maroon font-bold text-base;
+            content: counter(number) '.';
           }
 
           > ol > li {
             &::marker {
-              content: counter(number, lower-alpha);
+              @apply text-maroon;
+              content: counter(number, lower-alpha) '.';
             }
 
             > ol > li::marker {
-              content: counter(number, lower-roman);
+              @apply text-maroon;
+              content: counter(number, lower-roman) '.';
             }
           }
         }
@@ -304,7 +314,7 @@
 
       &:is(.rich-text > *:not([data-block]) + *),
       &:is(.rich-text > * + *:not([data-block])) {
-        @apply mt-4;
+        @apply mt-10;
       }
     }
   }
@@ -316,6 +326,57 @@
       @apply mx-auto max-w-article text-foreground;
     }
 
+    .wp-block-quote {
+      @apply border-l-2 border-maroon pl-4;
+
+      cite {
+        @apply h6 normal-case not-italic block mt-4;
+      }
+    }
+
+    /*
+     * Pull Quote
+     */
+
+    .wp-block-pullquote {
+      @apply relative pl-0 md:pl-14 border-t-2 border-maroon border-b py-6 md:py-9;
+
+      blockquote {
+        @apply pl-0;
+
+        p {
+          @apply font-serif tracking-tight md:text-h3 before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:top-8 before:left-0;
+        }
+      }
+
+      cite {
+        @apply h6 normal-case not-italic block mt-4;
+      }
+    }
+
+    .wp-block-pullquote.alignleft,
+    .wp-block-pullquote.alignright {
+      @apply pl-0;
+
+      blockquote {
+        @apply pl-0 md:pl-11;
+        p {
+          @apply text-2xl before:text-7xl;
+        }
+      }
+    }
+
+    .wp-block-pullquote.alignfull {
+      @apply pl-0;
+
+      blockquote {
+        @apply pl-0 md:pl-14;
+        p {
+          @apply text-blockquoteLg before:text-8xl before:h-[50px];
+        }
+      }
+    }
+
     /*
      * Table
      */
@@ -323,11 +384,21 @@
       @apply overflow-scroll;
 
       table {
-        @apply w-full border-collapse table-fixed border border-black min-w-[500px];
+        @apply w-full border-collapse table-fixed min-w-[500px] border-b border-maroon;
       }
 
       thead {
-        @apply h6 p-2 bg-gray-800;
+        @apply h6 p-2 bg-lavender;
+      }
+
+      th {
+        @apply font-serif-deck text-lg capitalize;
+      }
+
+      tbody tr {
+        &:is(:nth-child(even)) {
+          @apply bg-lavender20;
+        }
       }
 
       th,
@@ -335,12 +406,16 @@
         @apply text-left py-2 px-3;
 
         &:not(:first-child) {
-          @apply border-l border-black;
+          @apply border-0;
         }
       }
 
       tr {
-        @apply border-b border-black;
+        @apply border-0;
+      }
+
+      figcaption {
+        @apply mt-4;
       }
     }
 
@@ -469,27 +544,27 @@
 
 @layer components {
   .h1 {
-    @apply font-serif text-5xl lg:text-6xl 2xl:text-7xl;
+    @apply text-h1 font-serif;
   }
 
   .h2 {
-    @apply font-serif text-4xl lg:text-5xl;
+    @apply text-h2 font-serif;
   }
 
   .h3 {
-    @apply font-serif font-medium text-2xl lg:text-3xl;
+    @apply text-h3 font-serif;
   }
 
   .h4 {
-    @apply font-serif text-2xl font-medium;
+    @apply text-h4 font-serif;
   }
 
   .h5 {
-    @apply font-serif text-lg md:text-xl font-medium;
+    @apply text-h5 font-serif;
   }
 
   .h6 {
-    @apply font-sans text-sm font-medium uppercase;
+    @apply text-[0.938rem] uppercase font-bold;
   }
 
   .paragraph {
@@ -511,13 +586,13 @@
   }
 
   .button {
-    @apply bg-black text-white w-fit text-xs uppercase font-medium rounded-md px-3 pb-2 pt-2 md:pt-2.5  inline-block transition-all;
-    @apply hover:bg-black hover:text-white;
+    @apply bg-yellow text-maroon w-fit text-sm font-bold uppercase px-3 pb-2 pt-2 md:pt-2.5 inline-block transition-all;
+    @apply hover:bg-maroon hover:text-cream;
   }
 
   .button-outline {
-    @apply bg-transparent text-black border border-black;
-    @apply hover:bg-black hover:text-white;
+    @apply bg-transparent text-maroon border border-maroon;
+    @apply hover:bg-maroon hover:text-cream;
   }
 }
 

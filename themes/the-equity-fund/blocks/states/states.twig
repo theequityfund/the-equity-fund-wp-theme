@@ -7,11 +7,11 @@
   data-block="states"
   x-data="{ expanded: false }"
 >
-  <div class="flex justify-between items-baseline border-b border-maroon pb-1">
+  <div class="flex justify-between items-end border-b border-maroon pb-1 gap-2">
     <h2 class="font-display text-h3 uppercase">{{ headline }}</h2>
 
     {% if cta %}
-      <a class="font-sans hover:underline" href="{{ cta.url }}">{{ cta.title }}</a>
+      <a class="max-md:text-sm font-sans hover:underline whitespace-nowrap" href="{{ cta.url }}">{{ cta.title }}</a>
     {% endif %}
   </div>
 
@@ -20,7 +20,7 @@
       {% set grantees = state.grantees %}
 
       <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
-        <a class="flex gap-3 justify-between items-center px-6 py-4 border border-maroon border-dotted hover:bg-yellow h-full" href="{{ state.link }}">
+        <a class="flex gap-3 justify-between items-center px-6 py-4 border border-maroon border-dotted hover:bg-yellow h-ful hover:transition-all duration-100" href="{{ state.link }}">
           <div>
             <h3 class="text-h5 xl:text-h3 font-serif">{{ state.title }}</h3>
 
