@@ -421,7 +421,7 @@
 
       tbody tr {
         &:is(:nth-child(even)) {
-          @apply bg-lavender20;
+          @apply bg-lavender-20;
         }
       }
 
@@ -627,13 +627,13 @@
   }
 
   .palette-maroon {
-    --c-foreground: theme('colors.lavender');
+    --c-foreground: theme('colors.lavender.DEFAULT');
     --c-background: theme('colors.maroon');
   }
 
   .palette-lavender {
     --c-foreground: theme('colors.maroon');
-    --c-background: theme('colors.lavender');
+    --c-background: theme('colors.lavender.DEFAULT');
   }
 
   .palette-cream {
