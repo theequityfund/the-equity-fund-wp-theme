@@ -1,0 +1,14 @@
+{
+  "name": "acf/tease",
+  "title": "Tease",
+  "description": "Tease out content on the website.",
+  "category": "widgets",
+  "icon": {
+    "src": "align-pull-right"
+  },
+  "keywords": ["tease", "content", "cta"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "tease.php"
+  }
+}

@@ -1,0 +1,24 @@
+{% if statistics|length %}
+<section
+  class="palette-{{ palette|default('cream') }} size-{{ size|default('large') }} bg-background text-foreground"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+  data-block="statistics"
+>
+  {% if headline %}
+    <h2>{{ headline }}</h2>
+  {% endif %}
+
+  {% if cta %}
+    <a href="{{ cta.url }}">{{ cta.title }}</a>
+  {% endif %}
+
+  <dl>
+    {% for item in statistics %}
+      <div>
+        <dt>{{ item.figure }}</dt>
+        <dd>{{ item.description|striptags('<em><strong><a>')|raw }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
+</section>
+{% endif %}

@@ -2,21 +2,21 @@
 
 set -e
 
-HOST=HOST_GOES_HERE
-USER=USER_GOES_HERE
-PORT=PORT_GOES_HERE
+HOST=${1:-$SFTP_HOST}
+USER=${2:-$SFTP_USER}
+PORT=${3:-$SFTP_PORT}
 BASEDIR=$(dirname "$0")
 DEPLOYIGNORE=$BASEDIR/../.deployignore
 
-if [ -z $HOST ] || [ -z $USER ]; then
+if [ -z $HOST ] || [ -z $USER ] || [ -z $PORT ]; then
   echo "Please pass the SFTP host, user name, and port for your site."
   exit 1
 fi
 
 ## NOTE
 ## You might need this, depending on your host.
-# echo "Creating temporary directory..."
-# ssh $USER@$HOST -p $PORT -o StrictHostKeyChecking=no "mkdir -p ~/_tmp"
+echo "Creating temporary directory..."
+ssh $USER@$HOST -p $PORT -o StrictHostKeyChecking=no "mkdir -p ~/_tmp"
 
 echo "Deploying WordPress theme..."
 rsync \
@@ -26,8 +26,8 @@ rsync \
   --delete-after \
   -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
   --temp-dir=~/_tmp \
-  themes/wsk \
-  $USER@$HOST:~/public/wp-content/themes/wsk
+  themes/the-equity-fund \
+  $USER@$HOST:~/public/wp-content/themes
 
 echo "Deploying WordPress plugins..."
 rsync \
