@@ -1,4 +1,4 @@
-{% set limit = 1 %}
+{% set limit = 5 %}
 
 {% if states|length %}
 <section
@@ -7,28 +7,34 @@
   data-block="states"
   x-data="{ expanded: false }"
 >
-  <h2 class="font-serif">{{ headline }}</h2>
+  <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-maroon pb-1 sm:gap-2">
+    <h2 class="font-display text-h3 uppercase">{{ headline }}</h2>
 
-  {% if cta %}
-  <a href="{{ cta.url }}">{{ cta.title }}</a>
-  {% endif %}
+    {% if cta %}
+      <a class="max-md:text-sm font-sans hover:underline whitespace-nowrap" href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
+  </div>
 
-  <ul>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 my-8 md:gap-10 md:my-10">
     {% for state in states %}
       {% set grantees = state.grantees %}
 
       <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
-        <a href="{{ state.link }}">
-          <h3>{{ state.title }}</h3>
+        <a class="group flex gap-3 justify-between items-center px-6 py-4 border border-foreground border-dotted hover:bg-yellow hover:transition-all duration-100" href="{{ state.link }}">
+          <div>
+            <h3 class="text-h5 xl:text-h3 font-serif">{{ state.title }}</h3>
 
-          {% if grantees|length %}
-            <p>{{ grantees|length }} grantees</p>
-          {% endif %}
+            {% if grantees|length %}
+              <p class="text-sm font-medium">{{ grantees|length }} grantees</p>
+            {% endif %}
+          </div>
 
           {% if state.handle %}
-          <svg aria-hidden="true">
-            <use xlink:href="#state-{{ state.handle }}"></use>
-          </svg>
+          <div class="w-[20%] xl:w-[20%] flex-shrink-0 text-lavender group-hover:text-foreground transition-colors">
+            <svg viewBox="0 0 100 100" width="100%" aria-hidden="true">
+              <use xlink:href="#state-{{ state.handle }}"></use>
+            </svg>
+          </div>
           {% endif %}
         </a>
       </li>

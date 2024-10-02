@@ -28,7 +28,10 @@ module.exports = {
         white: '#FFFFFF',
         black: '#111111',
         maroon: '#500C20',
-        lavender: '#C4B3E0',
+        lavender: {
+          20: 'rgba(196, 179, 255, 0.2)',
+          DEFAULT: '#C4B3E0',
+        },
         teal: '#18C198',
         yellow: '#FFD64A',
         cream: '#FCF6ED',
@@ -48,9 +51,13 @@ module.exports = {
 
       fontSize: {
         giant: ['clamp(5rem, 8vw, 8rem)', '0.9'],
+        h1: ['clamp(3rem, 5vw + 1rem, 4.5rem)', '1.2'],
         h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
         h3: ['clamp(1.5rem, 5vw, 2rem)', '1.2'],
+        h4: ['clamp(1.375rem, 5vw, 1.75rem)', '1.2'],
         h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
+        blockquote: ['clamp(1.5rem, 2vw + 1rem, 2.25rem)', '1.1'],
+        'blockquote-lg': ['clamp(1.5rem, 5vw + 1rem, 4.5rem)', '1.1'],
       },
 
       maxWidth: {
