@@ -48,6 +48,26 @@
       "bidirectional_target": []
     },
     {
+      "key": "field_66ff080c6b17d",
+      "label": "Show Grantees Count?",
+      "name": "show_grantees_count",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "If enabled, each state will show the number of grantees associated.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
+    },
+    {
       "key": "field_66f1fb606f37a",
       "label": "CTA",
       "name": "cta",
@@ -82,5 +102,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727134609
+  "modified": 1727989821
 }
