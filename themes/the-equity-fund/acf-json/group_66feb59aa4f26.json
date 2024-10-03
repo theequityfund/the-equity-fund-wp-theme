@@ -1,0 +1,45 @@
+{
+  "key": "group_66feb59aa4f26",
+  "title": "Intervention Topper",
+  "fields": [
+    {
+      "key": "field_66feb59aa755d",
+      "label": "Introduction",
+      "name": "introduction",
+      "aria-label": "",
+      "type": "wysiwyg",
+      "instructions": "(Recommended) Write 3 – 5 sentences to introduce this intervention.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 1,
+      "delay": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "intervention"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1727968694
+}

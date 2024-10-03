@@ -7,6 +7,6 @@
     overline: 'Interventions',
     title: post.title,
     image: post.thumbnail,
-    description: post.excerpt,
+    description: post.meta('introduction')|striptags('<em><strong><a>')|raw,
   } %}
 {% endblock %}

@@ -37,7 +37,7 @@ class Intervention extends TimberPost {
 			'show_in_menu'       => true,
 			'show_in_ui'         => true,
 			'has_archive'        => false,
-			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail' ),
 			'map_meta_cap'       => true,
 		);
 
