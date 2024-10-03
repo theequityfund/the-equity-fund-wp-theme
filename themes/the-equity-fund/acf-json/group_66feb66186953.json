@@ -1,0 +1,50 @@
+{
+  "key": "group_66feb66186953",
+  "title": "Taxonomy: Intervention",
+  "fields": [
+    {
+      "key": "field_66feb66188774",
+      "label": "Interventions",
+      "name": "interventions",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "(Recommended) Include relevant interventions. This content will be shown on the interventions' pages. The first intervention is considered the \"primary\" intervention.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["intervention"],
+      "post_status": "",
+      "taxonomy": "",
+      "filters": ["search"],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "grantee"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1727969344
+}

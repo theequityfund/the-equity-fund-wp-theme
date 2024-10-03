@@ -3,14 +3,14 @@
 {% set palette = 'yellow' %}
 
 {% block pageBody %}
-  {% set solution = post.terms('solution')|first %}
+  {% set intervention = post.intervention %}
   {% set bylines = post.bylines %}
 
   {% include 'templates/components/toppers/article-topper.twig' with {
     title: post.title,
     image: post.thumbnail,
     bylines: bylines,
-    tag: solution,
+    tag: intervention,
     palette: palette,
   } %}
 

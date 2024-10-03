@@ -7,9 +7,6 @@
 
 namespace TheEquityFund\Managers;
 
-use TheEquityFund\Models\Solution;
-
-
 /** Class */
 class TaxonomiesManager {
 
@@ -30,9 +27,7 @@ class TaxonomiesManager {
 	 * @return array
 	 */
 	public function add_custom_taxonomy_classmap( $classmap ) {
-		$custom_classmap = array(
-			'solution' => Solution::class,
-		);
+		$custom_classmap = array();
 
 		return array_merge( $classmap, $custom_classmap );
 	}
@@ -43,6 +38,5 @@ class TaxonomiesManager {
 	 * @return void
 	 */
 	public function register_taxonomies(): void {
-		Solution::register();
 	}
 }
