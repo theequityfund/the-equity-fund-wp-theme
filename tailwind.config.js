@@ -5,6 +5,7 @@ module.exports = {
     'palette-maroon',
     'palette-lavender',
     'palette-teal',
+    'palette-coral',
     'palette-cream',
   ],
 
@@ -28,6 +29,7 @@ module.exports = {
         white: '#FFFFFF',
         black: '#111111',
         maroon: '#500C20',
+        coral: '#EE797B',
         lavender: {
           20: 'rgba(196, 179, 255, 0.2)',
           DEFAULT: '#C4B3E0',
