@@ -17,7 +17,7 @@
 
   <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 my-8 md:gap-10 md:my-10">
     {% for state in states %}
-      {% set grantees = state.grantees %}
+      {% set grantees = show_grantees_count ? state.grantees : [] %}
 
       <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
         <a class="group flex gap-3 justify-between items-center px-6 py-4 border border-foreground border-dotted hover:bg-yellow hover:transition-all duration-100" href="{{ state.link }}">
