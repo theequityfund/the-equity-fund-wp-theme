@@ -157,6 +157,7 @@
         "cream": "Cream",
         "maroon": "Maroon",
         "teal": "Teal",
+        "coral": "Coral",
         "yellow": "Yellow",
         "lavender": "Lavender"
       },
@@ -213,5 +214,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727795586
+  "modified": 1727989694
 }
