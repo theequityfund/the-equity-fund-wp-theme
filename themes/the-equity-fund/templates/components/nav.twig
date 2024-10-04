@@ -3,8 +3,8 @@
   x-data="{ isMenuOpen: false }"
   @keydown.escape.window="isMenuOpen = false"
 >
-  <nav class="group flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
-    <ul class="flex justify-between w-full items-center">
+  <nav class="flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
+    <ul class="flex justify-between w-full items-stretch">
       <li>
         <a href="{{ site.url }}">
           <span class="sr-only">Home</span>
@@ -16,7 +16,10 @@
 
       {% for item in nav_pages_menu.items %}
       <li class="max-md:hidden">
-        <a class="nav-link text-h5 font-serif border border-transparent hocus:border-foreground aria-current:border-foreground group-has-[.nav-link:not([aria-current='page']):hover]:aria-current:border-transparent px-3 pb-2 py-1.5" {% if item.current %}aria-current="page"{% endif %} href="{{ item.url }}">
+        <a
+          class="nav-link flex flex-col justify-center h-full text-h5 font-serif hocus:bg-foreground hocus:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
+          {% if item.current %}aria-current="page"{% endif %}
+          href="{{ item.url }}">
           {{ item.name }}
         </a>
       </li>
