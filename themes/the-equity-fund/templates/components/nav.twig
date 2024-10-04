@@ -1,6 +1,6 @@
 <header
   class="px-site-padding absolute top-wp-admin-bar inset-x-0 palette-{{ palette|default('cream') }} text-foreground"
-  x-data="{ isMenuOpen: true }"
+  x-data="{ isMenuOpen: false }"
   @keydown.escape.window="isMenuOpen = false"
 >
   <nav class="flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
@@ -81,7 +81,7 @@
       >
         <h2 id="menu-label" class="sr-only">Menu</h2>
 
-        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col gap-10">
+        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col gap-6">
           <div class="flex justify-between items-center">
             <a href="{{ site.url }}">
               <span class="sr-only">Home</span>
@@ -95,13 +95,59 @@
             </button>
           </div>
 
-          <ul class="flex flex-col divide-y-2 divide-foreground">
+          <ul class="flex flex-col">
             {% for item in nav_pages_menu.items %}
-            <li class="border-dotted">
-              <a class="block text-7xl font-display uppercase pt-2" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
-                {{ item.name }}
-              </a>
-            </li>
+              {% set hasChildren = item.children and item.children|length %}
+
+              <li
+                {% if hasChildren %}
+                x-data="{ expanded: false }"
+                {% endif %}
+              >
+                <div class="border-b-2 border-dotted border-foreground flex justify-between items-center">
+                  <a class="block text-6xl font-display uppercase pt-2" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
+                    {{ item.name }}
+                  </a>
+
+                  {% if hasChildren %}
+                  <button
+                    class="bg-foreground text-background rounded-full aspect-square h-8 flex flex-col justify-center items-center"
+                    @click="expanded = !expanded"
+                    :aria-expanded="expanded"
+                    aria-controls="menu-dropdown-{{ loop.index }}"
+                  >
+                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-0'" aria-hidden="true">
+                      <use xlink:href="#caret-down"></use>
+                    </svg>
+                    <span class="sr-only">Toggle menu for {{ item.name }}</span>
+                  </button>
+                  {% endif %}
+                </div>
+
+                {% if hasChildren %}
+                <div
+                  id="menu-dropdown-{{ loop.index }}"
+                  class="grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows]"
+                  :class="expanded && 'grid-rows-[1fr]'"
+                >
+                  <div
+                    class="min-h-0 transition-all"
+                    :class="expanded ? 'visible' : 'invisible'"
+                  >
+                    <ul
+                      class="pt-4 pb-8"
+                      :aria-hidden="!expanded"
+                    >
+                      {% for child in item.children %}
+                      <li>
+                        <a class="font-sans" href="{{ child.url }}">{{ child.name }}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+                {% endif %}
+              </li>
             {% endfor %}
           </ul>
         </div>
