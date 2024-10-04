@@ -54,11 +54,23 @@ module.exports = {
 
       fontSize: {
         giant: ['clamp(5rem, 8vw, 8rem)', '0.9'],
-        h1: ['clamp(3rem, 5vw + 1rem, 4.5rem)', '1.2'],
-        h2: ['clamp(2rem, 5vw, 3rem)', '1.2'],
-        h3: ['clamp(1.875rem, 2vw + 1rem, 2.5rem)', '1.1'],
-        h4: ['clamp(1.375rem, 5vw, 1.75rem)', '1.2'],
-        h5: ['clamp(1.25rem, 5vw, 1.5rem)', '1.2'],
+        h1: ['clamp(3rem, 2vw + 1rem, 4.5rem)', '1.2'],
+        h2: [
+          'clamp(1.75rem, 2vw + 1rem, 3rem)',
+          {
+            lineHeight: '1.1',
+            letterSpacing: '-0.0125em',
+          },
+        ],
+        h3: [
+          'clamp(1.5rem, 2vw + 1rem, 2.25rem)',
+          {
+            lineHeight: '1.1',
+            letterSpacing: '-0.0125em',
+          },
+        ],
+        h4: ['clamp(1.375rem, 2vw + 1rem, 1.75rem)', '1.2'],
+        h5: ['clamp(1.25rem, 2vw + 1rem, 1.5rem)', '1.2'],
         blockquote: ['clamp(1.5rem, 2vw + 1rem, 2.25rem)', '1.1'],
         'blockquote-lg': ['clamp(1.5rem, 5vw + 1rem, 4.5rem)', '1.1'],
         'big-number': ['clamp(6.875rem, 20vw + 1rem, 17.5rem)', '0.9'],
