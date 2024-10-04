@@ -84,6 +84,27 @@
           "parent_repeater": "field_66fc1e3d33e5d"
         },
         {
+          "key": "field_66ffeb2fd30a7",
+          "label": "Unit",
+          "name": "unit",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Optionally include a unit symbol such as %, yrs, m, k.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_66fc1e3d33e5d"
+        },
+        {
           "key": "field_66fc1e7533e5f",
           "label": "Description",
           "name": "description",
@@ -215,5 +236,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727989681
+  "modified": 1728048009
 }
