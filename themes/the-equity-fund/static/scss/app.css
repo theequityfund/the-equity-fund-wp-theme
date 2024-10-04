@@ -13,6 +13,15 @@
       url('../../static/fonts/judge/F37Judge-MediumCondensed.woff2') format('woff2');
   }
 
+  @font-face {
+    font-family: 'Judge';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../static/fonts/judge/F37Judge-RegularCompressed.woff') format('woff'),
+      url('../../static/fonts/judge/F37Judge-RegularCompressed.woff2') format('woff2');
+  }
+
   /* Feature Deck font */
   @font-face {
     font-family: 'Feature Deck';
