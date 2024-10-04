@@ -17,15 +17,18 @@
       {% for item in nav_pages_menu.items %}
         {% set hasChildren = item.children and item.children|length %}
         <li
-          class="relative max-md:hidden"
+          class="relative group max-md:hidden"
           {% if hasChildren %}
           x-data="{ expanded: false }"
+          @mouseenter="expanded = true"
+          @mouseleave="expanded = false"
           {% endif %}
         >
           <a
-            class="nav-link flex flex-col justify-center h-full text-h5 font-serif hocus:bg-foreground hocus:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
+            class="nav-link flex flex-col justify-center h-full text-h5 font-serif group-hocus-within:bg-foreground group-hocus-within:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
             {% if item.current %}aria-current="page"{% endif %}
-            href="{{ item.url }}">
+            href="{{ item.url }}"
+          >
             {{ item.name }}
           </a>
 
@@ -41,6 +44,14 @@
 
             <span class="sr-only">Toggle menu for {{ item.name }}</span>
           </button>
+
+          <ul class="absolute top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-x-2 border-b-2 border-foreground divide-y-2 divide-foreground" x-show="expanded">
+            {% for child in item.children %}
+            <li class="border-dotted">
+              <a class="block text-xl font-serif px-3 py-2 min-w-[200px] hocus:text-background hocus:bg-foreground transition-colors" href="{{ child.url }}">{{ child.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
           {% endif %}
         </li>
       {% endfor %}
