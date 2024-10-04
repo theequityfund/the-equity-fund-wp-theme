@@ -4,7 +4,10 @@
 
 {% block pageBody %}
   {% include 'templates/components/toppers/homepage-topper.twig' with {
-    title: page.title,
+    title: page.meta('headline'),
+    image: page.meta('image'),
+    introduction: page.meta('introduction'),
+    description: page.meta('description'),
   } %}
 
   <div class="gutenberg rich-text mt-4 mb-10 md:mt-6 md:mb-16">
