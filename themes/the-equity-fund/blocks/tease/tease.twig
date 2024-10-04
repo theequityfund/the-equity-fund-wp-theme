@@ -4,10 +4,10 @@
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
   {% if overline %}
-    <p>{{ overline }}</p>
+    <p class="uppercase font-bold max-md:text-sm tracking-wide">{{ overline }}</p>
   {% endif %}
 
-  <h2>{{ headline }}</h2>
+  <h2 class="font-display uppercase text-h2 text-center">{{ headline }}</h2>
 
   {% if description %}
     <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
