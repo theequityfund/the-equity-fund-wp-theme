@@ -18,8 +18,17 @@
     <dl class="grid grid-cols-2 xl:grid-cols-4 gap-10 pt-8 lg:pt-10">
       {% for item in statistics %}
         <div>
-          <dt class="flex flex-row justify-start"><span class="font-display font-normal text-big-number">{{ item.figure }} {% if item.unit %}</span><sup class="font-display font-normal top-[-0.5rem] text-5xl md:text-8xl pl-2">{{ item.unit }}</sup>{% endif %}</dt>
-          <dd class="text-base leading-[1.2] lg:text-lg lg:leading-[1.2]">{{ item.description|striptags('<em><strong><a>')|raw }}</dd>
+          <dt class="flex flex-row justify-start">
+            <span class="font-display font-normal text-big-number">{{ item.figure }}</span>
+
+            {% if item.unit %}
+              <sup class="font-display font-normal top-[-0.5rem] text-5xl md:text-8xl pl-2">{{ item.unit }}</sup>
+            {% endif %}
+          </dt>
+
+          <dd class="text-base leading-[1.2] lg:text-lg lg:leading-[1.2]">
+            {{ item.description|striptags('<em><strong><a>')|raw }}
+          </dd>
         </div>
       {% endfor %}
     </dl>
