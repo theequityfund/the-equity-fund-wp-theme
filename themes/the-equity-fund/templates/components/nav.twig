@@ -17,7 +17,7 @@
       {% for item in nav_pages_menu.items %}
         {% set hasChildren = item.children and item.children|length %}
         <li
-          class="relative group max-md:hidden"
+          class="relative group max-lg:hidden"
           {% if hasChildren %}
           x-data="{ expanded: false }"
           @mouseenter="expanded = true"
@@ -59,7 +59,7 @@
     </ul>
 
     <button
-      class="md:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
+      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -90,7 +90,7 @@
               </svg>
             </a>
 
-            <button class="md:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
               Close
             </button>
           </div>
