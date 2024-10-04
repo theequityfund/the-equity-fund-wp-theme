@@ -46,7 +46,7 @@
             <span class="sr-only">Toggle menu for {{ item.name }}</span>
           </button>
 
-          <ul class="absolute top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground" x-show="expanded">
+          <ul class="absolute z-20 top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground" x-show="expanded">
             {% for child in item.children %}
             <li class="">
               <a class="block text-xl font-serif px-3 py-2 min-w-[200px] bg-background hocus:text-background hocus:bg-foreground transition-colors" href="{{ child.url }}">{{ child.name }}</a>
