@@ -1,0 +1,13 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'lavender' %}
+
+{% block pageBody %}
+  {% include 'templates/components/toppers/article-topper.twig' with {
+    title: post.title,
+  } %}
+
+  <article class="gutenberg rich-text mt-4 mb-10 md:mt-6 md:mb-16">
+    {{ post.content }}
+  </article>
+{% endblock %}
