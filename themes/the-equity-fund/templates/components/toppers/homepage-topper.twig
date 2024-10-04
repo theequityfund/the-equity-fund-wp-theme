@@ -4,6 +4,7 @@
   {% if image %}
     {% include 'templates/components/lazy-img.twig' with {
       img: Image(image),
+      aspectRatio: 'wide',
     } %}
   {% endif %}
 

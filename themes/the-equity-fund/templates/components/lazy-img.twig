@@ -51,9 +51,21 @@
   {# calculate aspect ratio using image sizes #}
   {% set padding = img.height and img.width and img.width != 0 ? img.height / img.width * 100 ~ "%" : '0%' %}
 
-  {# override aspect ratio if a percentage string is used #}
-  {% if aspectRatio|length > 1 %}
+  {% if aspectRatio == "horizontal" %}
+    {% set padding = "66.66%" %}
+
+  {% elseif aspectRatio == "vertical" %}
+    {% set padding = "125%" %}
+
+  {% elseif aspectRatio == "square" %}
+    {% set padding = "100%" %}
+
+  {% elseif aspectRatio == "wide" %}
+    {% set padding = "56.25%" %}
+
+  {% elseif aspectRatio|length > 1 %}
     {% set padding = aspectRatio %}
+
   {% endif %}
 
   <div class="relative bg-background {{ class }}">
