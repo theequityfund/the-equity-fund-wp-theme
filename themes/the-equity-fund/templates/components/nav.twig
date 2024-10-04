@@ -15,14 +15,34 @@
       </li>
 
       {% for item in nav_pages_menu.items %}
-      <li class="max-md:hidden">
-        <a
-          class="nav-link flex flex-col justify-center h-full text-h5 font-serif hocus:bg-foreground hocus:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
-          {% if item.current %}aria-current="page"{% endif %}
-          href="{{ item.url }}">
-          {{ item.name }}
-        </a>
-      </li>
+        {% set hasChildren = item.children and item.children|length %}
+        <li
+          class="relative max-md:hidden"
+          {% if hasChildren %}
+          x-data="{ expanded: false }"
+          {% endif %}
+        >
+          <a
+            class="nav-link flex flex-col justify-center h-full text-h5 font-serif hocus:bg-foreground hocus:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
+            {% if item.current %}aria-current="page"{% endif %}
+            href="{{ item.url }}">
+            {{ item.name }}
+          </a>
+
+          {% if hasChildren %}
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center opacity-0 focus:opacity-100 aspect-square h-5 bg-foreground text-background rounded-full"
+            @click="expanded = !expanded"
+            :aria-expanded="expanded"
+          >
+            <svg class="h-2 w-2" aria-hidden="true">
+              <use xlink:href="#caret-down"></use>
+            </svg>
+
+            <span class="sr-only">Toggle menu for {{ item.name }}</span>
+          </button>
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
 
