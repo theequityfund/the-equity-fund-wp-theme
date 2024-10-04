@@ -22,6 +22,7 @@
           x-data="{ expanded: false }"
           @mouseenter="expanded = true"
           @mouseleave="expanded = false"
+          @focusout="$event.relatedTarget && $event.relatedTarget.closest('.group') !== $el && (expanded = false)"
           {% endif %}
         >
           <a
