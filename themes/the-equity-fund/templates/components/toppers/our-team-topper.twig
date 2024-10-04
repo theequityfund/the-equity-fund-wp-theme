@@ -1,15 +1,15 @@
-<header class="palette-lavender text-foreground grid md:grid-cols-2 md:items-stretch auto-rows-auto">
+<header class="palette-lavender text-foreground grid lg:grid-cols-2 lg:items-stretch auto-rows-auto">
   {% if image %}
     <div class="bg-background flex flex-col justify-center items-center lg:min-h-screen">
       {% include 'templates/components/lazy-img.twig' with {
-        class: 'w-full lg:w-1/2 max-md:p-12 max-md:pt-topper-margin max-lg:p-site-padding',
+        class: 'w-full lg:w-1/2 max-lg:p-12 max-lg:pt-topper-margin max-lg:p-site-padding',
         img: image,
       } %}
     </div>
   {% endif %}
 
-  <div class="flex flex-col items-center justify-center gap-6 md:gap-8 max-w-2xl mx-auto p-site-padding pt-12 md:pt-topper-margin-lg">
-    <span class="uppercase font-bold max-md:text-sm tracking-wide">{{ overline }}</span>
+  <div class="flex flex-col items-center justify-center gap-6 lg:gap-8 max-w-2xl mx-auto p-site-padding pt-12 lg:pt-topper-margin-lg">
+    <span class="uppercase font-bold max-lg:text-sm tracking-wide">{{ overline }}</span>
     <h1 class="font-display uppercase text-giant text-center">{{ title }}</h1>
 
     {% if description %}
