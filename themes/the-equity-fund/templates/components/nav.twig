@@ -48,7 +48,7 @@
 
           <ul class="absolute top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground" x-show="expanded">
             {% for child in item.children %}
-            <li class="border-dotted">
+            <li class="">
               <a class="block text-xl font-serif px-3 py-2 min-w-[200px] bg-background hocus:text-background hocus:bg-foreground transition-colors" href="{{ child.url }}">{{ child.name }}</a>
             </li>
             {% endfor %}
@@ -104,19 +104,19 @@
                 x-data="{ expanded: false }"
                 {% endif %}
               >
-                <div class="border-b-2 border-dotted border-foreground flex justify-between items-center">
+                <div class="border-b-2 border-dotted border-foreground flex justify-between items-center py-2">
                   <a class="block text-6xl font-display font-medium uppercase pt-2" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
                     {{ item.name }}
                   </a>
 
                   {% if hasChildren %}
                   <button
-                    class="bg-foreground text-background rounded-full aspect-square h-8 flex flex-col justify-center items-center"
+                    class="bg-background text-foreground border border-foreground rounded-full aspect-square h-7 flex flex-col justify-center items-center"
                     @click="expanded = !expanded"
                     :aria-expanded="expanded"
                     aria-controls="menu-dropdown-{{ loop.index }}"
                   >
-                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-0'" aria-hidden="true">
+                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-[-0.01rem]'" aria-hidden="true">
                       <use xlink:href="#caret-down"></use>
                     </svg>
                     <span class="sr-only">Toggle menu for {{ item.name }}</span>
@@ -135,7 +135,7 @@
                     :class="expanded ? 'visible' : 'invisible'"
                   >
                     <ul
-                      class="pt-4 pb-8"
+                      class="py-4"
                       :aria-hidden="!expanded"
                     >
                       {% for child in item.children %}
