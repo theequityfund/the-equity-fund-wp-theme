@@ -1,9 +1,9 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'cream' %}
+{% set palette = 'maroon' %}
 
 {% block pageBody %}
-  {% include 'templates/components/toppers/page-topper--default.twig' with {
+  {% include 'templates/components/toppers/article-topper.twig' with {
     title: post.title,
   } %}
 
