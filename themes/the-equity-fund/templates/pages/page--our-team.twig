@@ -1,0 +1,17 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'lavender' %}
+
+{% block pageBody %}
+  {% include 'templates/components/toppers/our-team-topper.twig' with {
+    overline: post.title,
+    title: post.meta('headline'),
+    description: post.meta('introduction')|striptags('<em><strong><a>')|raw,
+    cta: post.meta('cta'),
+    image: post.thumbnail
+  } %}
+
+  <article class="gutenberg rich-text mt-4 mb-10 md:mt-6 md:mb-16">
+    {{ post.content }}
+  </article>
+{% endblock %}
