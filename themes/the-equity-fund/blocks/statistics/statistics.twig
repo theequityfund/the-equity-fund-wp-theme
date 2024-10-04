@@ -4,7 +4,7 @@
   {% if headline %}aria-label="{{ headline }}"{% endif %}
   data-block="statistics"
 >
-  <div class="mx-site-padding py-8 md:py-14 lg:py-16">
+  <div class="mx-site-padding py-8 md:py-14 lg:py-20">
     <div class="flex max-sm:flex-col gap-4 sm:justify-between sm:items-end border-b border-black pb-5 lg:pb-6">
       {% if headline %}
         <h2 class="text-h3 font-serif max-w-[50rem]">{{ headline }}</h2>
@@ -18,7 +18,7 @@
     <dl class="grid grid-cols-2 xl:grid-cols-4 gap-10 pt-8 lg:pt-10">
       {% for item in statistics %}
         <div>
-          <dt class="flex flex-row justify-start"><span class="font-display text-big-number">{{ item.figure }} {% if item.unit %}</span><sup class="font-display top-[-0.5rem] text-8xl pl-2">{{ item.unit }}</sup>{% endif %}</dt>
+          <dt class="flex flex-row justify-start"><span class="font-display text-big-number">{{ item.figure }} {% if item.unit %}</span><sup class="font-display top-[-0.5rem] text-5xl md:text-8xl pl-2">{{ item.unit }}</sup>{% endif %}</dt>
           <dd class="text-base leading-[1.2] lg:text-lg lg:leading-[1.2]">{{ item.description|striptags('<em><strong><a>')|raw }}</dd>
         </div>
       {% endfor %}
