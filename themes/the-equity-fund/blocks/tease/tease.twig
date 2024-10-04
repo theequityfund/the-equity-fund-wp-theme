@@ -1,25 +1,27 @@
 <section
-  class="palette-{{ palette|default('maroon') }} size-{{ size|default('large') }} bg-background text-foreground"
+  class="palette-{{ palette|default('maroon') }} size-{{ size|default('large') }} bg-background text-foreground mx-breakout-site-paddding"
   data-block="tease"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
-  {% if overline %}
-    <p class="uppercase font-bold max-md:text-sm tracking-wide">{{ overline }}</p>
-  {% endif %}
+  <div class="px-site-padding py-8 md:py-14 lg:py-20">
+    {% if overline %}
+      <p class="uppercase font-bold max-md:text-sm tracking-wide">{{ overline }}</p>
+    {% endif %}
 
-  <h2 class="font-display uppercase text-h2 text-center">{{ headline }}</h2>
+    <h2 class="font-display uppercase text-h2 text-center">{{ headline }}</h2>
 
-  {% if description %}
-    <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
-  {% endif %}
+    {% if description %}
+      <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
+    {% endif %}
 
-  {% if cta %}
-    <a href="{{ cta.url }}">{{ cta.title }}</a>
-  {% endif %}
+    {% if cta %}
+      <a href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
 
-  {% if image %}
-    {% include 'templates/components/lazy-img.twig' with {
-      img: image
-    } %}
-  {% endif %}
+    {% if image %}
+      {% include 'templates/components/lazy-img.twig' with {
+        img: image
+      } %}
+    {% endif %}
+    </div>
 </section>
