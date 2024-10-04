@@ -1,6 +1,6 @@
 <header
   class="px-site-padding absolute top-wp-admin-bar inset-x-0 palette-{{ palette|default('cream') }} text-foreground"
-  x-data="{ isMenuOpen: false }"
+  x-data="{ isMenuOpen: true }"
   @keydown.escape.window="isMenuOpen = false"
 >
   <nav class="flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
@@ -81,7 +81,7 @@
       >
         <h2 id="menu-label" class="sr-only">Menu</h2>
 
-        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col justify-between gap-10">
+        <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col gap-10">
           <div class="flex justify-between items-center">
             <a href="{{ site.url }}">
               <span class="sr-only">Home</span>
@@ -95,10 +95,10 @@
             </button>
           </div>
 
-          <ul class="flex flex-col gap-4">
+          <ul class="flex flex-col divide-y-2 divide-foreground">
             {% for item in nav_pages_menu.items %}
-            <li>
-              <a class="text-h2 font-serif" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
+            <li class="border-dotted">
+              <a class="block text-7xl font-display uppercase pt-2" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
                 {{ item.name }}
               </a>
             </li>
