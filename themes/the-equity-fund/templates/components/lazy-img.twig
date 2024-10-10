@@ -33,12 +33,31 @@
 
 {% set caption = caption ?? img.caption|replace({ '"': '&quot;' })|e('html') %}
 {% set credit = credit ?? img.credit|replace({ '"': '&quot;' })|e('html') %}
-{% set aspectRatio = aspectRatio ?? true %}
+{% set aspectRatio = aspectRatio ?? false %}
 
-{# ignore aspect ratio if set to false #}
-{% if aspectRatio == false %}
+{# calculate aspect ratio using image sizes #}
+{% set padding = img.height and img.width and img.width != 0 ? img.height / img.width * 100 : 0 %}
+
+{% if aspectRatio is same as "square" or (aspectRatio == false and padding == 100) %}
+  {% set padding = "100" %}
+
+{% elseif aspectRatio is same as "vertical" or (aspectRatio == false and padding > 100) %}
+  {% set padding = "125" %}
+
+{% elseif aspectRatio is same as "horizontal" or (aspectRatio == false and padding < 100) %}
+  {% set padding = "66.66" %}
+
+{% elseif aspectRatio is same as "wide" %}
+  {% set padding = "56.25" %}
+
+{% endif %}
+
+{% set padding = padding ~ "%" %}
+
+<div class="relative bg-background {{ class }}">
+  <span class="block w-full" style="padding-top: {{ padding }}"></span>
   <img
-    class="lazyload w-full h-full object-cover opacity-0 transition-all [&.lazyloaded]:opacity-100 {{ class }}"
+    class="lazyload absolute inset-0 w-full h-full object-cover opacity-0 transition-all [&.lazyloaded]:opacity-100 {{ class }}"
     data-srcset="{{ img.srcset }}"
     data-src="{{ img.src }}"
     data-sizes="auto"
@@ -46,39 +65,4 @@
     data-caption="{{ caption }}"
     data-credit="{{ credit }}"
   />
-{% else %}
-
-  {# calculate aspect ratio using image sizes #}
-  {% set padding = img.height and img.width and img.width != 0 ? img.height / img.width * 100 ~ "%" : '0%' %}
-
-  {% if aspectRatio == "horizontal" %}
-    {% set padding = "66.66%" %}
-
-  {% elseif aspectRatio == "vertical" %}
-    {% set padding = "125%" %}
-
-  {% elseif aspectRatio == "square" %}
-    {% set padding = "100%" %}
-
-  {% elseif aspectRatio == "wide" %}
-    {% set padding = "56.25%" %}
-
-  {% elseif aspectRatio|length > 1 %}
-    {% set padding = aspectRatio %}
-
-  {% endif %}
-
-  <div class="relative bg-background {{ class }}">
-    <span class="block w-full" style="padding-top: {{ padding }}"></span>
-    <img
-      class="lazyload absolute inset-0 w-full h-full object-cover opacity-0 transition-all [&.lazyloaded]:opacity-100 {{ class }}"
-      data-srcset="{{ img.srcset }}"
-      data-src="{{ img.src }}"
-      data-sizes="auto"
-      alt="{{ img.alt }}"
-      data-caption="{{ caption }}"
-      data-credit="{{ credit }}"
-    />
-  </div>
-
-{% endif %}
+</div>
