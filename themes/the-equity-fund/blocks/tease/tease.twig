@@ -16,7 +16,12 @@
       {% endif %}
 
       {% if cta %}
-        <a class="uppercase leading-[1] text-sm lg:text-base font-bold tracking-wide px-4 py-3 bg-cream hover:bg-maroon hover:text-cream transition-all" href="{{ cta.url }}">{{ cta.title }}</a>
+        <a
+          class="uppercase leading-[1] text-sm lg:text-base font-bold tracking-wide px-4 py-3 text-button-foreground bg-button-background hover:bg-button-foreground hover:text-button-background transition-all"
+          href="{{ cta.url }}"
+        >
+          {{ cta.title }}
+        </a>
       {% endif %}
     </div>
 
