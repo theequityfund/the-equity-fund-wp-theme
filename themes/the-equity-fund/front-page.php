@@ -1,6 +1,6 @@
 <?php
 /**
- * Front page.
+ * Template Name: Homepage
  *
  * @package TheEquityFund
  */
@@ -11,6 +11,4 @@ $context = Timber::context();
 $_page   = Timber::get_post();
 
 $context['page'] = $_page;
-
-// Render view.
-Timber::render( 'pages/front-page.twig', $context );
+Timber::render( 'pages/page--homepage.twig', $context );

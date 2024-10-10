@@ -1,0 +1,16 @@
+<header class="palette-lavender bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin">
+  <h1 class="font-display font-medium text-foreground text-center uppercase">{{ title }}</h1>
+
+  {% if image %}
+    {% include 'templates/components/lazy-img.twig' with {
+      img: Image(image),
+      aspectRatio: 'wide',
+    } %}
+  {% endif %}
+
+  <p>{{ introduction }}</p>
+
+  {% if description %}
+    <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
+  {% endif %}
+</header>

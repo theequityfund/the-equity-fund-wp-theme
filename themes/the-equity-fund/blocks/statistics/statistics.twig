@@ -4,10 +4,10 @@
   {% if headline %}aria-label="{{ headline }}"{% endif %}
   data-block="statistics"
 >
-  <div class="px-site-padding py-10 md:py-14 lg:py-20">
-    <div class="flex max-sm:flex-col gap-4 sm:justify-between sm:items-end border-b border-black pb-5 lg:pb-6">
+  <div class="px-site-padding py-8 md:py-14 lg:py-20">
+    <div class="flex max-sm:flex-col gap-4 sm:justify-between sm:items-end border-b border-foreground {{ size == 'large' ? 'pb-5 lg:pb-6' : 'pb-4' }}">
       {% if headline %}
-        <h2 class="text-h2 font-serif max-w-[50rem]">{{ headline }}</h2>
+        <h2 class=" {{ size == 'large' ? 'text-h2 font-serif max-w-[50rem]' : 'uppercase font-bold max-md:text-sm tracking-wide max-w-96 leading-[1.2]' }}">{{ headline }}</h2>
       {% endif %}
 
       {% if cta %}
@@ -15,11 +15,20 @@
       {% endif %}
     </div>
 
-    <dl class="grid grid-cols-2 xl:grid-cols-4 gap-10 pt-8 lg:pt-10">
+    <dl class="grid grid-cols-2 xl:grid-cols-4 gap-gutter pt-8 lg:pt-10">
       {% for item in statistics %}
         <div>
-          <dt class="flex flex-row justify-start"><span class="font-display font-normal text-big-number">{{ item.figure }} {% if item.unit %}</span><sup class="font-display font-normal top-[-0.5rem] text-5xl md:text-8xl pl-2">{{ item.unit }}</sup>{% endif %}</dt>
-          <dd class="text-base leading-[1.2] lg:text-lg lg:leading-[1.2]">{{ item.description|striptags('<em><strong><a>')|raw }}</dd>
+          <dt class="flex flex-row justify-start">
+            <span class="font-display font-normal text-big-number">{{ item.figure }}</span>
+
+            {% if item.unit %}
+              <sup class="font-display font-normal top-[-0.5rem] text-5xl md:text-8xl pl-2">{{ item.unit }}</sup>
+            {% endif %}
+          </dt>
+
+          <dd class="text-base leading-[1.2] lg:text-lg lg:leading-[1.2]">
+            {{ item.description|striptags('<em><strong><a>')|raw }}
+          </dd>
         </div>
       {% endfor %}
     </dl>
