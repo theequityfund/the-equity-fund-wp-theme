@@ -8,6 +8,7 @@
 namespace TheEquityFund\Models;
 
 use Timber\Post as TimberPost;
+use Timber\Timber;
 
 /** Class */
 class Resource extends TimberPost {
@@ -42,5 +43,22 @@ class Resource extends TimberPost {
 		);
 
 		register_post_type( self::POST_TYPE, $args );
+	}
+
+	/**
+	 * Get intervention.
+	 *
+	 * @return array
+	 */
+	public function intervention(): Intervention|null {
+		// phpcs:ignore
+		/** @var string $intervention */
+		$interventions = $this->meta( 'interventions' );
+
+		if ( empty( $interventions ) ) {
+			return null;
+		}
+
+		return Timber::get_post( $interventions[0] );
 	}
 }
