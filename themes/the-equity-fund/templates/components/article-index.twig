@@ -6,8 +6,28 @@
 
   <ol>
     {% for article in articles %}
+      {% set intervention = article.intervention %}
+
       <li>
-        <a href="{{ article.link }}">{{ article.title }}</a>
+        {% if article.thumbnail %}
+          {% include 'templates/components/lazy-img.twig' with {
+            img: Image(article.thumbnail),
+          } %}
+        {% endif %}
+
+        <div>
+          {% if intervention %}
+          <a href="{{ intervention.link }}">{{ intervention.title }}</a>
+          {% endif %}
+
+          <h3>
+            <a href="{{ article.link }}">
+              {{ article.title }}
+            </a>
+          </h3>
+
+          <p>{{ article.preview.read_more('') }}</p>
+        </div>
       </li>
     {% endfor %}
   </ol>
