@@ -15,6 +15,7 @@
     <form
       class="col-start-1 row-span-full max-w-[300px] text-foreground"
       hx-get="{{ page.link }}"
+      hx-trigger="change delay:500ms, input changed delay:500ms"
       hx-target="#resource-index"
       hx-select="#resource-index"
       hx-swap="outerHTML"
@@ -43,8 +44,8 @@
                 id="{{ intervention.slug }}"
                 class="absolute inset-0 opacity-0 peer"
                 type="checkbox"
-                name="intervention"
-                value="{{ intervention.slug }}"
+                name="interventions[]"
+                value="{{ intervention.id }}"
               />
 
               <span class="aspect-square w-[60%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground"></span>
