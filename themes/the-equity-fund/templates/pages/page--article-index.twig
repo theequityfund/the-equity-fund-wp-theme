@@ -23,4 +23,8 @@
   <div class="gutenberg rich-text mt-4 mb-10 md:mt-6 md:mb-16">
     {{ post.content }}
   </div>
+
+  {% include 'templates/components/article-index.twig' with {
+    articles: articles
+  } %}
 {% endblock %}

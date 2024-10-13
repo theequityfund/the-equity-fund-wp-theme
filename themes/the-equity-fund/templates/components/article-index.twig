@@ -1,0 +1,17 @@
+{% set title = title|default('Recent') %}
+
+{% if articles|length %}
+<section class="px-site-padding" aria-label="{{ title }}">
+  <h2>{{ title }}</h2>
+
+  <ol>
+    {% for article in articles %}
+      <li>
+        <a href="{{ article.link }}">{{ article.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+
+  {{ articles.pagination.next.link }}
+</section>
+{% endif %}

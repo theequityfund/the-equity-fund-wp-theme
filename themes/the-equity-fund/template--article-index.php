@@ -18,10 +18,21 @@ if ( post_password_required( $_page->ID ) ) {
 
 	Timber::render( 'pages/password.twig', $context );
 } else {
+	global $paged;
+
 	$context['page'] = $_page;
 
 	$featured_article            = get_field( 'featured_article' );
 	$context['featured_article'] = $featured_article ? Timber::get_post( $featured_article ) : Timber::get_post( array( 'post_type' => 'post' ) );
+
+	$context['articles'] = Timber::get_posts(
+		array(
+			'post_type'      => 'post',
+			'posts_per_page' => 1,
+			'post__not_in'   => array( $context['featured_article']->ID ),
+			'paged'          => $paged,
+		)
+	);
 
 	Timber::render( 'pages/page--article-index.twig', $context );
 }
