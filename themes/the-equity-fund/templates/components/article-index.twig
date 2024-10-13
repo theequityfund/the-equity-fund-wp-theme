@@ -1,7 +1,7 @@
 {% set title = title|default('Recent') %}
 
 {% if articles|length %}
-<section class="px-site-padding" aria-label="{{ title }}">
+<section id="article-index" class="px-site-padding" aria-label="{{ title }}">
   <h2>{{ title }}</h2>
 
   <ol>
@@ -12,6 +12,8 @@
     {% endfor %}
   </ol>
 
-  {{ articles.pagination.next.link }}
+  {% include 'templates/components/pagination.twig' with {
+    pagination: articles.pagination
+  } %}
 </section>
 {% endif %}

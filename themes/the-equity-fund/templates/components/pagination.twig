@@ -1,51 +1,46 @@
-{#
----------------------------------------------------------------------------
-Pagination
----------------------------------------------------------------------------
-#}
-
 {% if pagination.pages %}
-<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+<nav
+  class="px-site-padding"
+  aria-label="Pagination"
+  hx-target="#article-index"
+  hx-select="#article-index"
+  hx-swap="outerHTML"
+  hx-replace-url="true"
+>
   {% set prev = pagination.prev %}
   {% set next = pagination.next %}
 
-  <ul class="pagination__list">
+  <button
+    hx-get="{{ prev.link }}"
+    hx-trigger="click"
+    aria-label="Previous Page"
+    {% if not prev %}disabled{% endif %}
+  >
+    ←
+  </button>
 
-    <li class="pagination__next-prev previousPage">
-      {% if prev %}
-      <a href="{{ prev.link }}" class="pagination__next-prev-button" aria-label="Previous Page">
-        Previous
-      </a>
-      {% else %}
-      <span class="pagination__next-prev-button disabled">
-        Previous
-      </span>
-      {% endif %}
-    </li>
-
-    {% for page_link in pagination.pages %}
-    <li class="pagination__list-item {{ page_link.current ? 'selected' }}">
-      {% if page_link.link %}
-        <a href="{{ page_link.link }}" class="pagination__link" aria-label="{{ 'Page ' ~ page_link.title }}">{{ page_link.title }}</a>
-      {% else %}
-        <span class="pagination__link" aria-label="{{ 'Page ' ~ page_link.title }}">{{ page_link.title }}</span>
-      {% endif %}
+  <ol>
+    {% for page in pagination.pages %}
+    <li>
+      <button
+        class="pagination__link"
+        hx-get="{{ page.link }}"
+        hx-trigger="click"
+        aria-label="{{ 'Page ' ~ page.title }}"
+      >
+        {{ page.title }}
+      </button>
     </li>
     {% endfor %}
+  </ol>
 
-    <li class="pagination__next-prev nextPage">
-      {% if next %}
-      <a href="{{ next.link }}" class="pagination__next-prev-button" aria-label="Next Page">
-        Next
-      </a>
-      {% else %}
-      <span class="pagination__next-prev-button disabled">
-        Next
-      </span>
-      {% endif %}
-    </li>
-
-  </ul>
-
+  <button
+    hx-get="{{ next.link }}"
+    hx-trigger="click"
+    aria-label="Next Page"
+    {% if not next %}disabled{% endif %}
+  >
+    →
+  </button>
 </nav>
 {% endif %}
