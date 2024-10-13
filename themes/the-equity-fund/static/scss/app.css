@@ -334,7 +334,7 @@
   }
 
   .gutenberg {
-    @apply space-y-8 md:space-y-10;
+    @apply space-y-8 md:space-y-10 px-site-padding;
 
     > *:not([data-block]) {
       @apply mx-auto max-w-article text-foreground;
