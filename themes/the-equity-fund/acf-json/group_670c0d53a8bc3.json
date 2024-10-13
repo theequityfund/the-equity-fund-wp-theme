@@ -1,0 +1,45 @@
+{
+  "key": "group_670c0d53a8bc3",
+  "title": "Topper: Resource Index",
+  "fields": [
+    {
+      "key": "field_670c0d5381abb",
+      "label": "Introduction",
+      "name": "introduction",
+      "aria-label": "",
+      "type": "wysiwyg",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_template",
+        "operator": "==",
+        "value": "template--resource-index.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1728843165
+}

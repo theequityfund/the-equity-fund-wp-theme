@@ -4,9 +4,13 @@
 
 {% block pageBody %}
   <div class="grid grid-cols-3 gap-gutter pt-topper-margin px-site-padding">
-    <div class="flex flex-col gap-12 col-span-2">
-      <header class="text-foreground">
+    <div class="flex flex-col col-span-2">
+      <header class="text-foreground flex flex-col gap-2 border-b border-foreground border-dotted pb-10">
         <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
+
+        {% if page.meta('introduction') %}
+          <p class="font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+        {% endif %}
       </header>
 
       {% include 'templates/components/resource-index.twig' with {
