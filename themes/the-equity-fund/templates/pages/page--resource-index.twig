@@ -3,9 +3,15 @@
 {% set palette = 'yellow' %}
 
 {% block pageBody %}
-  <h1 class="sr-only">{{ page.title }}</h1>
+  <div class="grid grid-cols-3 gap-gutter pt-topper-margin px-site-padding">
+    <div class="flex flex-col gap-12 col-span-2">
+      <header class="text-foreground">
+        <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
+      </header>
 
-  {% include 'templates/components/resource-index.twig' with {
-    resources: resources
-  } %}
+      {% include 'templates/components/resource-index.twig' with {
+        resources: resources
+      } %}
+    </div>
+  </div>
 {% endblock %}
