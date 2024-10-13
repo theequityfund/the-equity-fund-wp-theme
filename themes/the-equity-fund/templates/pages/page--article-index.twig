@@ -9,7 +9,7 @@
     {% include 'blocks/tease/tease.twig' with {
       overline: intervention.title ?? 'Featured',
       headline: featured_article.title,
-      description: featured_article.excerpt,
+      description: featured_article.preview.read_more(''),
       image: featured_article.thumbnail,
       cta: {
         title: 'Read More',
