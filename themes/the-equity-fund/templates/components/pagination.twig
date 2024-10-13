@@ -27,6 +27,10 @@
         hx-get="{{ page.link }}"
         hx-trigger="click"
         aria-label="{{ 'Page ' ~ page.title }}"
+        {% if page.current %}
+        aria-current="page"
+        disabled
+        {% endif %}
       >
         {{ page.title }}
       </button>
