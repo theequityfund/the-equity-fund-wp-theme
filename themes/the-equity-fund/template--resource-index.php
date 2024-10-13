@@ -18,14 +18,17 @@ if ( post_password_required( $_page->ID ) ) {
 
 	Timber::render( 'pages/password.twig', $context );
 } else {
-	global $paged;
-	$query         = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
-	$interventions = isset( $_GET['interventions'] ) ? $_GET['interventions'] : array();
-	$interventions = array_map( 'sanitize_text_field', $interventions );
-
 	$context['page'] = $_page;
 
-	if ( empty( $interventions ) ) {
+	global $paged;
+	$query         = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
+	$context['query'] = $query;
+
+	$selected_interventions = isset( $_GET['interventions'] ) ? $_GET['interventions'] : array();
+	$selected_interventions = array_map( 'sanitize_text_field', $selected_interventions );
+	$context['selected_interventions'] = $selected_interventions;
+
+	if ( empty( $selected_interventions ) ) {
 		$context['resources'] = Timber::get_posts(
 			array(
 				'post_type'      => 'resource',
@@ -51,7 +54,7 @@ if ( post_password_required( $_page->ID ) ) {
 								'compare' => 'LIKE',
 							);
 						},
-						$interventions
+						$selected_interventions
 					),
 				),
 			)
