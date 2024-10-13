@@ -33,8 +33,10 @@
     {% endfor %}
   </ol>
 
-  {% include 'templates/components/pagination.twig' with {
-    pagination: articles.pagination
-  } %}
+  <div class="border-t border-foreground border-dotted">
+    {% include 'templates/components/pagination.twig' with {
+      pagination: articles.pagination
+    } %}
+  </div>
 </section>
 {% endif %}

@@ -1,6 +1,6 @@
 {% if pagination.pages %}
 <nav
-  class="px-site-padding"
+  class="flex justify-end py-4 gap-2 group"
   aria-label="Pagination"
   hx-target="#article-index"
   hx-select="#article-index"
@@ -11,6 +11,7 @@
   {% set next = pagination.next %}
 
   <button
+    class="font-bold p-3 pb-2 leading-none [&:not(:disabled)]:hocus:bg-yellow transition-colors disabled:opacity-50"
     hx-get="{{ prev.link }}"
     hx-trigger="click"
     aria-label="Previous Page"
@@ -19,11 +20,11 @@
     ←
   </button>
 
-  <ol>
+  <ol class="flex gap-2">
     {% for page in pagination.pages %}
     <li>
       <button
-        class="pagination__link"
+        class="font-bold p-3 pb-2 leading-none hocus:bg-yellow transition-colors aria-current:bg-yellow"
         hx-get="{{ page.link }}"
         hx-trigger="click"
         aria-label="{{ 'Page ' ~ page.title }}"
@@ -39,6 +40,7 @@
   </ol>
 
   <button
+    class="font-bold p-3 pb-2 leading-none [&:not(:disabled)]:hocus:bg-yellow transition-colors disabled:opacity-50"
     hx-get="{{ next.link }}"
     hx-trigger="click"
     aria-label="Next Page"
