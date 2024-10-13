@@ -20,8 +20,8 @@ if ( post_password_required( $_page->ID ) ) {
 } else {
 	$context['page'] = $_page;
 
-	$featured_article = get_field( 'featured_article' );
-	$context['featured_article'] = $featured_article ? Timber::get_post( $featured_article ) : Timber::get_post([ 'post_type' => 'post' ]);
+	$featured_article            = get_field( 'featured_article' );
+	$context['featured_article'] = $featured_article ? Timber::get_post( $featured_article ) : Timber::get_post( array( 'post_type' => 'post' ) );
 
 	Timber::render( 'pages/page--article-index.twig', $context );
 }
