@@ -28,7 +28,7 @@ if ( post_password_required( $_page->ID ) ) {
 	$context['articles'] = Timber::get_posts(
 		array(
 			'post_type'      => 'post',
-			'posts_per_page' => 1, // TODO: Update to 6.
+			'posts_per_page' => 2, // TODO: Update to 6.
 			'post__not_in'   => array( $context['featured_article']->ID ),
 			'paged'          => $paged,
 		)
