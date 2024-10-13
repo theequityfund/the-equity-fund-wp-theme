@@ -1,0 +1,70 @@
+{
+  "key": "group_670c052e4c847",
+  "title": "Resource",
+  "fields": [
+    {
+      "key": "field_670c052e98201",
+      "label": "File",
+      "name": "file",
+      "aria-label": "",
+      "type": "file",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "library": "all",
+      "min_size": "",
+      "max_size": "",
+      "mime_types": ""
+    },
+    {
+      "key": "field_670c055998202",
+      "label": "Interventions",
+      "name": "interventions",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "(Recommended) Include relevant interventions. The first intervention is considered the \"primary\" intervention.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["intervention"],
+      "post_status": "",
+      "taxonomy": "",
+      "filters": ["search"],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "resource"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1728841221
+}
