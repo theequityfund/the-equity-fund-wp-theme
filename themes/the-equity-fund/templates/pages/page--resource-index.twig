@@ -3,18 +3,38 @@
 {% set palette = 'yellow' %}
 
 {% block pageBody %}
-  <div class="grid grid-cols-3 gap-gutter pt-topper-margin px-site-padding">
-    <div></div>
+  <div class="grid grid-cols-3 gap-gutter auto-rows-auto pt-topper-margin px-site-padding">
+    <header class="text-foreground flex flex-col gap-2 col-start-2 col-span-2">
+      <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
-    <div class="flex flex-col col-span-2">
-      <header class="text-foreground flex flex-col gap-2 border-b border-foreground border-dotted pb-10">
-        <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
+      {% if page.meta('introduction') %}
+        <p class="font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+      {% endif %}
+    </header>
 
-        {% if page.meta('introduction') %}
-          <p class="font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
-        {% endif %}
-      </header>
+    <form
+      class="col-start-1 row-span-full max-w-[300px]"
+      hx-get="{{ page.link }}"
+      hx-target="#resource-index"
+      hx-select="#resource-index"
+      hx-swap="outerHTML"
+      hx-replace-url="true"
+    >
+      <div class="w-full pr-2 flex gap-1 items-center justify-between border border-dashed border-foreground">
+        <input
+          class="w-full bg-background text-foreground px-3 py-2 text-sm placeholder:text-foreground placeholder:opacity-30"
+          type="search"
+          name="query"
+          placeholder="Search"
+        >
 
+        <svg class="h-4 w-4 text-foreground" aria-hidden="true">
+          <use xlink:href="#search"></use>
+        </svg>
+      </div>
+    </form>
+
+    <div class="border-t border-dotted border-foreground row-start-2 col-start-2 col-span-2">
       {% include 'templates/components/resource-index.twig' with {
         resources: resources
       } %}

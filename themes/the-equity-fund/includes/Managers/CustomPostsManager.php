@@ -40,7 +40,7 @@ class CustomPostsManager {
 			'state'        => State::class,
 			'grantee'      => Grantee::class,
 			'intervention' => Intervention::class,
-			'resource' => Resource::class,
+			'resource'     => Resource::class,
 		);
 
 		return array_merge( $classmap, $custom_classmap );

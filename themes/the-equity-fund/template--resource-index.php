@@ -19,6 +19,7 @@ if ( post_password_required( $_page->ID ) ) {
 	Timber::render( 'pages/password.twig', $context );
 } else {
 	global $paged;
+	$query = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
 
 	$context['page'] = $_page;
 
@@ -27,6 +28,7 @@ if ( post_password_required( $_page->ID ) ) {
 			'post_type'      => 'resource',
 			'posts_per_page' => 4, // TODO: Update to 6.
 			'paged'          => $paged,
+			's'              => $query,
 		)
 	);
 
