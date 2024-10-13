@@ -38,7 +38,7 @@
         <legend class="block mb-4 pb-2 font-serif font-medium text-xl border-b border-foreground w-full">Interventions</legend>
 
         {% for intervention in interventions %}
-          <label class="flex gap-2 items-center">
+          <label class="flex gap-2 items-center cursor-pointer">
             <span class="relative rounded-full border border-foreground aspect-square h-4 w-4 shrink-0">
               <input
                 id="{{ intervention.slug }}"
