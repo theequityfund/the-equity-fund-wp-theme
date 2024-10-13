@@ -15,7 +15,7 @@
     <form
       class="col-start-1 row-span-full max-w-[400px] text-foreground sticky top-site-padding"
       hx-get="{{ page.link }}"
-      hx-trigger="change delay:500ms, input changed delay:500ms"
+      hx-trigger="change, input changed delay:500ms"
       hx-target="#resource-index"
       hx-select="#resource-index"
       hx-swap="outerHTML"
