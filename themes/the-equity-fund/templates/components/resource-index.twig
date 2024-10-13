@@ -23,7 +23,7 @@
               {{ resource.title }}
             </h3>
 
-            <p class="mt-2">{{ resource.preview.read_more('') }}</p>
+            <p class="mt-2">{{ resource.excerpt.read_more('') }}</p>
 
             {% if file %}
             <a class="button flex items-center gap-2" href="{{ file.link }}" target="_blank" rel="noopener noreferrer">
