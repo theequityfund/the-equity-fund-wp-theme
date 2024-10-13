@@ -3,6 +3,8 @@
 {% set palette = 'yellow' %}
 
 {% block pageBody %}
+  <h1 class="sr-only">{{ post.title }}</h1>
+
   <div class="pt-topper-margin palette-yellow bg-background">
     {% set intervention = featured_article.intervention %}
 
