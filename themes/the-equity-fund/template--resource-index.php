@@ -32,5 +32,16 @@ if ( post_password_required( $_page->ID ) ) {
 		)
 	);
 
+	$interventions = Timber::get_posts(
+		array(
+			'post_type' => 'intervention',
+			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC',
+		)
+	);
+
+	$context['interventions'] = $interventions;
+
 	Timber::render( 'pages/page--resource-index.twig', $context );
 }
