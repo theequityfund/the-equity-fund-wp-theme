@@ -1,0 +1,26 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'yellow' %}
+
+{% block pageBody %}
+  <div class="pt-topper-margin palette-yellow bg-background">
+    {% set intervention = featured_article.intervention %}
+
+    {% include 'blocks/tease/tease.twig' with {
+      overline: intervention.title ?? 'Featured',
+      headline: featured_article.title,
+      description: featured_article.excerpt,
+      image: featured_article.thumbnail,
+      cta: {
+        title: 'Read More',
+        url: featured_article.link,
+      },
+      size: 'large',
+      palette: palette,
+    } %}
+  </div>
+
+  <div class="gutenberg rich-text">
+    {{ post.content }}
+  </div>
+{% endblock %}
