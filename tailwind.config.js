@@ -80,6 +80,13 @@ module.exports = {
             letterSpacing: '-0.0125em',
           },
         ],
+        p: [
+          'clamp(0.875rem, 0.25vw + 1rem, 1.125rem)',
+          {
+            lineHeight: '1.3',
+            letterSpacing: '-0.0125em',
+          },
+        ],
         blockquote: ['clamp(1.5rem, 2vw + 1rem, 2.25rem)', '1.1'],
         'blockquote-lg': ['clamp(1.5rem, 5vw + 1rem, 4.5rem)', '1.1'],
         'big-number': ['clamp(6.875rem, 20vw + 1rem, 17.5rem)', '0.9'],

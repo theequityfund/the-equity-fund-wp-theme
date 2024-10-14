@@ -29,6 +29,7 @@
       {% if image %}
         {% include 'templates/components/lazy-img.twig' with {
           img: image,
+          aspectRatio: image_crop|default('vertical')
         } %}
       {% endif %}
     </div>
