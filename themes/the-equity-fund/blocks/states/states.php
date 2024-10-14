@@ -25,8 +25,8 @@ $states = Timber::get_posts(
 	)
 );
 
-$context['states'] = $states;
+$context['states']              = $states;
 $context['show_grantees_count'] = get_field( 'show_grantees_count' );
-$context['cta'] = get_field( 'cta' );
+$context['cta']                 = get_field( 'cta' );
 
 Timber::render( basename( __DIR__ ) . '/states.twig', $context );

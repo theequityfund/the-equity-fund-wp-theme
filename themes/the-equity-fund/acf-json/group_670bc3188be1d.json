@@ -1,0 +1,49 @@
+{
+  "key": "group_670bc3188be1d",
+  "title": "Article Index",
+  "fields": [
+    {
+      "key": "field_670bc3186bd69",
+      "label": "Featured Article",
+      "name": "featured_article",
+      "aria-label": "",
+      "type": "post_object",
+      "instructions": "(Recommended) If not provided, index will pull the most recent article.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["post"],
+      "post_status": ["publish"],
+      "taxonomy": "",
+      "return_format": "id",
+      "multiple": 0,
+      "allow_null": 1,
+      "bidirectional": 0,
+      "ui": 1,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_template",
+        "operator": "==",
+        "value": "template--article-index.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1728824636
+}
