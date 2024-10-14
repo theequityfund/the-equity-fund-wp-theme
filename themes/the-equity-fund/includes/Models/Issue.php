@@ -1,6 +1,6 @@
 <?php
 /**
- * Intervention post type.
+ * Issue post type.
  *
  * @package TheEquityFund
  */
@@ -10,8 +10,8 @@ namespace TheEquityFund\Models;
 use Timber\Post as TimberPost;
 
 /** Class */
-class Intervention extends TimberPost {
-	const POST_TYPE = 'intervention';
+class Issue extends TimberPost {
+	const POST_TYPE = 'issue';
 
 	/**
 	 * Register the post type.
@@ -20,11 +20,11 @@ class Intervention extends TimberPost {
 	 */
 	public static function register(): void {
 		$labels = array(
-			'name'          => 'Interventions',
-			'singular_name' => 'Intervention',
-			'not_found'     => 'No Interventions Found',
-			'add_new'       => 'Add New Intervention',
-			'add_new_item'  => 'Add New Intervention',
+			'name'          => 'Issues',
+			'singular_name' => 'Issue',
+			'not_found'     => 'No Issues Found',
+			'add_new'       => 'Add New Issue',
+			'add_new_item'  => 'Add New Issue',
 		);
 
 		$args = array(

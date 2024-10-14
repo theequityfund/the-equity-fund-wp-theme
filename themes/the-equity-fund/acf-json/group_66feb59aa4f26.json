@@ -1,6 +1,6 @@
 {
   "key": "group_66feb59aa4f26",
-  "title": "Intervention Topper",
+  "title": "Issue Topper",
   "fields": [
     {
       "key": "field_66feb59aa755d",
@@ -8,7 +8,7 @@
       "name": "introduction",
       "aria-label": "",
       "type": "wysiwyg",
-      "instructions": "(Recommended) Write 3 – 5 sentences to introduce this intervention.",
+      "instructions": "(Recommended) Write 3 – 5 sentences to introduce this issue.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -28,7 +28,7 @@
       {
         "param": "post_type",
         "operator": "==",
-        "value": "intervention"
+        "value": "issue"
       }
     ]
   ],
