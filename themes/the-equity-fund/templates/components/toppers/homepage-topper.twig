@@ -3,11 +3,11 @@
     <h1 class="font-display font-medium text-foreground text-center uppercase text-[35vw] leading-[0.8]">{{ title }}</h1>
 
     {% if image %}
-      <figure class="w-7/12 absolute z-1">
-      {% include 'templates/components/lazy-img.twig' with {
-        img: Image(image),
-        aspectRatio: 'wide',
-      } %}
+      <figure class="w-7/12 absolute">
+        {% include 'templates/components/lazy-img.twig' with {
+          img: Image(image),
+          aspectRatio: 'wide',
+        } %}
       </figure>
     {% endif %}
   </div>
