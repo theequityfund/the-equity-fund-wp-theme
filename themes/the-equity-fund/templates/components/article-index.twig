@@ -8,7 +8,7 @@
     {% for article in articles %}
       {% set intervention = article.intervention %}
 
-      <li class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter py-site-padding border-dotted relative">
+      <li class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-gutter py-site-padding border-dotted relative">
         {% if article.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
@@ -22,7 +22,7 @@
           {% endif %}
 
           <h3 class="font-serif text-h3">
-            <a href="{{ article.link }}">
+            <a class="transition-all hover:shadow-[inset_0em_-0.4em_0em_#FFD64A] shadow-[inset_0em_-0.4em_0em_transparent]" href="{{ article.link }}">
               {{ article.title }}
             </a>
           </h3>
