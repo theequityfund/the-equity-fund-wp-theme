@@ -1,6 +1,6 @@
 <?php
 /**
- * Single intervention.
+ * Single issue.
  *
  * @package TheEquityFund
  */
@@ -20,5 +20,5 @@ if ( post_password_required( $_post->ID ) ) {
 	Timber::render( 'pages/password.twig', $context );
 } else {
 	$context['post'] = $_post;
-	Timber::render( 'pages/intervention.twig', $context );
+	Timber::render( 'pages/issue.twig', $context );
 }

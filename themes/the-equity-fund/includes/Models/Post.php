@@ -30,19 +30,19 @@ class Post extends TimberPost {
 	}
 
 	/**
-	 * Get intervention.
+	 * Get issue.
 	 *
 	 * @return array
 	 */
-	public function intervention(): Intervention|null {
+	public function issue(): Issue|null {
 		// phpcs:ignore
-		/** @var string $intervention */
-		$intervention = $this->meta( 'intervention' );
+		/** @var string $issue */
+		$issue = $this->meta( 'issue' );
 
-		if ( empty( $intervention ) ) {
+		if ( empty( $issue ) ) {
 			return null;
 		}
 
-		return Timber::get_post( $intervention );
+		return Timber::get_post( $issue );
 	}
 }

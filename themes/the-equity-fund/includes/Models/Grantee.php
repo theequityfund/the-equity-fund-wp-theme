@@ -51,7 +51,7 @@ class Grantee extends TimberPost {
 	 *
 	 * @return PostCollectionInterface|null
 	 */
-	public function states(): PostCollectionInterface|null {
+	public function states(): PostCollectionInterface|array|null {
 		$states = get_field( 'states', $this->ID );
 
 		if ( ! $states ) {

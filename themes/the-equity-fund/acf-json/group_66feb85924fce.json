@@ -1,14 +1,14 @@
 {
   "key": "group_66feb85924fce",
-  "title": "Post: Intervention",
+  "title": "Post: Issue",
   "fields": [
     {
       "key": "field_66feb859270f6",
-      "label": "Intervention",
-      "name": "intervention",
+      "label": "Issue",
+      "name": "issue",
       "aria-label": "",
       "type": "post_object",
-      "instructions": "(Recommended) Include relevant intervention.",
+      "instructions": "(Recommended) Include relevant issue.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -16,7 +16,7 @@
         "class": "",
         "id": ""
       },
-      "post_type": ["intervention"],
+      "post_type": ["issue"],
       "post_status": "",
       "taxonomy": "",
       "return_format": "id",
