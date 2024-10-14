@@ -19,7 +19,7 @@ if ( post_password_required( $_page->ID ) ) {
 	Timber::render( 'pages/password.twig', $context );
 } else {
 	$context['page'] = $_page;
-	$limit           = 4;  // TODO: Update to 6.
+	$limit           = 6;
 
 	global $paged;
 	$query            = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
