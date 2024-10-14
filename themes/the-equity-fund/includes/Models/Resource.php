@@ -46,19 +46,19 @@ class Resource extends TimberPost {
 	}
 
 	/**
-	 * Get intervention.
+	 * Get issue.
 	 *
 	 * @return array
 	 */
-	public function intervention(): Intervention|null {
+	public function issue(): Issue|null {
 		// phpcs:ignore
-		/** @var string $intervention */
-		$interventions = $this->meta( 'interventions' );
+		/** @var string $issue */
+		$issues = $this->meta( 'issues' );
 
-		if ( empty( $interventions ) ) {
+		if ( empty( $issues ) ) {
 			return null;
 		}
 
-		return Timber::get_post( $interventions[0] );
+		return Timber::get_post( $issues[0] );
 	}
 }

@@ -36,24 +36,24 @@
       </div>
 
       <fieldset class="flex flex-col gap-2 mt-8">
-        <legend class="block mb-4 pb-2 font-serif font-medium text-xl border-b border-foreground w-full">Interventions</legend>
+        <legend class="block mb-4 pb-2 font-serif font-medium text-xl border-b border-foreground w-full">Issues</legend>
 
-        {% for intervention in interventions %}
+        {% for issue in issues %}
           <label class="flex gap-2 items-center cursor-pointer">
             <span class="relative rounded-full border border-foreground aspect-square h-4 w-4 shrink-0">
               <input
-                id="{{ intervention.slug }}"
+                id="{{ issue.slug }}"
                 class="absolute inset-0 opacity-0 peer"
                 type="checkbox"
-                name="interventions[]"
-                value="{{ intervention.id }}"
-                {% if intervention.id in selected_interventions %}checked{% endif %}
+                name="issues[]"
+                value="{{ issue.id }}"
+                {% if issue.id in selected_issues %}checked{% endif %}
               />
 
               <span class="aspect-square w-[60%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground"></span>
             </span>
 
-            <span class="text-sm translate-y-[0.05rem]">{{ intervention.title }}</span>
+            <span class="text-sm translate-y-[0.05rem]">{{ issue.title }}</span>
           </label>
         {% endfor %}
       </fieldset>

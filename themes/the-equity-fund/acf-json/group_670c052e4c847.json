@@ -24,11 +24,11 @@
     },
     {
       "key": "field_670c055998202",
-      "label": "Interventions",
-      "name": "interventions",
+      "label": "Issues",
+      "name": "issues",
       "aria-label": "",
       "type": "relationship",
-      "instructions": "(Recommended) Include relevant interventions. The first intervention is considered the \"primary\" intervention.",
+      "instructions": "(Recommended) Include relevant issues. The first issue is considered the \"primary\" issue.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -36,7 +36,7 @@
         "class": "",
         "id": ""
       },
-      "post_type": ["intervention"],
+      "post_type": ["issue"],
       "post_status": "",
       "taxonomy": "",
       "filters": ["search"],

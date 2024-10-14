@@ -25,11 +25,11 @@ if ( post_password_required( $_page->ID ) ) {
 	$query            = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
 	$context['query'] = $query;
 
-	$selected_interventions            = isset( $_GET['interventions'] ) ? $_GET['interventions'] : array();
-	$selected_interventions            = array_map( 'sanitize_text_field', $selected_interventions );
-	$context['selected_interventions'] = $selected_interventions;
+	$selected_issues            = isset( $_GET['issues'] ) ? $_GET['issues'] : array();
+	$selected_issues            = array_map( 'sanitize_text_field', $selected_issues );
+	$context['selected_issues'] = $selected_issues;
 
-	if ( empty( $selected_interventions ) ) {
+	if ( empty( $selected_issues ) ) {
 		$context['resources'] = Timber::get_posts(
 			array(
 				'post_type'      => 'resource',
@@ -48,30 +48,30 @@ if ( post_password_required( $_page->ID ) ) {
 				'meta_query'     => array(
 					'relation' => 'OR',
 					...array_map(
-						function( $intervention ) {
+						function( $issue ) {
 							return array(
-								'key'     => 'interventions',
-								'value'   => '"' . $intervention . '"',
+								'key'     => 'issues',
+								'value'   => '"' . $issue . '"',
 								'compare' => 'LIKE',
 							);
 						},
-						$selected_interventions
+						$selected_issues
 					),
 				),
 			)
 		);
 	}
 
-	$interventions = Timber::get_posts(
+	$issues = Timber::get_posts(
 		array(
-			'post_type'      => 'intervention',
+			'post_type'      => 'issue',
 			'posts_per_page' => -1,
 			'orderby'        => 'title',
 			'order'          => 'ASC',
 		)
 	);
 
-	$context['interventions'] = $interventions;
+	$context['issues'] = $issues;
 
 	Timber::render( 'pages/page--resource-index.twig', $context );
 }
