@@ -1,14 +1,14 @@
 {
   "key": "group_66feb66186953",
-  "title": "Taxonomy: Intervention",
+  "title": "Taxonomy: Issue",
   "fields": [
     {
       "key": "field_66feb66188774",
-      "label": "Interventions",
-      "name": "interventions",
+      "label": "Issues",
+      "name": "issues",
       "aria-label": "",
       "type": "relationship",
-      "instructions": "(Recommended) Include relevant interventions. This content will be shown on the interventions' pages. The first intervention is considered the \"primary\" intervention.",
+      "instructions": "(Recommended) Include relevant issues. This content will be shown on the issues' pages. The first issue is considered the \"primary\" issue.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -16,7 +16,7 @@
         "class": "",
         "id": ""
       },
-      "post_type": ["intervention"],
+      "post_type": ["issue"],
       "post_status": "",
       "taxonomy": "",
       "filters": ["search"],

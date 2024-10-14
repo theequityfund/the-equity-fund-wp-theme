@@ -6,10 +6,10 @@
   <h1 class="sr-only">{{ page.title }}</h1>
 
   <div class="pt-topper-margin palette-yellow bg-background px-site-padding lg:pb-8 [&>*>*]:max-lg:pt-0">
-    {% set intervention = featured_article.intervention %}
+    {% set issue = featured_article.issue %}
 
     {% include 'blocks/tease/tease.twig' with {
-      overline: intervention.title ?? 'Featured',
+      overline: issue.title ?? 'Featured',
       headline: featured_article.title,
       description: featured_article.preview.read_more(''),
       image: featured_article.thumbnail,
