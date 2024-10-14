@@ -154,14 +154,13 @@
         "id": ""
       },
       "choices": {
-        "cream": "Cream",
         "maroon": "Maroon",
         "teal": "Teal",
         "coral": "Coral",
         "yellow": "Yellow",
         "lavender": "Lavender"
       },
-      "default_value": "cream",
+      "default_value": "maroon",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
@@ -194,6 +193,32 @@
       "ui": 1,
       "ajax": 0,
       "placeholder": ""
+    },
+    {
+      "key": "field_670d28ba957bc",
+      "label": "Image Crop",
+      "name": "image_crop",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Specify how the image should be cropped.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "square": "Square",
+        "vertical": "Vertical"
+      },
+      "default_value": "vertical",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
     }
   ],
   "location": [
@@ -214,5 +239,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727989694
+  "modified": 1728915731
 }
