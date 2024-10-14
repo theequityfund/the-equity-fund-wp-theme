@@ -3,8 +3,8 @@
   x-init
   class="flex justify-end py-4 gap-2 group"
   aria-label="Pagination"
-  hx-target="#article-index"
-  hx-select="#article-index"
+  hx-target="{{ swap }}"
+  hx-select="{{ swap }}"
   hx-swap="outerHTML"
   hx-replace-url="true"
   x-on:htmx:before-request.camel="$event.detail.target.scrollIntoView({ behavior: 'smooth' })"
