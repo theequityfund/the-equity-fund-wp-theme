@@ -1,16 +1,21 @@
 <header class="palette-lavender bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin">
-  <h1 class="font-display font-medium text-foreground text-center uppercase">{{ title }}</h1>
+  <div class="flex items-center justify-center">
+  <h1 class="font-display font-medium text-foreground text-center uppercase text-[35vw] leading-[0.8]">{{ title }}</h1>
+    {% if image %}
+      <figure class="md:w-7/12 absolute z-10">
+      {% include 'templates/components/lazy-img.twig' with {
+        img: Image(image),
+        aspectRatio: 'wide',
+      } %}
+      </figure>
+    {% endif %}
+  </div>
 
-  {% if image %}
-    {% include 'templates/components/lazy-img.twig' with {
-      img: Image(image),
-      aspectRatio: 'wide',
-    } %}
-  {% endif %}
+  <div class="grid grid-cols-2 gap-gutter text-foreground">
+  <p class="text-h2 font-serif">{{ introduction }}</p>
 
-  <p>{{ introduction }}</p>
-
-  {% if description %}
-    <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
-  {% endif %}
+    {% if description %}
+      <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
+    {% endif %}
+  </div>
 </header>
