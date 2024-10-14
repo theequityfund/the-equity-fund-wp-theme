@@ -1,8 +1,8 @@
 <header class="palette-lavender bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin">
-  <div class="flex items-center justify-center">
-  <h1 class="font-display font-medium text-foreground text-center uppercase text-[35vw] leading-[0.8]">{{ title }}</h1>
+  <div class="flex items-center justify-center mt-[2vw]">
+    <h1 class="font-display font-medium text-foreground text-center uppercase text-[35vw] leading-[0.8]">{{ title }}</h1>
     {% if image %}
-      <figure class="md:w-7/12 absolute z-10">
+      <figure class="w-7/12 absolute z-1">
       {% include 'templates/components/lazy-img.twig' with {
         img: Image(image),
         aspectRatio: 'wide',
@@ -11,11 +11,11 @@
     {% endif %}
   </div>
 
-  <div class="grid grid-cols-2 gap-gutter text-foreground">
-  <p class="text-h2 font-serif">{{ introduction }}</p>
+  <div class="{{description == true ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter' : '' }} text-foreground pt-3 md:pt-5 lg:pt-8">
+    <p class="text-h2 font-serif {{ description == true ? 'lg:col-span-6' : 'md:w-9/12 lg:w-7/12 mx-auto md:text-center' }}">{{ introduction }}</p>
 
     {% if description %}
-      <p>{{ description|striptags('<em><strong><a>')|raw }}</p>
+      <p class="text-p lg:col-span-4 lg:col-start-9 lg:col-end-13">{{ description|striptags('<em><strong><a>')|raw }}</p>
     {% endif %}
   </div>
 </header>
