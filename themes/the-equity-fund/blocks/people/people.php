@@ -10,7 +10,7 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['overline']    = get_field( 'overline' );
-$context['palette']     = get_field( 'palette' );
+$context['headline']    = get_field( 'headline' );
+$context['people'] = get_field( 'people' );
 
 Timber::render( basename( __DIR__ ) . '/people.twig', $context );

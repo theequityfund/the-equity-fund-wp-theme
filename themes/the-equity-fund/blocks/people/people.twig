@@ -1,6 +1,9 @@
 <section
-  class="palette-{{ palette|default('maroon') }} bg-background text-foreground"
+  class="text-foreground"
   data-block="people"
-  {% if overline %}aria-label="{{ overline }}"{% endif %}
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
 >
+  {% include 'templates/components/block-header.twig' with {
+    title: headline
+  } %}
 </section>
