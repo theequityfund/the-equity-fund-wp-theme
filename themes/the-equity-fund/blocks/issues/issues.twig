@@ -1,0 +1,11 @@
+{% if issues|length %}
+<section
+  class="palette-cream text-foreground"
+  data-block="issues"
+  aria-label="{{ headline }}"
+>
+  {% include 'templates/components/block-header.twig' with {
+    title: headline,
+  } %}
+</section>
+{% endif %}

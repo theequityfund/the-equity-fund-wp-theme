@@ -1,0 +1,14 @@
+{
+  "name": "acf/issues",
+  "title": "Issues",
+  "description": "List out issues areas.",
+  "category": "widgets",
+  "icon": {
+    "src": "editor-ul"
+  },
+  "keywords": ["issues", "interventions", "list", "grantees"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "issues.php"
+  }
+}
