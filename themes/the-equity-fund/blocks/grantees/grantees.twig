@@ -32,10 +32,6 @@
         {% if grantee.excerpt %}
           <p>{{ grantee.excerpt.read_more('') }}</p>
         {% endif %}
-
-        {% if issue %}
-          <a href="{{ issue.link }}">{{ issue.title }}</a>
-        {% endif %}
       </li>
     {% endfor %}
   </ul>
