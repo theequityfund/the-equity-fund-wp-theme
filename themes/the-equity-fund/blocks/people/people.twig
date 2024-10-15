@@ -8,7 +8,7 @@
     title: headline
   } %}
 
-  <ul class="grid grid-cols-3 gap-gutter mt-gutter">
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-gutter mt-gutter">
     {% for person in people %}
       {% set position = person.meta('position') %}
 
@@ -18,7 +18,7 @@
         'Twitter': person.meta('twitter'),
       } %}
 
-      <li class="flex flex-col gap-2">
+      <li class="flex flex-col gap-3">
         {% if person.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
@@ -27,27 +27,29 @@
           } %}
         {% endif %}
 
-        <h3>{{ person.title }}</h3>
+        <div class="flex flex-col gap-2">
+          <h3 class="text-h3 font-serif">{{ person.title }}</h3>
 
-        {% if position %}
-          <p>{{ position }}</p>
-        {% endif %}
+          {% if position %}
+            <p class=" font-sans-narrow font-bold text-p">{{ position }}</p>
+          {% endif %}
 
-        {% if person.preview %}
-          <p>{{ person.preview.read_more('') }}</p>
-        {% endif %}
+          {% if person.preview %}
+            <p class="text-p">{{ person.preview.read_more('') }}</p>
+          {% endif %}
 
-        <div>
-          {% for type, url in socials %}
-            {% if url %}
-              <a href="{{ url }}">
-                <span class="sr-only">{{ type }}</span>
-                <svg class="aspect-square h-8 w-8" aria-hidden="true">
-                  <use xlink:href="#{{ type|lower }}"></use>
-                </svg>
-              </a>
-            {% endif %}
-          {% endfor %}
+          <div class="flex gap-1">
+            {% for type, url in socials %}
+              {% if url %}
+                <a class="group" href="{{ url }}">
+                  <span class="sr-only">{{ type }}</span>
+                  <svg class="aspect-square h-8 w-8 group-hover:text-lavender transition-colors" aria-hidden="true">
+                    <use xlink:href="#{{ type|lower }}"></use>
+                  </svg>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       </li>
     {% endfor %}

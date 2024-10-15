@@ -83,7 +83,7 @@ module.exports = {
         p: [
           'clamp(0.875rem, 0.25vw + 1rem, 1.125rem)',
           {
-            lineHeight: '1.3',
+            lineHeight: '1.35',
             letterSpacing: '-0.0125em',
           },
         ],
