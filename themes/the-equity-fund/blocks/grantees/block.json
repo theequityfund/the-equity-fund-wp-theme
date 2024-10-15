@@ -1,0 +1,14 @@
+{
+  "name": "acf/grantees",
+  "title": "Grantees",
+  "description": "List out grantees.",
+  "category": "widgets",
+  "icon": {
+    "src": "grid-view"
+  },
+  "keywords": ["grantees", "grid"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "grantees.php"
+  }
+}
