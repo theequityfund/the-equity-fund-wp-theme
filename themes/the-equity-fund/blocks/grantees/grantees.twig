@@ -14,6 +14,7 @@
     {% for grantee in grantees %}
       {% set headingTag = headline ? 'h3' : 'h2' %}
       {% set issue = grantee.issue() %}
+      {% set external_link = grantee.meta('external_link') %}
 
       <li>
         {% if grantee.thumbnail %}
@@ -24,7 +25,7 @@
         {% endif%}
 
         <{{ headingTag }}>
-          <a href="{{ grantee.link }}">
+          <a href="{{ external_link|default(grantee.link) }}" {% if external_link %} target="_blank" rel="noopener noreferrer"{% endif %}>
             {{ grantee.title }}
           </a>
         </{{ headingTag }}>
