@@ -1,0 +1,14 @@
+{
+  "name": "acf/people",
+  "title": "People",
+  "description": "List out people.",
+  "category": "widgets",
+  "icon": {
+    "src": "admin-users"
+  },
+  "keywords": ["people", "person", "employees", "team"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "people.php"
+  }
+}

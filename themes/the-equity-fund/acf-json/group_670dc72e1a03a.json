@@ -1,0 +1,96 @@
+{
+  "key": "group_670dc72e1a03a",
+  "title": "Person",
+  "fields": [
+    {
+      "key": "field_670dc72ed8d98",
+      "label": "Position / Title",
+      "name": "position",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_670dc74fd8d99",
+      "label": "LinkedIn",
+      "name": "linkedin",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
+      "key": "field_670dc772d8d9a",
+      "label": "Instagram",
+      "name": "instagram",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
+      "key": "field_670dc7a0d8d9b",
+      "label": "Twitter",
+      "name": "twitter",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "person"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1728956347
+}

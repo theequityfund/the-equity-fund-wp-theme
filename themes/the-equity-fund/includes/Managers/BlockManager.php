@@ -33,6 +33,7 @@ class BlockManager {
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/states' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/tease' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/statistics' );
+		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/people' );
 
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/image-layout' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/related-articles' );
@@ -119,6 +120,7 @@ class BlockManager {
 			'acf/states',
 			'acf/tease',
 			'acf/statistics',
+			'acf/people',
 		);
 	}
 }
