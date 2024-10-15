@@ -340,9 +340,9 @@
       @apply mt-8 md:mt-10;
     }
 
-    > [data-block] + [data-block] {
+    /* > [data-block] + [data-block] {
       @apply !mt-0;
-    }
+    } */
 
     > *:not([data-block]) {
       @apply mx-auto max-w-article text-foreground;
