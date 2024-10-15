@@ -5,8 +5,18 @@
 {% block pageBody %}
   {% include 'templates/components/toppers/split-topper.twig' with {
     overline: 'Issues',
-    title: post.title,
-    image: post.thumbnail,
-    description: post.meta('introduction')|striptags('<em><strong><a>')|raw,
+    title: issue.title,
+    image: issue.thumbnail,
+    description: issue.meta('introduction')|striptags('<em><strong><a>')|raw,
   } %}
+
+  <article class="gutenberg rich-text my-10 md:my-16 space-y-10 md:space-y-16">
+    {{ issue.content }}
+
+    {% if issue.grantees|length %}
+      {% include 'blocks/grantees/grantees.twig' with {
+        grantees: issue.grantees,
+      } %}
+    {% endif %}
+  </article>
 {% endblock %}
