@@ -56,7 +56,13 @@ module.exports = {
 
       fontSize: {
         giant: ['clamp(4rem, 6vw, 8rem)', '0.9'],
-        h1: ['clamp(3rem, 2vw + 1rem, 4.5rem)', '1.2'],
+        h1: [
+          'clamp(2.25rem, 5vw + 1rem, 4.5rem)',
+          {
+            lineHeight: '1.1',
+            letterSpacing: '-0.0125em',
+          },
+        ],
         h2: [
           'clamp(1.75rem, 2vw + 1rem, 3rem)',
           {
