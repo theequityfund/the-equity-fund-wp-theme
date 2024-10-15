@@ -1,0 +1,14 @@
+{
+  "name": "acf/featured-content",
+  "title": "Featured Content",
+  "description": "Feature stories or resources.",
+  "category": "widgets",
+  "icon": {
+    "src": "excerpt-view"
+  },
+  "keywords": ["stories", "resources", "featured"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "featured-content.php"
+  }
+}

@@ -1,0 +1,51 @@
+{% set limit = 5 %}
+
+{% if states|length %}
+<section
+  class="palette-cream text-foreground"
+  aria-label="{{ headline|default('Grantee states') }}"
+  data-block="states"
+  x-data="{ expanded: false }"
+>
+  {% include 'templates/components/block-header.twig' with {
+    title: headline,
+    link: cta
+  } %}
+
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 my-8 md:gap-10 md:my-10">
+    {% for state in states %}
+      {% set grantees = show_grantees_count ? state.grantees : [] %}
+
+      <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
+        <a class="group flex gap-3 justify-between items-center px-6 py-4 border border-foreground border-dotted hover:bg-yellow hover:transition-all duration-100" href="{{ state.link }}">
+          <div>
+            <h3 class="text-h5 xl:text-h3 font-serif">{{ state.title }}</h3>
+
+            {% if grantees|length %}
+              <p class="text-sm font-medium">{{ grantees|length }} {{ grantees|length == 0 or grantees|length > 1 ? 'grantees' : 'grantee' }}</p>
+            {% endif %}
+          </div>
+
+          {% if state.handle %}
+          <div class="w-[20%] xl:w-[20%] flex-shrink-0 text-lavender group-hover:text-foreground transition-colors">
+            <svg viewBox="0 0 100 100" width="100%" aria-hidden="true">
+              <use xlink:href="#state-{{ state.handle }}"></use>
+            </svg>
+          </div>
+          {% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if states|length > limit %}
+    <button
+      class="md:hidden"
+      @click="expanded = !expanded"
+      x-text="expanded ? 'View less' : 'View all'"
+    >
+      View all
+    </button>
+  {% endif %}
+</section>
+{% endif %}
