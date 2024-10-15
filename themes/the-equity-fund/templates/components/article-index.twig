@@ -1,7 +1,7 @@
 {% set title = title|default('Recent') %}
 
 {% if articles|length %}
-<section id="article-index" class="px-site-padding text-foreground" aria-label="{{ title }}">
+<section id="article-index" class="px-site-padding text-foreground [&.htmx-request]:opacity-20 transition-opacity" aria-label="{{ title }}">
   <h2 class="uppercase font-display font-medium text-h3 border-b-2 border-foreground pb-1">{{ title }}</h2>
 
   <ol class="divide-y divide-foreground">

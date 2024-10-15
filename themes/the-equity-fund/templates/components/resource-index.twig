@@ -1,4 +1,4 @@
-<section id="resource-index" class="text-foreground" aria-label="Results">
+<section id="resource-index" class="text-foreground [&.htmx-request]:opacity-20 transition-opacity" aria-label="Results">
   {% if resources|length %}
     <ol class="divide-y divide-foreground">
       {% for resource in resources %}

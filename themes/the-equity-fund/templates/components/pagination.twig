@@ -5,6 +5,7 @@
   aria-label="Pagination"
   hx-target="{{ swap }}"
   hx-select="{{ swap }}"
+  hx-indicator="{{ swap }}"
   hx-swap="outerHTML"
   hx-replace-url="true"
   x-on:htmx:before-request.camel="$event.detail.target.scrollIntoView({ behavior: 'smooth' })"
