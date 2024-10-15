@@ -10,11 +10,16 @@
 
   <ul>
     {% for issue in issues %}
-    <li>
-      <h3>
-        <a href="{{ issue.link }}">{{ issue.title }}</a>
-      </h3>
-    </li>
+      {% set grantee_count = issue.count_grantees() %}
+      <li>
+        <h3>
+          <a href="{{ issue.link }}">{{ issue.title }}</a>
+        </h3>
+
+        {% if grantee_count %}
+          <p>{{ grantee_count }} {{ grantee_count == 1 ? 'grantee' : 'grantees' }}</p>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </section>
