@@ -8,7 +8,7 @@
     title: headline
   } %}
 
-  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-gutter mt-gutter">
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-gutter mt-gutter">
     {% for person in people %}
       {% set position = person.meta('position') %}
 
@@ -33,6 +33,7 @@
           {% if position %}
             <p class=" font-sans-narrow font-bold text-p">{{ position }}</p>
           {% endif %}
+          </div>
 
           {% if person.preview %}
             <p class="text-p">{{ person.preview.read_more('') }}</p>
@@ -50,7 +51,7 @@
               {% endif %}
             {% endfor %}
           </div>
-        </div>
+
       </li>
     {% endfor %}
   </ul>
