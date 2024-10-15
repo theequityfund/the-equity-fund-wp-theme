@@ -11,7 +11,7 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['headline']    = get_field( 'headline' );
+$context['headline'] = get_field( 'headline' );
 
 $people_ids = get_field( 'people' );
 

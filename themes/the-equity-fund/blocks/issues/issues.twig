@@ -7,5 +7,15 @@
   {% include 'templates/components/block-header.twig' with {
     title: headline,
   } %}
+
+  <ul>
+    {% for issue in issues %}
+    <li>
+      <h3>
+        <a href="{{ issue.link }}">{{ issue.title }}</a>
+      </h3>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 {% endif %}
