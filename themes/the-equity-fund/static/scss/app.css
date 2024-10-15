@@ -336,8 +336,12 @@
   .gutenberg {
     @apply px-site-padding;
 
-    > :not([data-block]) ~ :not([data-block]) {
+    > * ~ * {
       @apply mt-8 md:mt-10;
+    }
+
+    > [data-block] + [data-block] {
+      @apply !mt-0;
     }
 
     > *:not([data-block]) {
