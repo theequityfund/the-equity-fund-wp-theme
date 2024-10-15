@@ -12,15 +12,15 @@
     {% for issue in issues %}
       {% set grantee_count = issue.count_grantees() %}
 
-      <li class="border-b group hover:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-3 flex sm:justify-between sm:items-center max-sm:flex-col">
-        <h3 class="text-h2 ">
+      <li class="border-b group hover:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-3 flex gap-4 sm:justify-between sm:items-center max-sm:flex-col">
+        <h3 class="text-h2">
           <a class="after:inset-0 after:absolute" href="{{ issue.link }}">
             <span class="block z-[10] group-hover:translate-x-3 transition-transform font-serif-deck">{{ issue.title }}</span>
           </a>
         </h3>
 
         {% if grantee_count %}
-          <p class="text-p group-hover:translate-x-3 sm:group-hover:-translate-x-3 transition-transform">{{ grantee_count }} {{ grantee_count == 1 ? 'grantee' : 'grantees' }}</p>
+          <p class="text-p shrink-0 group-hover:translate-x-3 sm:group-hover:-translate-x-3 transition-transform">{{ grantee_count }} {{ grantee_count == 1 ? 'grantee' : 'grantees' }}</p>
         {% endif %}
       </li>
     {% endfor %}
