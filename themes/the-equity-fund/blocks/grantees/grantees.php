@@ -1,29 +1,29 @@
 <?php
 /**
- * Issues block.
+ * Grantees block.
  *
  * @package TheEquityFund
  * @param array $block The block settings and attributes.
  */
 
-use TheEquityFund\Models\Issue;
+use TheEquityFund\Models\Grantee;
 use Timber\Timber;
 
 $context = Timber::context();
 
 $context['headline'] = get_field( 'headline' );
 
-$issue_ids = get_field( 'issues' );
+$grantee_ids = get_field( 'grantees' );
 
-$context['issues'] = Timber::get_posts(
+$context['grantees'] = Timber::get_posts(
 	array(
-		'post_type'      => Issue::POST_TYPE,
+		'post_type'      => Grantee::POST_TYPE,
 		'post_status'    => 'publish',
-		'post__in'       => $issue_ids,
+		'post__in'       => $grantee_ids,
 		'posts_per_page' => -1,
 		'orderby'        => 'post__in',
 	)
 );
 
 
-Timber::render( basename( __DIR__ ) . '/issues.twig', $context );
+Timber::render( basename( __DIR__ ) . '/grantees.twig', $context );

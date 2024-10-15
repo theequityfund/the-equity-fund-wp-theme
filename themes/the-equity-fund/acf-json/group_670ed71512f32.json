@@ -1,0 +1,70 @@
+{
+  "key": "group_670ed71512f32",
+  "title": "Block: Grantees",
+  "fields": [
+    {
+      "key": "field_670ed715ed0d8",
+      "label": "Headline",
+      "name": "headline",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_670ed734ed0d9",
+      "label": "Grantees",
+      "name": "grantees",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "Specify the grantees to display. If not provided, this block will automatically pull all of the grantees.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["grantee"],
+      "post_status": "",
+      "taxonomy": "",
+      "filters": ["search"],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/grantees"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1729025886
+}

@@ -1,26 +1,40 @@
-{% if issues|length %}
+{% if grantees|length %}
 <section
-  class="palette-cream text-foreground"
-  data-block="issues"
-  aria-label="{{ headline }}"
+  class="palette-cream text-foreground flex flex-col gap-gutter"
+  data-block="grantees"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
 >
-  {% include 'templates/components/block-header.twig' with {
-    title: headline,
-  } %}
+  {% if headline %}
+    {% include 'templates/components/block-header.twig' with {
+      title: headline,
+    } %}
+  {% endif %}
 
-  <ul>
-    {% for issue in issues %}
-      {% set grantee_count = issue.count_grantees() %}
+  <ul class="grid grid-cols-3 gap-gutter">
+    {% for grantee in grantees %}
+      {% set headingTag = headline ? 'h3' : 'h2' %}
+      {% set issue = grantee.issue() %}
 
-      <li class="border-b group hover:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-3 flex gap-4 sm:justify-between sm:items-center max-sm:flex-col">
-        <h3 class="text-h2">
-          <a class="after:inset-0 after:absolute" href="{{ issue.link }}">
-            <span class="block z-[10] group-hover:translate-x-3 transition-transform font-serif-deck">{{ issue.title }}</span>
+      <li>
+        {% if grantee.thumbnail %}
+          {% include 'templates/components/lazy-img.twig' with {
+            class: 'w-full',
+            img: Image(grantee.thumbnail),
+          } %}
+        {% endif%}
+
+        <{{ headingTag }}>
+          <a href="{{ grantee.link }}">
+            {{ grantee.title }}
           </a>
-        </h3>
+        </{{ headingTag }}>
 
-        {% if grantee_count %}
-          <p class="text-p shrink-0 group-hover:translate-x-3 sm:group-hover:-translate-x-3 transition-transform">{{ grantee_count }} {{ grantee_count == 1 ? 'grantee' : 'grantees' }}</p>
+        {% if grantee.excerpt %}
+          <p>{{ grantee.excerpt.read_more('') }}</p>
+        {% endif %}
+
+        {% if issue %}
+          <a href="{{ issue.link }}">{{ issue.title }}</a>
         {% endif %}
       </li>
     {% endfor %}
