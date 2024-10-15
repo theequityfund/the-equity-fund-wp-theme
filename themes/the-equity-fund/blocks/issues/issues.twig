@@ -11,6 +11,7 @@
   <ul>
     {% for issue in issues %}
       {% set grantee_count = issue.count_grantees() %}
+
       <li>
         <h3>
           <a href="{{ issue.link }}">{{ issue.title }}</a>

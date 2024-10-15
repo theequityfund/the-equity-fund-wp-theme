@@ -28,8 +28,8 @@
       "name": "issues",
       "aria-label": "",
       "type": "relationship",
-      "instructions": "",
-      "required": 1,
+      "instructions": "Specify the issues to display. If not provided, this block will automatically pull all of the issues.",
+      "required": 0,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -66,5 +66,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1728999438
+  "modified": 1729000217
 }
