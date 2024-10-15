@@ -20,6 +20,6 @@ if ( post_password_required( $_post->ID ) ) {
 
 	Timber::render( 'pages/password.twig', $context );
 } else {
-	$context['post'] = $_post;
+	$context['state'] = $_post;
 	Timber::render( 'pages/state.twig', $context );
 }
