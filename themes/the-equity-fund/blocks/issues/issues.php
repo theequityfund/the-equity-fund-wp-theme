@@ -1,29 +1,29 @@
 <?php
 /**
- * People block.
+ * Issues block.
  *
  * @package TheEquityFund
  * @param array $block The block settings and attributes.
  */
 
-use TheEquityFund\Models\Person;
+use TheEquityFund\Models\Issue;
 use Timber\Timber;
 
 $context = Timber::context();
 
 $context['headline'] = get_field( 'headline' );
 
-$people_ids = get_field( 'people' );
+$issue_ids = get_field( 'issues' );
 
-$context['people'] = Timber::get_posts(
+$context['issues'] = Timber::get_posts(
 	array(
-		'post_type'      => Person::POST_TYPE,
+		'post_type'      => Issue::POST_TYPE,
 		'post_status'    => 'publish',
-		'post__in'       => $people_ids,
+		'post__in'       => $issue_ids,
 		'posts_per_page' => -1,
 		'orderby'        => 'post__in',
 	)
 );
 
 
-Timber::render( basename( __DIR__ ) . '/people.twig', $context );
+Timber::render( basename( __DIR__ ) . '/issues.twig', $context );
