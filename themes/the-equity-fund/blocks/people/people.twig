@@ -10,17 +10,27 @@
 
   <ul class="grid grid-cols-3 gap-gutter mt-gutter">
     {% for person in people %}
-    <li class="flex flex-col gap-2">
-      {% include 'templates/components/lazy-img.twig' with {
-        class: 'w-full',
-        img: Image(person.thumbnail),
-        aspectRatio: 'square'
-      } %}
+      {% set position = person.meta('position') %}
 
-      <h3>{{ person.title }}</h3>
-      <p>{{ person.meta('position') }}</p>
-      <p>{{ person.preview.read_more('') }}</p>
-    </li>
+      <li class="flex flex-col gap-2">
+        {% if person.thumbnail %}
+          {% include 'templates/components/lazy-img.twig' with {
+            class: 'w-full',
+            img: Image(person.thumbnail),
+            aspectRatio: 'square'
+          } %}
+        {% endif %}
+
+        <h3>{{ person.title }}</h3>
+
+        {% if position %}
+          <p>{{ position }}</p>
+        {% endif %}
+
+        {% if person.preview %}
+          <p>{{ person.preview.read_more('') }}</p>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </section>
