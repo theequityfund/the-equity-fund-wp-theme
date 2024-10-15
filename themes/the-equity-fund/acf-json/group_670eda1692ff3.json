@@ -1,0 +1,42 @@
+{
+  "key": "group_670eda1692ff3",
+  "title": "Grantee",
+  "fields": [
+    {
+      "key": "field_670eda167636c",
+      "label": "External Link",
+      "name": "external_link",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "If provided, the grantee page will not exist. Instead, grantee will link to this external link whenever it is teased.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "grantee"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "side",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1729026639
+}
