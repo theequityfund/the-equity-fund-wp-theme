@@ -1,14 +1,15 @@
 <section
   class="text-foreground"
   data-block="statement"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
 >
   {% if headline %}
-    <h3 class="text-h2 uppercase font-display font-medium mb-2">{{ headline }}</h3>
+    <h2 class="text-h2 uppercase font-display font-medium mb-2">{{ headline }}</h2>
   {% endif %}
 
   <div class="grid md:grid-cols-2 lg:grid-cols-12 md:gap-gutter {{ description == true ? 'gap-4' }}">
-    <div class=" [&_p]:font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1 font-normal lg:col-span-10 [&_p]:font-serif-deck &_p]:font-light' }}">
-      {{ statement }}
+    <div class="font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
+      {{ statement|striptags('<em><strong><a>')|raw }}
     </div>
 
     {% if description %}
