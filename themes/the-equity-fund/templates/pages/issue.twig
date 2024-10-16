@@ -10,7 +10,7 @@
     description: issue.meta('introduction')|striptags('<em><strong><a>')|raw,
   } %}
 
-  <article class="gutenberg rich-text my-10 md:my-16 space-y-10 md:space-y-16">
+  <article class="gutenberg rich-text">
     {{ issue.content }}
 
     {% if issue.grantees|length %}
