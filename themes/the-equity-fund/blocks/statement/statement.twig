@@ -9,15 +9,15 @@
     } %}
   {% endif %}
 
-  <div class="grid  lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
-    <div class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
+  <div class="grid lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+    <p class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
       {{ statement|striptags('<em><strong><a>')|raw }}
-    </div>
+    </p>
 
     {% if description %}
-      <div class="text-p lg:col-span-4 lg:col-end-12">
+      <p class="text-p lg:col-span-4 lg:col-end-12">
         {{ description|striptags('<em><strong><a>')|raw }}
-      </div>
+      </p>
     {% endif %}
   </div>
 </section>
