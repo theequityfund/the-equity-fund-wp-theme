@@ -1,14 +1,14 @@
 <section
-  class="text-foreground"
+  class="text-foreground grid md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter"
   data-block="statement"
 >
-  <p>
+  <div class="text-h3 [&_p]:font-serif lg:col-span-6">
     {{ statement }}
-  </p>
+  </div>
 
   {% if description %}
-    <p>
+    <div class="text-p lg:col-span-4 lg:col-end-12">
       {{ description|striptags('<em><strong><a>')|raw }}
-    </p>
+    </div>
   {% endif %}
 </section>
