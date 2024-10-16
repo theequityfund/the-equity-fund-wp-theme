@@ -337,12 +337,12 @@
     @apply px-site-padding;
 
     /* Everything should have space between */
-    > * {
+    > *:not([data-block]) {
       @apply mt-8 md:mt-10;
     }
 
     /* Space between blocks is different */
-    > *[data-block] {
+    > *[data-block]:not(:first-child) {
       @apply mt-10 md:mt-16;
     }
 
@@ -352,7 +352,7 @@
     }
 
     /* Space from footer for any last-child that is not a colored block */
-    > :is(:not([data-block]):last-child, .palette-cream[data-block]:last-child) {
+    > :not([data-block]):last-child {
       @apply mb-8 md:mb-10;
     }
 
