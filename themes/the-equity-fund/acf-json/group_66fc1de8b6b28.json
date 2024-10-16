@@ -56,7 +56,7 @@
       },
       "layout": "block",
       "pagination": 0,
-      "min": 1,
+      "min": 2,
       "max": 4,
       "collapsed": "field_66fc1e5833e5e",
       "button_label": "Add Statistic",
@@ -236,5 +236,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729111446
+  "modified": 1729112456
 }
