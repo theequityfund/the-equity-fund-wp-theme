@@ -352,7 +352,7 @@
     }
 
     /* Space from footer for any last-child that is not a colored block */
-    > :not([data-block]):last-child {
+    > :is(:not([data-block]), .palette-cream[data-block]):last-child {
       @apply mb-8 md:mb-10;
     }
 
