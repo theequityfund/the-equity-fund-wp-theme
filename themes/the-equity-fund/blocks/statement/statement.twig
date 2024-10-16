@@ -4,11 +4,13 @@
   {% if headline %}aria-label="{{ headline }}"{% endif %}
 >
   {% if headline %}
-    <h2 class="text-h2 uppercase font-display font-medium mb-2">{{ headline }}</h2>
+    {% include 'templates/components/block-header.twig' with {
+    title: headline
+  } %}
   {% endif %}
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-12 md:gap-gutter {{ description == true ? 'gap-4' }}">
-    <div class="font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
+  <div class="grid  lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+    <div class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
       {{ statement|striptags('<em><strong><a>')|raw }}
     </div>
 
