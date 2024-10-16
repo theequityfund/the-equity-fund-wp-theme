@@ -5,8 +5,8 @@
 >
   {% if headline %}
     {% include 'templates/components/block-header.twig' with {
-    title: headline
-  } %}
+      title: headline
+    } %}
   {% endif %}
 
   <div class="grid  lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
