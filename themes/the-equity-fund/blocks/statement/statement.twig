@@ -1,8 +1,12 @@
 <section
-  class="text-foreground grid md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter"
+  class="text-foreground {{ description == true ? 'grid md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter' : '' }}"
   data-block="statement"
 >
-  <div class="text-h3 [&_p]:font-serif lg:col-span-6">
+  {% if headline %}
+    <h3 class="text-h2 uppercase font-display font-medium mb-2">{{ headline }}</h3>
+  {% endif %}
+
+  <div class=" [&_p]:font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1' }}">
     {{ statement }}
   </div>
 
