@@ -6,8 +6,8 @@
     <h3 class="text-h2 uppercase font-display font-medium mb-2">{{ headline }}</h3>
   {% endif %}
 
-  <div class="{{ description == true ? 'grid md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter' : '' }}">
-    <div class=" [&_p]:font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1' }}">
+  <div class="grid md:grid-cols-2 lg:grid-cols-12 md:gap-gutter {{ description == true ? 'gap-4' }}">
+    <div class=" [&_p]:font-serif lg:col-span-6 {{ description == true ? 'text-h3' : 'text-h1 font-normal lg:col-span-10 [&_p]:font-serif-deck &_p]:font-light' }}">
       {{ statement }}
     </div>
 
