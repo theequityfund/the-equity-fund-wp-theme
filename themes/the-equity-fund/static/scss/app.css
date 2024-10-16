@@ -340,6 +340,10 @@
       @apply mt-8 md:mt-10;
     }
 
+    [data-block] {
+      @apply mt-10 md:mt-16;
+    }
+
     /* > [data-block] + [data-block] {
       @apply !mt-0;
     } */
