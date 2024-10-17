@@ -342,7 +342,7 @@
     }
 
     /* Space between blocks is different */
-    > *[data-block]:not(:first-child) {
+    > [data-block] {
       @apply mt-10 md:mt-16;
     }
 
@@ -351,7 +351,8 @@
     }
 
     /* No space between colored blocks */
-    > [data-block]:not(.palette-cream) + [data-block]:not(.palette-cream) {
+    > [data-block]:not(.palette-cream) + [data-block]:not(.palette-cream),
+    > [data-block]:not(.palette-cream):first-child {
       @apply !mt-0;
     }
 
