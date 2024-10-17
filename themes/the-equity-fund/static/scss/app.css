@@ -346,6 +346,10 @@
       @apply mt-10 md:mt-16;
     }
 
+    > *[data-block]:is(.palette-cream):first-child {
+      @apply mt-8 md:mt-12;
+    }
+
     /* No space between colored blocks */
     > [data-block]:not(.palette-cream) + [data-block]:not(.palette-cream) {
       @apply !mt-0;
