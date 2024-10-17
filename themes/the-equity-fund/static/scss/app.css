@@ -341,11 +341,17 @@
       @apply mt-8 md:mt-10;
     }
 
-    /* Space between blocks is different */
+    /* Space for blocks is different */
     > [data-block] {
       @apply mt-10 md:mt-16;
     }
-    /* No space between colored blocks */
+
+    /* Space for first non-colored block */
+    > *[data-block]:is(.palette-cream):first-child {
+      @apply mt-8 md:mt-12;
+    }
+
+    /* No space between colored blocks and first colored block */
     > [data-block]:not(.palette-cream) + [data-block]:not(.palette-cream),
     > [data-block]:not(.palette-cream):first-child {
       @apply !mt-0;

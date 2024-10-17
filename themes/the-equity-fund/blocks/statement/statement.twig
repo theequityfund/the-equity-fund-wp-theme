@@ -10,7 +10,7 @@
   {% endif %}
 
   <div class="grid lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
-    <p class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-h1 font-normal lg:col-span-10 font-serif-deck' }}">
+    <p class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-statement col-span-full font-normal xl:col-span-10 font-serif-deck' }}">
       {{ statement|striptags('<em><strong><a>')|raw }}
     </p>
 
