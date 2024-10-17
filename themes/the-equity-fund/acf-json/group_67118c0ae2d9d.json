@@ -28,7 +28,7 @@
       "name": "checklist",
       "aria-label": "",
       "type": "repeater",
-      "instructions": "Every item is marked as \"checked\" in the list.",
+      "instructions": "Every item is marked as \"checked\" in the list. It is recommended to include at least 4 items.",
       "required": 1,
       "conditional_logic": 0,
       "wrapper": {
@@ -46,8 +46,8 @@
       "sub_fields": [
         {
           "key": "field_67118c62af97b",
-          "label": "Item",
-          "name": "item",
+          "label": "Text",
+          "name": "text",
           "aria-label": "",
           "type": "text",
           "instructions": "",
@@ -86,5 +86,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729203373
+  "modified": 1729203655
 }
