@@ -1,0 +1,16 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'maroon' %}
+
+{% block pageBody %}
+  {% include 'templates/components/toppers/landing-topper.twig' with {
+    headline: page.meta('headline'),
+    introduction: page.meta('introduction'),
+    images: page.meta('images'),
+    palette: palette
+  } %}
+
+  <article class="gutenberg rich-text">
+    {{ post.content }}
+  </article>
+{% endblock %}
