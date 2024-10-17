@@ -37,6 +37,7 @@ class BlockManager {
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/issues' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/grantees' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/statement' );
+		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/checklist' );
 
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/image-layout' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/related-articles' );
@@ -127,6 +128,7 @@ class BlockManager {
 			'acf/issues',
 			'acf/grantees',
 			'acf/statement',
+			'acf/checklist',
 		);
 	}
 }
