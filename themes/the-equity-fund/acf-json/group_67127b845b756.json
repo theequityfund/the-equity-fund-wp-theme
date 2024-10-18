@@ -1,0 +1,86 @@
+{
+  "key": "group_67127b845b756",
+  "title": "Block: Featured Content",
+  "fields": [
+    {
+      "key": "field_67127b843bbfb",
+      "label": "Headline",
+      "name": "headline",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_67127bb83bbfc",
+      "label": "Content",
+      "name": "content",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "Include multiple news stories or resources.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["resource", "post"],
+      "post_status": "",
+      "taxonomy": "",
+      "filters": ["search", "post_type"],
+      "return_format": "id",
+      "min": 1,
+      "max": "",
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    },
+    {
+      "key": "field_67127cfe399bc",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/featured-content"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1729264914
+}
