@@ -10,8 +10,8 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['headline'] = get_field( 'headline' );
-$context['statement'] = get_field( 'statement' );
+$context['headline']    = get_field( 'headline' );
+$context['statement']   = get_field( 'statement' );
 $context['description'] = get_field( 'description' );
 
 Timber::render( basename( __DIR__ ) . '/statement.twig', $context );
