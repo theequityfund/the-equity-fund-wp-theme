@@ -1,0 +1,90 @@
+{
+  "key": "group_67118c0ae2d9d",
+  "title": "Block: Checklist",
+  "fields": [
+    {
+      "key": "field_67118c0baf979",
+      "label": "Headline",
+      "name": "headline",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_67118c50af97a",
+      "label": "Checklist",
+      "name": "checklist",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "Every item is marked as \"checked\" in the list. It is recommended to include at least 4 items.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "pagination": 0,
+      "min": 1,
+      "max": 0,
+      "collapsed": "field_67118c62af97b",
+      "button_label": "Add Item",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_67118c62af97b",
+          "label": "Text",
+          "name": "text",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_67118c50af97a"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/checklist"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1729203655
+}

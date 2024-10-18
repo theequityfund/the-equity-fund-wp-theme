@@ -4,18 +4,25 @@
 
 {% block pageBody %}
   {% set description %}
-  <span class="font-bold">{{ post.title }}</span> — {{ post.meta('introduction')|striptags('<em><strong><a>')|raw }}
+  <span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}
   {% endset %}
 
   {% include 'templates/components/toppers/split-topper.twig' with {
     overline: 'State-based grantees',
-    title: post.meta('headline'),
-    state: post.handle,
-    image: post.thumbnail,
+    title: state.meta('headline'),
+    state: state.handle,
+    image: state.thumbnail,
     description: description,
   } %}
 
-  <article class="gutenberg rich-text my-10 md:my-16 space-y-10 md:space-y-16">
-    {{ post.content }}
+  <article class="gutenberg rich-text">
+    {{ state.content }}
+
+    {% if state.grantees|length %}
+      {% include 'blocks/grantees/grantees.twig' with {
+        grantees: state.grantees,
+      } %}
+    {% endif %}
   </article>
+
 {% endblock %}

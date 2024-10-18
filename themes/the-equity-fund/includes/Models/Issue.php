@@ -8,6 +8,7 @@
 namespace TheEquityFund\Models;
 
 use Timber\Post as TimberPost;
+use Timber\PostCollectionInterface;
 use Timber\Timber;
 
 /** Class */
@@ -46,11 +47,11 @@ class Issue extends TimberPost {
 	}
 
 	/**
-	 * Count the number of grantees associated with this issue.
+	 * Get the grantees related to this issue.
 	 *
 	 * @return int
 	 */
-	public function count_grantees(): int {
+	public function grantees(): PostCollectionInterface|null {
 		$grantees = Timber::get_posts(
 			array(
 				'post_type'      => Grantee::POST_TYPE,
@@ -65,6 +66,6 @@ class Issue extends TimberPost {
 			)
 		);
 
-		return count( $grantees );
+		return $grantees;
 	}
 }

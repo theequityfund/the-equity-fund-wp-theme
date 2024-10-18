@@ -1,6 +1,6 @@
 <?php
 /**
- * Single issue.
+ * Template Name: Landing
  *
  * @package TheEquityFund
  */
@@ -8,17 +8,16 @@
 use Timber\Timber;
 
 $context = Timber::context();
+$_page   = Timber::get_post();
 
-$_post = Timber::get_post( false );
-
-// If post is password protected, render password page.
-if ( post_password_required( $_post->ID ) ) {
+// If page is password protected, render password page.
+if ( post_password_required( $_page->ID ) ) {
 	$cookie_value       = $_COOKIE[ 'wp-postpass_' . COOKIEHASH ];
 	$context['error']   = ! isset( $cookie_value ) ? false : 'Password is incorrect.';
-	$context['post_id'] = $_post->ID;
+	$context['post_id'] = $_page->ID;
 
 	Timber::render( 'pages/password.twig', $context );
 } else {
-	$context['issue'] = $_post;
-	Timber::render( 'pages/issue.twig', $context );
+	$context['page'] = $_page;
+	Timber::render( 'pages/page--landing.twig', $context );
 }

@@ -336,13 +336,31 @@
   .gutenberg {
     @apply px-site-padding;
 
-    > * ~ * {
+    /* Everything should have space between */
+    > *:not([data-block]) {
       @apply mt-8 md:mt-10;
     }
 
-    /* > [data-block] + [data-block] {
+    /* Space for blocks is different */
+    > [data-block] {
+      @apply mt-10 md:mt-16;
+    }
+
+    /* Space for first non-colored block */
+    > *[data-block]:is(.palette-cream):first-child {
+      @apply mt-8 md:mt-12;
+    }
+
+    /* No space between colored blocks and first colored block */
+    > [data-block]:not(.palette-cream) + [data-block]:not(.palette-cream),
+    > [data-block]:not(.palette-cream):first-child {
       @apply !mt-0;
-    } */
+    }
+
+    /* Space from footer for any last-child that is not a colored block */
+    > :is(:not([data-block]), .palette-cream[data-block]):last-child {
+      @apply mb-8 md:mb-10;
+    }
 
     > *:not([data-block]) {
       @apply mx-auto max-w-article text-foreground;

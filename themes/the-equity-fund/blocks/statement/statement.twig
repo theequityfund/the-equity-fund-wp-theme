@@ -1,0 +1,23 @@
+<section
+  class="palette-cream text-foreground"
+  data-block="statement"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+>
+  {% if headline %}
+    {% include 'templates/components/block-header.twig' with {
+      title: headline
+    } %}
+  {% endif %}
+
+  <div class="grid lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+    <p class="font-serif {{ description == true ? 'text-h3 lg:col-span-6 ' : 'text-statement col-span-full font-normal xl:col-span-10 font-serif-deck' }}">
+      {{ statement|striptags('<em><strong><a>')|raw }}
+    </p>
+
+    {% if description %}
+      <p class="text-p lg:col-span-4 lg:col-end-12">
+        {{ description|striptags('<em><strong><a>')|raw }}
+      </p>
+    {% endif %}
+  </div>
+</section>

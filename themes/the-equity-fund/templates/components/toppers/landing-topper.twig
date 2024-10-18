@@ -1,0 +1,17 @@
+{% set palette = palette|default('maroon') %}
+
+<header class="palette-{{ palette }} bg-background text-foreground px-site-padding">
+  <h1>{{ headline }}</h1>
+
+  {% if introduction %}
+  <p>{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+  {% endif %}
+
+  {% if images|length %}
+    {% for image in images %}
+      {% include 'templates/components/lazy-img.twig' with {
+        img: Image(image),
+      } %}
+    {% endfor %}
+  {% endif %}
+</header>

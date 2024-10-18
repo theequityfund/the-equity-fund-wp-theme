@@ -7,10 +7,11 @@
 
   {% include 'templates/components/toppers/article-topper.twig' with {
     title: post.title,
+    image: post.thumbnail,
     tag: tag ? { title: tag.title, link: tag.url } : null,
   } %}
 
-  <article class="gutenberg rich-text mt-4 mb-10 md:mt-6 md:mb-16">
+  <article class="gutenberg rich-text">
     {{ post.content }}
   </article>
 {% endblock %}

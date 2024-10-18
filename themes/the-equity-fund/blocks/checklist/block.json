@@ -1,0 +1,14 @@
+{
+  "name": "acf/checklist",
+  "title": "Checklist",
+  "description": "Display a checklist of items.",
+  "category": "widgets",
+  "icon": {
+    "src": "editor-ul"
+  },
+  "keywords": ["checklist", "list"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "checklist.php"
+  }
+}

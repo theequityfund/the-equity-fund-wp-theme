@@ -1,0 +1,44 @@
+{% if grantees|length %}
+<section
+  class="palette-cream text-foreground flex flex-col gap-gutter"
+  data-block="grantees"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+>
+  {% if headline %}
+    {% include 'templates/components/block-header.twig' with {
+      title: headline,
+    } %}
+  {% endif %}
+
+  <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-gutter">
+    {% for grantee in grantees %}
+      {% set headingTag = headline ? 'h3' : 'h2' %}
+      {% set issue = grantee.issue() %}
+      {% set external_link = grantee.meta('external_link') %}
+
+      <li class="group">
+        <div class="relative before:content-[''] before:absolute before:w-[calc(100%+2rem)] before:h-[calc(100%+2rem)] before:bg-yellow before:z-1 before:translate-x-[-50%] before:translate-y-[-50%] before:left-[50%] before:top-[50%] before:opacity-0 before:transition-opacity hover:before:opacity-100 ">
+          <div class="relative z-[2] flex gap-3 flex-col border-b border-dotted border-foreground pb-4">
+            {% if grantee.thumbnail %}
+              {% include 'templates/components/lazy-img.twig' with {
+                class: 'w-full',
+                img: Image(grantee.thumbnail),
+              } %}
+            {% endif%}
+
+            <{{ headingTag }} class="text-h3 font-serif ">
+              <a class="after:inset-0 after:absolute" href="{{ external_link|default(grantee.link) }}" {% if external_link %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                {{ grantee.title }}
+              </a>
+            </{{ headingTag }}>
+
+            {% if grantee.excerpt %}
+              <p class="text-p">{{ grantee.excerpt.read_more('') }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

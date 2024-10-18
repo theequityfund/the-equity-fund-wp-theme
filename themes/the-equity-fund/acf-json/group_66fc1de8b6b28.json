@@ -56,8 +56,8 @@
       },
       "layout": "block",
       "pagination": 0,
-      "min": 1,
-      "max": 8,
+      "min": 2,
+      "max": 4,
       "collapsed": "field_66fc1e5833e5e",
       "button_label": "Add Statistic",
       "rows_per_page": 20,
@@ -236,5 +236,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1728048009
+  "modified": 1729112456
 }

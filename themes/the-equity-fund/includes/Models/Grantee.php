@@ -47,6 +47,23 @@ class Grantee extends TimberPost {
 	}
 
 	/**
+	 * Get issue.
+	 *
+	 * @return array
+	 */
+	public function issue(): Issue|null {
+		// phpcs:ignore
+		/** @var string $issue */
+		$issues = $this->meta( 'issues' );
+
+		if ( empty( $issues ) ) {
+			return null;
+		}
+
+		return Timber::get_post( $issues[0] );
+	}
+
+	/**
 	 * Get the states related to this grantee.
 	 *
 	 * @return PostCollectionInterface|null
