@@ -75,7 +75,7 @@
     <template x-teleport="body">
       <div
         id="menu"
-        class="fixed inset-x-0 bottom-0 top-wp-admin-bar h-screen w-full text-foreground bg-background palette-{{ palette|default('cream') }}"
+        class="fixed inset-x-0 bottom-0 top-wp-admin-bar h-screen w-full text-foreground bg-background z-50 palette-{{ palette|default('cream') }}"
         x-show="isMenuOpen"
         x-trap.noscroll="isMenuOpen"
         :aria-hidden="!isMenuOpen"
