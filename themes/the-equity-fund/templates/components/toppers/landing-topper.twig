@@ -1,17 +1,29 @@
 {% set palette = palette|default('maroon') %}
 
-<header class="palette-{{ palette }} bg-background text-foreground px-site-padding">
-  <h1>{{ headline }}</h1>
+{% set image_1 = '[&>*:nth-child(1)]:col-span-2 [&>*:nth-child(1)]:col-start-1 [&>*:nth-child(1)]:col-end-3 [&>*:nth-child(1)]:md:col-start-1 [&>*:nth-child(1)]:md:col-end-3' %}
+{% set image_2 = '[&>*:nth-child(2)]:col-span-3 [&>*:nth-child(2)]:col-start-6 [&>*:nth-child(2)]:col-start-9 [&>*:nth-child(2)]:md:col-start-10 [&>*:nth-child(2)]:md:col-end-13' %}
+{% set image_3 = '[&>*:nth-child(3)]col-span-3 [&>*:nth-child(3)]:col-start-1 [&>*:nth-child(3)]:col-end-4 [&>*:nth-child(3)]:md:col-start-2 [&>*:nth-child(3)]:md:col-end-5 [&>*:nth-child(3)]:self-end' %}
+{% set image_4 = '[&>*:nth-child(4)]:col-span-2 [&>*:nth-child(4)]:col-start-6 [&>*:nth-child(4)]:col-end-8 [&>*:nth-child(4)]:md:col-start-10 [&>*:nth-child(4)]:md:col-end-12 [&>*:nth-child(4)]:self-center' %}
 
-  {% if introduction %}
-  <p>{{ introduction|striptags('<em><strong><a>')|raw }}</p>
-  {% endif %}
+<header class="palette-{{ palette }} bg-background text-foreground px-site-padding pt-topper-margin relative">
+  <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[25vh]">
+    <h1 class="font-display font-medium uppercase text-headline text-center">{{ headline }}</h1>
+    {% if introduction %}
+      <p class="text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-10">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+    {% endif %}
+  </div>
 
   {% if images|length %}
-    {% for image in images %}
-      {% include 'templates/components/lazy-img.twig' with {
-        img: Image(image),
-      } %}
-    {% endfor %}
-  {% endif %}
+  <div class="absolute inset-x-0 inset-y-0">
+    <div class="grid grid-cols-8 md:grid-cols-12 w-full h-full gap-4 md:gap-gutter px-site-padding pt-topper-margin {{ image_1 }} {{ image_2 }} {{ image_3 }} {{ image_4 }}">
+      {% for image in images %}
+        <figure class="">
+          {% include 'templates/components/lazy-img.twig' with {
+            img: Image(image),
+          } %}
+        </figure>
+      {% endfor %}
+    {% endif %}
+    </div>
+  </div>
 </header>
