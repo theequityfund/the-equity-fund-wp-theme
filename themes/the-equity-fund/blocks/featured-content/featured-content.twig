@@ -9,11 +9,11 @@
     link: cta
   } %}
 
-  <ul>
+  <ul class="flex md:gap-x-gutter py-site-padding flex-wrap justify-between gap-y-10 md:gap-y-16">
     {% for post in posts %}
       {% set issue = post.issue %} {# Both `Post` and `Resource` have `issue` #}
 
-      <li>
+      <li class="w-full md:w-6/12 md:[&:nth-child(4n+2)]:w-5/12 md:[&:nth-child(4n+3)]:w-5/12 lg:[&:nth-child(4n+2)]:w-4/12 lg:[&:nth-child(4n+3)]:w-4/12">
         {% if post.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
@@ -21,14 +21,14 @@
           } %}
         {% endif %}
 
-        <div>
+        <div class="flex flex-col gap-3 md:gap-4 mt-6">
           {% if issue %}
-          <a href="{{ issue.link }}">{{ issue.title }}</a>
+          <a class="text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1.1] hover:underline" href="{{ issue.link }}">{{ issue.title }}</a>
           {% endif %}
 
-          <h3>{{ post.title }}</h3>
+          <h3 class="text-h3 leading-[1.1] font-serif">{{ post.title }}</h3>
 
-          <p>{{ post.preview.read_more('') }}</p>
+          <p class="text-p ">{{ post.preview.read_more('') }}</p>
 
           {% if post.type == 'resource' %}
             <a class="button flex items-center gap-2" href="{{ post.meta('file').url }}" target="_blank" rel="noopener noreferrer">
