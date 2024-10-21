@@ -224,7 +224,7 @@
       }
 
       &:is(strong):not(:is(.rich-text > [data-block] *)) {
-        @apply font-medium;
+        @apply font-bold;
       }
 
       &:is(em) {
