@@ -17,11 +17,11 @@
   <div class="absolute inset-x-0 inset-y-0">
     <div class="grid grid-cols-8 md:grid-cols-12 w-full h-full gap-4 md:gap-gutter px-site-padding pt-topper-margin {{ image_1 }} {{ image_2 }} {{ image_3 }} {{ image_4 }}">
       {% for image in images %}
-        <figure class="">
+        <div>
           {% include 'templates/components/lazy-img.twig' with {
             img: Image(image),
           } %}
-        </figure>
+        </div>
       {% endfor %}
     {% endif %}
     </div>
