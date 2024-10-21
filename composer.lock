@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92f6e3251cd76eef707bad91a2711465",
+    "content-hash": "80ef89a6236c254921c1b0ee675abac4",
     "packages": [
         {
             "name": "composer/installers",
@@ -873,6 +873,24 @@
                 }
             ],
             "time": "2022-10-16T01:01:54+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/forms-for-campaign-monitor",
+            "version": "2.8.17",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/forms-for-campaign-monitor/",
+                "reference": "tags/2.8.17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/forms-for-campaign-monitor.2.8.17.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/forms-for-campaign-monitor/"
         },
         {
             "name": "wpackagist-plugin/wp-environment-indicator",
