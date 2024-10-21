@@ -80,11 +80,11 @@ module.exports = {
         h3: [
           'clamp(1.5rem, 2vw + 1rem, 2.25rem)',
           {
-            lineHeight: '1.1',
+            lineHeight: '1.15',
             letterSpacing: '-0.0125em',
           },
         ],
-        h4: ['clamp(1.375rem, 2vw + 1rem, 1.75rem)', '1.2'],
+        h4: ['clamp(1.375rem, 2vw + 1rem, 1.75rem)', '1.25'],
         h5: ['clamp(1.25rem, 2vw + 1rem, 1.5rem)', '1.2'],
         h6: [
           'clamp(1rem, 0.5vw + 1rem, 1.5rem)',
@@ -94,7 +94,7 @@ module.exports = {
           },
         ],
         p: [
-          'clamp(0.875rem, 0.25vw + 1rem, 1.125rem)',
+          'clamp(0.875rem, 0.25vw + 1rem, 1.25rem)',
           {
             lineHeight: '1.35',
             letterSpacing: '-0.0125em',
