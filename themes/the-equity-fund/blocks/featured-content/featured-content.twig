@@ -9,11 +9,11 @@
     link: cta
   } %}
 
-  <ul class="flex md:gap-x-gutter py-site-padding flex-wrap justify-between gap-y-10 md:gap-y-16">
+  <ul class="py-site-padding gap-y-10 md:gap-y-16 {{ posts|length > 2 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'flex max-md:flex-wrap justify-between' }} {{ posts|length > 3 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' }} md:gap-x-gutter ">
     {% for post in posts %}
       {% set issue = post.issue %} {# Both `Post` and `Resource` have `issue` #}
 
-      <li class="w-full md:w-6/12 md:[&:nth-child(4n+2)]:w-5/12 md:[&:nth-child(4n+3)]:w-5/12 lg:[&:nth-child(4n+2)]:w-4/12 lg:[&:nth-child(4n+3)]:w-4/12">
+      <li class="w-full {{ posts|length <= 2 ? 'md:w-6/12 lg:[&:nth-child(2)]:w-4/12' }}">
         {% if post.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
