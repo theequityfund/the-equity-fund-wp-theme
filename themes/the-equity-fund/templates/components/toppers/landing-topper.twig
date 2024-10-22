@@ -1,10 +1,5 @@
 {% set palette = palette|default('maroon') %}
 
-{% set image_1 = '[&>*:nth-child(1)]:col-span-2 [&>*:nth-child(1)]:col-start-1 [&>*:nth-child(1)]:col-end-3 [&>*:nth-child(1)]:md:col-start-1 [&>*:nth-child(1)]:md:col-end-3' %}
-{% set image_2 = '[&>*:nth-child(2)]:col-span-3 [&>*:nth-child(2)]:col-start-6 [&>*:nth-child(2)]:col-end-9 [&>*:nth-child(2)]:md:col-start-10 [&>*:nth-child(2)]:md:col-end-13' %}
-{% set image_3 = '[&>*:nth-child(3)]col-span-3 [&>*:nth-child(3)]:col-start-1 [&>*:nth-child(3)]:col-end-4 [&>*:nth-child(3)]:md:col-start-2 [&>*:nth-child(3)]:md:col-end-5 [&>*:nth-child(3)]:self-end' %}
-{% set image_4 = '[&>*:nth-child(4)]:col-span-2 [&>*:nth-child(4)]:col-start-7 [&>*:nth-child(4)]:col-end-9 [&>*:nth-child(4)]:md:col-start-11 [&>*:nth-child(4)]:md:col-end-13 [&>*:nth-child(4)]:self-end' %}
-
 <header class="palette-{{ palette }} bg-background text-foreground px-site-padding pt-topper-margin relative">
   <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[25vh]">
     <h1 class="font-display font-medium uppercase text-headline text-center">{{ headline }}</h1>
@@ -15,13 +10,29 @@
 
   {% if images|length %}
   <div class="absolute inset-x-0 inset-y-0">
-    <div class="grid grid-cols-8 md:grid-cols-12 w-full h-full pb-site-padding gap-4 md:gap-gutter px-site-padding pt-topper-margin {{ image_1 }} {{ image_2 }} {{ image_3 }} {{ image_4 }}">
+    <div class="grid grid-cols-8 md:grid-cols-12 w-full h-full pb-site-padding gap-4 md:gap-gutter px-site-padding pt-topper-margin">
       {% for image in images %}
-        <figure class="">
+        {% set imageClass = "" %}
+
+        {% if loop.index == 1 %}
+          {% set imageClass = "col-span-2 col-start-1 col-end-3 md:col-start-1 md:col-end-3" %}
+
+        {% elseif loop.index == 2 %}
+          {% set imageClass = "col-span-3 col-start-6 col-end-9 md:col-start-10 md:col-end-13" %}
+
+        {% elseif loop.index == 3 %}
+          {% set imageClass = "col-span-3 col-start-1 col-end-4 md:col-start-2 md:col-end-5 self-end" %}
+
+        {% elseif loop.index == 4 %}
+          {% set imageClass = "col-span-2 col-start-7 col-end-9 md:col-start-11 md:col-end-13 self-end" %}
+
+        {% endif %}
+
+        <div class="{{ imageClass }}">
           {% include 'templates/components/lazy-img.twig' with {
             img: Image(image),
           } %}
-        </figure>
+        </div>
       {% endfor %}
     {% endif %}
     </div>
