@@ -58,7 +58,7 @@ module.exports = {
         headline: [
           'clamp(5.625rem, 20vw + 1rem, 18.75rem)',
           {
-            lineHeight: '1.1',
+            lineHeight: '0.8',
             letterSpacing: '-0.0125em',
           },
         ],

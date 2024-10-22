@@ -2,9 +2,9 @@
 
 <header class="palette-{{ palette }} bg-background text-foreground px-site-padding pt-topper-margin relative">
   <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[25vh]">
-    <h1 class="font-display font-medium uppercase text-headline text-center">{{ headline }}</h1>
+    <h1 class="font-display font-medium uppercase text-headline text-center z-20">{{ headline }}</h1>
     {% if introduction %}
-      <p class="text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-10">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+      <p class="text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-20">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
     {% endif %}
   </div>
 
@@ -28,7 +28,7 @@
 
         {% endif %}
 
-        <div class="{{ imageClass }}">
+        <div class="{{ imageClass }} hover:z-20">
           {% include 'templates/components/lazy-img.twig' with {
             img: Image(image),
           } %}
