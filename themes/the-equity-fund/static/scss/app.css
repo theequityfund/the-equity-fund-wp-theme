@@ -754,4 +754,20 @@
   input[type='text'] {
     @apply !border-dashed !border-foreground !bg-background !py-7 !px-4 !font-sans !text-foreground !text-p;
   }
+
+  ul {
+    @apply !list-none !flex !flex-col !gap-2 !mt-4;
+
+    li {
+      @apply marker:!content-none !pl-0 !ml-0 !flex !gap-3 !items-center;
+
+      input[type='checkbox'] {
+        @apply !cursor-pointer !h-5 !w-5 !shrink-0 !accent-foreground;
+      }
+
+      label {
+        @apply !mb-0 !cursor-pointer;
+      }
+    }
+  }
 }
