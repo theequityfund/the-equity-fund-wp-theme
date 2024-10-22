@@ -724,7 +724,7 @@
 /**
  * Campaign Monitor forms
  */
-form.cmApp_embedFormContainer {
+.cmApp_embedFormContainer {
   @apply !p-0 !mx-auto !mt-0;
 
   .cmApp_embedded {
@@ -732,7 +732,26 @@ form.cmApp_embedFormContainer {
   }
 
   .cmApp_formHeader {
-    @apply !font-serif !text-h2 !text-foreground;
-    @apply !text-left;
+    @apply !font-serif !text-h2 !text-foreground !text-left;
+  }
+
+  form {
+    @apply !flex !flex-col !gap-4;
+
+    > div {
+      @apply !px-0;
+    }
+  }
+
+  .cmApp_fieldWrap {
+    @apply !flex !flex-col !gap-4;
+  }
+
+  label {
+    @apply !font-sans !text-foreground !text-p !font-medium !block !mb-2;
+  }
+
+  input[type='text'] {
+    @apply !border-dotted !border-foreground !bg-background !py-6 !px-3 !font-sans !text-foreground !text-p;
   }
 }
