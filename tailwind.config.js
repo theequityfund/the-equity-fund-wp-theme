@@ -93,13 +93,6 @@ module.exports = {
             letterSpacing: '-0.0125em',
           },
         ],
-        tiny: [
-          'clamp(1rem, 0.5vw + 1rem, 1.5rem)',
-          {
-            lineHeight: '1.2',
-            letterSpacing: '-0.0125em',
-          },
-        ],
         p: [
           'clamp(0.875rem, 0.25vw + 1rem, 1.25rem)',
           {
