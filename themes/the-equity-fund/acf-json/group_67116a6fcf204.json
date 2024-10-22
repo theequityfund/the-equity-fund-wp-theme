@@ -48,7 +48,7 @@
       "name": "images",
       "aria-label": "",
       "type": "gallery",
-      "instructions": "(Recommended) Add up to 4 images. The images will be placed around the topper.",
+      "instructions": "(Recommended) Add 4 images. The images will be placed around the topper.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -58,7 +58,7 @@
       },
       "return_format": "id",
       "library": "all",
-      "min": "",
+      "min": 4,
       "max": 4,
       "min_width": "",
       "min_height": "",
@@ -89,5 +89,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729194866
+  "modified": 1729555726
 }
