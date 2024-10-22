@@ -15,7 +15,7 @@
         {% set imageClass = "" %}
 
         {% if loop.index == 1 %}
-        {% set imageClass = "col-span-2 col-start-1 col-end-3 md:col-start-1 md:col-end-3" %}
+          {% set imageClass = "col-span-2 col-start-1 col-end-3 md:col-start-1 md:col-end-3" %}
 
         {% elseif loop.index == 2 %}
           {% set imageClass = "col-span-3 col-start-6 col-start-9 md:col-start-10 md:col-end-13" %}
@@ -25,6 +25,7 @@
 
         {% elseif loop.index == 4 %}
           {% set imageClass = "col-span-2 col-start-6 col-end-8 md:col-start-10 md:col-end-12 max-md:self-end" %}
+
         {% endif %}
 
         <div class="{{ imageClass }}">
