@@ -720,3 +720,19 @@
     --c-button-background: theme('colors.cream');
   }
 }
+
+/**
+ * Campaign Monitor forms
+ */
+form.cmApp_embedFormContainer {
+  @apply !p-0 !mx-auto !mt-0;
+
+  .cmApp_embedded {
+    @apply !p-0 !m-0 !w-full !max-w-none;
+  }
+
+  .cmApp_formHeader {
+    @apply !font-serif !text-h2 !text-foreground;
+    @apply !text-left;
+  }
+}
