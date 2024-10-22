@@ -744,7 +744,7 @@
   }
 
   .cmApp_fieldWrap {
-    @apply !flex !flex-col !gap-4;
+    @apply !flex !flex-col !gap-6;
   }
 
   label {
@@ -752,6 +752,6 @@
   }
 
   input[type='text'] {
-    @apply !border-dotted !border-foreground !bg-background !py-6 !px-3 !font-sans !text-foreground !text-p;
+    @apply !border-dashed !border-foreground !bg-background !py-7 !px-4 !font-sans !text-foreground !text-p;
   }
 }
