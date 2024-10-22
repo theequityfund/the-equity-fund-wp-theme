@@ -16,12 +16,12 @@
       <li class="w-full {{ posts|length <= 2 ? 'md:w-6/12 lg:[&:nth-child(2)]:w-4/12' }}">
         {% if post.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
-            class: 'w-full',
+            class: 'w-full mb-6',
             img: Image(post.thumbnail),
           } %}
         {% endif %}
 
-        <div class="flex flex-col gap-3 md:gap-4 mt-6">
+        <div class="flex flex-col gap-3 md:gap-4">
           {% if issue %}
           <a class="text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1.1] hover:underline" href="{{ issue.link }}">{{ issue.title }}</a>
           {% endif %}
