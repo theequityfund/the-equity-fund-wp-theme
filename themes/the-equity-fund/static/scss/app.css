@@ -131,7 +131,7 @@
   @font-face {
     font-family: 'Metrify Narrow';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-display: swap;
     src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff') format('woff'),
       url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff2') format('woff2');
@@ -150,7 +150,7 @@
   @font-face {
     font-family: 'Metrify';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-display: swap;
     src: url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff') format('woff'),
       url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff2') format('woff2');
