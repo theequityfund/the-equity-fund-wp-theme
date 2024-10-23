@@ -780,4 +780,8 @@
   .cmApp_logo {
     @apply !hidden;
   }
+
+  .cmApp_errorMsg {
+    @apply !bg-foreground !text-background !p-8 !font-bold;
+  }
 }
