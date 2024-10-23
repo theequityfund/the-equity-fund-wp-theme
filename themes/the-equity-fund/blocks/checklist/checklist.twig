@@ -1,17 +1,17 @@
-{% if checklist|length %}
-<section
-  class="palette-cream text-foreground"
-  data-block="checklist"
-  {% if headline %}aria-label="{{ headline }}"{% endif %}
->
-  {% include 'templates/components/block-header.twig' with {
-    title: headline
-  } %}
+{% if groups|length %}
+<div class="palette-cream text-foreground" data-block="checklist">
+  {% for group in groups %}
+    {% if group.checklist|length %}
+      <section {% if group.headline %}aria-label="{{ group.headline }}"{% endif %}>
+        <h2>{{ group.headline }}</h2>
 
-  <ul>
-    {% for item in checklist %}
-      <li>{{ item.text }}</li>
-    {% endfor %}
-  </ul>
-</section>
+        <ul>
+          {% for item in group.checklist %}
+            <li>{{ item.text }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  {% endfor %}
+</div>
 {% endif %}

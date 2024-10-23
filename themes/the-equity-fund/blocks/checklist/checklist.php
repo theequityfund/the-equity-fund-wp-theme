@@ -10,7 +10,6 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['headline']  = get_field( 'headline' );
-$context['checklist'] = get_field( 'checklist' );
+$context['groups'] = get_field( 'groups' );
 
 Timber::render( basename( __DIR__ ) . '/checklist.twig', $context );
