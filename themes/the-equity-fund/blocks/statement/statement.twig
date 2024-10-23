@@ -43,7 +43,7 @@
 
     {% if description %}
       <p class="text-p lg:col-span-4 lg:col-end-12 [&_a]:underline [&_a]:hover:no-underline">
-        {{ description|striptags('<em><strong><a><br>')|raw }}
+        {{ description|striptags('<em><strong><a>')|raw }}
       </p>
     {% endif %}
   </div>
