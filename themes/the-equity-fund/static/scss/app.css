@@ -247,6 +247,10 @@
         @apply text-foreground hover:text-background hover:bg-foreground bg-gradient-to-r from-foreground to-foreground bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
       }
 
+      &:is(strong) {
+        @apply font-bold;
+      }
+
       &:is(p, li, ul, ol, blockquote) {
         @apply leading-snug paragraph;
       }
