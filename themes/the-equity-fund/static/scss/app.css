@@ -131,7 +131,7 @@
   @font-face {
     font-family: 'Metrify Narrow';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-display: swap;
     src: url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff') format('woff'),
       url('../../static/fonts/metrify/NaNMetrifyBNarrow-Med.woff2') format('woff2');
@@ -150,7 +150,7 @@
   @font-face {
     font-family: 'Metrify';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-display: swap;
     src: url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff') format('woff'),
       url('../../static/fonts/metrify/NaNMetrifyBStd-Med.woff2') format('woff2');
@@ -718,5 +718,90 @@
 
     --c-button-foreground: theme('colors.black');
     --c-button-background: theme('colors.cream');
+  }
+}
+
+/**
+ * Campaign Monitor forms
+ */
+.cmApp_embedFormContainer {
+  @apply !p-0 !mx-auto !mt-4 !mb-8;
+
+  .cmApp_embedded {
+    @apply !p-0 !m-0 !w-full !max-w-none;
+  }
+
+  .cmApp_formHeader {
+    @apply !font-serif !text-h2 !text-foreground !text-left;
+  }
+
+  form {
+    @apply !flex !flex-col !gap-4;
+
+    > div {
+      @apply !px-0;
+    }
+  }
+
+  .cmApp_fieldWrap {
+    @apply !flex !flex-col !gap-6;
+  }
+
+  label {
+    @apply !font-sans !text-foreground !text-p !font-medium !block !mb-2;
+  }
+
+  input[type='text'] {
+    @apply !border-dashed !border-foreground !bg-background !py-7 !px-4 !font-sans !text-foreground !text-p;
+  }
+
+  ul {
+    @apply !list-none !flex !flex-col !gap-2 !mt-4;
+
+    li {
+      @apply marker:!content-none !pl-0 !ml-0 !flex !gap-3 !items-center;
+
+      input[type='checkbox'] {
+        @apply !cursor-pointer !h-5 !w-5 !shrink-0 !accent-foreground;
+      }
+
+      label {
+        @apply !mb-0 !cursor-pointer;
+      }
+    }
+  }
+
+  input[type='submit'] {
+    @apply !font-sans !h-auto;
+    @apply !cursor-pointer !bg-yellow !border-none !text-maroon !w-fit !text-sm !font-bold !uppercase !px-4 !pb-3.5  !pt-4 !inline-block !transition-all;
+    @apply hover:!bg-maroon hover:!text-cream;
+  }
+
+  .cmApp_logo {
+    @apply !hidden;
+  }
+
+  .cmApp_errorMsg {
+    @apply !bg-foreground !text-background !p-8;
+
+    div {
+      @apply !font-sans !font-bold;
+    }
+  }
+
+  .cmApp_statusContainer {
+    @apply !bg-teal !text-black !p-8 !mb-4;
+
+    .cmApp_processingMsg {
+      @apply !m-0 !p-0;
+
+      p {
+        @apply !font-sans !font-bold;
+      }
+    }
+
+    #cmApp_thankYouCheck {
+      @apply !hidden;
+    }
   }
 }
