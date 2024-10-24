@@ -1,5 +1,7 @@
 {% set limit = 5 %}
 
+{% set headline_length = headline_length|default('short') %}
+
 {% if states|length %}
 <section
   class="palette-cream text-foreground"
@@ -7,10 +9,13 @@
   data-block="states"
   x-data="{ expanded: false }"
 >
-  {% include 'templates/components/block-header.twig' with {
-    title: headline,
-    link: cta
-  } %}
+  <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-1 sm:gap-2">
+    <h2 class="{{ headline_length == 'short' ? 'font-display font-medium text-h3 uppercase' : '' }}">{{ headline }}</h2>
+
+    {% if cta %}
+      <a class="max-md:text-sm font-sans hover:underline whitespace-nowrap" href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
+  </div>
 
   <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 my-8 md:gap-10 md:my-10">
     {% for state in states %}

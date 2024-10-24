@@ -3,6 +3,24 @@
   "title": "Block: States",
   "fields": [
     {
+      "key": "field_671a918f4242e",
+      "label": "Content",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
       "key": "field_66f1e75510738",
       "label": "Headline",
       "name": "headline",
@@ -48,6 +66,66 @@
       "bidirectional_target": []
     },
     {
+      "key": "field_66f1fb606f37a",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array"
+    },
+    {
+      "key": "field_671a919a4242f",
+      "label": "Settings",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_671a91aa42430",
+      "label": "Headline Length",
+      "name": "headline_length",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Prefer \"Long\" if the headline is a long text.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "short": "Short",
+        "long": "Long"
+      },
+      "default_value": "short",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
       "key": "field_66ff080c6b17d",
       "label": "Show Grantees Count?",
       "name": "show_grantees_count",
@@ -66,22 +144,6 @@
       "ui_on_text": "",
       "ui_off_text": "",
       "ui": 1
-    },
-    {
-      "key": "field_66f1fb606f37a",
-      "label": "CTA",
-      "name": "cta",
-      "aria-label": "",
-      "type": "link",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "array"
     }
   ],
   "location": [
@@ -102,5 +164,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1727989994
+  "modified": 1729795195
 }
