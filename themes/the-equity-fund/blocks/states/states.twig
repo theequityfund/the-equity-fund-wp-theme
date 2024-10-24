@@ -17,7 +17,7 @@
     {% endif %}
   </div>
 
-  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 my-8 md:gap-10 md:my-10">
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-site-padding my-site-padding md:gap-10 md:my-10">
     {% for state in states %}
       {% set grantees = show_grantees_count ? state.grantees : [] %}
 
