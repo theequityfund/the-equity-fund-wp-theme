@@ -1,0 +1,19 @@
+{
+  "name": "The Climate & Clean Energy Equity Fund",
+  "short_name": "The Equity Fund",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#C4B3E0",
+  "background_color": "#C4B3E0",
+  "display": "standalone"
+}
