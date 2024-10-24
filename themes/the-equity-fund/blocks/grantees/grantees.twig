@@ -5,6 +5,7 @@
 <section
   class="palette-cream text-foreground flex flex-col gap-gutter"
   data-block="grantees"
+  x-ref="block"
   {% if headline %}aria-label="{{ headline }}"{% endif %}
   {% if withTruncator %}x-data="{ expanded: false }"{% endif %}
 >
@@ -13,7 +14,16 @@
       <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
 
       {% if withTruncator %}
-        <button @click="expanded = !expanded" x-text="expanded ? 'Collapse' : 'Show all {{ grantees|length }}'">
+        <button
+          x-text="expanded ? 'Collapse' : 'Show all {{ grantees|length }}'"
+          @click="
+            if (expanded) {
+              window.scrollTo({ top: $refs.block.offsetTop });
+            }
+
+            expanded = !expanded;
+          "
+        >
           Show all {{ grantees|length }}
         </button>
       {% endif %}
