@@ -21,7 +21,7 @@
           <div class="relative z-[2] flex gap-3 flex-col border-b border-dotted border-foreground pb-4">
             {% if grantee.thumbnail %}
               {% include 'templates/components/lazy-img.twig' with {
-                class: 'w-full',
+                class: 'w-full grayscale group-hover:grayscale-0',
                 img: Image(grantee.thumbnail),
               } %}
             {% endif%}
