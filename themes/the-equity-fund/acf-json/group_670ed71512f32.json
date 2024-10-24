@@ -23,6 +23,24 @@
       "append": ""
     },
     {
+      "key": "field_671a839407192",
+      "label": "Manually select grantees",
+      "name": "",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 1,
+      "multi_expand": 1,
+      "endpoint": 0
+    },
+    {
       "key": "field_670ed734ed0d9",
       "label": "Grantees",
       "name": "grantees",
@@ -46,6 +64,72 @@
       "elements": "",
       "bidirectional": 0,
       "bidirectional_target": []
+    },
+    {
+      "key": "field_671a7e80b4bb7",
+      "label": "Or, automatically filter by:",
+      "name": "",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "Do not include any grantees above if you want to automatically pull grantees by the following filters.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 0,
+      "multi_expand": 0,
+      "endpoint": 0
+    },
+    {
+      "key": "field_671a8315b4bb8",
+      "label": "Issue",
+      "name": "issue",
+      "aria-label": "",
+      "type": "post_object",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["issue"],
+      "post_status": "",
+      "taxonomy": "",
+      "return_format": "id",
+      "multiple": 0,
+      "allow_null": 0,
+      "bidirectional": 0,
+      "ui": 1,
+      "bidirectional_target": []
+    },
+    {
+      "key": "field_671a834483148",
+      "label": "State",
+      "name": "state",
+      "aria-label": "",
+      "type": "post_object",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["state"],
+      "post_status": "",
+      "taxonomy": "",
+      "return_format": "id",
+      "multiple": 0,
+      "allow_null": 0,
+      "bidirectional": 0,
+      "ui": 1,
+      "bidirectional_target": []
     }
   ],
   "location": [
@@ -66,5 +150,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729025886
+  "modified": 1729790899
 }
