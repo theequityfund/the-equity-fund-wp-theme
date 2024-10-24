@@ -8,7 +8,7 @@
       <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
       {% if page.meta('introduction') %}
-        <p class="font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+        <p class="rich-text font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
       {% endif %}
     </header>
 
