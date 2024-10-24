@@ -36,7 +36,17 @@
       {% set issue = grantee.issue() %}
       {% set external_link = grantee.meta('external_link') %}
 
-      <li class="group" x-show="{{ loop.index0 }} < {{ truncatorLimit }} || expanded">
+      <li
+        class="group"
+
+        {% if withTruncator %}
+        x-show="{{ loop.index0 }} < {{ truncatorLimit }} || expanded"
+        {% endif %}
+
+        {% if withTruncator and loop.index0 > truncatorLimit %}
+        x-cloak
+        {% endif %}
+      >
         <div class="relative before:content-[''] before:absolute before:w-[calc(100%+2rem)] before:h-[calc(100%+2rem)] before:bg-yellow before:z-1 before:translate-x-[-50%] before:translate-y-[-50%] before:left-[50%] before:top-[50%] before:opacity-0 before:transition-opacity hover:before:opacity-100 ">
           <div class="relative z-[2] flex gap-3 flex-col border-b border-dotted border-foreground pb-4">
             {% if grantee.thumbnail %}
