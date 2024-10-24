@@ -3,6 +3,24 @@
   "title": "Block: Statement",
   "fields": [
     {
+      "key": "field_671943fb3bc6a",
+      "label": "Content",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
       "key": "field_670fcc9acd749",
       "label": "Headline",
       "name": "headline",
@@ -61,6 +79,50 @@
       "toolbar": "basic",
       "media_upload": 0,
       "delay": 0
+    },
+    {
+      "key": "field_671943e53bc69",
+      "label": "Settings",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_671943503bc68",
+      "label": "Variant",
+      "name": "variant",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "\"Standalone\" is the default option. To stack multiple Statement blocks, choose the \"Stack\" variant.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "standalone": "Standalone",
+        "stack": "Stack"
+      },
+      "default_value": "standalone",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
     }
   ],
   "location": [
@@ -81,5 +143,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729088689
+  "modified": 1729709062
 }
