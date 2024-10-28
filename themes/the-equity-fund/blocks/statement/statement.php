@@ -13,6 +13,6 @@ $context = Timber::context();
 $context['headline']    = get_field( 'headline' );
 $context['statement']   = get_field( 'statement' );
 $context['description'] = get_field( 'description' );
-$context['variant'] = get_field( 'variant' );
+$context['variant']     = get_field( 'variant' );
 
 Timber::render( basename( __DIR__ ) . '/statement.twig', $context );

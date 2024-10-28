@@ -195,6 +195,32 @@
       "placeholder": ""
     },
     {
+      "key": "field_671ffa9f820f8",
+      "label": "Layout",
+      "name": "layout",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Specify the position of the image.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "image-right": "Image Right",
+        "image-left": "Image Left"
+      },
+      "default_value": "image-right",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
       "key": "field_670d28ba957bc",
       "label": "Image Crop",
       "name": "image_crop",
@@ -239,5 +265,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1728915731
+  "modified": 1730149137
 }
