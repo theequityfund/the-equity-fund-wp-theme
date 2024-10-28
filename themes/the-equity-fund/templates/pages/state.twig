@@ -3,9 +3,11 @@
 {% set palette = 'maroon' %}
 
 {% block pageBody %}
-  {% set description %}
-  <span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}
-  {% endset %}
+  {% if state.meta('introduction') %}
+    {% set description %}
+    <span class="font-bold">{{ state.title }}</span> — {{ state.meta('introduction')|striptags('<em><strong><a>')|raw }}
+    {% endset %}
+  {% endif %}
 
   {% include 'templates/components/toppers/split-topper.twig' with {
     overline: 'State-based grantees',

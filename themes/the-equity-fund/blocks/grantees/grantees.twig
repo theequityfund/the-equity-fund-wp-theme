@@ -1,14 +1,34 @@
+{% set truncatorLimit = 8 %}
+{% set withTruncator = grantees|length > truncatorLimit %}
+
 {% if grantees|length %}
 <section
   class="palette-cream text-foreground flex flex-col gap-gutter"
   data-block="grantees"
+  x-ref="block"
   {% if headline %}aria-label="{{ headline }}"{% endif %}
+  {% if withTruncator %}x-data="{ expanded: false }"{% endif %}
 >
-  {% if headline %}
-    {% include 'templates/components/block-header.twig' with {
-      title: headline,
-    } %}
-  {% endif %}
+  <div class="mx-breakout-site-paddding px-site-padding {% if withTruncator %}sticky top-0 pt-4 bg-background z-10{% endif %}">
+    <div class="flex justify-between sm:items-end border-b border-foreground pb-1 sm:gap-2">
+      <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
+
+      {% if withTruncator %}
+        <button
+          x-text="expanded ? 'Collapse' : 'Show all {{ grantees|length }}'"
+          @click="
+            if (expanded) {
+              window.scrollTo({ top: $refs.block.offsetTop });
+            }
+
+            expanded = !expanded;
+          "
+        >
+          Show all {{ grantees|length }}
+        </button>
+      {% endif %}
+    </div>
+  </div>
 
   <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-gutter">
     {% for grantee in grantees %}
@@ -16,12 +36,22 @@
       {% set issue = grantee.issue() %}
       {% set external_link = grantee.meta('external_link') %}
 
-      <li class="group">
+      <li
+        class="group"
+
+        {% if withTruncator %}
+        x-show="{{ loop.index0 }} < {{ truncatorLimit }} || expanded"
+        {% endif %}
+
+        {% if withTruncator and loop.index0 > truncatorLimit %}
+        x-cloak
+        {% endif %}
+      >
         <div class="relative before:content-[''] before:absolute before:w-[calc(100%+2rem)] before:h-[calc(100%+2rem)] before:bg-yellow before:z-1 before:translate-x-[-50%] before:translate-y-[-50%] before:left-[50%] before:top-[50%] before:opacity-0 before:transition-opacity hover:before:opacity-100 ">
           <div class="relative z-[2] flex gap-3 flex-col border-b border-dotted border-foreground pb-4">
             {% if grantee.thumbnail %}
               {% include 'templates/components/lazy-img.twig' with {
-                class: 'w-full',
+                class: 'w-full grayscale group-hover:grayscale-0',
                 img: Image(grantee.thumbnail),
               } %}
             {% endif%}
