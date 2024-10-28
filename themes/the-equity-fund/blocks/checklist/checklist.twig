@@ -2,13 +2,13 @@
 <div class="palette-cream text-foreground {{ groups|length > 1 ? 'grid grid-cols-1 xl:grid-cols-2 gap-site-padding xl:gap-gutter' }}" data-block="checklist">
   {% for group in groups %}
     {% if group.checklist|length %}
-      <section class="bg-lavender px-site-padding py-8 md:py-12" {% if group.headline %}aria-label="{{ group.headline }}"{% endif %}>
+      <section class="palette-lavender bg-background px-site-padding py-8 md:py-12" {% if group.headline %}aria-label="{{ group.headline }}"{% endif %}>
         <h2 class="font-display font-medium text-h3 uppercase {{ groups|length == 1 ? 'border-b border-foreground pb-1' }}">{{ group.headline }}</h2>
 
         <ul class="{{ groups|length == 1 ? 'md:columns-2 lg:columns-3 xl:columns-4 col-span-2' : 'md:columns-2 mt-4' }} gap-gutter ">
           {% for item in group.checklist %}
             <li class="py-3 md:py-3 border-b border-dashed border-foreground leading-[1] text-p flex gap-2 md:gap-3 items-center {{ groups|length == 1 ? 'lg:text-xl' }}">
-              <svg class="w-4 h-4 md:w-5 md:h-5 fill-background text-foreground flex-shrink-0" aria-hidden="true">
+              <svg class="w-4 h-4 md:w-5 md:h-5 fill-cream text-foreground flex-shrink-0" aria-hidden="true">
                 <use xlink:href="#checkmark"></use>
               </svg>
               {{ item.text }}
