@@ -48,6 +48,33 @@
       "preview_size": "medium"
     },
     {
+      "key": "field_672115204c771",
+      "label": "Size",
+      "name": "size",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Specify the size of the headline and image on the topper. These options should allow flexibility in the topper headline.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "large": "Large (2 lines, 1 – 2 words each)",
+        "medium": "Medium (2 lines, 2 – 3 words each)",
+        "small": "Small (2 lines, 3 – 4 words each)"
+      },
+      "default_value": "large",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
       "key": "field_670038a7273f1",
       "label": "Introduction",
       "name": "introduction",
@@ -106,5 +133,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1728067864
+  "modified": 1730221632
 }
