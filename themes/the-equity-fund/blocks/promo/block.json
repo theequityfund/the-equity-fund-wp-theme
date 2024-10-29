@@ -1,0 +1,14 @@
+{
+  "name": "acf/statement",
+  "title": "Statement",
+  "description": "Write a statement.",
+  "category": "widgets",
+  "icon": {
+    "src": "text"
+  },
+  "keywords": ["statement", "headline", "text"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "statement.php"
+  }
+}

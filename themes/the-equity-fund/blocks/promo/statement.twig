@@ -1,0 +1,67 @@
+{% set variant = variant|default('standalone') %}
+
+{% if variant == 'standalone' %}
+<section
+  class="palette-cream text-foreground"
+  data-block="statement"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+>
+  {% if headline %}
+    {% include 'templates/components/block-header.twig' with {
+      title: headline
+    } %}
+  {% endif %}
+
+  <div class="grid lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+    <p class="rich-text font-serif text-h3 {{ description == true ? 'lg:col-span-6' : 'lg:col-span-12 xl:col-span-6 text-h4' }}">
+      {{ statement|striptags('<em><strong><a>')|raw }}
+    </p>
+
+    {% if description %}
+      <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
+        {{ description|striptags('<em><strong><a>')|raw }}
+      </p>
+    {% endif %}
+
+    {% if cta %}
+      <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
+
+    {% if images|length %}
+      <div class="flex">
+        {% for image in images %}
+          {% include 'templates/components/lazy-img.twig' with {
+            class: 'w-full',
+            img: Image(image),
+          } %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% elseif variant == 'stack' %}
+
+<section
+  class="palette-cream text-foreground grid md:grid-cols-12 md:gap-gutter border-t border-foreground pt-4"
+  data-block="statement"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+>
+  {% if headline %}
+    <h2 class="font-display font-medium text-h3 uppercase md:col-span-4 lg:col-span-6">{{ headline }}</h2>
+  {% endif %}
+
+  <div class="space-y-6 max-md:mt-4 md:col-span-8 lg:col-span-6">
+    <p class="rich-text font-serif text-h4">
+      {{ statement|striptags('<em><strong><a>')|raw }}
+    </p>
+
+    {% if description %}
+      <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
+        {{ description|striptags('<em><strong><a>')|raw }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% endif %}
