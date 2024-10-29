@@ -8,7 +8,8 @@
 >
   {% if headline %}
     {% include 'templates/components/block-header.twig' with {
-      title: headline
+      title: headline,
+      cta: cta
     } %}
   {% endif %}
 
@@ -21,21 +22,6 @@
       <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
         {{ description|striptags('<em><strong><a>')|raw }}
       </p>
-    {% endif %}
-
-    {% if cta %}
-      <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
-    {% endif %}
-
-    {% if images|length %}
-      <div class="flex">
-        {% for image in images %}
-          {% include 'templates/components/lazy-img.twig' with {
-            class: 'w-full',
-            img: Image(image),
-          } %}
-        {% endfor %}
-      </div>
     {% endif %}
   </div>
 </section>
@@ -60,6 +46,10 @@
       <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
         {{ description|striptags('<em><strong><a>')|raw }}
       </p>
+    {% endif %}
+
+    {% if cta %}
+      <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
     {% endif %}
   </div>
 </section>

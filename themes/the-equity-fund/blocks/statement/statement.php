@@ -13,7 +13,6 @@ $context = Timber::context();
 $context['headline']    = get_field( 'headline' );
 $context['statement']   = get_field( 'statement' );
 $context['description'] = get_field( 'description' );
-$context['images']      = get_field( 'images' );
 $context['cta']         = get_field( 'cta' );
 $context['variant']     = get_field( 'variant' );
 
