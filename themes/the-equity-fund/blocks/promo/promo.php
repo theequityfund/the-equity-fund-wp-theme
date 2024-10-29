@@ -10,7 +10,7 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['overline']   = get_field( 'overline' );
+$context['overline']    = get_field( 'overline' );
 $context['headline']    = get_field( 'headline' );
 $context['description'] = get_field( 'description' );
 $context['images']      = get_field( 'images' );

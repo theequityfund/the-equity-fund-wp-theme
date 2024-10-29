@@ -22,8 +22,8 @@
     },
     {
       "key": "field_670fcc9acd749",
-      "label": "Headline",
-      "name": "headline",
+      "label": "Overline",
+      "name": "overline",
       "aria-label": "",
       "type": "text",
       "instructions": "",
@@ -159,5 +159,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730220259
+  "modified": 1730222993
 }

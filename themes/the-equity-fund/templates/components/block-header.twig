@@ -1,6 +1,5 @@
-<div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-1 sm:gap-2">
+<div class="{{ border|default(true) }} {{ border ? 'border-b border-foreground pb-1' }} flex max-sm:flex-col sm:justify-between sm:items-end  sm:gap-2">
   <h2 class="font-display font-medium text-h3 uppercase">{{ title }}</h2>
-
   {% if link %}
     <a class="max-md:text-sm font-sans hover:underline whitespace-nowrap" href="{{ link.url }}">{{ link.title }}</a>
   {% endif %}

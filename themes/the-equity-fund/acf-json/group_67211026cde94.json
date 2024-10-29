@@ -27,9 +27,9 @@
       "label": "Headline",
       "name": "headline",
       "aria-label": "",
-      "type": "text",
+      "type": "wysiwyg",
       "instructions": "",
-      "required": 1,
+      "required": 0,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -37,10 +37,10 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
     },
     {
       "key": "field_67211026d016b",
@@ -49,7 +49,7 @@
       "aria-label": "",
       "type": "wysiwyg",
       "instructions": "",
-      "required": 0,
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -68,8 +68,8 @@
       "name": "images",
       "aria-label": "",
       "type": "gallery",
-      "instructions": "(Recommended)",
-      "required": 0,
+      "instructions": "Include one to two images. For 1 image it is recommended to use a horizontal image.",
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -78,7 +78,7 @@
       },
       "return_format": "id",
       "library": "all",
-      "min": "",
+      "min": 1,
       "max": 2,
       "min_width": "",
       "min_height": "",
@@ -125,5 +125,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730220201
+  "modified": 1730223631
 }

@@ -1,35 +1,41 @@
 <section
   class="palette-cream text-foreground"
   data-block="statement"
-  {% if headline %}aria-label="{{ headline }}"{% endif %}
+  {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
-  {% if headline %}
-    {% include 'templates/components/block-header.twig' with {
-      title: headline
-    } %}
-  {% endif %}
 
-  <div class="grid lg:grid-cols-12 md:gap-gutter {{ headline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
-    <p class="rich-text font-serif text-h3 {{ description == true ? 'lg:col-span-6' : 'lg:col-span-12 xl:col-span-6 text-h4' }}">
-      {{ statement|striptags('<em><strong><a>')|raw }}
-    </p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-gutter">
+    <div class="flex flex-col gap-4 xl:col-span-5">
+      {% if overline %}
+        {% include 'templates/components/block-header.twig' with {
+          title: overline,
+          border: false,
+        } %}
+      {% endif %}
 
-    {% if description %}
-      <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
-        {{ description|striptags('<em><strong><a>')|raw }}
-      </p>
-    {% endif %}
+      {% if headline %}
+        <p class="rich-text font-serif text-h4">{{ headline|striptags('<em><strong><a>')|raw }}</p>
+      {% endif %}
 
-    {% if cta %}
-      <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
-    {% endif %}
+
+      {% if description %}
+        <p class="rich-text text-p">
+          {{ description|striptags('<em><strong><a>')|raw }}
+        </p>
+      {% endif %}
+
+      {% if cta %}
+        <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
+      {% endif %}
+    </div>
 
     {% if images|length %}
-      <div class="flex">
+      <div class="flex items-end gap-site-padding md:gap-gutter xl:col-span-6 xl:col-end-13 max-md:mt-site-padding">
         {% for image in images %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
             img: Image(image),
+            aspectRatio: images|length == 1 ? 'horizontal',
           } %}
         {% endfor %}
       </div>
