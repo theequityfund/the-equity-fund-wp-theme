@@ -1,15 +1,15 @@
 <header class="pt-topper-margin md:pt-topper-margin-lg pb-6 palette-cream bg-background px-site-padding">
-  <div class="border-b border-dotted border-foreground pb-7 mx-auto max-w-article">
+  <div class="flex flex-col gap-8 border-b border-dotted border-foreground pb-8 mx-auto max-w-article">
     <h1 class="font-serif text-foreground text-h2">{{ title }}</h1>
 
     {% if information|length %}
     <section aria-label="Job Information">
       <h2 class="sr-only">Job Information</h2>
 
-      <ul>
+      <ul class="flex flex-col max-md:gap-4">
         {% for item in information %}
-          <li>
-            <h3>{{ item.label }}</h3>
+          <li class="flex max-md:flex-col text-foreground">
+            <h3 class="font-bold md:w-1/4 shrink-0">{{ item.label }}:</h3>
             <p>{{ item.text }}</p>
           </li>
         {% endfor %}
