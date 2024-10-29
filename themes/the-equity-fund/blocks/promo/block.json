@@ -1,14 +1,14 @@
 {
-  "name": "acf/statement",
-  "title": "Statement",
-  "description": "Write a statement.",
+  "name": "acf/promo",
+  "title": "Promo",
+  "description": "Promote a piece of content.",
   "category": "widgets",
   "icon": {
     "src": "text"
   },
-  "keywords": ["statement", "headline", "text"],
+  "keywords": ["promo", "promotion"],
   "acf": {
     "mode": "edit",
-    "renderTemplate": "statement.php"
+    "renderTemplate": "promo.php"
   }
 }
