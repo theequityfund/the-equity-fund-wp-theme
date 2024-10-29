@@ -3,8 +3,23 @@
 {% set palette = 'cream' %}
 
 {% block pageBody %}
+  {% set employee_status = post.meta('employee_status') %}
+  {% set location = post.meta('location') %}
+  {% set additional_information = post.meta('additional_information') %}
+
+  {% set information = additional_information %}
+
+  {% if location %}
+    {% set information = [{ label: 'Location', text: location }]|merge(information) %}
+  {% endif %}
+
+  {% if employee_status %}
+    {% set information = [{ label: 'Employee Status', text: employee_status }]|merge(information) %}
+  {% endif %}
+
   {% include 'templates/components/toppers/page-topper--job-post.twig' with {
     title: post.title,
+    information: information
   } %}
 
   <article class="gutenberg rich-text">
