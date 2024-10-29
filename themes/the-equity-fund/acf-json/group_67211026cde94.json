@@ -37,7 +37,7 @@
         "id": ""
       },
       "default_value": "",
-      "tabs": "all",
+      "tabs": "visual",
       "toolbar": "basic",
       "media_upload": 0,
       "delay": 0
@@ -125,5 +125,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730223631
+  "modified": 1730229890
 }
