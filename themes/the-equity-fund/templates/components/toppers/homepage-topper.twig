@@ -1,9 +1,9 @@
 <header class="palette-lavender bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin size-{{ size|default('large') }}">
   <div class="flex items-center justify-center mt-[2vw]">
-    <h1 class="font-display font-medium text-foreground text-center uppercase text-[35vw] leading-[0.8]">{{ title }}</h1>
+    <h1 class="font-display font-medium text-foreground text-center uppercase leading-[0.8] {{ size == 'small' ? 'text-[20vw]'}} {{ size == 'medium' ? 'text-[25vw]'}} {{ size == 'large' ? 'text-[35vw]' }}">{{ title }}</h1>
 
     {% if image %}
-      <figure class="w-7/12 absolute">
+      <figure class="{{ size == 'small' ? 'w-4/12' }} {{ size == 'medium' ? 'w-5/12' }} {{ size == 'large' ? 'w-6/12' }} absolute">
         {% include 'templates/components/lazy-img.twig' with {
           img: Image(image),
           aspectRatio: 'wide',
