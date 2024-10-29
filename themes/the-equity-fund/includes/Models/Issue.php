@@ -41,6 +41,10 @@ class Issue extends TimberPost {
 			'has_archive'        => false,
 			'supports'           => array( 'title', 'editor', 'thumbnail' ),
 			'map_meta_cap'       => true,
+			'rewrite'            => array(
+				'slug' => 'issue',
+				'with_front' => false,
+			),
 		);
 
 		register_post_type( self::POST_TYPE, $args );
