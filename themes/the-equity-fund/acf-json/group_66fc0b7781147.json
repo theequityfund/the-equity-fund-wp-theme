@@ -154,6 +154,7 @@
         "id": ""
       },
       "choices": {
+        "cream": "Cream",
         "maroon": "Maroon",
         "teal": "Teal",
         "coral": "Coral",
@@ -265,5 +266,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730149137
+  "modified": 1730164717
 }
