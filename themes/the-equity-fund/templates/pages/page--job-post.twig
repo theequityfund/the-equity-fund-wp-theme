@@ -1,0 +1,13 @@
+{% extends "layouts/base.twig" %}
+
+{% set palette = 'cream' %}
+
+{% block pageBody %}
+  {% include 'templates/components/toppers/page-topper--job-post.twig' with {
+    title: post.title,
+  } %}
+
+  <article class="gutenberg rich-text">
+    {{ post.content }}
+  </article>
+{% endblock %}
