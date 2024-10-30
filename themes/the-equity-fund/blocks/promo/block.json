@@ -1,0 +1,14 @@
+{
+  "name": "acf/promo",
+  "title": "Promo",
+  "description": "Promote a piece of content.",
+  "category": "widgets",
+  "icon": {
+    "src": "text"
+  },
+  "keywords": ["promo", "promotion"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "promo.php"
+  }
+}

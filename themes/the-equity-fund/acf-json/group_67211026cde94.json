@@ -1,32 +1,14 @@
 {
-  "key": "group_670ee00f5768f",
-  "title": "Block: Statement",
+  "key": "group_67211026cde94",
+  "title": "Block: Promo",
   "fields": [
     {
-      "key": "field_671943fb3bc6a",
-      "label": "Content",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_670fcc9acd749",
+      "key": "field_672110440897c",
       "label": "Overline",
       "name": "overline",
       "aria-label": "",
       "type": "text",
-      "instructions": "",
+      "instructions": "(Recommended)",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -41,29 +23,9 @@
       "append": ""
     },
     {
-      "key": "field_670ee00f64c43",
-      "label": "Statement",
-      "name": "statement",
-      "aria-label": "",
-      "type": "wysiwyg",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "tabs": "visual",
-      "toolbar": "basic",
-      "media_upload": 0,
-      "delay": 0
-    },
-    {
-      "key": "field_670ee03364c44",
-      "label": "Description",
-      "name": "description",
+      "key": "field_67211026cf96a",
+      "label": "Headline",
+      "name": "headline",
       "aria-label": "",
       "type": "wysiwyg",
       "instructions": "",
@@ -81,7 +43,55 @@
       "delay": 0
     },
     {
-      "key": "field_671ffdb10ec1a",
+      "key": "field_67211026d016b",
+      "label": "Description",
+      "name": "description",
+      "aria-label": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    },
+    {
+      "key": "field_67211026d05cc",
+      "label": "Images",
+      "name": "images",
+      "aria-label": "",
+      "type": "gallery",
+      "instructions": "Include one to two images. For 1 image it is recommended to use a horizontal image.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min": 1,
+      "max": 2,
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "insert": "append",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_67211026d0970",
       "label": "CTA",
       "name": "cta",
       "aria-label": "",
@@ -95,50 +105,6 @@
         "id": ""
       },
       "return_format": "array"
-    },
-    {
-      "key": "field_671943e53bc69",
-      "label": "Settings",
-      "name": "",
-      "aria-label": "",
-      "type": "tab",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "placement": "top",
-      "endpoint": 0,
-      "selected": 0
-    },
-    {
-      "key": "field_671943503bc68",
-      "label": "Variant",
-      "name": "variant",
-      "aria-label": "",
-      "type": "select",
-      "instructions": "\"Standalone\" is the default option. To stack multiple Statement blocks, choose the \"Stack\" variant.",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "choices": {
-        "standalone": "Standalone",
-        "stack": "Stack"
-      },
-      "default_value": "standalone",
-      "return_format": "value",
-      "multiple": 0,
-      "allow_null": 0,
-      "ui": 1,
-      "ajax": 0,
-      "placeholder": ""
     }
   ],
   "location": [
@@ -146,7 +112,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/statement"
+        "value": "acf/promo"
       }
     ]
   ],
@@ -159,5 +125,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730222993
+  "modified": 1730229890
 }
