@@ -22,7 +22,7 @@
       {% set grantees = show_grantees_count ? state.grantees : [] %}
 
       <li class="max-md:data-[hidden]:hidden" :data-hidden="{{ loop.index0 ~ ' >= '|e ~ limit }} && !expanded">
-        <a class="group flex gap-3 justify-between items-center px-6 py-4 border border-foreground border-dotted hover:bg-yellow hover:transition-all duration-100" href="{{ state.link }}">
+        <a class="group flex gap-3 justify-between items-center px-6 py-4 border border-foreground border-dotted hocus:bg-yellow hocus:transition-all duration-100" href="{{ state.link }}">
           <div>
             <h3 class="text-h5 xl:text-h3 font-serif">{{ state.title }}</h3>
 
@@ -32,7 +32,7 @@
           </div>
 
           {% if state.handle %}
-          <div class="w-[20%] xl:w-[20%] flex-shrink-0 text-lavender group-hover:text-foreground transition-colors">
+          <div class="w-[20%] xl:w-[20%] flex-shrink-0 text-lavender group-hocus:text-foreground transition-colors">
             <svg viewBox="0 0 100 100" width="100%" aria-hidden="true">
               <use xlink:href="#state-{{ state.handle }}"></use>
             </svg>
