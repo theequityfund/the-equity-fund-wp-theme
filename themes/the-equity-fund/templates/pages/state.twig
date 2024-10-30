@@ -19,12 +19,6 @@
 
   <article class="gutenberg rich-text">
     {{ state.content }}
-
-    {% if state.grantees|length %}
-      {% include 'blocks/grantees/grantees.twig' with {
-        grantees: state.grantees,
-      } %}
-    {% endif %}
   </article>
 
 {% endblock %}

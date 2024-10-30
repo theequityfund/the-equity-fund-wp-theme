@@ -12,11 +12,5 @@
 
   <article class="gutenberg rich-text">
     {{ issue.content }}
-
-    {% if issue.grantees|length %}
-      {% include 'blocks/grantees/grantees.twig' with {
-        grantees: issue.grantees,
-      } %}
-    {% endif %}
   </article>
 {% endblock %}
