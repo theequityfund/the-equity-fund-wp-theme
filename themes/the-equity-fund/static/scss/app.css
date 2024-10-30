@@ -169,6 +169,10 @@
     @apply font-sans-narrow;
   }
 
+  [x-cloak] {
+    display: none !important;
+  }
+
   a,
   strong,
   em {
