@@ -248,7 +248,7 @@
       }
 
       &:is(a):not(.wp-element-button):not(.button):not(.ups-block__related-articles__link) {
-        @apply text-foreground hover:text-background hover:bg-foreground bg-gradient-to-r from-foreground to-foreground bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
+        @apply text-foreground hocus:text-background hocus:bg-foreground bg-gradient-to-r from-foreground to-foreground bg-no-repeat transition-all bg-left-bottom bg-[length:100%_1px];
       }
 
       &:is(strong) {
@@ -670,12 +670,12 @@
 
   .button {
     @apply bg-yellow text-maroon w-fit text-sm font-bold uppercase px-3 pb-2 pt-2 md:pt-2.5 inline-block transition-all;
-    @apply hover:bg-maroon hover:text-cream;
+    @apply hocus:bg-maroon hocus:text-cream;
   }
 
   .button-outline {
     @apply bg-transparent text-maroon border border-maroon;
-    @apply hover:bg-maroon hover:text-cream;
+    @apply hocus:bg-maroon hocus:text-cream;
   }
 }
 
