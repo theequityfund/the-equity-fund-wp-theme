@@ -3,16 +3,15 @@
   data-block="statement"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
+    {% if overline %}
+      {% include 'templates/components/block-header.twig' with {
+        title: overline,
+        link: cta,
+      } %}
+    {% endif %}
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-gutter">
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-gutter {{ overline == true ? 'pt-4' }}">
     <div class="flex flex-col gap-4 xl:col-span-5">
-      {% if overline %}
-        {% include 'templates/components/block-header.twig' with {
-          title: overline,
-          border: false,
-        } %}
-      {% endif %}
-
       {% if headline %}
         <p class="rich-text font-serif text-h4">{{ headline|striptags('<em><strong><a>')|raw }}</p>
       {% endif %}
@@ -22,10 +21,6 @@
         <p class="rich-text text-p">
           {{ description|striptags('<em><strong><a>')|raw }}
         </p>
-      {% endif %}
-
-      {% if cta %}
-        <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
       {% endif %}
     </div>
 
