@@ -4,27 +4,27 @@
   <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[25vh]">
     <h1 class="font-display font-medium uppercase text-headline text-center z-20">{{ headline }}</h1>
     {% if introduction %}
-      <p class="rich-text text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-20">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+      <p class="rich-text text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-20 mt-4">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
     {% endif %}
   </div>
 
   {% if images|length %}
   <div class="absolute inset-x-0 inset-y-0">
-    <div class="grid grid-cols-8 md:grid-cols-12 w-full h-full pb-site-padding gap-4 md:gap-gutter px-site-padding pt-topper-margin">
+    <div class="grid grid-cols-8 lg:grid-cols-12 grid-rows-1 w-full h-full pb-site-padding gap-4 md:gap-gutter px-site-padding pt-topper-margin">
       {% for image in images %}
         {% set imageClass = "" %}
 
         {% if loop.index == 1 %}
-          {% set imageClass = "col-span-2 col-start-1 col-end-3 md:col-start-1 md:col-end-3" %}
+          {% set imageClass = "col-span-2 col-start-1 col-end-3 lg:col-start-1 lg:col-end-3" %}
 
         {% elseif loop.index == 2 %}
-          {% set imageClass = "col-span-3 col-start-6 col-end-9 md:col-start-10 md:col-end-13" %}
+          {% set imageClass = "col-span-2 col-start-7 col-end-9 lg:col-start-11 lg:col-end-13" %}
 
         {% elseif loop.index == 3 %}
-          {% set imageClass = "col-span-3 col-start-1 col-end-4 md:col-start-2 md:col-end-5 self-end" %}
+          {% set imageClass = "col-span-2 col-start-1 col-end-3 lg:col-start-1 lg:col-end-3 self-end" %}
 
         {% elseif loop.index == 4 %}
-          {% set imageClass = "col-span-2 col-start-7 col-end-9 md:col-start-11 md:col-end-13 self-end" %}
+          {% set imageClass = "col-span-2 col-start-7 col-end-9 lg:col-start-11 lg:col-end-13 self-end" %}
 
         {% endif %}
 
