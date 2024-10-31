@@ -1,8 +1,8 @@
 {% set palette = palette|default('maroon') %}
 
 <header class="palette-{{ palette }} bg-background text-foreground px-site-padding pt-topper-margin relative">
-  <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[25vh]">
-    <h1 class="font-display font-medium uppercase text-headline text-center z-20">{{ headline }}</h1>
+  <div class="flex items-center justify-center flex-col px-site-padding h-full py-[clamp(9rem,25vw,15rem)] lg:py-[20vh] ">
+    <h1 class="font-display font-medium uppercase text-headline text-center z-20 lg:max-w-[80rem]">{{ headline }}</h1>
     {% if introduction %}
       <p class="rich-text text-h2 font-serif text-center w-full md:w-8/12 lg:w-6/12 z-20 mt-4">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
     {% endif %}
