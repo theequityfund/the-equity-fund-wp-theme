@@ -260,7 +260,7 @@
       }
 
       &:is(p, li, ul, ol):not(blockquote > p) {
-        @apply text-base md:text-[1.25rem] leading-[1.4] font-sans-narrow;
+        @apply text-basic-text font-sans-narrow;
       }
 
       &:is(hr) {
@@ -344,6 +344,10 @@
   .gutenberg {
     @apply px-site-padding;
 
+    [data-block='tease'] + [data-block='tease']:is(.palette-cream) {
+      @apply mt-0;
+    }
+
     /* Everything should have space between */
     > *:not([data-block]) {
       @apply mt-8 md:mt-10;
@@ -379,7 +383,7 @@
      */
 
     .has-drop-cap {
-      @apply first-letter:text-7xl first-letter:text-foreground
+      @apply first-letter:text-6xl first-letter:md:text-[5.5rem] first-letter:leading-[1] first-letter:text-foreground
   first-letter:mr-3 first-letter:float-left first-letter:font-serif;
     }
 
@@ -408,7 +412,7 @@
         @apply pl-0 md:pl-14 border-t-2 border-foreground py-6 md:py-9;
 
         p {
-          @apply !font-serif tracking-tight !text-blockquote before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:left-0 before:!leading-[0.9];
+          @apply !font-serif tracking-tight !text-blockquote before:content-["“"] before:text-5xl before:h-[40px] before:md:text-8xl before:text-lavender before:block before:md:absolute before:left-0 before:!leading-[0.9] !leading-[1.2];
         }
       }
 
@@ -756,11 +760,11 @@
   }
 
   label {
-    @apply !font-sans !text-foreground !text-p !font-medium !block !mb-2;
+    @apply !font-sans !text-foreground !text-body-text !font-medium !block !mb-2;
   }
 
   input[type='text'] {
-    @apply !border-dashed !border-foreground !bg-background !py-7 !px-4 !font-sans !text-foreground !text-p;
+    @apply !border-dashed !border-foreground !bg-background !py-7 !px-4 !font-sans !text-foreground !text-body-text;
   }
 
   ul {

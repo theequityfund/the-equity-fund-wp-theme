@@ -13,7 +13,7 @@
     {% for post in posts %}
       {% set issue = post.issue %} {# Both `Post` and `Resource` have `issue` #}
 
-      <li class="w-full {{ posts|length <= 2 ? 'md:w-6/12 lg:[&:nth-child(2)]:w-4/12' }}">
+      <li class="w-full {{ posts|length <= 2 ? 'md:w-6/12 lg:[&:nth-child(2)]:w-4/12 lg:[&:nth-child(1)_p]:w-8/12' }}">
         {% if post.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full mb-6',
@@ -28,7 +28,7 @@
 
           <h3 class="text-h3 leading-[1.1] font-serif">{{ post.title }}</h3>
 
-          <p class="text-p ">{{ post.preview.read_more('') }}</p>
+          <p class="text-body-text">{{ post.preview.read_more('') }}</p>
 
           {% if post.type == 'resource' %}
             <a class="button flex items-center gap-2" href="{{ post.meta('file').url }}" target="_blank" rel="noopener noreferrer">

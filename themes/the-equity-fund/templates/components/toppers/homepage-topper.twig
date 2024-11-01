@@ -19,7 +19,7 @@
     <p class="text-h2 font-serif {{ description ? 'lg:col-span-6' : 'md:w-9/12 lg:w-7/12 mx-auto text-center' }}">{{ introduction }}</p>
 
     {% if description %}
-      <p class="rich-text text-p lg:col-span-4 lg:col-start-8 lg:col-end-12">
+      <p class="rich-text text-body-text lg:col-span-4 lg:col-start-8 lg:col-end-12">
         {{ description|striptags('<em><strong><a>')|raw }}
       </p>
     {% endif %}

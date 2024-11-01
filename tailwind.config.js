@@ -93,8 +93,15 @@ module.exports = {
             letterSpacing: '-0.0125em',
           },
         ],
-        p: [
-          'clamp(0.875rem, 0.25vw + 1rem, 1.125rem)',
+        'basic-text': [
+          'clamp(1rem, 0.4vw + 1rem, 1.25rem)',
+          {
+            lineHeight: '1.5',
+            letterSpacing: '-0.0125em',
+          },
+        ],
+        'body-text': [
+          'clamp(1rem, 0.4vw + 1rem, 1.25rem)',
           {
             lineHeight: '1.35',
             letterSpacing: '-0.0125em',
@@ -106,7 +113,7 @@ module.exports = {
       },
 
       maxWidth: {
-        article: '800px',
+        article: '720px',
         'article-wide': '1200px',
         '1/3': '33.333333%',
       },
