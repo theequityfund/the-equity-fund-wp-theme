@@ -31,12 +31,12 @@
           <h3 class="text-h3 font-serif">{{ person.title }}</h3>
 
           {% if position %}
-            <p class=" font-sans-narrow font-bold text-p">{{ position }}</p>
+            <p class=" font-sans-narrow font-bold text-body-text">{{ position }}</p>
           {% endif %}
           </div>
 
           {% if person.preview %}
-            <p class="text-p">{{ person.preview.read_more('') }}</p>
+            <p class="text-body-text">{{ person.preview.read_more('') }}</p>
           {% endif %}
 
           <div class="flex gap-1">

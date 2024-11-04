@@ -13,16 +13,22 @@
     } %}
   {% endif %}
 
-  <div class="grid lg:grid-cols-12 md:gap-gutter {{ overline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
-    <p class="rich-text font-serif text-h3 {{ description == true ? 'lg:col-span-6' : 'lg:col-span-12 xl:col-span-6 text-h4' }}">
+  <div class="grid lg:grid-cols-12 md:gap-gutter {{ overline == false ? 'border-t border-foreground pt-4' }} {{ overline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+    <p class="rich-text font-serif text-h3 leading-[1.2] {{ description == true ? 'lg:col-span-6' : 'lg:col-span-12 xl:col-span-6 text-h4' }}">
       {{ statement|striptags('<em><strong><a>')|raw }}
     </p>
 
+    <div class="lg:col-span-4 lg:col-end-12">
     {% if description %}
-      <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
+      <p class="rich-text text-body-text ">
         {{ description|striptags('<em><strong><a>')|raw }}
       </p>
     {% endif %}
+
+    {% if cta and overline == false %}
+      <a class="button mt-4" href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
+    </div>
   </div>
 </section>
 
@@ -37,13 +43,13 @@
     <h2 class="font-display font-medium text-h3 uppercase md:col-span-4 lg:col-span-6">{{ overline }}</h2>
   {% endif %}
 
-  <div class="space-y-6 max-md:mt-4 md:col-span-8 lg:col-span-6">
-    <p class="rich-text font-serif text-h4">
+  <div class="space-y-6 max-md:mt-4  {{ overline == false ? 'col-span-12 lg:col-start-4 lg:col-end-10' }} {{ overline ? 'md:col-span-8 lg:col-span-6'}}">
+    <p class="rich-text font-serif text-h3 leading-[1.2]">
       {{ statement|striptags('<em><strong><a>')|raw }}
     </p>
 
     {% if description %}
-      <p class="rich-text text-p lg:col-span-4 lg:col-end-12">
+      <p class="rich-text text-body-text lg:col-span-4 lg:col-end-12">
         {{ description|striptags('<em><strong><a>')|raw }}
       </p>
     {% endif %}
