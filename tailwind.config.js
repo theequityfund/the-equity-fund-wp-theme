@@ -27,6 +27,8 @@ module.exports = {
         background: 'var(--c-background)',
         'button-foreground': 'var(--c-button-foreground)',
         'button-background': 'var(--c-button-background)',
+        'button-hover-foreground': 'var(--c-button-hover-foreground)',
+        'button-hover-background': 'var(--c-button-hover-background)',
 
         white: '#FFFFFF',
         black: '#111111',
