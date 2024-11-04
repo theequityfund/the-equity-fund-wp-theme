@@ -3,17 +3,17 @@
 {% set palette = 'cream' %}
 
 {% block pageBody %}
-  <div class="grid grid-cols-3 gap-gutter auto-rows-auto pt-topper-margin md:pb-24 px-site-padding">
+  <div class="max-md:flex max-md:flex-col md:grid md:grid-cols-3 gap-4 md:gap-gutter md:auto-rows-auto pt-topper-margin md:pb-24 px-site-padding">
     <header class="text-foreground flex flex-col gap-2 col-start-2 col-span-2">
       <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
       {% if page.meta('introduction') %}
-        <p class="rich-text font-serif font-medium max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
+        <p class="rich-text font-serif font-medium text-body-text max-w-[40ch]">{{ page.meta('introduction')|striptags('<em><strong><a>')|raw }}</p>
       {% endif %}
     </header>
 
     <form
-      class="col-start-1 row-start-1 row-span-2 h-fit max-w-[400px] text-foreground sticky top-site-padding"
+      class=" md:col-start-1 md:row-start-1 md:row-span-2 h-fit md:max-w-[400px] text-foreground md:sticky top-site-padding"
       hx-get="{{ page.link }}"
       hx-trigger="change, input changed delay:500ms"
       hx-target="#resource-index"
@@ -22,22 +22,22 @@
       hx-swap="outerHTML"
       hx-replace-url="true"
     >
-      <div class="w-full pr-2 flex gap-1 items-center justify-between border border-dashed border-foreground">
+      <div class="relative w-full flex gap-1 items-center justify-between">
         <input
-          class="w-full bg-background text-foreground px-3 py-2 text-sm placeholder:text-foreground placeholder:opacity-30"
+          class="w-full bg-background text-foreground px-3 py-2 text-sm md:text-base placeholder:text-foreground placeholder:opacity-30 border border-dashed border-foreground focus:outline-0 focus:bg-yellow focus:border-solid"
           type="search"
           name="query"
           placeholder="Search"
           {% if query %}value="{{ query }}"{% endif %}
         >
 
-        <svg class="h-4 w-4 text-foreground" aria-hidden="true">
+        <svg class="h-4 w-4 text-foreground absolute right-2" aria-hidden="true">
           <use xlink:href="#search"></use>
         </svg>
       </div>
 
-      <fieldset class="flex flex-col gap-2 mt-8">
-        <legend class="block mb-4 pb-2 font-serif font-medium text-xl border-b border-foreground w-full">Issues</legend>
+      <fieldset class="flex flex-col gap-3 mt-6 md:mt-8 w-full">
+        <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
 
         {% for issue in issues %}
           <label class="flex gap-2 items-center cursor-pointer">
@@ -52,19 +52,19 @@
               />
 
               <span class="aspect-square w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream">
-                <svg class="w-3 h-3 text-backround flex-shrink-0" aria-hidden="true">
+                <svg class="w-3 h-3 fill-cream text-backround flex-shrink-0" aria-hidden="true">
                   <use xlink:href="#checkmark"></use>
                 </svg>
               </span>
             </span>
 
-            <span class="text-sm translate-y-[0.05rem]">{{ issue.title }}</span>
+            <span class="text-sm md:text-base translate-y-[0.05rem]">{{ issue.title }}</span>
           </label>
         {% endfor %}
       </fieldset>
     </form>
 
-    <div class="border-t border-dotted border-foreground row-start-2 col-start-2 col-span-2">
+    <div class="border-t border-dotted border-foreground md:row-start-2 md:col-start-2 md:col-span-2">
       {% include 'templates/components/resource-index.twig' with {
         resources: resources
       } %}
