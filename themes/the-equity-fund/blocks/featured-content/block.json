@@ -6,7 +6,7 @@
   "icon": {
     "src": "excerpt-view"
   },
-  "keywords": ["stories", "resources", "featured"],
+  "keywords": ["stories", "blogs", "resources", "featured", "content"],
   "acf": {
     "mode": "edit",
     "renderTemplate": "featured-content.php"
