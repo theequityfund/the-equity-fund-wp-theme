@@ -1,11 +1,13 @@
 {% extends "layouts/base.twig" %}
 
+{% set palette = 'cream' %}
+
 {% block pageBody %}
+  <header class="pt-topper-margin-lg px-site-padding text-foreground flex flex-col gap-8">
+    <h1 class="font-display font-medium uppercase text-giant">404 Not Found</h1>
 
-<div class="page">
-  <div class="page-inner">
-    <h1>404 Not Found</h1>
-  </div>
-</div>
+    <p class="font-serif text-h3">Oops! We could not find the page you were looking for.<p/>
 
+    <a class="button" href="/">Return Home</a>
+  </header>
 {% endblock %}
