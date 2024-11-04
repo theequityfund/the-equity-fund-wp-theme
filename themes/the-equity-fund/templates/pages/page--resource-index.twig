@@ -3,7 +3,7 @@
 {% set palette = 'cream' %}
 
 {% block pageBody %}
-  <div class="grid grid-cols-3 gap-gutter auto-rows-auto pt-topper-margin px-site-padding">
+  <div class="grid grid-cols-3 gap-gutter auto-rows-auto pt-topper-margin md:pb-24 px-site-padding">
     <header class="text-foreground flex flex-col gap-2 col-start-2 col-span-2">
       <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
@@ -41,7 +41,7 @@
 
         {% for issue in issues %}
           <label class="flex gap-2 items-center cursor-pointer">
-            <span class="relative rounded-full border border-foreground aspect-square h-4 w-4 shrink-0">
+            <span class="relative rounded-full border border-foreground aspect-square h-6 w-6 shrink-0">
               <input
                 id="{{ issue.slug }}"
                 class="absolute inset-0 opacity-0 peer"
@@ -51,7 +51,11 @@
                 {% if issue.id in selected_issues %}checked{% endif %}
               />
 
-              <span class="aspect-square w-[60%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground"></span>
+              <span class="aspect-square w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream">
+                <svg class="w-3 h-3 text-backround flex-shrink-0" aria-hidden="true">
+                  <use xlink:href="#checkmark"></use>
+                </svg>
+              </span>
             </span>
 
             <span class="text-sm translate-y-[0.05rem]">{{ issue.title }}</span>
