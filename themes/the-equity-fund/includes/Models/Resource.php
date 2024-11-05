@@ -41,7 +41,7 @@ class Resource extends TimberPost {
 			'supports'           => array( 'title', 'excerpt', 'thumbnail' ),
 			'map_meta_cap'       => true,
 			'rewrite'            => array(
-				'slug' => 'resource',
+				'slug'       => 'resource',
 				'with_front' => false,
 			),
 		);

@@ -42,7 +42,7 @@ class Issue extends TimberPost {
 			'supports'           => array( 'title', 'editor', 'thumbnail' ),
 			'map_meta_cap'       => true,
 			'rewrite'            => array(
-				'slug' => 'issue',
+				'slug'       => 'issue',
 				'with_front' => false,
 			),
 		);
