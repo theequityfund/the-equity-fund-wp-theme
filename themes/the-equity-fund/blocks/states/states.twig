@@ -13,7 +13,7 @@
     <h2 class="{{ headline_length == 'short' ? 'font-display font-medium text-h3 uppercase' : 'text-h3 font-serif md:w-8/12 lg:w-6/12 pb-2 md:pb-3' }}">{{ headline }}</h2>
 
     {% if cta %}
-      <a class="max-md:text-sm font-sans hocus:underline whitespace-nowrap" href="{{ cta.url }}">{{ cta.title }}</a>
+      <a class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors" href="{{ cta.url }}">{{ cta.title }}</a>
     {% endif %}
   </div>
 
