@@ -63,7 +63,7 @@
     </ul>
 
     <button
-      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
+      class="lg:hidden text-h5 font-serif border border-dotted border-foreground px-3 pb-2 py-1.5 h-fit"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -94,7 +94,7 @@
               </svg>
             </a>
 
-            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="text-h5 font-serif border border-dotted border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
               Close
             </button>
           </div>
@@ -120,7 +120,7 @@
                     :aria-expanded="expanded"
                     aria-controls="menu-dropdown-{{ loop.index }}"
                   >
-                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-[-0.05rem]'" aria-hidden="true">
+                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-[-0.06rem]'" aria-hidden="true">
                       <use xlink:href="#caret-down"></use>
                     </svg>
                     <span class="sr-only">Toggle menu for {{ item.name }}</span>
