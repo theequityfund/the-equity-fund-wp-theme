@@ -42,7 +42,7 @@ class Grantee extends TimberPost {
 			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 			'map_meta_cap'       => true,
 			'rewrite'            => array(
-				'slug' => 'grantee',
+				'slug'       => 'grantee',
 				'with_front' => false,
 			),
 		);
