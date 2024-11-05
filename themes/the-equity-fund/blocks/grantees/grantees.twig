@@ -62,7 +62,7 @@
               </a>
             </{{ headingTag }}>
 
-            {% if grantee.excerpt %}
+            {% if show_grantee_description and grantee.excerpt %}
               <p class="text-body-text">{{ grantee.excerpt.read_more('') }}</p>
             {% endif %}
           </div>

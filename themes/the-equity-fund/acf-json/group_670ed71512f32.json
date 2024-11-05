@@ -3,6 +3,24 @@
   "title": "Block: Grantees",
   "fields": [
     {
+      "key": "field_672a77683e23d",
+      "label": "Content",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
       "key": "field_670ed715ed0d8",
       "label": "Headline",
       "name": "headline",
@@ -130,6 +148,62 @@
       "bidirectional": 0,
       "ui": 1,
       "bidirectional_target": []
+    },
+    {
+      "key": "field_672a78b25f73a",
+      "label": "[ACCORDION END]",
+      "name": "",
+      "aria-label": "",
+      "type": "accordion",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "open": 0,
+      "multi_expand": 0,
+      "endpoint": 1
+    },
+    {
+      "key": "field_672a7862c878e",
+      "label": "Settings",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_672a76f23e23c",
+      "label": "Show Grantee Description?",
+      "name": "show_grantee_description",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "If enabled, grantees will show their description.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -150,5 +224,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729793893
+  "modified": 1730836727
 }
