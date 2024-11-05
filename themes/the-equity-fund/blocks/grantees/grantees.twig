@@ -10,11 +10,12 @@
   {% if withTruncator %}x-data="{ expanded: false }"{% endif %}
 >
   <div class="mx-breakout-site-paddding px-site-padding {% if withTruncator %}sticky top-0 pt-4 bg-background z-10{% endif %}">
-    <div class="flex justify-between sm:items-end border-b border-foreground pb-1 sm:gap-2">
+    <div class="flex justify-between items-end border-b border-foreground pb-1 sm:gap-2">
       <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
 
       {% if withTruncator %}
         <button
+          class="text-sm w-fit h-fit md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors"
           x-text="expanded ? 'Collapse' : 'Show all {{ grantees|length }}'"
           @click="
             if (expanded) {
