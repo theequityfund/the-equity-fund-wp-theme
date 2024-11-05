@@ -52,7 +52,7 @@
         {% if url %}
         <a href="{{ url }}">
           <span class="sr-only">{{ type }}</span>
-          <svg class="aspect-square h-8 w-8" aria-hidden="true">
+          <svg class="aspect-square h-8 w-8 hocus:text-cream transition-colors" aria-hidden="true">
             <use xlink:href="#{{ type|lower }}"></use>
           </svg>
         </a>
