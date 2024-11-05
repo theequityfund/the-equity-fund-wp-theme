@@ -21,9 +21,9 @@
           } %}
         {% endif %}
 
-        <div class="flex flex-col gap-3 md:gap-4">
+        <div class="flex flex-col gap-3 md:gap-4 items-start">
           {% if issue %}
-          <a class="text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1.1] hocus:underline" href="{{ issue.link }}">{{ issue.title }}</a>
+          <a class="text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1] hocus:bg-foreground hocus:text-background px-1 py-1 -mx-1 -my-1 transition-colors" href="{{ issue.link }}">{{ issue.title }}</a>
           {% endif %}
 
           <h3 class="text-h3 leading-[1.1] font-serif">{{ post.title }}</h3>
