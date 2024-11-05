@@ -26,7 +26,7 @@
           </svg>
         </div>
 
-    <div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-gutter">
+    <div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-gutter">
       <form
         class="flex flex-col gap-6 md:gap-8 lg:col-start-1 h-fit text-foreground lg:sticky top-site-padding"
         x-data
@@ -43,8 +43,8 @@
           <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
 
           {% for issue in issues %}
-            <label class="flex gap-2 items-center cursor-pointer">
-              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0">
+            <label class="flex gap-2 items-center cursor-pointer group">
+              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0 group-hocus:bg-yellow transition-colors">
                 <input
                   id="{{ issue.slug }}"
                   class="absolute inset-0 opacity-0 peer"
@@ -54,14 +54,14 @@
                   {% if issue.id in selected_issues %}checked{% endif %}
                 />
 
-                <span class="aspect-square w-5 h-5 md:w-6 md:h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream">
-                  <svg class="w-2 h-2 md:w-3 md:h-3 fill-cream text-backround flex-shrink-0" aria-hidden="true">
+                <span class="aspect-square w-5 h-5 md:w-6 md:h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream [&>svg]:peer-checked:opacity-100">
+                  <svg class="w-2 h-2 md:w-3 md:h-3 fill-cream text-backround flex-shrink-0 opacity-0" aria-hidden="true">
                     <use xlink:href="#checkmark"></use>
                   </svg>
                 </span>
               </span>
 
-              <span class="text-sm md:text-base translate-y-[0.05rem]">{{ issue.title }}</span>
+              <span class="text-sm md:text-base translate-y-[0.05rem] group-hocus:underline">{{ issue.title }}</span>
             </label>
           {% endfor %}
         </fieldset>
@@ -79,7 +79,7 @@
         </button>
       </form>
 
-      <div class=" md:col-start-2 md:col-span-2">
+      <div class="max-lg:border-t max-lg:border-foreground max-lg:border-dotted md:col-start-2 md:col-span-2">
         {% include 'templates/components/resource-index.twig' with {
           resources: resources
         } %}
