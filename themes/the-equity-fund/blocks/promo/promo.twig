@@ -6,7 +6,6 @@
     {% if overline %}
       {% include 'templates/components/block-header.twig' with {
         title: overline,
-        link: cta,
       } %}
     {% endif %}
 
@@ -22,6 +21,10 @@
           {{ description|striptags('<em><strong><a>')|raw }}
         </p>
       {% endif %}
+
+      {% if cta %}
+      <a class="button" href="{{ cta.url }}">{{ cta.title }}</a>
+    {% endif %}
     </div>
 
     {% if images|length %}
