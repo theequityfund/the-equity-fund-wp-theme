@@ -3,7 +3,7 @@
   x-data="{ isMenuOpen: false }"
   @keydown.escape.window="isMenuOpen = false"
 >
-  <nav class="flex justify-between items-center border-b-2 border-foreground" aria-label="Header">
+  <nav class="flex justify-between items-center border-b lg:border-b-2 border-foreground" aria-label="Header">
     <ul class="flex justify-between w-full items-stretch">
       <li>
         <a href="{{ site.url }}">
@@ -63,7 +63,7 @@
     </ul>
 
     <button
-      class="lg:hidden text-h5 font-serif border border-dotted border-foreground px-3 pb-2 py-1.5 h-fit"
+      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -86,7 +86,7 @@
         <h2 id="menu-label" class="sr-only">Menu</h2>
 
         <div class="px-site-padding pb-site-padding h-full w-full overflow-auto flex flex-col gap-6">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center border-b border-foreground">
             <a href="{{ site.url }}">
               <span class="sr-only">Home</span>
               <svg class="w-48 h-20" aria-hidden="true">
@@ -94,7 +94,7 @@
               </svg>
             </a>
 
-            <button class="text-h5 font-serif border border-dotted border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
               Close
             </button>
           </div>
