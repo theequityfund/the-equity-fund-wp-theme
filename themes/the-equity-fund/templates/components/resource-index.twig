@@ -5,7 +5,7 @@
         {% set issue = resource.issue %}
         {% set file = resource.meta('file') %}
 
-        <li class="{{ resource.thumbnail ? 'grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-gutter' }} py-8 md:py-12 border-dotted">
+        <li class="{{ resource.thumbnail ? 'grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-gutter' }} py-8 md:py-10 lg:py-12 border-dotted [&:first-child]:pt-0">
           {% if resource.thumbnail %}
             {% include 'templates/components/lazy-img.twig' with {
               class: 'w-full',

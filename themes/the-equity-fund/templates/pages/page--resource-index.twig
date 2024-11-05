@@ -3,7 +3,7 @@
 {% set palette = 'cream' %}
 
 {% block pageBody %}
-  <div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-gutter lg:auto-rows-auto pt-topper-margin lg:pb-24 px-site-padding">
+  <div class="pt-topper-margin md:pt-topper-margin-lg lg:pb-24 px-site-padding">
     <header class="text-foreground flex flex-col gap-2 col-start-2 col-span-2">
       <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
@@ -12,76 +12,78 @@
       {% endif %}
     </header>
 
-    <form
-      class="flex flex-col gap-6 md:gap-8 lg:col-start-1 lg:row-start-1 lg:row-span-2 h-fit text-foreground lg:sticky top-site-padding"
-      x-data
-      x-ref="form"
-      hx-get="{{ page.link }}"
-      hx-trigger="change, input changed delay:500ms"
-      hx-target="#resource-index"
-      hx-select="#resource-index"
-      hx-indicator="#resource-index"
-      hx-swap="outerHTML"
-      hx-replace-url="true"
-    >
-      <div class="relative w-full flex gap-1 items-center justify-between">
-        <input
-          class="w-full bg-background text-foreground px-3 py-2 text-sm md:text-base placeholder:text-foreground placeholder:opacity-50 border border-dashed border-foreground focus:outline-0 focus:bg-yellow focus:border-solid [&::-webkit-search-cancel-button]:hidden"
-          type="search"
-          name="query"
-          placeholder="Search"
-          {% if query %}value="{{ query }}"{% endif %}
-        >
+        <div class="relative w-full flex gap-1 items-center justify-between pt-5 md:pt-7 pb-6 md:pb-8 lg:pb-16">
+          <input
+            class="w-full bg-background text-foreground px-3 py-4 md:px-5 md:py-6 text-h3 placeholder:text-foreground placeholder:opacity-70 border border-foreground focus:outline-0 focus:bg-yellow focus:border-solid [&::-webkit-search-cancel-button]:hidden"
+            type="search"
+            name="query"
+            placeholder="Search"
+            {% if query %}value="{{ query }}"{% endif %}
+          >
 
-        <svg class="h-4 w-4 text-foreground absolute right-2" aria-hidden="true">
-          <use xlink:href="#search"></use>
-        </svg>
-      </div>
+          <svg class="h-5 w-5 md:w-6 md:h-6 text-foreground absolute right-4 md:right-6" aria-hidden="true">
+            <use xlink:href="#search"></use>
+          </svg>
+        </div>
 
-      <fieldset class="flex flex-col gap-3 w-full">
-        <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
-
-        {% for issue in issues %}
-          <label class="flex gap-2 items-center cursor-pointer">
-            <span class="relative rounded-full border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0">
-              <input
-                id="{{ issue.slug }}"
-                class="absolute inset-0 opacity-0 peer"
-                type="checkbox"
-                name="issues[]"
-                value="{{ issue.id }}"
-                {% if issue.id in selected_issues %}checked{% endif %}
-              />
-
-              <span class="aspect-square w-5 h-5 md:w-6 md:h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream">
-                <svg class="w-2 h-2 md:w-3 md:h-3 fill-cream text-backround flex-shrink-0" aria-hidden="true">
-                  <use xlink:href="#checkmark"></use>
-                </svg>
-              </span>
-            </span>
-
-            <span class="text-sm md:text-base translate-y-[0.05rem]">{{ issue.title }}</span>
-          </label>
-        {% endfor %}
-      </fieldset>
-
-      <button
-        class="button button-outline"
+    <div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-4 lg:gap-gutter">
+      <form
+        class="flex flex-col gap-6 md:gap-8 lg:col-start-1 h-fit text-foreground lg:sticky top-site-padding"
+        x-data
+        x-ref="form"
         hx-get="{{ page.link }}"
-        @click="
-          $refs.form.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
-            checkbox.checked = false;
-          })
-        "
+        hx-trigger="change, input changed delay:500ms"
+        hx-target="#resource-index"
+        hx-select="#resource-index"
+        hx-indicator="#resource-index"
+        hx-swap="outerHTML"
+        hx-replace-url="true"
       >
-        Reset Filters
-      </button>
-    </form>
+        <fieldset class="flex flex-col gap-3 w-full">
+          <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
 
-    <div class="border-t border-dotted border-foreground md:row-start-2 md:col-start-2 md:col-span-2">
-      {% include 'templates/components/resource-index.twig' with {
-        resources: resources
-      } %}
+          {% for issue in issues %}
+            <label class="flex gap-2 items-center cursor-pointer">
+              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0">
+                <input
+                  id="{{ issue.slug }}"
+                  class="absolute inset-0 opacity-0 peer"
+                  type="checkbox"
+                  name="issues[]"
+                  value="{{ issue.id }}"
+                  {% if issue.id in selected_issues %}checked{% endif %}
+                />
+
+                <span class="aspect-square w-5 h-5 md:w-6 md:h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream">
+                  <svg class="w-2 h-2 md:w-3 md:h-3 fill-cream text-backround flex-shrink-0" aria-hidden="true">
+                    <use xlink:href="#checkmark"></use>
+                  </svg>
+                </span>
+              </span>
+
+              <span class="text-sm md:text-base translate-y-[0.05rem]">{{ issue.title }}</span>
+            </label>
+          {% endfor %}
+        </fieldset>
+
+        <button
+          class="button button-outline"
+          hx-get="{{ page.link }}"
+          @click="
+            $refs.form.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
+              checkbox.checked = false;
+            })
+          "
+        >
+          Reset Filters
+        </button>
+      </form>
+
+      <div class=" md:col-start-2 md:col-span-2">
+        {% include 'templates/components/resource-index.twig' with {
+          resources: resources
+        } %}
+      </div>
     </div>
   </div>
 {% endblock %}
