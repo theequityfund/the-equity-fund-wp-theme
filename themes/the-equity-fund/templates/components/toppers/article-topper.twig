@@ -1,7 +1,25 @@
 {% set palette = palette|default('cream') %}
 
-<header class="palette-{{ palette }} bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin">
-  <div class="flex flex-col items-center gap-8 md:gap-12 max-w-6xl mx-auto">
+<header class="palette-{{ palette }} bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin md:pt-topper-margin-lg">
+  <div class="flex flex-col items-center gap-8 md:gap-10 lg:w-10/12 xl:w-8/12 mx-auto">
+    <h1 class="font-serif text-foreground text-h2 text-center max-w-article-wide">{{ title }}</h1>
+
+    {% if tag or bylines|length %}
+    <div class="text-body-text font-sans-narrow leading-[1] flex items-center max-md:flex-col md:gap-3 text-foreground max-md:text-center">
+      {% if tag %}
+        <a class="font-bold hocus:text-background transition-colors hocus:bg-foreground px-1 py-1 -translate-x-1 -mt-1 -mr-1" href="{{ tag.link }}">{{ tag.title }}</a>
+      {% endif %}
+
+      {% if tag and bylines|length %}
+        <span aria-hidden="true">⸺</span>
+      {% endif %}
+
+      {% if bylines|length %}
+        <p>By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
+      {% endif %}
+      </div>
+    {% endif %}
+
     {% if image %}
       {% include 'templates/components/lazy-img.twig' with {
         class: 'w-full',
@@ -9,22 +27,6 @@
       } %}
     {% endif %}
 
-    <h1 class="font-serif text-foreground text-h2 text-center">{{ title }}</h1>
 
-    {% if tag or bylines|length %}
-    <div class="text-foreground flex items-center max-md:flex-col md:gap-6">
-      {% if tag %}
-      <a class="font-bold" href="{{ tag.link }}">{{ tag.title }}</a>
-      {% endif %}
-
-      {% if tag and bylines|length %}
-      <span aria-hidden="true">⸺</span>
-      {% endif %}
-
-      {% if bylines|length %}
-      <p>By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
-      {% endif %}
-    </div>
-    {% endif %}
   </div>
 </header>

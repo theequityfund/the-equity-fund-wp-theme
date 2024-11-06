@@ -18,7 +18,23 @@ class ACFManager {
 	 */
 	public function run() {
 		add_filter( 'acf/fields/relationship/query', array( $this, 'relationship_query' ), 10, 3 );
+		add_filter( 'acf/fields/wysiwyg/toolbars', array( $this, 'remove_wysiwyg_toolbar_options' ) );
 	}
+
+
+	/**
+	 * Remove some of the TinyMCE options from the WYSIWYG editor.
+	 * This is to prevent users from adding unnecessary HTML.
+	 *
+	 * @param array $toolbars Toolbars.
+	 * @return array
+	 */
+	public function remove_wysiwyg_toolbar_options( $toolbars ) {
+		$toolbars['Basic'][1] = array( 'undo', 'redo', 'bold', 'italic', 'underline', 'link' );
+
+		return $toolbars;
+	}
+
 
 	/**
 	 * Modify ACF relationship field to show most recent posts instead of alpha

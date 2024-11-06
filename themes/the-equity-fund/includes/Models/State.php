@@ -95,7 +95,7 @@ class State extends TimberPost {
 			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 			'map_meta_cap'       => true,
 			'rewrite'            => array(
-				'slug' => 'state',
+				'slug'       => 'state',
 				'with_front' => false,
 			),
 		);

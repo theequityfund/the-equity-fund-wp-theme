@@ -23,7 +23,7 @@
     <ul class="sm:columns-2">
       {% for item in nav_footer_menu.items %}
       <li class="mb-2">
-        <a class="font-serif text-h3 hocus:underline decoration-2 underline-offset-2" href="{{ item.url }}">{{ item.name }}</a>
+        <a class="font-serif text-h3 hocus:bg-foreground hocus:text-background decoration-2 underline-offset-2 px-1 -ml-1 transition-colors" href="{{ item.url }}">{{ item.name }}</a>
       </li>
       {% endfor %}
     </ul>
@@ -52,7 +52,7 @@
         {% if url %}
         <a href="{{ url }}">
           <span class="sr-only">{{ type }}</span>
-          <svg class="aspect-square h-8 w-8" aria-hidden="true">
+          <svg class="aspect-square h-8 w-8 hocus:text-cream transition-colors" aria-hidden="true">
             <use xlink:href="#{{ type|lower }}"></use>
           </svg>
         </a>
