@@ -57,7 +57,7 @@
       "post_type": ["state"],
       "post_status": "",
       "taxonomy": "",
-      "filters": ["search", "taxonomy"],
+      "filters": ["search"],
       "return_format": "id",
       "min": "",
       "max": "",
@@ -164,5 +164,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729795195
+  "modified": 1730930929
 }
