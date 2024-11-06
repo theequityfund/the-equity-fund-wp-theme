@@ -14,11 +14,13 @@
       <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
 
       <div class="flex gap-3 items-center">
-        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap">Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees</span>
+        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap">
+          Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
+        </span>
+
         {% if withTruncator %}
           <button
             class="button whitespace-nowrap max-sm:w-full"
-            x-text="expanded ? 'Collapse' : 'Show all'"
             @click="
               if (expanded) {
                 window.scrollTo({ top: $refs.block.offsetTop });
@@ -27,7 +29,12 @@
               expanded = !expanded;
             "
           >
-            Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
+            <span x-show="!expanded">
+              Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
+            </span>
+
+            <span x-show="expanded">Collapse</span>
+            </span>
           </button>
         {% endif %}
       </div>
