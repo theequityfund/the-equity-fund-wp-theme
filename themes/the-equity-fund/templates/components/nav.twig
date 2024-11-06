@@ -47,7 +47,7 @@
           </button>
 
           <ul
-            class="absolute z-20 top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground w-full text-left"
+            class="absolute z-20 top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground text-left"
             x-show="expanded"
             x-cloak
           >
@@ -63,7 +63,7 @@
     </ul>
 
     <button
-      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
+      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit hocus:bg-foreground hocus:text-background transition-colors"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -94,7 +94,7 @@
               </svg>
             </a>
 
-            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit hocus:bg-foreground hocus:text-background transition-colors" @click="isMenuOpen = false">
               Close
             </button>
           </div>
