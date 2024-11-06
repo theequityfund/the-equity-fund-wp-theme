@@ -3,7 +3,15 @@
 {% set palette = 'cream' %}
 
 {% block pageBody %}
-  <div class="pt-topper-margin md:pt-topper-margin-lg lg:pb-24 px-site-padding">
+  <div
+    class="pt-topper-margin md:pt-topper-margin-lg lg:pb-24 px-site-padding"
+    hx-target="#resource-index"
+    hx-select="#resource-index"
+    hx-indicator="#resource-index"
+    hx-swap="outerHTML"
+    hx-replace-url="true"
+    hx-include="[name='query'], [name='issues[]']"
+  >
     <header class="text-foreground flex flex-col gap-2 col-start-2 col-span-2">
       <h1 class="font-display uppercase text-giant font-medium">{{ page.title }}</h1>
 
@@ -12,19 +20,23 @@
       {% endif %}
     </header>
 
-        <div class="relative w-full flex gap-1 items-center justify-between pt-5 md:pt-7 pb-6 md:pb-8 lg:pb-16">
-          <input
-            class="w-full bg-background text-foreground px-3 py-4 md:px-5 md:py-5 text-h4 placeholder:text-foreground placeholder:opacity-70 border border-foreground focus:outline-0 focus:bg-yellow focus:border-solid [&::-webkit-search-cancel-button]:hidden leading-[1]"
-            type="search"
-            name="query"
-            placeholder="Search"
-            {% if query %}value="{{ query }}"{% endif %}
-          >
+    <form
+      class="relative w-full flex gap-1 items-center justify-between pt-5 md:pt-7 pb-6 md:pb-8 lg:pb-16"
+      hx-get="{{ page.link }}"
+      hx-trigger="input changed delay:500ms"
+    >
+      <input
+        class="w-full bg-background text-foreground px-3 py-4 md:px-5 md:py-5 text-h4 placeholder:text-foreground placeholder:opacity-70 border border-foreground focus:outline-0 focus:bg-yellow focus:border-solid [&::-webkit-search-cancel-button]:hidden leading-[1]"
+        type="search"
+        name="query"
+        placeholder="Search"
+        {% if query %}value="{{ query }}"{% endif %}
+      >
 
-          <svg class="h-5 w-5 md:w-6 md:h-6 text-foreground absolute right-4 md:right-6" aria-hidden="true">
-            <use xlink:href="#search"></use>
-          </svg>
-        </div>
+      <svg class="h-5 w-5 md:w-6 md:h-6 text-foreground absolute right-4 md:right-6" aria-hidden="true">
+        <use xlink:href="#search"></use>
+      </svg>
+    </form>
 
     <div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-gutter">
       <form
@@ -32,12 +44,7 @@
         x-data
         x-ref="form"
         hx-get="{{ page.link }}"
-        hx-trigger="change, input changed delay:500ms"
-        hx-target="#resource-index"
-        hx-select="#resource-index"
-        hx-indicator="#resource-index"
-        hx-swap="outerHTML"
-        hx-replace-url="true"
+        hx-trigger="change"
       >
         <fieldset class="flex flex-col gap-3 w-full">
           <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
@@ -69,6 +76,7 @@
         <button
           class="button button-outline"
           hx-get="{{ page.link }}"
+          hx-include="[name='query']"
           @click="
             $refs.form.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
               checkbox.checked = false;
