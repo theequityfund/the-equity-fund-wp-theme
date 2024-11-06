@@ -9,7 +9,7 @@
         <p class="uppercase font-bold max-lg:text-sm tracking-wide">{{ overline }}</p>
       {% endif %}
 
-      <h2 class="font-display uppercase  font-medium text-center {{ size == 'large' ? 'text-giant' : 'text-h2' }}">{{ headline }}</h2>
+      <h2 class="font-display uppercase  font-medium text-center {{ size == 'large' ? 'text-giant' : 'text-h1' }}">{{ headline }}</h2>
 
       {% if description %}
         <p class="rich-text max-w-[37.5rem] text-h6 leading-[1.4] font-serif">{{ description|striptags('<em><strong><a>')|raw }}</p>
