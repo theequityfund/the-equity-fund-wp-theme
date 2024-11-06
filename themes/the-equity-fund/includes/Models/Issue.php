@@ -37,7 +37,7 @@ class Issue extends TimberPost {
 			'menu_icon'          => 'dashicons-flag',
 			'show_in_rest'       => true,
 			'show_in_menu'       => true,
-			'show_in_ui'         => true,
+			'show_ui'            => true,
 			'has_archive'        => false,
 			'supports'           => array( 'title', 'editor', 'thumbnail' ),
 			'map_meta_cap'       => true,

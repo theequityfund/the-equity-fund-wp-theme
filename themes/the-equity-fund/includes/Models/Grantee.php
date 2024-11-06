@@ -37,7 +37,7 @@ class Grantee extends TimberPost {
 			'menu_icon'          => 'dashicons-groups',
 			'show_in_rest'       => true,
 			'show_in_menu'       => true,
-			'show_in_ui'         => true,
+			'show_ui'            => true,
 			'has_archive'        => false,
 			'supports'           => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
 			'map_meta_cap'       => true,

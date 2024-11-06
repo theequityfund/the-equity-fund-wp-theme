@@ -29,13 +29,13 @@ class Person extends TimberPost {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => true,
+			'public'             => false,
 			'publicly_queryable' => false,
 			'menu_position'      => 21,
 			'menu_icon'          => 'dashicons-admin-users',
 			'show_in_rest'       => false,
 			'show_in_menu'       => true,
-			'show_in_ui'         => false,
+			'show_ui'            => true,
 			'has_archive'        => false,
 			'supports'           => array( 'title', 'excerpt', 'thumbnail' ),
 			'map_meta_cap'       => true,
