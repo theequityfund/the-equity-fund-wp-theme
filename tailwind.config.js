@@ -105,7 +105,7 @@ module.exports = {
         'body-text': [
           'clamp(1rem, 0.4vw + 1rem, 1.25rem)',
           {
-            lineHeight: '1.35',
+            lineHeight: '1.3',
             letterSpacing: '-0.0125em',
           },
         ],
