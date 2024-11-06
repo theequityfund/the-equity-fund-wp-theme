@@ -10,14 +10,14 @@
   {% if withTruncator %}x-data="{ expanded: false }"{% endif %}
 >
   <div class="mx-breakout-site-paddding px-site-padding {% if withTruncator %}sticky top-0 pt-4 bg-background z-10{% endif %}">
-    <div class="flex justify-between items-end border-b border-foreground pb-3 gap-2">
+    <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-3 gap-2">
       <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
 
       <div class="flex gap-3 items-center">
         <span class="text-base leading-[1] max-md:hidden whitespace-nowrap">Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees</span>
         {% if withTruncator %}
           <button
-            class="button whitespace-nowrap"
+            class="button whitespace-nowrap max-sm:w-full"
             x-text="expanded ? 'Collapse' : 'Show all'"
             @click="
               if (expanded) {
