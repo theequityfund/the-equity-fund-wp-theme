@@ -267,11 +267,26 @@
         @apply h-px border-foreground border-b border-t-0 border-dotted;
       }
 
-      /* &:is(blockquote) {
-        p {
-          @apply font-serif tracking-tight md:text-h3;
-        }
-      } */
+      &:is(h1) + &:is(ul),
+      &:is(h1) + &:is(ol),
+      &:is(h4) + &:is(ul),
+      &:is(h4) + &:is(ol),
+      &:is(h5) + &:is(ul),
+      &:is(h5) + &:is(ol),
+      &:is(h6) + &:is(ul),
+      &:is(h6) + &:is(ol) {
+        @apply mt-0;
+      }
+
+      &:is(h2) + &:is(ul),
+      &:is(h2) + &:is(ol) {
+        @apply mt-1;
+      }
+
+      &:is(h3) + &:is(ul),
+      &:is(h3) + &:is(ol) {
+        @apply mt-1;
+      }
 
       &:is(ul):not(.ups-block__related-articles__list) {
         ul {
@@ -636,7 +651,7 @@
 
 @layer components {
   .h1 {
-    @apply text-h1 font-display;
+    @apply text-h1 font-display font-medium uppercase;
   }
 
   .h2 {
