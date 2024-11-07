@@ -96,7 +96,7 @@ module.exports = {
           },
         ],
         'basic-text': [
-          'clamp(1rem, 0.4vw + 1rem, 1.25rem)',
+          'clamp(1rem, 0.58vw + 1rem, 1.375rem)',
           {
             lineHeight: '1.5',
             letterSpacing: '-0.0125em',
