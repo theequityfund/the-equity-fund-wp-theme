@@ -13,6 +13,7 @@
     <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-3 gap-2">
       <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
 
+      {% if withTruncator %}
       <div class="flex gap-3 items-center">
         <span class="text-base leading-[1] max-md:hidden whitespace-nowrap" x-show="!expanded">
           Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
@@ -22,26 +23,25 @@
           Showing all <strong>{{ grantees|length }}</strong> grantees
         </span>
 
-        {% if withTruncator %}
-          <button
-            class="button whitespace-nowrap max-sm:w-full"
-            @click="
-              if (expanded) {
-                window.scrollTo({ top: $refs.block.offsetTop });
-              }
+        <button
+          class="button whitespace-nowrap max-sm:w-full"
+          @click="
+            if (expanded) {
+              window.scrollTo({ top: $refs.block.offsetTop });
+            }
 
-              expanded = !expanded;
-            "
-          >
-            <span x-show="!expanded">
-              Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
-            </span>
+            expanded = !expanded;
+          "
+        >
+          <span x-show="!expanded">
+            Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
+          </span>
 
-            <span x-show="expanded">Collapse</span>
-            </span>
-          </button>
-        {% endif %}
+          <span x-show="expanded">Collapse</span>
+          </span>
+        </button>
       </div>
+      {% endif %}
     </div>
   </div>
 
