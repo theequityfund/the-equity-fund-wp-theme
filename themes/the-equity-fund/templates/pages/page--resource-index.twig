@@ -51,7 +51,7 @@
 
           {% for issue in issues %}
             <label class="flex gap-2 items-center cursor-pointer group">
-              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0 group-hocus:bg-yellow transition-colors">
+              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0 group-hocus:bg-yellow transition-colors group-hocus-within:outline-2 group-hocus-within:outline group-hocus-within:outline-offset-1 group-hocus-within:outline-[-webkit-focus-ring-color]">
                 <input
                   id="{{ issue.slug }}"
                   class="absolute inset-0 opacity-0 peer"
