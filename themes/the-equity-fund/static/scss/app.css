@@ -636,7 +636,7 @@
 
 @layer components {
   .h1 {
-    @apply text-h1 font-serif;
+    @apply text-h1 font-display;
   }
 
   .h2 {
