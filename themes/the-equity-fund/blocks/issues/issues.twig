@@ -12,7 +12,7 @@
     {% for issue in issues %}
       {% set grantee_count = issue.grantees()|length %}
 
-      <li class="border-b group hocus-within:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-3 flex gap-4 sm:justify-between sm:items-center max-sm:flex-col">
+      <li class="border-b group hocus-within:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-4 flex gap-4 sm:justify-between sm:items-center max-sm:flex-col">
         <h3 class="text-h2">
           <a class="after:inset-0 after:absolute" href="{{ issue.link }}">
             <span class="block z-[10] group-hocus-within:translate-x-3 transition-transform font-serif-deck">{{ issue.title }}</span>

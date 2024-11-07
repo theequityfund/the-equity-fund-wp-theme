@@ -5,7 +5,7 @@
 >
   <nav class="flex justify-between items-center border-b lg:border-b-2 border-foreground" aria-label="Header">
     <ul class="flex justify-between w-full items-stretch">
-      <li>
+      <li class="pr-12">
         <a href="{{ site.url }}">
           <span class="sr-only">Home</span>
           <svg class="w-48 h-20" aria-hidden="true">
@@ -17,7 +17,7 @@
       {% for item in nav_pages_menu.items %}
         {% set hasChildren = item.children and item.children|length %}
         <li
-          class="relative group max-lg:hidden"
+          class="relative group max-lg:hidden w-full text-center"
           {% if hasChildren %}
           x-data="{ expanded: false }"
           @mouseenter="expanded = true"
@@ -26,7 +26,7 @@
           {% endif %}
         >
           <a
-            class="nav-link flex flex-col justify-center h-full text-h5 font-serif group-hocus-within:bg-foreground group-hocus-within:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
+            class="nav-link flex flex-col justify-center h-full text-h5 font-serif group-hocus:bg-foreground group-hocus:text-background border-b-transparent border-b-4 aria-current:border-b-foreground px-6 py-1.5 transition-colors"
             {% if item.current %}aria-current="page"{% endif %}
             href="{{ item.url }}"
           >
@@ -47,13 +47,13 @@
           </button>
 
           <ul
-            class="absolute z-20 top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground"
+            class="absolute z-20 top-full {% if loop.last %}right-0{% else %}left-0{% endif %} border-2 border-foreground divide-y-2 divide-foreground text-left min-w-[100%]"
             x-show="expanded"
             x-cloak
           >
             {% for child in item.children %}
             <li class="">
-              <a class="block text-xl font-serif px-3 py-2 min-w-[300px] bg-background hocus:text-background hocus:bg-foreground transition-colors" href="{{ child.url }}">{{ child.name }}</a>
+              <a class="block text-xl font-serif px-3 py-2 min-w-[300px] bg-background hocus:text-background hocus:bg-foreground transition-colors hocus:!border-t-background" href="{{ child.url }}">{{ child.name }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -63,7 +63,7 @@
     </ul>
 
     <button
-      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit"
+      class="lg:hidden text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit hocus:bg-foreground hocus:text-background transition-colors"
       @click="isMenuOpen = !isMenuOpen"
       :aria-expanded="isMenuOpen"
       aria-haspopup="true"
@@ -94,7 +94,7 @@
               </svg>
             </a>
 
-            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit" @click="isMenuOpen = false">
+            <button class="text-h5 font-serif border border-foreground px-3 pb-2 py-1.5 h-fit hocus:bg-foreground hocus:text-background transition-colors" @click="isMenuOpen = false">
               Close
             </button>
           </div>
