@@ -267,24 +267,15 @@
         @apply h-px border-foreground border-b border-t-0 border-dotted;
       }
 
-      &:is(h1) + &:is(ul),
-      &:is(h1) + &:is(ol),
-      &:is(h4) + &:is(ul),
-      &:is(h4) + &:is(ol),
-      &:is(h5) + &:is(ul),
-      &:is(h5) + &:is(ol),
-      &:is(h6) + &:is(ul),
-      &:is(h6) + &:is(ol) {
+      &:is(h1, h4, h5, h6) + &:is(ul, ol) {
         @apply mt-0;
       }
 
-      &:is(h2) + &:is(ul),
-      &:is(h2) + &:is(ol) {
+      &:is(h2) + &:is(ul, ol) {
         @apply mt-1;
       }
 
-      &:is(h3) + &:is(ul),
-      &:is(h3) + &:is(ol) {
+      &:is(h3) + &:is(ul, ol) {
         @apply mt-1;
       }
 
