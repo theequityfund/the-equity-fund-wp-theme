@@ -3,6 +3,24 @@
   "title": "Block: Issues",
   "fields": [
     {
+      "key": "field_672d323674dd4",
+      "label": "Content",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
       "key": "field_670e6fc6e9bde",
       "label": "Headline",
       "name": "headline",
@@ -46,6 +64,44 @@
       "elements": "",
       "bidirectional": 0,
       "bidirectional_target": []
+    },
+    {
+      "key": "field_672d323d74dd5",
+      "label": "Settings",
+      "name": "",
+      "aria-label": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0,
+      "selected": 0
+    },
+    {
+      "key": "field_672d320d74dd3",
+      "label": "Show Grantees Count?",
+      "name": "show_grantees_count",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "If enabled, each issue will show the number of grantees associated.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -66,5 +122,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729000217
+  "modified": 1731015240
 }

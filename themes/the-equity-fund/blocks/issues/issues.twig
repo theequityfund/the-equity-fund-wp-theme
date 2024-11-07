@@ -10,7 +10,7 @@
 
   <ul>
     {% for issue in issues %}
-      {% set grantee_count = issue.grantees()|length %}
+      {% set grantee_count = show_grantees_count ? issue.grantees()|length : null %}
 
       <li class="border-b group hocus-within:bg-yellow transition-colors border-foreground border-dotted relative py-2 md:py-4 flex gap-4 sm:justify-between sm:items-center max-sm:flex-col">
         <h3 class="text-h2">
