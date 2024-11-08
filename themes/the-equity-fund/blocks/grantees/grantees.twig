@@ -15,12 +15,14 @@
 
       {% if withTruncator %}
       <div class="flex gap-3 items-center">
-        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap" x-show="!expanded">
-          Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
-        </span>
+        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap" aria-atomic="true" aria-live="polite">
+          <span x-show="!expanded">
+            Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
+          </span>
 
-        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap" x-show="expanded">
-          Showing all <strong>{{ grantees|length }}</strong> grantees
+          <span x-show="expanded">
+            Showing all <strong>{{ grantees|length }}</strong> grantees
+          </span>
         </span>
 
         <button
