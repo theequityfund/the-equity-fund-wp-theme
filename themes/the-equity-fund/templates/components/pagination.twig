@@ -8,7 +8,7 @@
   hx-indicator="{{ swap }}"
   hx-swap="outerHTML"
   hx-replace-url="true"
-  x-on:htmx:before-request.camel="$event.detail.target.scrollIntoView({ behavior: 'smooth' })"
+  @htmx:before-request.camel="$event.detail.target.scrollIntoView({ behavior: 'smooth' })"
 >
   {% set prev = pagination.prev %}
   {% set next = pagination.next %}
