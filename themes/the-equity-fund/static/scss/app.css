@@ -267,11 +267,17 @@
         @apply h-px border-foreground border-b border-t-0 border-dotted;
       }
 
-      /* &:is(blockquote) {
-        p {
-          @apply font-serif tracking-tight md:text-h3;
-        }
-      } */
+      &:is(h1, h4, h5, h6) + &:is(ul, ol) {
+        @apply mt-0;
+      }
+
+      &:is(h2) + &:is(ul, ol) {
+        @apply mt-1;
+      }
+
+      &:is(h3) + &:is(ul, ol) {
+        @apply mt-1;
+      }
 
       &:is(ul):not(.ups-block__related-articles__list) {
         ul {
@@ -636,7 +642,7 @@
 
 @layer components {
   .h1 {
-    @apply text-h1 font-display;
+    @apply text-h1 font-display font-medium uppercase;
   }
 
   .h2 {
