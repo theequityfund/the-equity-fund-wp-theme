@@ -61,7 +61,7 @@
     data-srcset="{{ img.srcset }}"
     data-src="{{ img.src }}"
     data-sizes="auto"
-    alt="{{ img.alt }}"
+    {% if img.alt %}alt="{{ img.alt }}"{% endif %}
     data-caption="{{ caption }}"
     data-credit="{{ credit }}"
   />
