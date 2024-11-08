@@ -18,6 +18,11 @@ class Links {
           link.setAttribute('rel', 'noopener noreferrer');
           link.setAttribute('target', '_blank');
         }
+
+        // If current link, set aria-current
+        if (link.href === window.location.href) {
+          link.setAttribute('aria-current', 'page');
+        }
       });
     }
   }
