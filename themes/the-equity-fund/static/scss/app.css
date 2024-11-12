@@ -200,7 +200,7 @@
     :not(:is([data-block] *)), /* Target elements that are NOT in [data-block] */
     :is([data-block] .rich-text *) /* Target elements in [data-block] only if inside a nested .rich-text class */ {
       &:is(h1, h2, h3, h4, h5, h6) {
-        @apply mb-4 mt-8;
+        @apply mb-4 mt-8 md:mt-12;
       }
 
       &:is(h1) {
