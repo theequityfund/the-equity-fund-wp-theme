@@ -20,9 +20,9 @@
 
     <div class="lg:col-span-4 lg:col-end-12">
     {% if description %}
-      <div class="rich-text text-body-text ">
-        {{ description|striptags('<p><em><strong><a>')|raw }}
-      </div>
+      <p class="rich-text text-body-text ">
+        {{ description|striptags('<em><strong><a>')|raw }}
+      </p>
     {% endif %}
 
     {% if cta and overline == false %}
