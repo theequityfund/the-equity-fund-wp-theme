@@ -12,5 +12,11 @@
   <link rel="manifest" href="{{ theme.link }}/static/img/site.webmanifest">
   <meta name="theme-color" content="#C4B3E0">
 
+  {% if wp_env == 'production' %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9YXQHNB2G"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S9YXQHNB2G');</script>
+  {% endif %}
+
   {{ function('wp_head') }}
 </head>
