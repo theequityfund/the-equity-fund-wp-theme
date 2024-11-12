@@ -227,6 +227,10 @@
         @apply h6;
       }
 
+      &:is(p + p) {
+        @apply mt-4;
+      }
+
       &:is(strong):not(:is(.rich-text > [data-block] *)) {
         @apply font-bold;
       }
@@ -361,7 +365,7 @@
 
     /* Everything should have space between */
     > *:not([data-block]) {
-      @apply mt-8 md:mt-10;
+      @apply !mt-8 md:!mt-10;
     }
 
     /* Space for blocks is different */
