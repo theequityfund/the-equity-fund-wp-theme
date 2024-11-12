@@ -6,7 +6,7 @@
   data-block="statistics"
 >
 <div class="px-site-padding py-8 md:py-14 lg:py-20 ">
-  <div class=" {{ count == 2 ? 'grid grid-cols-1 lg:grid-cols-12 lg:grid-gutter' }} {{ count == 2 and palette == 'cream' ? 'border-t border-foreground border-dotted pt-8' }}">
+  <div class=" {{ count == 2 ? 'grid grid-cols-1 lg:grid-cols-12 lg:grid-gutter' }} {{ count == 2 and palette == 'cream' ? 'border-t border-foreground pt-8' }}">
     <div class="flex max-sm:flex-col max-sm:items-start gap-5 border-b border-foreground sm:justify-between sm:items-end {{ count == 2 ? 'lg:flex-col lg:col-span-5 lg:border-0 lg:justify-normal lg:items-start' }} {{ size == 'large' ? 'pb-5 lg:pb-6' : 'pb-4' }}">
       {% if headline %}
         <h2 class="{{ size == 'large' ? 'text-h2 font-serif' }} {{ size == 'small' and count == 2 ? 'text-h3 font-serif' }} {{ size == 'large' and count >= 3 ? 'max-w-[50rem]' }} {{ size == 'small' and count >= 3 ? 'uppercase font-bold max-md:text-sm tracking-wide max-w-96 leading-[1.2]' }}">{{ headline }}</h2>
