@@ -17,9 +17,9 @@
 
 
       {% if description %}
-        <p class="rich-text text-body-text">
-          {{ description|striptags('<em><strong><a>')|raw }}
-        </p>
+        <div class="rich-text text-body-text">
+          {{ description|striptags('<p><em><strong><a>')|raw }}
+        </div>
       {% endif %}
 
       {% if cta %}
