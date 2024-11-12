@@ -109,7 +109,7 @@
                 {% endif %}
               >
                 <div class="border-b-2 border-dotted border-foreground flex justify-between items-center py-2">
-                  <a class="block text-6xl font-display font-medium uppercase pt-2" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
+                  <a class="flex items-center gap-2 text-6xl font-display font-medium uppercase pt-2 aria-current:before:inline-block before:hidden before:w-2 before:h-2 before:rounded-full before:bg-foreground" href="{{ item.url }}" {% if item.current %}aria-current="page"{% endif %}>
                     {{ item.name }}
                   </a>
 
@@ -120,7 +120,7 @@
                     :aria-expanded="expanded"
                     aria-controls="menu-dropdown-{{ loop.index }}"
                   >
-                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 translate-y-[-0.06rem]'" aria-hidden="true">
+                    <svg class="h-3 w-3 translate-y-[0.1rem] transition-transform" :class="expanded && 'rotate-180 -translate-y-[0.06rem]'" aria-hidden="true">
                       <use xlink:href="#caret-down"></use>
                     </svg>
                     <span class="sr-only">Toggle menu for {{ item.name }}</span>
