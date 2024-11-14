@@ -20,7 +20,7 @@
             Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
           </span>
 
-          <span x-show="expanded">
+          <span x-show="expanded" x-cloak>
             Showing all <strong>{{ grantees|length }}</strong> grantees
           </span>
         </span>
@@ -39,7 +39,7 @@
             Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
           </span>
 
-          <span x-show="expanded">Collapse</span>
+          <span x-show="expanded" x-cloak>Collapse</span>
           </span>
         </button>
       </div>
