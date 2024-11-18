@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>{% if wp_title %}{{ wp_title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <title>{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}</title>
   <link rel="stylesheet" href="{{ theme.link }}/dist/static/app.css?v={{ theme_version }}" type="text/css" media="all" />
   <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
   <link rel="preload" href="/wp-content/themes/the-equity-fund/static/fonts/judge/F37Judge-MediumCondensed.woff" as="font" type="font/woff" crossorigin="anonymous">
