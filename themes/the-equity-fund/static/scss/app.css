@@ -350,6 +350,17 @@
   .gutenberg {
     @apply px-site-padding;
 
+    [data-block='statement'] + .wp-block-separator,
+    [data-block='promo'] + .wp-block-separator,
+    [data-block]:is(.palette-cream) + .wp-block-separator {
+      @apply w-full max-w-[none];
+    }
+
+    [data-block='tease']:is(.palette-cream) + .wp-block-separator,
+    [data-block='statistics']:is(.palette-cream) + .wp-block-separator {
+      @apply mt-4;
+    }
+
     [data-block='tease'] + [data-block='tease']:is(.palette-cream) {
       @apply mt-0;
     }
