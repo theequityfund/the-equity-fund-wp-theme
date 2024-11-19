@@ -356,7 +356,8 @@
       @apply w-full max-w-[none];
     }
 
-    [data-block='tease']:is(.palette-cream) + .wp-block-separator {
+    [data-block='tease']:is(.palette-cream) + .wp-block-separator,
+    [data-block='statistics']:is(.palette-cream) + .wp-block-separator {
       @apply mt-4;
     }
 
