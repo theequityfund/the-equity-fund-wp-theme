@@ -1,0 +1,12 @@
+{% if img %}
+<figure class="{{ class }}">
+  {% include 'templates/components/lazy-img.twig' with {
+    class: 'w-full',
+    img: img,
+  } %}
+
+  {% if img.caption %}
+    <figcaption class="mt-2 text-body-text text-foreground">{{ img.caption }}</figcaption>
+  {% endif %}
+</figure>
+{% endif %}
