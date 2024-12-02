@@ -785,6 +785,10 @@
     @apply !font-serif !text-h2 !text-foreground !text-left;
   }
 
+  .cmApp_formSubHeader {
+    @apply !font-sans !text-foreground !text-body-text !text-left;
+  }
+
   form {
     @apply !flex !flex-col !gap-4;
 
