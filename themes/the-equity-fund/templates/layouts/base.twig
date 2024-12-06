@@ -3,7 +3,10 @@
 
 {% include "layouts/includes/head.twig" %}
 
-<body class="palette-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}">
+<body
+  class="palette-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}"
+  x-data="{ isMenuOpen: false }"
+>
   <a
     class="[&:not(:focus)]:sr-only absolute top-4 left-4 bg-cream px-4 py-3 flex justify-center z-[100]"
     href="#content"
@@ -13,15 +16,12 @@
   </a>
 
   {% include "layouts/includes/svgs.twig" %}
-  {% include "layouts/includes/grid.twig" %}
 
-  <div class="bg-background">
+  <div class="bg-background" :class="isMenuOpen ? 'overflow-hidden relative max-h-svh' : ''">
 
     {% include "components/nav.twig" with {
       palette: palette|default('cream')
     } %}
-
-    {# {% include "components/menu.twig" %} #}
 
     <main id="content" class="{% block custom_content_classes %}{% endblock %}" tabindex="-1">
       {% block pageBody %}
