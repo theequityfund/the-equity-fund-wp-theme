@@ -120,9 +120,10 @@ class ThemeManager {
 		// if not admin, single post, or page, then filter out password protected posts.
 		if ( ! is_admin() && ! is_single() && ( ! is_page() || is_front_page() ) ) {
 			$query->set( 'has_password', false );
-
-			// TODO: Investigate why this excludes gallery images in Promo block for front page.
-			// $query->set( 'post_status', 'publish' );
+			/**
+			* TODO: Investigate why this excludes gallery images in Promo block for front page.
+			* $query->set( 'post_status', 'publish' );
+			*/
 		}
 	}
 
