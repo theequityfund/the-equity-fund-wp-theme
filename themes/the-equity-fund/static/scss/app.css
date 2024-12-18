@@ -370,6 +370,10 @@
       @apply !mt-0;
     }
 
+    [data-block='tease']:is(.palette-cream):last-child {
+      @apply !mb-0;
+    }
+
     /* Everything should have space between */
     > *:not([data-block]) {
       @apply mt-8 md:mt-10;
@@ -768,6 +772,27 @@
     --c-button-background: theme('colors.cream');
     --c-button-hover-foreground: theme('colors.cream');
     --c-button-hover-background: theme('colors.black');
+  }
+}
+
+/* Detail List */
+@layer utilities {
+  .detail-list {
+    & li:before {
+      @apply font-semibold text-base;
+    }
+  }
+
+  .detail-list {
+    counter-reset: custom-counter;
+
+    & li {
+      counter-increment: custom-counter;
+
+      &:before {
+        content: counters(custom-counter, '.', decimal-leading-zero);
+      }
+    }
   }
 }
 
