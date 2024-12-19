@@ -22,8 +22,8 @@
     },
     {
       "key": "field_6762e7e012a61",
-      "label": "Title",
-      "name": "title",
+      "label": "Overline",
+      "name": "overline",
       "aria-label": "",
       "type": "text",
       "instructions": "",
@@ -36,6 +36,7 @@
       },
       "default_value": "",
       "maxlength": "",
+      "allow_in_bindings": 1,
       "placeholder": "",
       "prepend": "",
       "append": ""
@@ -67,7 +68,7 @@
       "aria-label": "",
       "type": "repeater",
       "instructions": "",
-      "required": 0,
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -76,7 +77,7 @@
       },
       "layout": "block",
       "pagination": 0,
-      "min": 0,
+      "min": 2,
       "max": 0,
       "collapsed": "",
       "button_label": "Add Row",
@@ -145,12 +146,12 @@
       "selected": 0
     },
     {
-      "key": "field_6762eb167a0b7",
-      "label": "List Style",
-      "name": "list_style",
+      "key": "field_67645343091d8",
+      "label": "Numbered?",
+      "name": "numbered",
       "aria-label": "",
-      "type": "select",
-      "instructions": "",
+      "type": "true_false",
+      "instructions": "Toggling this on will add numbers to each detail item.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -158,17 +159,12 @@
         "class": "",
         "id": ""
       },
-      "choices": {
-        "ordered": "Ordered",
-        "unordered": "Unordered"
-      },
-      "default_value": "ordered",
-      "return_format": "value",
-      "multiple": 0,
-      "allow_null": 0,
-      "ui": 0,
-      "ajax": 0,
-      "placeholder": ""
+      "message": "",
+      "default_value": 1,
+      "allow_in_bindings": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -189,5 +185,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1734536751
+  "modified": 1734628240
 }
