@@ -10,9 +10,9 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['title']       = get_field( 'title' );
+$context['overline']       = get_field( 'overline' );
 $context['statement']   = get_field( 'statement' );
 $context['detail_list'] = get_field( 'detail_list' );
-$context['list_style']  = get_field( 'list_style' );
+$context['numbered']  = get_field( 'numbered' );
 
 Timber::render( basename( __DIR__ ) . '/detail-list.twig', $context );
