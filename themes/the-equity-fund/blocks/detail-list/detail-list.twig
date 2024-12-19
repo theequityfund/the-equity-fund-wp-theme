@@ -1,0 +1,38 @@
+<section
+  class="palette-cream text-foreground"
+  data-block="detail-list"
+>
+  <div class="grid md:grid-cols-12 gap-gutter">
+    <div class="md:col-span-10 xl:col-span-6 gap-2 flex flex-col">
+      {% if overline %}
+        <h2 class="font-display font-medium text-h3 uppercase">{{ overline }}</h2>
+      {% endif %}
+
+      {% if statement %}
+          <p class="rich-text font-serif text-h3 leading-[1.2]">
+            {{ statement|striptags('<em><strong><a>')|raw }}
+          </p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if detail_list %}
+    {% set tag = numbered ? 'ol' : 'ul' %}
+
+    <{{ tag }} class="grid lg:grid-cols-3 lg:gap-gutter mt-4 md:mt-6 {% if numbered %}detail-list{% endif %}">
+      {% for item in detail_list %}
+        <li class="flex flex-col gap-3 border-t border-dashed border-foreground pt-4 mt-4 md:pt-5 md:mt-5 lg:pt-6 lg:mt-6">
+          {% if item.title %}
+            <h3 class=" font-serif text-h4">{{ item.title }}</h3>
+          {% endif %}
+          {% if item.description %}
+            <p class="rich-text leading-[1.2]">
+              {{ item.description|striptags('<em><strong><a>')|raw }}
+            </p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </{{ tag }}>
+  {% endif %}
+
+</section>

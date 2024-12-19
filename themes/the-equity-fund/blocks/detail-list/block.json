@@ -1,0 +1,14 @@
+{
+  "name": "acf/detail-list",
+  "title": "Detail List",
+  "description": "Detailed ordered or unordered list.",
+  "category": "widgets",
+  "icon": {
+    "src": "list-view"
+  },
+  "keywords": ["list", "detail", "text"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "detail-list.php"
+  }
+}
