@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c621b404159009ac07af96ed42a8a8b",
+    "content-hash": "78c7e0ac1261ce5c2b17cd16914a6b8a",
     "packages": [
         {
             "name": "composer/installers",
@@ -938,6 +938,24 @@
             "time": "2024-07-20T21:52:34+00:00"
         },
         {
+            "name": "wpackagist-plugin/duplicate-post",
+            "version": "4.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/duplicate-post/",
+                "reference": "tags/4.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/duplicate-post.4.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/duplicate-post/"
+        },
+        {
             "name": "wpackagist-plugin/forms-for-campaign-monitor",
             "version": "2.8.17",
             "source": {
@@ -954,6 +972,42 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/forms-for-campaign-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "5.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/5.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "24.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/24.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         },
         {
             "name": "wpackagist-plugin/wp-environment-indicator",
