@@ -29,7 +29,7 @@
   "config": {
     "optimize-autoloader": true,
     "platform": {
-      "php": "8.0"
+      "php": "8.1"
     },
     "allow-plugins": {
       "composer/installers": true,
@@ -45,7 +45,7 @@
   "require": {
     "wpackagist-plugin/wp-environment-indicator": "^1.0",
     "vlucas/phpdotenv": "^5.4",
-    "timber/timber": "^2.1",
+    "timber/timber": "^2.3",
     "wpengine/advanced-custom-fields-pro": "^6.3",
     "wpackagist-plugin/duplicate-post": "4.5",
     "wpackagist-plugin/forms-for-campaign-monitor": "^2.8",
