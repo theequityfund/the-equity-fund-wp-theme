@@ -7,6 +7,13 @@
   class="palette-cream {% if pagename %} page-name-{{ pagename }}{% endif %} {% block custom_body_classes %}{% endblock %}"
   x-data="{ isMenuOpen: false }"
 >
+  {% if wp_env == 'production' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="ns "
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  {% endif %}
+
   <a
     class="[&:not(:focus)]:sr-only absolute top-4 left-4 bg-cream px-4 py-3 flex justify-center z-[100]"
     href="#content"
