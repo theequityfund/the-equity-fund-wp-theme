@@ -1,5 +1,5 @@
-import 'lazysizes';
-import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
+// import 'lazysizes';
+// import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 
 import Alpine from 'alpinejs';
 import focus from '@alpinejs/focus';
