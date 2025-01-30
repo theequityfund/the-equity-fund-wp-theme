@@ -61,7 +61,7 @@ class ThemeManager {
 		wp_enqueue_script( 'vendor', THE_EQUITY_FUND_THEME_URL . '/dist/static/vendor.js', array(), THE_EQUITY_FUND_THEME_VERSION, true );
 
 		// Enqueue custom JS file, with cache busting.
-		wp_enqueue_script( 'script.js', THE_EQUITY_FUND_THEME_URL . '/dist/static/app.js', array( 'polyfill' ), THE_EQUITY_FUND_THEME_VERSION, true );
+		wp_enqueue_script( 'script.js', THE_EQUITY_FUND_THEME_URL . '/dist/static/app.js', array(), THE_EQUITY_FUND_THEME_VERSION, true );
 	}
 
 	/**
