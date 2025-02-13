@@ -26,15 +26,25 @@ rsync \
   --ipv4 \
   --delete-after \
   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
-  themes/ \
-  $USER@$HOST:~/public/wp-content/themes
+  test-deploy/ \
+  $USER@$HOST:~/public/wp-content/test-deploy
 
-echo "Deploying WordPress plugins..."
-rsync \
-  -rlvz \
-  --ipv4 \
-  --exclude=".gitignore" \
-  --exclude="node_modules/" \
-  -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
-  plugins/ \
-  $USER@$HOST:~/public/wp-content/plugins
+# echo "Deploying WordPress theme..."
+# rsync \
+#   -rlvz \
+#   --exclude-from="$DEPLOYIGNORE" \
+#   --ipv4 \
+#   --delete-after \
+#   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
+#   themes/ \
+#   $USER@$HOST:~/public/wp-content/themes
+
+# echo "Deploying WordPress plugins..."
+# rsync \
+#   -rlvz \
+#   --ipv4 \
+#   --exclude=".gitignore" \
+#   --exclude="node_modules/" \
+#   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
+#   plugins/ \
+#   $USER@$HOST:~/public/wp-content/plugins
