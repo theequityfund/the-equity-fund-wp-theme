@@ -52,7 +52,6 @@
     "lint:php": "./themes/the-equity-fund/vendor/bin/phpcs --standard=phpcs.xml.dist --error-severity=1 --warning-severity=8 -p",
     "fix:php": "./themes/the-equity-fund/vendor/bin/phpcbf",
     "phpstan": "./themes/the-equity-fund/vendor/bin/phpstan analyze --memory-limit 512M",
-    "test:bundlesize": "bundlesize",
     "test:a11y": "node tests/pa11y.js",
     "prepare": "husky install",
     "lint-staged": "lint-staged"

@@ -2,21 +2,22 @@
 
 set -e
 
+# Load environment variables from .env file if it exists
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs)
+fi
+
 HOST=${1:-$SFTP_HOST}
 USER=${2:-$SFTP_USER}
 PORT=${3:-$SFTP_PORT}
+
 BASEDIR=$(dirname "$0")
 DEPLOYIGNORE=$BASEDIR/../.deployignore
 
 if [ -z $HOST ] || [ -z $USER ] || [ -z $PORT ]; then
-  echo "Please pass the SFTP host, user name, and port for your site."
+  echo "Please pass the SFTP host, user name, and port for your site, or define them using \$SFTP_HOST, \$SFTP_USER and \$SFTP_PORT env variables."
   exit 1
 fi
-
-## NOTE
-## You might need this, depending on your host.
-echo "Creating temporary directory..."
-ssh $USER@$HOST -p $PORT -o StrictHostKeyChecking=no "mkdir -p ~/_tmp"
 
 echo "Deploying WordPress theme..."
 rsync \
@@ -24,9 +25,8 @@ rsync \
   --exclude-from="$DEPLOYIGNORE" \
   --ipv4 \
   --delete-after \
-  -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
-  --temp-dir=~/_tmp \
-  themes/the-equity-fund \
+  -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
+  themes/ \
   $USER@$HOST:~/public/wp-content/themes
 
 echo "Deploying WordPress plugins..."
@@ -35,7 +35,6 @@ rsync \
   --ipv4 \
   --exclude=".gitignore" \
   --exclude="node_modules/" \
-  -e "ssh -p $PORT -o StrictHostKeyChecking=no" \
-  --temp-dir=~/_tmp \
-  plugins \
-  $USER@$HOST:~/public/wp-content
+  -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
+  plugins/ \
+  $USER@$HOST:~/public/wp-content/plugins

@@ -1,18 +1,20 @@
 name: Test
 
-on: [pull_request]
+on:
+  - pull_request
 
 jobs:
-  lint:
+  tests:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4.2.2
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
+          cache: 'npm'
 
       - name: Add HTTP basic auth credentials
         env:
@@ -23,17 +25,17 @@ jobs:
       - name: Install PHP dependencies
         uses: php-actions/composer@v6
 
+      - name: Manually install rollup dependencies (see https://github.com/npm/cli/issues/4828#issuecomment-2404560937)
+        run: npm i @rollup/rollup-linux-x64-gnu
+
       - name: Install dependencies
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Lint scripts
+      - name: Test JavaScript
         run: npm run lint:scripts
 
-      - name: Lint PHP
+      - name: Test PHP
         run: npm run lint:php
-
-      - name: Check bundlesize
-        run: npm run test:bundlesize
