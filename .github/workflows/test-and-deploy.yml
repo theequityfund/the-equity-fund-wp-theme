@@ -3,16 +3,17 @@ on:
   push:
     branches:
       - develop
-      - feb-maint
+      - main
 
 jobs:
   deploy:
-    name: Test and deploy to Kinsta staging environment
+    name: Test and deploy to Kinsta environment
     runs-on: ubuntu-latest
     env:
       SFTP_HOST: ${{ secrets.KINSTA_SFTP_HOST }}
       SFTP_USER: ${{ secrets.KINSTA_SFTP_USER }}
-      SFTP_PORT: ${{ secrets.KINSTA_STAGING_SFTP_PORT }}
+      SFTP_PORT: ${{ github.ref == 'refs/heads/main' && secrets.KINSTA_LIVE_SFTP_PORT || secrets.KINSTA_STAGING_SFTP_PORT }}
+
     steps:
       - uses: actions/checkout@v4.2.2
 
