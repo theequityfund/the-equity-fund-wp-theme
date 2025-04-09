@@ -34,8 +34,11 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
   mv wp-completion.bash $HOME; \
   echo -e "source $HOME/wp-completion.bash\n" > $HOME/.bashrc
 
-# Download WordPress
-RUN wp core download
+# Download WordPress core manually (fast & safe)
+RUN curl -o wordpress.tar.gz https://wordpress.org/latest.tar.gz && \
+    mkdir -p /var/www/html && \
+    tar --strip-components=1 -xzf wordpress.tar.gz -C /var/www/html && \
+    rm wordpress.tar.gz
 
 # Copy custom configuration files into location expected by nginx-php-fpm.
 # See https://github.com/richarvey/nginx-php-fpm/blob/master/docs/nginx_configs.md
