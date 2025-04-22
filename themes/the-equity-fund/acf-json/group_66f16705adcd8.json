@@ -40,7 +40,7 @@
       "tabs": "visual",
       "toolbar": "basic",
       "media_upload": 1,
-      "delay": 0
+      "delay": 1
     }
   ],
   "location": [
@@ -61,5 +61,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1728012720
+  "modified": 1744144049
 }
