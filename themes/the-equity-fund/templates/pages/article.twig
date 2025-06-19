@@ -1,6 +1,6 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'yellow' %}
+{% set palette = 'lavender' %}
 
 {% block pageBody %}
   {% set issue = post.issue %}
@@ -10,11 +10,25 @@
     title: post.title,
     image: post.thumbnail,
     bylines: bylines,
-    tag: issue,
+    date: post.date|date("F j, Y"),
     palette: palette,
   } %}
 
   <article class="gutenberg rich-text">
+
     {{ post.content }}
+
+    <div class="py-12">
+      <div class="border-t border-b border-dotted border-foreground py-6">
+        <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+          <span class="font-bold text-foreground">Issues:</span>
+          <span class="text-foreground">
+            {{ post.issue }}
+          </span>
+        </div>
+      </div>
+    </div>
+
   </article>
+
 {% endblock %}
