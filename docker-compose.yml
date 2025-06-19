@@ -58,6 +58,9 @@ services:
       TZ: America/New_York
   db:
     image: mysql/mysql-server:8.0.27
+    command: --max_allowed_packet=2G --innodb_buffer_pool_size=2G
+    ports:
+      - "33306:3306"
     volumes:
       # Export an initial DB seed using `wp db export` and load it automatically on first install
       # See https://hub.docker.com/_/mysql

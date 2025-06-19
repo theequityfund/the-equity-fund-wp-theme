@@ -1,11 +1,11 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'yellow' %}
+{% set palette = 'lavender' %}
 
 {% block pageBody %}
   <h1 class="sr-only">{{ page.title }}</h1>
 
-  <div class="pt-topper-margin palette-yellow bg-background px-site-padding lg:pb-8 [&>*>*]:max-lg:pt-0">
+  <div class="pt-topper-margin palette-lavender bg-background px-site-padding lg:pb-8 [&>*>*]:max-lg:pt-0">
     {% set issue = featured_article.issue %}
 
     {% include 'templates/components/toppers/article-index-topper.twig' with {
@@ -22,11 +22,13 @@
     } %}
   </div>
 
-  <div class="gutenberg rich-text">
-    {{ page.content }}
-  </div>
+  {% if page.content %}
+    <div class="gutenberg rich-text">
+      {{ page.content }}
+    </div>
+  {% endif %}
 
-  <div class="mt-site-padding">
+  <div class="my-site-padding">
     {% include 'templates/components/article-index.twig' with {
       articles: articles
     } %}
