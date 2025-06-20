@@ -1,7 +1,13 @@
 {% set title = title|default('News') %}
 
-{% if articles|length %}
-<div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-gutter px-site-padding text-foreground">
+<div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-gutter px-site-padding text-foreground"
+    hx-target="#article-index"
+    hx-select="#article-index"
+    hx-indicator="#article-index"
+    hx-swap="outerHTML"
+    hx-replace-url="true"
+    hx-include="[name='query'], [name='issues[]']"
+>
 
   <h2 class="lg:col-start-1 lg:row-start-1 lg:col-span-1 uppercase font-display font-medium text-h1">{{ title }}</h2>
 
@@ -119,10 +125,9 @@
           pagination: articles.pagination
         } %}
       </div>  
-      {% else %}
+    {% else %}
       <p class="font-bold text-h6 lg:border-y lg:border-foreground py-4 lg:border-dotted leading-[1.2] mb-24">No results found.</p>
-      {% endif %}
+    {% endif %}
     </section>
   </div>
 </div>
-{% endif %}
