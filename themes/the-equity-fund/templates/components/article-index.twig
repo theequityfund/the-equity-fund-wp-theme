@@ -88,15 +88,10 @@
       {% if articles|length %}
       <ol class="divide-y divide-foreground">
         {% for article in articles %}
-          {% set issue = article.issue %}
 
           <li class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter py-site-padding relative border-dotted {% if loop.first %}lg:border-t lg:border-foreground{% endif %}">
 
             <div class="flex flex-col gap-2 md:col-start-1 lg:col-span-8 xl:col-span-8 z-10">
-              {% if issue %}
-              <a class="w-fit text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1] px-1 py-1 -translate-x-1 -mt-1 hocus:bg-foreground hocus:text-background transition-colors" href="{{ issue.link }}">{{ issue.title }}</a>
-              {% endif %}
-
               <h3 class="font-serif text-h3">
                 <a class="transition-all hocus:shadow-[inset_0em_-0.4em_0em_#FFD64A] shadow-[inset_0em_-0.4em_0em_transparent]" href="{{ article.link }}">
                   {{ article.title }}
@@ -104,6 +99,8 @@
               </h3>
 
               <p class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.preview.read_more('') }}</p>
+
+              <span class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.date|date("F j, Y") }}</p>
             </div>
 
             {% if article.thumbnail %}

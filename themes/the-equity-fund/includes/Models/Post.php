@@ -34,15 +34,22 @@ class Post extends TimberPost {
 	 *
 	 * @return array
 	 */
-	public function issue(): Issue|null {
+	public function issue(): iterable|null {
 		// phpcs:ignore
-		/** @var string $issue */
-		$issue = $this->meta( 'issue' );
+		/** @var array $issue_ids */
+		$issue_ids = $this->meta( 'issue' );
 
-		if ( empty( $issue ) ) {
+		if ( empty( $issue_ids ) ) {
 			return null;
 		}
 
-		return Timber::get_post( $issue );
+		return Timber::get_posts(
+			array(
+				'post_type'      => 'issue',
+				'post__in'       => $issue_ids,
+				'orderby'        => 'post__in',
+				'posts_per_page' => -1,
+			)
+		);
 	}
 }

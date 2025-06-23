@@ -3,7 +3,7 @@
 {% set palette = 'lavender' %}
 
 {% block pageBody %}
-  {% set issue = post.issue %}
+  {% set issues = post.issue %}
   {% set bylines = post.bylines %}
 
   {% include 'templates/components/toppers/article-topper.twig' with {
@@ -23,7 +23,11 @@
         <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
           <span class="font-bold text-foreground">Issues:</span>
           <span class="text-foreground">
-            {{ post.issue }}
+            {% for issue in issues %}
+              {{ issue.post_title }}{% if not loop.last %}, {% endif %}
+            {% else %}
+              No issues found
+            {% endfor %}
           </span>
         </div>
       </div>
