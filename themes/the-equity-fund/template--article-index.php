@@ -26,6 +26,11 @@ if ( post_password_required( $_page->ID ) ) {
 	$featured_article            = get_field( 'featured_article' );
 	$context['featured_article'] = $featured_article ? Timber::get_post( $featured_article ) : Timber::get_post( array( 'post_type' => 'post' ) );
 
+
+	$palette              = get_field( 'news_color', 'option' );
+	$context['palette']   = empty( $palette ) ? 'lavender' : $palette;
+	$context['show_date'] = get_field( 'show_date_on_news', 'option' );
+
 	$query            = isset( $_GET['query'] ) ? sanitize_text_field( $_GET['query'] ) : '';
 	$context['query'] = $query;
 

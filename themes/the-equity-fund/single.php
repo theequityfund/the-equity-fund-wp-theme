@@ -20,6 +20,11 @@ if ( post_password_required( $_post->ID ) ) {
 
 	Timber::render( 'pages/password.twig', $context );
 } else {
-	$context['post'] = $_post;
+	$context['post']      = $_post;
+	$context['show_date'] = get_field( 'show_date_on_news', 'option' );
+
+	$palette            = get_field( 'news_color', 'option' );
+	$context['palette'] = empty( $palette ) ? 'lavender' : $palette;
+
 	Timber::render( 'pages/article.twig', $context );
 }

@@ -99,8 +99,9 @@
               </h3>
 
               <p class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.preview.read_more('') }}</p>
-
-              <span class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.date|date("F j, Y") }}</p>
+              {% if show_date %}
+                <span class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.date|date("F j, Y") }}</p>
+              {% endif %}
             </div>
 
             {% if article.thumbnail %}

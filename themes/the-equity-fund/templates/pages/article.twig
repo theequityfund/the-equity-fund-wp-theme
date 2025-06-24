@@ -1,7 +1,5 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'lavender' %}
-
 {% block pageBody %}
   {% set issues = post.issue %}
   {% set bylines = post.bylines %}
@@ -12,6 +10,7 @@
     bylines: bylines,
     date: post.date|date("F j, Y"),
     palette: palette,
+    show_date: show_date,
   } %}
 
   <article class="gutenberg rich-text">
