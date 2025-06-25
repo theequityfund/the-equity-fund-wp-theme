@@ -30,6 +30,10 @@ auth.json
 # WordPress core
 web/**
 
+!web/composer.json
+!web/composer.lock
+!web/auth.json.sample
+
 !web/wp-content/
 !web/wp-content/themes/
 !web/wp-content/themes/**
