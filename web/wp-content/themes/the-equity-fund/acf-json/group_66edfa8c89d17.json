@@ -1,212 +1,211 @@
-[
-  {
-    "key": "group_66edfa8c89d17",
-    "title": "Settings",
-    "fields": [
-      {
-        "key": "field_66edfa8caecbc",
-        "label": "Footer",
-        "name": "footer",
-        "aria-label": "",
-        "type": "group",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_66edfac7aecbd",
-            "label": "Mission Statement",
-            "name": "mission_statement",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "",
-              "class": "",
-              "id": ""
-            },
-            "default_value": "",
-            "tabs": "visual",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-          }
-        ]
+{
+  "key": "group_66edfa8c89d17",
+  "title": "Settings",
+  "fields": [
+    {
+      "key": "field_66edfa8caecbc",
+      "label": "Footer",
+      "name": "footer",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
       },
-      {
-        "key": "field_66edfbb41641b",
-        "label": "Social",
-        "name": "social",
-        "aria-label": "",
-        "type": "group",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-        },
-        "layout": "block",
-        "sub_fields": [
-          {
-            "key": "field_66edfbbd1641c",
-            "label": "Vimeo",
-            "name": "vimeo",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "50",
-              "class": "",
-              "id": ""
-            },
-            "return_format": "url"
-          },
-          {
-            "key": "field_66edfbeb1641d",
-            "label": "Facebook",
-            "name": "facebook",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "50",
-              "class": "",
-              "id": ""
-            },
-            "return_format": "url"
-          },
-          {
-            "key": "field_66edfbfa1641e",
-            "label": "LinkedIn",
-            "name": "linkedin",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "50",
-              "class": "",
-              "id": ""
-            },
-            "return_format": "url"
-          },
-          {
-            "key": "field_66edfc0b1641f",
-            "label": "Instagram",
-            "name": "instagram",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "50",
-              "class": "",
-              "id": ""
-            },
-            "return_format": "url"
-          },
-          {
-            "key": "field_66edfcbbbf4ee",
-            "label": "Twitter",
-            "name": "twitter",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-              "width": "50",
-              "class": "",
-              "id": ""
-            },
-            "return_format": "url"
-          }
-        ]
-      },
-      {
-        "key": "field_6859e075a1e13",
-        "label": "Show Date on News",
-        "name": "show_date_on_news",
-        "aria-label": "",
-        "type": "true_false",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "30",
-          "class": "",
-          "id": ""
-        },
-        "message": "",
-        "default_value": 0,
-        "allow_in_bindings": 0,
-        "ui_on_text": "",
-        "ui_off_text": "",
-        "ui": 1
-      },
-      {
-        "key": "field_6859e0a5a1e14",
-        "label": "News Color",
-        "name": "news_color",
-        "aria-label": "",
-        "type": "select",
-        "instructions": "",
-        "required": 0,
-        "conditional_logic": 0,
-        "wrapper": {
-          "width": "70",
-          "class": "",
-          "id": ""
-        },
-        "choices": {
-          "lavender": "Light Lavender (Default) - HEX E1DEE7",
-          "coral": "Coral - HEX FF7077",
-          "teal": "Teal - HEX 18C198",
-          "gold": "Gold - HEX FFD64A"
-        },
-        "default_value": "lavender",
-        "return_format": "value",
-        "multiple": 0,
-        "allow_null": 0,
-        "allow_in_bindings": 0,
-        "ui": 0,
-        "ajax": 0,
-        "placeholder": ""
-      }
-    ],
-    "location": [
-      [
+      "layout": "block",
+      "sub_fields": [
         {
-          "param": "options_page",
-          "operator": "==",
-          "value": "site-settings"
+          "key": "field_66edfac7aecbd",
+          "label": "Mission Statement",
+          "name": "mission_statement",
+          "aria-label": "",
+          "type": "wysiwyg",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "tabs": "visual",
+          "toolbar": "basic",
+          "media_upload": 0,
+          "delay": 0
         }
       ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "seamless",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0
-  }
-]
+    },
+    {
+      "key": "field_66edfbb41641b",
+      "label": "Social",
+      "name": "social",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_66edfbbd1641c",
+          "label": "Vimeo",
+          "name": "vimeo",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfbeb1641d",
+          "label": "Facebook",
+          "name": "facebook",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfbfa1641e",
+          "label": "LinkedIn",
+          "name": "linkedin",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfc0b1641f",
+          "label": "Instagram",
+          "name": "instagram",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        },
+        {
+          "key": "field_66edfcbbbf4ee",
+          "label": "Twitter",
+          "name": "twitter",
+          "aria-label": "",
+          "type": "link",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "url"
+        }
+      ]
+    },
+    {
+      "key": "field_6859e075a1e13",
+      "label": "Show Date on News",
+      "name": "show_date_on_news",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "30",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "allow_in_bindings": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
+    },
+    {
+      "key": "field_6859e0a5a1e14",
+      "label": "News Color",
+      "name": "news_color",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "70",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "lavender": "Light Lavender (Default) - HEX E1DEE7",
+        "coral": "Coral - HEX FF7077",
+        "teal": "Teal - HEX 18C198",
+        "gold": "Gold - HEX FFD64A"
+      },
+      "default_value": "lavender",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "allow_in_bindings": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "site-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "seamless",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1750867546
+}
