@@ -1,0 +1,92 @@
+{% set truncatorLimit = 8 %}
+{% set withTruncator = grantees|length > truncatorLimit %}
+
+{% if grantees|length %}
+<section
+  class="palette-cream text-foreground flex flex-col gap-gutter"
+  data-block="grantees"
+  x-ref="block"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+  {% if withTruncator %}x-data="{ expanded: false }"{% endif %}
+>
+  <div class="mx-breakout-site-paddding px-site-padding {% if withTruncator %}sticky top-0 pt-4 bg-background z-10{% endif %}">
+    <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-3 gap-2">
+      <h2 class="font-display font-medium text-h3 uppercase">{{ headline }}</h2>
+
+      {% if withTruncator %}
+      <div class="flex gap-3 items-center">
+        <span class="text-base leading-[1] max-md:hidden whitespace-nowrap" aria-atomic="true" aria-live="polite">
+          <span x-show="!expanded">
+            Showing <strong>{{ truncatorLimit }}</strong> out of <strong>{{ grantees|length }}</strong> grantees
+          </span>
+
+          <span x-show="expanded" x-cloak>
+            Showing all <strong>{{ grantees|length }}</strong> grantees
+          </span>
+        </span>
+
+        <button
+          class="button whitespace-nowrap max-sm:w-full"
+          @click="
+            if (expanded) {
+              window.scrollTo({ top: $refs.block.offsetTop });
+            }
+
+            expanded = !expanded;
+          "
+        >
+          <span x-show="!expanded">
+            Show all <span class="md:hidden">{{ grantees|length }} grantees</span>
+          </span>
+
+          <span x-show="expanded" x-cloak>Collapse</span>
+          </span>
+        </button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <ul class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-y-12 md:gap-x-gutter">
+    {% for grantee in grantees %}
+      {% set headingTag = headline ? 'h3' : 'h2' %}
+      {% set issue = grantee.issue() %}
+      {% set external_link = grantee.meta('external_link') %}
+
+      <li
+        class="group"
+
+        {% if withTruncator %}
+        x-show="{{ loop.index0 }} < {{ truncatorLimit }} || expanded"
+        {% endif %}
+
+        {% if withTruncator and loop.index0 > truncatorLimit %}
+        x-cloak
+        {% endif %}
+      >
+        <div class="relative before:content-[''] before:absolute before:w-[calc(100%+2rem)] before:h-[calc(100%+2rem)] before:bg-yellow before:z-1 before:translate-x-[-50%] before:translate-y-[-50%] before:left-[50%] before:top-[50%] before:opacity-0 before:transition-opacity hocus-within:before:opacity-100 md:h-full">
+          <div class="relative z-[2] flex gap-3 flex-col border-b border-dotted border-foreground pb-4 md:h-full {{ grantee.thumbnail == false ? 'justify-end' }}">
+            {% if grantee.thumbnail %}
+              {% include 'templates/components/lazy-img.twig' with {
+                class: 'w-full grayscale group-hocus-within:grayscale-0',
+                img: get_image(grantee.thumbnail),
+                aspectRatio: 'horizontal',
+              } %}
+            {% endif%}
+
+            <{{ headingTag }} class="text-h4 font-serif ">
+              <a class="after:inset-0 after:absolute" href="{{ external_link|default(grantee.link) }}" {% if external_link %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                {{ grantee.title }}
+              </a>
+            </{{ headingTag }}>
+
+            {% if show_grantee_description and grantee.excerpt %}
+              <p class="text-body-text">{{ grantee.excerpt.read_more('') }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

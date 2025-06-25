@@ -12,7 +12,7 @@
   "plugins": ["react"],
   "overrides": [
     {
-      "files": "./themes/the-equity-fund/blocks/**/*.js",
+      "files": "./web/wp-content/themes/the-equity-fund/blocks/**/*.js",
       "extends": "@upstatement/eslint-config/react",
       "rules": {
         "react/react-in-jsx-scope": "off"

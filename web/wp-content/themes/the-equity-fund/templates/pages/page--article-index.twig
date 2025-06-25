@@ -1,0 +1,35 @@
+{% extends "layouts/base.twig" %}
+
+{% block pageBody %}
+  <h1 class="sr-only">{{ page.title }}</h1>
+
+  <div class="pt-topper-margin palette-{{ palette }} bg-background px-site-padding lg:pb-8 [&>*>*]:max-lg:pt-0">
+    {% set issue = featured_article.issue %}
+
+    {% include 'templates/components/toppers/article-index-topper.twig' with {
+      overline: issue.title ?? 'Featured',
+      headline: featured_article.title,
+      description: featured_article.excerpt.read_more(''),
+      image: featured_article.thumbnail,
+      cta: {
+        title: 'Read More',
+        url: featured_article.link,
+      },
+      size: 'large',
+      palette: palette,
+    } %}
+  </div>
+
+  {% if page.content %}
+    <div class="gutenberg rich-text">
+      {{ page.content }}
+    </div>
+  {% endif %}
+
+  <div class="my-site-padding">
+    {% include 'templates/components/article-index.twig' with {
+      articles: articles,
+      show_date: show_date,
+    } %}
+  </div>
+{% endblock %}

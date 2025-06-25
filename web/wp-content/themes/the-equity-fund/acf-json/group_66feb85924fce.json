@@ -1,0 +1,51 @@
+{
+  "key": "group_66feb85924fce",
+  "title": "Post: Issue",
+  "fields": [
+    {
+      "key": "field_66feb859270f6",
+      "label": "Issue",
+      "name": "issue",
+      "aria-label": "",
+      "type": "relationship",
+      "instructions": "(Recommended) Include relevant issue.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": ["issue"],
+      "post_status": ["publish"],
+      "taxonomy": "",
+      "filters": ["search"],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "allow_in_bindings": 0,
+      "elements": "",
+      "bidirectional": 0,
+      "bidirectional_target": []
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1750868876
+}

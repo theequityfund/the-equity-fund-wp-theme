@@ -9,11 +9,11 @@
   <ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
 
   <!-- Where to sniff -->
-  <file>./themes/the-equity-fund</file>
+  <file>./web/wp-content/themes/the-equity-fund</file>
   <exclude-pattern>*.twig</exclude-pattern>
-  <exclude-pattern>./themes/the-equity-fund/vendor</exclude-pattern>
-  <exclude-pattern>./themes/the-equity-fund/node_modules</exclude-pattern>
-  <exclude-pattern>./themes/the-equity-fund/dist</exclude-pattern>
+  <exclude-pattern>./web/wp-content/themes/the-equity-fund/vendor</exclude-pattern>
+  <exclude-pattern>./web/wp-content/themes/the-equity-fund/node_modules</exclude-pattern>
+  <exclude-pattern>./web/wp-content/themes/the-equity-fund/dist</exclude-pattern>
   <exclude-pattern>*.js</exclude-pattern>
   <exclude-pattern>*.css</exclude-pattern>
   <exclude-pattern>*.scss</exclude-pattern>
