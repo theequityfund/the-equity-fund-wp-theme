@@ -45,7 +45,6 @@
     "build:wp-blocks": "wp-scripts build ./web/wp-content/themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
     "build:tailwind": "tailwindcss -m -i ./web/wp-content/themes/the-equity-fund/static/scss/app.css -o ./web/wp-content/themes/the-equity-fund/dist/static/app.css",
     "start": "NODE_ENV=development webpack --config ./web/wp-content/themes/the-equity-fund/webpack.config.js --watch --mode development & npm run start:wp-blocks & npm run start:tailwind",
-    "start:ups-dock": "NODE_ENV=development webpack --config ./web/wp-content/themes/the-equity-fund/webpack.config.js --watch --mode development --env platform=ups-dock & npm run start:wp-blocks & npm run start:tailwind",
     "start:wp-blocks": "wp-scripts start ./web/wp-content/themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
     "start:tailwind": "tailwindcss -i ./web/wp-content/themes/the-equity-fund/static/scss/app.css -o ./web/wp-content/themes/the-equity-fund/dist/static/app.css --watch",
     "lint:scripts": "eslint ./web/wp-content/themes/the-equity-fund/static/js/**/*.js --cache",
