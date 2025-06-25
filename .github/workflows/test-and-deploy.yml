@@ -56,6 +56,7 @@ jobs:
       - name: Reinstall only non-dev PHP dependencies
         uses: php-actions/composer@v6
         with:
+          working_dir: 'web'
           dev: no
 
       - name: Do the deploy
