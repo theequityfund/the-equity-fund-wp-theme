@@ -22,7 +22,7 @@
         {% if person.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
-            img: Image(person.thumbnail),
+            img: get_image(person.thumbnail),
             aspectRatio: 'square'
           } %}
         {% endif %}
@@ -35,8 +35,8 @@
           {% endif %}
           </div>
 
-          {% if person.preview %}
-            <p class="text-body-text">{{ person.preview.read_more('') }}</p>
+          {% if person.excerpt %}
+            <p class="text-body-text">{{ person.excerpt.read_more('') }}</p>
           {% endif %}
 
           <div class="flex gap-1">

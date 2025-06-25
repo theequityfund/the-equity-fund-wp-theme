@@ -69,7 +69,7 @@
             {% if grantee.thumbnail %}
               {% include 'templates/components/lazy-img.twig' with {
                 class: 'w-full grayscale group-hocus-within:grayscale-0',
-                img: Image(grantee.thumbnail),
+                img: get_image(grantee.thumbnail),
                 aspectRatio: 'horizontal',
               } %}
             {% endif%}

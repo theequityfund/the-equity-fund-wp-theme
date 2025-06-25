@@ -17,7 +17,7 @@
         {% if post.thumbnail %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full mb-6',
-            img: Image(post.thumbnail),
+            img: get_image(post.thumbnail),
           } %}
         {% endif %}
 
@@ -28,7 +28,7 @@
 
           <h3 class="text-h3 leading-[1.1] font-serif">{{ post.title }}</h3>
 
-          <p class="text-body-text">{{ post.preview.read_more('') }}</p>
+          <p class="text-body-text">{{ post.excerpt.read_more('') }}</p>
 
           {% if post.type == 'resource' %}
             <a class="button flex items-center gap-2" href="{{ post.meta('file').url }}" target="_blank" rel="noopener noreferrer">

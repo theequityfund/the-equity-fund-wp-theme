@@ -32,7 +32,7 @@
         {% for image in images %}
           {% include 'templates/components/lazy-img.twig' with {
             class: 'w-full',
-            img: Image(image),
+            img: get_image(image),
             aspectRatio: images|length == 1 ? 'horizontal',
           } %}
         {% endfor %}

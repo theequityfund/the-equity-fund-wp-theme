@@ -11,7 +11,7 @@
           {% if resource.thumbnail %}
             {% include 'templates/components/lazy-img.twig' with {
               class: 'w-full',
-              img: Image(resource.thumbnail),
+              img: get_image(resource.thumbnail),
               aspectRatio: 'horizontal',
             } %}
           {% endif %}

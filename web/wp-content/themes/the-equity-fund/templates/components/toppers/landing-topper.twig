@@ -23,7 +23,7 @@
 
         <div class="{{ imageClass }} hover:z-20">
           {% include 'templates/components/lazy-img.twig' with {
-            img: Image(image),
+            img: get_image(image),
           } %}
         </div>
       {% endfor %}
@@ -52,7 +52,7 @@
 
         <div class="{{ imageClass }} hover:z-20">
           {% include 'templates/components/lazy-img.twig' with {
-            img: Image(image),
+            img: get_image(image),
           } %}
         </div>
       {% endfor %}

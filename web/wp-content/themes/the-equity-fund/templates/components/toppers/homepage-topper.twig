@@ -8,7 +8,7 @@
     {% if image %}
       <figure class="{{ size == 'small' ? 'w-4/12' }} {{ size == 'medium' ? 'w-5/12' }} {{ size == 'large' ? 'w-6/12' }} absolute top-[14.5vw]">
         {% include 'templates/components/lazy-img.twig' with {
-          img: Image(image),
+          img: get_image(image),
           aspectRatio: 'wide',
         } %}
       </figure>
