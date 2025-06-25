@@ -71,7 +71,7 @@ See below for troubleshooting steps.
 
     # Install dependencies.
     npm install
-    composer install
+    ddev composer install
     ```
 
 ### Development
