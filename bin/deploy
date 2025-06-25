@@ -36,5 +36,5 @@ rsync \
   --exclude=".gitignore" \
   --exclude="node_modules/" \
   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
-  plugins/ \
+  web/wp-content/plugins/ \
   $USER@$HOST:~/public/wp-content/plugins
