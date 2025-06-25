@@ -9,7 +9,10 @@ module.exports = {
     'palette-cream',
   ],
 
-  content: ['./themes/the-equity-fund/**/*.twig', './themes/the-equity-fund/**/*.js'],
+  content: [
+    './web/wp-content/themes/the-equity-fund/**/*.twig',
+    './web/wp-content/themes/the-equity-fund/**/*.js',
+  ],
   theme: {
     fontFamily: {
       display: ['Judge', 'sans-serif'],

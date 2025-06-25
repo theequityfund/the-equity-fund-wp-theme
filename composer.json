@@ -35,11 +35,11 @@
       "composer/installers": true,
       "dealerdirect/phpcodesniffer-composer-installer": true
     },
-    "vendor-dir": "themes/the-equity-fund/vendor"
+    "vendor-dir": "web/wp-content/themes/the-equity-fund/vendor"
   },
   "autoload": {
     "psr-4": {
-      "TheEquityFund\\": "themes/the-equity-fund/includes"
+      "TheEquityFund\\": "web/wp-content/themes/the-equity-fund/includes"
     }
   },
   "require": {
