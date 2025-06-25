@@ -17,13 +17,13 @@
         "id": ""
       },
       "post_type": ["issue"],
-      "post_status": "",
+      "post_status": ["publish"],
       "taxonomy": "",
       "filters": ["search"],
       "return_format": "id",
       "min": "",
       "max": "",
-      "allow_in_bindings": 1,
+      "allow_in_bindings": 0,
       "elements": "",
       "bidirectional": 0,
       "bidirectional_target": []
@@ -46,5 +46,6 @@
   "hide_on_screen": "",
   "active": true,
   "description": "",
-  "show_in_rest": 0
+  "show_in_rest": 0,
+  "modified": 1750868876
 }
