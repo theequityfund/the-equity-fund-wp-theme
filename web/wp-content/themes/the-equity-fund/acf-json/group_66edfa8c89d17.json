@@ -174,12 +174,13 @@
         "id": ""
       },
       "choices": {
-        "lavender": "Light Lavender (Default) - HEX E1DEE7",
+        "lavender-light": "Light Lavender (Default) - HEX E1DEE7",
+        "lavender": "Regular Lavender HEX C4B3E0",
         "coral": "Coral - HEX FF7077",
         "teal": "Teal - HEX 18C198",
-        "gold": "Gold - HEX FFD64A"
+        "yellow": "Gold - HEX FFD64A"
       },
-      "default_value": "lavender",
+      "default_value": "lavender-light",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
@@ -207,5 +208,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1750867546
+  "modified": 1750894715
 }
