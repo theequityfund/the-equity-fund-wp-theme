@@ -4,6 +4,7 @@ module.exports = {
     'palette-yellow',
     'palette-maroon',
     'palette-lavender',
+    'palette-lavender-light',
     'palette-teal',
     'palette-coral',
     'palette-cream',
@@ -40,6 +41,7 @@ module.exports = {
         lavender: {
           20: 'rgba(196, 179, 255, 0.2)',
           DEFAULT: '#C4B3E0',
+          light: '#E1DEE7',
         },
         teal: '#18C198',
         yellow: '#FFD64A',

@@ -744,6 +744,16 @@
     --c-button-hover-background: theme('colors.maroon');
   }
 
+  .palette-lavender-light {
+    --c-foreground: theme('colors.maroon');
+    --c-background: theme('colors.lavender.light');
+
+    --c-button-foreground: theme('colors.maroon');
+    --c-button-background: theme('colors.cream');
+    --c-button-hover-foreground: theme('colors.cream');
+    --c-button-hover-background: theme('colors.maroon');
+  }
+
   .palette-cream {
     --c-foreground: theme('colors.maroon');
     --c-background: theme('colors.cream');
