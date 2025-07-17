@@ -1,0 +1,34 @@
+<section
+  class="palette-{{ palette }} size-{{ size|default('large') }} bg-background text-foreground mx-breakout-site-paddding"
+  data-block="tease"
+  {% if overline %}aria-label="{{ overline }}"{% endif %}
+>
+  <div class="px-4 sm:px-8 md:px-20 py-16 flex flex-col lg:flex-row justify-between gap-10">
+    <div class="max-w-[690px] flex flex-col gap-4 lg:gap-6 text-left">
+
+      <h2 class="font-display uppercase font-medium text-[64px] leading-[128%]">{{ headline }}</h2>
+
+      {% if description %}
+        <p class="rich-text max-w-[37.5rem] text-[24px] leading-[150%] font-serif">{{ description|striptags('<em><strong><a>') | excerpt(30) }}</p>
+      {% endif %}
+
+      {% if cta %}
+        <a
+          class="w-auto inline-block self-start uppercase leading-[1] text-sm lg:text-base font-bold tracking-wide px-4 py-3 text-button-foreground bg-button-background hocus:bg-button-hover-background hocus:text-button-hover-foreground transition-all"
+          href="{{ cta.url }}"
+        >
+          {{ cta.title }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="w-full max-w-[640px]">
+      {% if image %}
+        {% include 'templates/components/lazy-img.twig' with {
+          img: image,
+          aspectRatio: 'square'
+        } %}
+      {% endif %}
+    </div>
+  </div>
+</section>

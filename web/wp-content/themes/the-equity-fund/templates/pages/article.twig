@@ -1,0 +1,37 @@
+{% extends "layouts/base.twig" %}
+
+{% block pageBody %}
+  {% set issues = post.issue %}
+  {% set bylines = post.bylines %}
+
+  {% include 'templates/components/toppers/article-topper.twig' with {
+    title: post.title,
+    image: post.thumbnail,
+    bylines: bylines,
+    date: post.date|date("F j, Y"),
+    palette: palette,
+    show_date: show_date,
+  } %}
+
+  <article class="gutenberg rich-text">
+
+    {{ post.content }}
+
+    <div class="py-12">
+      <div class="border-t border-b border-dotted border-foreground py-6">
+        <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+          <span class="font-bold text-foreground">Issues:</span>
+          <span class="text-foreground">
+            {% for issue in issues %}
+              {{ issue.post_title }}{% if not loop.last %}, {% endif %}
+            {% else %}
+              No issues found
+            {% endfor %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+{% endblock %}

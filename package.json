@@ -28,11 +28,11 @@
   },
   "bundlesize": [
     {
-      "path": "./themes/the-equity-fund/dist/static/app.js",
+      "path": "./web/wp-content/themes/the-equity-fund/dist/static/app.js",
       "maxSize": "10 kB"
     },
     {
-      "path": "./themes/the-equity-fund/dist/static/vendor.js",
+      "path": "./web/wp-content/themes/the-equity-fund/dist/static/vendor.js",
       "maxSize": "110 kB"
     }
   ],
@@ -41,17 +41,16 @@
     "last 2 versions"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack --config ./themes/the-equity-fund/webpack.config.js  --progress --mode production && npm run build:wp-blocks && npm run build:tailwind",
-    "build:wp-blocks": "wp-scripts build ./themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
-    "build:tailwind": "tailwindcss -m -i ./themes/the-equity-fund/static/scss/app.css -o ./themes/the-equity-fund/dist/static/app.css",
-    "start": "NODE_ENV=development webpack --config ./themes/the-equity-fund/webpack.config.js --watch --mode development & npm run start:wp-blocks & npm run start:tailwind",
-    "start:ups-dock": "NODE_ENV=development webpack --config ./themes/the-equity-fund/webpack.config.js --watch --mode development --env platform=ups-dock & npm run start:wp-blocks & npm run start:tailwind",
-    "start:wp-blocks": "wp-scripts start ./themes/the-equity-fund/blocks/index.js --output-path=themes/the-equity-fund/dist/blocks",
-    "start:tailwind": "tailwindcss -i ./themes/the-equity-fund/static/scss/app.css -o ./themes/the-equity-fund/dist/static/app.css --watch",
-    "lint:scripts": "eslint ./themes/the-equity-fund/static/js/**/*.js --cache",
-    "lint:php": "./themes/the-equity-fund/vendor/bin/phpcs --standard=phpcs.xml.dist --error-severity=1 --warning-severity=8 -p",
-    "fix:php": "./themes/the-equity-fund/vendor/bin/phpcbf",
-    "phpstan": "./themes/the-equity-fund/vendor/bin/phpstan analyze --memory-limit 512M",
+    "build": "NODE_ENV=production webpack --config ./web/wp-content/themes/the-equity-fund/webpack.config.js  --progress --mode production && npm run build:wp-blocks && npm run build:tailwind",
+    "build:wp-blocks": "wp-scripts build ./web/wp-content/themes/the-equity-fund/blocks/index.js --output-path=web/wp-content/themes/the-equity-fund/dist/blocks",
+    "build:tailwind": "tailwindcss -m -i ./web/wp-content/themes/the-equity-fund/static/scss/app.css -o ./web/wp-content/themes/the-equity-fund/dist/static/app.css",
+    "start": "NODE_ENV=development webpack --config ./web/wp-content/themes/the-equity-fund/webpack.config.js --watch --mode development & npm run start:wp-blocks & npm run start:tailwind",
+    "start:wp-blocks": "wp-scripts start ./web/wp-content/themes/the-equity-fund/blocks/index.js --output-path=web/wp-content/themes/the-equity-fund/dist/blocks",
+    "start:tailwind": "tailwindcss -i ./web/wp-content/themes/the-equity-fund/static/scss/app.css -o ./web/wp-content/themes/the-equity-fund/dist/static/app.css --watch",
+    "lint:scripts": "eslint ./web/wp-content/themes/the-equity-fund/static/js/**/*.js --cache",
+    "lint:php": "./web/wp-content/themes/the-equity-fund/vendor/bin/phpcs --standard=phpcs.xml.dist --error-severity=1 --warning-severity=8 -p",
+    "fix:php": "./web/wp-content/themes/the-equity-fund/vendor/bin/phpcbf",
+    "phpstan": "./web/wp-content/themes/the-equity-fund/vendor/bin/phpstan analyze --memory-limit 512M",
     "test:a11y": "node tests/pa11y.js",
     "prepare": "husky install",
     "lint-staged": "lint-staged"

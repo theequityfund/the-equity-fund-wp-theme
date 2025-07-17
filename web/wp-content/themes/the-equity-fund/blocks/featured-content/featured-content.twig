@@ -1,0 +1,51 @@
+{% if posts|length %}
+<section
+  class="palette-cream text-foreground"
+  aria-label="{{ headline }}"
+  data-block="featured-content"
+>
+  {% include 'templates/components/block-header.twig' with {
+    title: headline,
+    link: cta
+  } %}
+
+  <ul class="py-site-padding gap-y-10 md:gap-y-16 {{ posts|length > 2 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'flex max-md:flex-wrap justify-between' }} {{ posts|length > 3 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' }} md:gap-x-gutter ">
+    {% for post in posts %}
+      {% set issue = post.issue %} {# Both `Post` and `Resource` have `issue` #}
+
+      <li class="w-full {{ posts|length <= 2 ? 'md:w-6/12 lg:[&:nth-child(2)]:w-4/12 lg:[&:nth-child(1)_p]:w-8/12' }}">
+        {% if post.thumbnail %}
+          {% include 'templates/components/lazy-img.twig' with {
+            class: 'w-full mb-6',
+            img: get_image(post.thumbnail),
+          } %}
+        {% endif %}
+
+        <div class="flex flex-col gap-3 md:gap-4 items-start">
+          {% if issue %}
+          <a class="text-sm font-bold font-sans-narrow uppercase tracking-wide leading-[1] hocus:bg-foreground hocus:text-background px-1 py-1 -mx-1 -my-1 transition-colors" href="{{ issue.link }}">{{ issue.title }}</a>
+          {% endif %}
+
+          <h3 class="text-h3 leading-[1.1] font-serif">{{ post.title }}</h3>
+
+          <p class="text-body-text">{{ post.excerpt.read_more('') }}</p>
+
+          {% if post.type == 'resource' %}
+            <a class="button flex items-center gap-2" href="{{ post.meta('file').url }}" target="_blank" rel="noopener noreferrer">
+              <svg class="w-4 h-4" aria-hidden="true">
+                <use xlink:href="#download"></use>
+              </svg>
+
+              Download
+            </a>
+          {% else %}
+            <a class="button" href="{{ post.link }}">
+              Read More
+            </a>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

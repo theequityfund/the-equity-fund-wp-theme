@@ -1,0 +1,131 @@
+{% set title = title|default('News') %}
+
+<div class="max-lg:flex max-lg:flex-col lg:grid lg:grid-cols-3 gap-8 md:gap-10 lg:gap-gutter px-site-padding text-foreground"
+    hx-target="#article-index"
+    hx-select="#article-index"
+    hx-indicator="#article-index"
+    hx-swap="outerHTML"
+    hx-replace-url="true"
+    hx-include="[name='query'], [name='issues[]']"
+>
+
+  <h2 class="lg:col-start-1 lg:row-start-1 lg:col-span-1 uppercase font-display font-medium text-h1">{{ title }}</h2>
+
+  <div id="side-wrapper" class="lg:col-start-1 lg:row-start-2 flex flex-col gap-6">
+
+    <form
+      class="relative w-full flex gap-1 items-center justify-between mb-10"
+      hx-get="{{ page.link }}"
+      hx-trigger="input changed delay:500ms"
+    >
+      <input
+        class="w-full bg-background text-foreground px-3 py-1 md:px-5 md:py-2 text-h4 placeholder:text-foreground placeholder:opacity-70 border border-foreground focus:outline-0 focus:bg-yellow focus:border-solid [&::-webkit-search-cancel-button]:hidden leading-[1]"
+        type="search"
+        name="query"
+        placeholder="Search"
+        {% if query %}value="{{ query }}"{% endif %}
+      >
+
+      <svg class="h-5 w-5 md:w-6 md:h-6 text-foreground absolute right-4 md:right-6" aria-hidden="true">
+        <use xlink:href="#search"></use>
+      </svg>
+    </form>
+
+
+    <form
+        class="flex flex-col gap-6 md:gap-8 lg:col-start-1 h-fit text-foreground lg:sticky top-site-padding"
+        x-data
+        x-ref="form"
+        hx-get="{{ page.link }}"
+        hx-trigger="change"
+      >
+        <fieldset class="flex flex-col gap-3 w-full">
+          <legend class="block mb-4 pb-2 font-serif font-medium text-h5 border-b border-foreground w-full">Issues</legend>
+
+          {% for issue in issues %}
+            <label class="flex gap-2 items-center cursor-pointer group">
+              <span class="relative border border-foreground aspect-square w-5 h-5 md:w-6 md:h-6 shrink-0 group-hocus:bg-yellow transition-colors group-hocus-within:outline-2 group-hocus-within:outline group-hocus-within:outline-offset-1 group-hocus-within:outline-[-webkit-focus-ring-color]">
+                <input
+                  id="{{ issue.slug }}"
+                  class="absolute inset-0 opacity-0 peer"
+                  type="checkbox"
+                  name="issues[]"
+                  value="{{ issue.id }}"
+                  {% if issue.id in selected_issues %}checked{% endif %}
+                />
+
+                <span class="aspect-square w-5 h-5 md:w-6 md:h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-colors peer-checked:bg-foreground flex items-center justify-center text-cream [&>svg]:peer-checked:opacity-100">
+                  <svg class="w-2 h-2 md:w-3 md:h-3 fill-cream text-backround flex-shrink-0 opacity-0" aria-hidden="true">
+                    <use xlink:href="#checkmark"></use>
+                  </svg>
+                </span>
+              </span>
+
+              <span class="text-sm md:text-base translate-y-[0.05rem] group-hocus:underline">{{ issue.title }}</span>
+            </label>
+          {% endfor %}
+        </fieldset>
+
+        <button
+          class="button button-outline"
+          hx-get="{{ page.link }}"
+          hx-include="[name='query']"
+          @click="
+            $refs.form.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
+              checkbox.checked = false;
+            })
+          "
+        >
+          Reset Filters
+        </button>
+      </form>
+  </div>
+
+  <div class="lg:col-start-2 lg:col-span-2 lg:row-start-2 max-lg:border-t max-lg:border-foreground max-lg:border-dotted">
+    <section id="article-index" class="px-site-padding text-foreground [&.htmx-request]:opacity-20 transition-opacity" aria-label="{{ title }}">
+      <h2 class="sr-only">Results</h2>
+
+      {% if articles|length %}
+      <ol class="divide-y divide-foreground">
+        {% for article in articles %}
+
+          <li class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-gutter py-site-padding relative border-dotted {% if loop.first %}lg:border-t lg:border-foreground{% endif %}">
+
+            <div class="flex flex-col gap-2 md:col-start-1 lg:col-span-8 xl:col-span-8 z-10">
+              <h3 class="font-serif text-h3">
+                <a class="transition-all hocus:shadow-[inset_0em_-0.4em_0em_#FFD64A] shadow-[inset_0em_-0.4em_0em_transparent]" href="{{ article.link }}">
+                  {{ article.title }}
+                </a>
+              </h3>
+
+              <p class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.excerpt.read_more('') }}</p>
+              {% if show_date %}
+                <span class="mt-2 text-body-text lg:w-11/12 xl:w-10/12">{{ article.date|date("F j, Y") }}</p>
+              {% endif %}
+            </div>
+
+            {% if article.thumbnail %}
+            <div class="lg:col-span-4">
+              {% include 'templates/components/lazy-img.twig' with {
+                class: 'w-full',
+                img: get_image(article.thumbnail),
+              } %}
+            </div>
+            {% endif %}
+
+          </li>
+        {% endfor %}
+      </ol>
+
+      <div class="border-t border-foreground border-dotted">
+        {% include 'templates/components/pagination.twig' with {
+          swap: '#article-index',
+          pagination: articles.pagination
+        } %}
+      </div>
+    {% else %}
+      <p class="font-bold text-h6 lg:border-y lg:border-foreground py-4 lg:border-dotted leading-[1.2] mb-24">No results found.</p>
+    {% endif %}
+    </section>
+  </div>
+</div>

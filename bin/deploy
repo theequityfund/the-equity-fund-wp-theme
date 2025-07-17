@@ -26,7 +26,7 @@ rsync \
   --ipv4 \
   --delete-after \
   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
-  themes/ \
+  web/wp-content/themes/ \
   $USER@$HOST:~/public/wp-content/themes
 
 echo "Deploying WordPress plugins..."
@@ -36,5 +36,5 @@ rsync \
   --exclude=".gitignore" \
   --exclude="node_modules/" \
   -e "ssh -i ~/.ssh/id_rsa -p $PORT -o StrictHostKeyChecking=no" \
-  plugins/ \
+  web/wp-content/plugins/ \
   $USER@$HOST:~/public/wp-content/plugins
