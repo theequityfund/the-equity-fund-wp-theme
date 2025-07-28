@@ -46,6 +46,9 @@ class ThemeManager {
 
 		add_filter( 'admin_footer_text', array( $this, 'add_admin_footer_credit' ) );
 
+		add_filter( 'wpseo_meta_author', array( $this, 'modify_meta_author' ), 10, 2 );
+		add_filter( 'wpseo_enhanced_slack_data', array( $this, 'modify_meta_slack_data' ), 10, 2 );
+
 		$this->setup_theme_support();
 	}
 
@@ -146,5 +149,47 @@ class ThemeManager {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_theme_support( 'align-wide' );
+	}
+
+	/**
+	 * Modify the author data.
+	 *
+	 * @param string                                                      $author The author data.
+	 * @param Yoast\WP\SEO\Presentations\Indexable_Post_Type_Presentation $presentation The presentation object.
+	 *
+	 * @return string
+	 */
+	public function modify_meta_author( $author, $presentation ) {
+		if ( $presentation instanceof \Yoast\WP\SEO\Presentations\Indexable_Post_Type_Presentation ) {
+			$post_id = $presentation->model->object_id;
+			$author_field = get_field( 'authors', $post_id );
+
+			if ( ! empty( $author_field ) ) {
+				return join( ', ', array_column( $author_field, 'name' ) );
+			}
+		}
+
+		return $author;
+	}
+
+	/**
+	 * Modify the slack data.
+	 *
+	 * @param array                                                       $data The slack data.
+	 * @param Yoast\WP\SEO\Presentations\Indexable_Post_Type_Presentation $presentation The presentation object.
+	 *
+	 * @return array
+	 */
+	public function modify_meta_slack_data( $data, $presentation ) {
+		if ( isset( $data['Written by'] ) && $presentation instanceof \Yoast\WP\SEO\Presentations\Indexable_Post_Type_Presentation ) {
+			$post_id = $presentation->model->object_id;
+			$author_field = get_field( 'authors', $post_id );
+
+			if ( ! empty( $author_field ) ) {
+				$data['Written by'] = join( ', ', array_column( $author_field, 'name' ) );
+			}
+		}
+
+		return $data;
 	}
 }
