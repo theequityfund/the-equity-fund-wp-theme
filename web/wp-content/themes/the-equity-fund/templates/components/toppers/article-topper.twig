@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-5 md:gap-6 text-body-text font-sans-narrow leading-[1] items-center text-foreground max-md:text-center">
       <h1 class="font-serif text-foreground text-h2 text-center max-w-article-wide">{{ title }}</h1>
       {% if bylines|length %}
-        <p>By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %} {% if show_date %} {{ date }} {% endif %}</p>
+        <p class="text-base">By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %} {% if show_date %} . {{ date }} {% endif %}</p>
       {% endif %}
     </div>
 
