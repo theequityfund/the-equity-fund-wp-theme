@@ -1,21 +1,38 @@
 <header class="palette-lavender bg-background px-site-padding pb-12 md:pb-16 pt-topper-margin size-{{ size|default('large') }}">
   <div class="flex items-center justify-center mt-[2vw] relative">
 
-    {% if image %}
-      <figure class="{{ size == 'small' ? 'w-4/12' }} {{ size == 'medium' ? 'w-5/12' }} {{ size == 'large' ? 'w-6/12' }}">
-        {% include 'templates/components/lazy-img.twig' with {
-          img: get_image(image),
-          aspectRatio: 'wide',
-        } %}
+    {% if image or image_mobile %}
+      <figure class="w-10/12 md:w-8/12 lg:w-7/12 relative">
+
+        {# MOBILE #}
+        {% if image_mobile %}
+          <div class="[display:block] md:[display:none] w-full">
+            {% include 'templates/components/lazy-img.twig' with {
+              img: get_image(image_mobile),
+              aspectRatio: false,
+            } %}
+          </div>
+        {% endif %}
+
+        {# DESKTOP #}
+        {% if image %}
+          <div class="[display:none] md:[display:block] w-full">
+            {% include 'templates/components/lazy-img.twig' with {
+              img: get_image(image),
+              aspectRatio: false,
+            } %}
+          </div>
+        {% endif %}
+
       </figure>
     {% endif %}
 
-    <h1 class="font-display text-yellow font-medium text-center uppercase leading-[0.8] text-[10vw] absolute top-[19vw]">
-        {{ headline.first_line }} {{ headline.second_line }}
+    <h1 class="font-display text-yellow font-medium text-center uppercase leading-[0.8] text-[20vw] sm:text-[15vw] md:text-[10vw] absolute top-[86vw] sm:top-[90vw] md:top-[38vw] lg:top-[33.5vw]">
+        {{ headline }}
     </h1>
   </div>
 
-  <div class="text-foreground pt-3 md:pt-5 lg:pt-36 text-center">
+  <div class="text-foreground pt-12 sm:pt-14 md:pt-18 lg:pt-20 xl:pt-32 text-center">
       <p class="text-base md:text-lg lg:text-xl font-serif mx-auto max-w-[50rem]">
           {{ introduction }}
       </p>
