@@ -5,29 +5,31 @@
   {% if headline %}aria-label="{{ headline }}"{% endif %}
   data-block="statistics"
 >
-  <div class="px-site-padding py-5 md:py-10 lg:py-15">
+  <div class="px-site-padding py-8 md:py-12 lg:py-16">
     <div class="{{ count == 2 ? 'grid grid-cols-1 lg:grid-cols-12 lg:grid-gutter' }} {{ count == 2 and palette == 'cream' ? 'lg:border-t border-foreground lg:pt-8' }}">
 
-      <div class="flex max-sm:flex-col max-sm:items-start gap-5 border-b border-foreground sm:justify-between sm:items-end {{ count == 2 ? 'lg:flex-col lg:col-span-5 lg:border-0 lg:justify-normal lg:items-start' }} pb-5 lg:pb-6">
-        {% if headline %}
-          <h2 class="text-h2 font-serif max-w-[50rem]">
-            {{ headline }}
-          </h2>
-        {% endif %}
+      {% if headline or cta %}
+        <div class="flex max-sm:flex-col max-sm:items-start gap-5 border-b border-foreground sm:justify-between sm:items-end {{ count == 2 ? 'lg:flex-col lg:col-span-5 lg:border-0 lg:justify-normal lg:items-start' }} pb-5 lg:pb-6">
+          {% if headline %}
+            <h2 class="text-h2 font-serif max-w-[50rem]">
+              {{ headline }}
+            </h2>
+          {% endif %}
 
-        {% if cta %}
-          <a
-            class="inline-block whitespace-nowrap leading-[1] {{ count == 2 ? 'lg:self-start lg:uppercase lg:leading-[1] hocus:bg-foreground hocus:text-background lg:text-base lg:font-bold lg:px-4 lg:py-3 lg:text-button-foreground lg:bg-button-background hocus:lg:bg-button-hover-background hocus:lg:text-button-hover-foreground transition-all hocus:lg:no-underline max-lg:px-1 max-lg:-mx-1 max-lg:leading-[1]' : 'text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors leading-[1]' }}"
-            href="{{ cta.url }}"
-          >
-            {{ cta.title }}
-          </a>
-        {% endif %}
-      </div>
+          {% if cta %}
+            <a
+              class="inline-block whitespace-nowrap leading-[1] {{ count == 2 ? 'lg:self-start lg:uppercase lg:leading-[1] hocus:bg-foreground hocus:text-background lg:text-base lg:font-bold lg:px-4 lg:py-3 lg:text-button-foreground lg:bg-button-background hocus:lg:bg-button-hover-background hocus:lg:text-button-hover-foreground transition-all hocus:lg:no-underline max-lg:px-1 max-lg:-mx-1 max-lg:leading-[1]' : 'text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors leading-[1]' }}"
+              href="{{ cta.url }}"
+            >
+              {{ cta.title }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
 
-      <dl class="grid max-md:grid-cols-1 gap-5 md:gap-gutter {{ count == 2 ? 'md:grid-cols-2 lg:col-span-6 lg:col-end-13 max-lg:pt-5' }} {{ count == 4 ? 'md:grid-cols-2 lg:grid-cols-4 pt-5 md:pt-8 lg:pt-10' }} {{ count == 3 ? 'md:grid-cols-3 pt-5 md:pt-8 lg:pt-10' }}">
+      <dl class="grid max-md:grid-cols-1 gap-5 md:gap-gutter {{ count == 2 ? 'md:grid-cols-2 lg:col-span-6 lg:col-end-13' }} {{ count == 4 ? 'md:grid-cols-2 lg:grid-cols-4' }} {{ count == 3 ? 'md:grid-cols-3' }}">
         {% for item in statistics %}
-          <div class="flex flex-col items-center justify-center text-center border-dotted border-foreground max-md:grid max-md:grid-cols-2 max-md:gap-gutter max-md:last:border-0 max-md:last:pb-0 max-md:border-b max-md:pb-4 {{ count <= 3 ? 'md:border-l md:pl-4 first:md:pl-0 first:md:border-0' }} {{ count == 4 ? 'lg:pl-4 lg:border-l first:md:border-b first:md:pb-6 first:lg:border-0 first:pl-0 [&:nth-child(2)]:md:pb-6 [&:nth-child(2)]:md:border-b [&:nth-child(2)]:lg:border-b-0 [&:nth-child(2)]:lg:pb-0' }}">
+          <div class="flex flex-col items-center justify-center text-center border-dotted border-foreground max-md:grid max-md:grid-cols-2 pt-4 max-md:gap-gutter max-md:last:border-0 max-md:last:pb-0 max-md:border-b max-md:pb-4 {{ count <= 3 ? 'md:border-l md:pl-4 first:md:pl-0 first:md:border-0' }} {{ count == 4 ? 'lg:pl-4 lg:border-l first:md:border-b first:md:pb-6 first:lg:border-0 first:pl-0 [&:nth-child(2)]:md:pb-6 [&:nth-child(2)]:md:border-b [&:nth-child(2)]:lg:border-b-0 [&:nth-child(2)]:lg:pb-0' }}">
 
             <dt class="text-center">
               <span class="relative inline-block font-serif font-bold leading-none text-[3rem] md:text-[3.75rem]">

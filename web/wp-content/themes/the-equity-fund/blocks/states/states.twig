@@ -9,8 +9,13 @@
   data-block="states"
   x-data="{ expanded: false }"
 >
+  <h2 class="{{ headline_length == 'short' ? 'font-display font-medium text-h2 uppercase' : 'text-h2 font-serif md:w-8/12 lg:w-6/12 pb-2 md:pb-3' }}">{{ headline }}</h2>
   <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-1 sm:gap-2">
-    <h2 class="{{ headline_length == 'short' ? 'font-display font-medium text-h3 uppercase' : 'text-h3 font-serif md:w-8/12 lg:w-6/12 pb-2 md:pb-3' }}">{{ headline }}</h2>
+    {% if description %}
+      <p class="text-base md:text-2xl leading-[1.4] md:w-8/12 lg:w-6/12">
+        {{ description }}
+      </p>
+    {% endif %}
 
     {% if cta %}
       <a class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors" href="{{ cta.url }}">{{ cta.title }}</a>

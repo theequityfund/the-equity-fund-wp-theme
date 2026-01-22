@@ -6,7 +6,7 @@
   {% include 'templates/components/toppers/homepage-topper.twig' with {
     headline: page.meta('headline'),
     image: page.meta('image'),
-    image_mobile: page.meta('image_mobile'),
+    image_mobile: page.meta('image_mobile') ?: page.meta('image'),
     introduction: page.meta('introduction')
   } %}
 
