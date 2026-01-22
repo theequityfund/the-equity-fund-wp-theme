@@ -11,9 +11,9 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['headline'] = get_field( 'headline' );
-
-$provided_states_ids = get_field( 'states' );
+$context['headline']    = get_field( 'headline' );
+$context['description'] = get_field( 'description' );
+$provided_states_ids    = get_field( 'states' );
 
 $states = Timber::get_posts(
 	array(
