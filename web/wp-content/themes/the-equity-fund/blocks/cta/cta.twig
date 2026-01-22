@@ -25,14 +25,14 @@
       {% if cta_link %}
         <a
           href="{{ cta_link.url }}"
-          class="inline-block uppercase font-bold tracking-wide text-sm md:text-base px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors whitespace-nowrap"
+          class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors"
         >
           {{ cta_link.title }}
         </a>
       {% endif %}
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter pt-5 md:pt-8 lg:pt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-5 md:pt-8 lg:pt-10">
       {% for item in cta_items %}
         <article class="flex flex-col gap-3">
 
@@ -48,7 +48,7 @@
             </a>
           {% endif %}
 
-          <h3 class="font-display font-bold uppercase tracking-wide text-base md:text-lg">
+          <h3 class="font-display font-bold uppercase tracking-wide text-h3">
             <a href="{{ item.link }}" class="hocus:underline">
               {{ item.title }}
             </a>
