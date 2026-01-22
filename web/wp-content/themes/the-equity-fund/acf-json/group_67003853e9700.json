@@ -29,8 +29,8 @@
       "name": "image",
       "aria-label": "",
       "type": "image",
-      "instructions": "(Recommended)",
-      "required": 0,
+      "instructions": "",
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -115,5 +115,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1768452571
+  "modified": 1769060313
 }
