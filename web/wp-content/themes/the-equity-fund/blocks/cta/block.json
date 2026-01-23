@@ -1,0 +1,14 @@
+{
+  "name": "acf/cta",
+  "title": "CTA Component",
+  "description": "CTA component. With link and articles.",
+  "category": "widgets",
+  "icon": {
+    "src": "megaphone"
+  },
+  "keywords": ["cta"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "cta.php"
+  }
+}
