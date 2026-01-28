@@ -46,11 +46,11 @@
     "wpackagist-plugin/wp-environment-indicator": "^1.0",
     "vlucas/phpdotenv": "^5.4",
     "timber/timber": "^2.3",
-    "wpengine/advanced-custom-fields-pro": "^6.5.1",
+    "wpengine/advanced-custom-fields-pro": "6.7.0.2",
     "wpackagist-plugin/duplicate-post": "4.5",
     "wpackagist-plugin/forms-for-campaign-monitor": "^2.8.17",
-    "wpackagist-plugin/redirection": "^5.5.2",
-    "wpackagist-plugin/wordpress-seo": "^26.0",
+    "wpackagist-plugin/redirection": "^5.6.1",
+    "wpackagist-plugin/wordpress-seo": "^26.8",
     "wpackagist-plugin/microsoft-clarity": "^0.10"
   },
   "require-dev": {
