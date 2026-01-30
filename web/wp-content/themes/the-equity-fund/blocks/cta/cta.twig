@@ -49,13 +49,17 @@
           {% endif %}
 
           <h3 class="font-display font-medium uppercase tracking-wide text-h3">
-            <a href="{{ item.link }}" class="hocus:underline">
+            {% if item.link %}
+              <a href="{{ item.link }}" class="hocus:underline">
+                {{ item.title }}
+              </a>
+            {% else %}
               {{ item.title }}
-            </a>
+            {% endif %}
           </h3>
 
           {% if item.description %}
-            <p class="text-sm md:text-[1.375rem] leading-[1.52] font-light tracking-[0.01em]">
+            <p class="rich-text text-body-text">
               {{ item.description }}
             </p>
           {% endif %}
