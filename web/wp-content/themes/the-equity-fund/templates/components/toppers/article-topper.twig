@@ -2,8 +2,15 @@
   <div class="flex flex-col items-center gap-8 lg:gap-10 lg:w-10/12 xl:w-8/12 mx-auto">
     <div class="flex flex-col gap-5 md:gap-6 text-body-text font-sans-narrow leading-[1] items-center text-foreground max-md:text-center">
       <h1 class="font-serif text-foreground text-h2 text-center max-w-article-wide">{{ title }}</h1>
-      {% if bylines|length %}
-        <p class="text-base">By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %} {% if show_date %} . {{ date }} {% endif %}</p>
+      {% if bylines|length or show_date %}
+        <div class="text-center">
+          {% if bylines|length %}
+            <p class="text-base">By {% for byline in bylines %}{{ byline }}{% if loop.index < loop.length - 1 %}, {% endif %}{% if loop.index == loop.length - 1 %} and {% endif %}{% endfor %}</p>
+          {% endif %}
+          {% if show_date %}
+            <p class="text-base">{{ date }}</p>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
 
