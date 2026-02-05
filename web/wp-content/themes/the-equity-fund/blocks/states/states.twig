@@ -10,7 +10,7 @@
   x-data="{ expanded: false }"
 >
   <h2 class="{{ headline_length == 'short' ? 'font-display font-medium text-h2 uppercase mb-2' : 'text-h2 font-serif md:w-8/12 lg:w-6/12 pb-2 md:pb-3' }}">{{ headline }}</h2>
-  <div class="flex max-sm:flex-col sm:justify-between sm:items-end border-b border-foreground pb-6 sm:gap-2">
+  <div class="border-b border-foreground pb-5 md:pb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
     {% if description %}
       <p class="font-serif text-base md:text-2xl leading-[1.4] max-w-[75vw]">
         {{ description }}
