@@ -23,7 +23,7 @@
 
             {% if cta %}
               <a
-                class="inline-block whitespace-nowrap leading-[1] {{ count == 2 ? 'lg:self-start lg:uppercase lg:leading-[1] hocus:bg-foreground hocus:text-background lg:text-base lg:font-bold lg:px-4 lg:py-3 lg:text-button-foreground lg:bg-button-background hocus:lg:bg-button-hover-background hocus:lg:text-button-hover-foreground transition-all hocus:lg:no-underline max-lg:px-1 max-lg:-mx-1 max-lg:leading-[1]' : 'text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors leading-[1]' }}"
+                class="inline-block whitespace-nowrap self-baseline leading-[1] {{ count == 2 ? 'lg:self-start lg:uppercase lg:leading-[1] hocus:bg-foreground hocus:text-background lg:text-base lg:font-bold lg:px-4 lg:py-3 lg:text-button-foreground lg:bg-button-background hocus:lg:bg-button-hover-background hocus:lg:text-button-hover-foreground transition-all hocus:lg:no-underline max-lg:px-1 max-lg:-mx-1 max-lg:leading-[1]' : 'text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 hocus:bg-foreground hocus:text-background transition-colors leading-[1]' }}"
                 href="{{ cta.url }}"
               >
                 {{ cta.title }}
