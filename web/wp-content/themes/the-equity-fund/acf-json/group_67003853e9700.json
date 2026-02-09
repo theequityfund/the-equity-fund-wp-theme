@@ -94,6 +94,27 @@
       "placeholder": "",
       "prepend": "",
       "append": ""
+    },
+    {
+      "key": "field_69895448f84eb",
+      "label": "Video",
+      "name": "video",
+      "aria-label": "",
+      "type": "file",
+      "instructions": "Optional. If provided - the video will be displayed instead of the image.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "all",
+      "min_size": "",
+      "max_size": "",
+      "mime_types": "",
+      "allow_in_bindings": 0
     }
   ],
   "location": [
@@ -115,5 +136,5 @@
   "description": "",
   "show_in_rest": 0,
   "display_title": "",
-  "modified": 1769060313
+  "modified": 1770620352
 }

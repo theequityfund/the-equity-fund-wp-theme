@@ -3,24 +3,45 @@
 
     <figure class="w-full xl:w-[80%] mx-auto relative">
 
-      {# MOBILE #}
-      {% if image_mobile %}
-        <div class="[display:block] md:[display:none] w-full">
-          {% include 'templates/components/lazy-img.twig' with {
-            img: get_image(image_mobile),
-            aspectRatio: 'horizontal',
-          } %}
-        </div>
-      {% endif %}
+      {% if hero_video %}
 
-      {# DESKTOP #}
-      {% if image %}
-        <div class="[display:none] md:[display:block] w-full">
-          {% include 'templates/components/lazy-img.twig' with {
-            img: get_image(image),
-            aspectRatio: 'wide',
-          } %}
+        <div class="w-full aspect-[16/9] overflow-hidden">
+
+          <video
+            class="w-full h-full object-cover cursor-pointer"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            data-ambient-video
+          >
+            <source src="{{ hero_video }}" type="video/mp4">
+          </video>
+
         </div>
+
+      {% else %}
+
+        {# MOBILE #}
+        {% if image_mobile %}
+          <div class="[display:block] md:[display:none] w-full">
+            {% include 'templates/components/lazy-img.twig' with {
+              img: get_image(image_mobile),
+              aspectRatio: 'horizontal',
+            } %}
+          </div>
+        {% endif %}
+
+        {# DESKTOP #}
+        {% if image %}
+          <div class="[display:none] md:[display:block] w-full">
+            {% include 'templates/components/lazy-img.twig' with {
+              img: get_image(image),
+              aspectRatio: 'wide',
+            } %}
+          </div>
+        {% endif %}
       {% endif %}
 
     </figure>
