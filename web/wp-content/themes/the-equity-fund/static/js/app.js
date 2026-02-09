@@ -20,4 +20,26 @@ onDocumentReady(() => {
   });
 
   Alpine.start();
+
+  /**
+   * Ambient Hero Video (click = pause/play)
+   */
+  const ambientVideos = document.querySelectorAll('[data-ambient-video]');
+
+  ambientVideos.forEach(video => {
+    video.addEventListener('click', e => {
+      e.preventDefault();
+
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+
+    // Disable double-click seek behavior
+    video.addEventListener('dblclick', e => {
+      e.preventDefault();
+    });
+  });
 });
