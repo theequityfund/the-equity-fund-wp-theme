@@ -84,7 +84,7 @@ Start the server:
 ddev start
 ```
 
-Start the asset bundler by running this command:
+Start the asset bundler:
 
 ```
 npm run start
