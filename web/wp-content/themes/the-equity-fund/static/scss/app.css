@@ -718,10 +718,10 @@
     --c-foreground: theme('colors.maroon');
     --c-background: theme('colors.yellow');
 
-    --c-button-foreground: theme('colors.maroon');
-    --c-button-background: theme('colors.cream');
-    --c-button-hover-foreground: theme('colors.cream');
-    --c-button-hover-background: theme('colors.maroon');
+    --c-button-foreground: theme('colors.cream');
+    --c-button-background: theme('colors.maroon');
+    --c-button-hover-foreground: theme('colors.maroon');
+    --c-button-hover-background: theme('colors.cream');
   }
 
   .palette-maroon {
@@ -738,10 +738,10 @@
     --c-foreground: theme('colors.maroon');
     --c-background: theme('colors.lavender.DEFAULT');
 
-    --c-button-foreground: theme('colors.maroon');
-    --c-button-background: theme('colors.cream');
-    --c-button-hover-foreground: theme('colors.cream');
-    --c-button-hover-background: theme('colors.maroon');
+    --c-button-foreground: theme('colors.cream');
+    --c-button-background: theme('colors.maroon');
+    --c-button-hover-foreground: theme('colors.maroon');
+    --c-button-hover-background: theme('colors.cream');
   }
 
   .palette-lavender-light {
@@ -758,10 +758,10 @@
     --c-foreground: theme('colors.maroon');
     --c-background: theme('colors.cream');
 
-    --c-button-foreground: theme('colors.maroon');
-    --c-button-background: theme('colors.yellow');
-    --c-button-hover-foreground: theme('colors.cream');
-    --c-button-hover-background: theme('colors.maroon');
+    --c-button-foreground: theme('colors.cream');
+    --c-button-background: theme('colors.maroon');
+    --c-button-hover-foreground: theme('colors.maroon');
+    --c-button-hover-background: theme('colors.yellow');
   }
 
   .palette-teal {
