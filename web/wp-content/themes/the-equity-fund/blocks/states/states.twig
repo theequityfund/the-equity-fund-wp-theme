@@ -18,7 +18,7 @@
     {% endif %}
 
     {% if cta %}
-      <a class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 bg-foreground text-background underline-offset-4 hocus:bg-transparent hocus:underline hocus:text-inherit transition-colors" href="{{ cta.url }}">{{ cta.title }}</a>
+      <a class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 bg-foreground text-background hocus:bg-button-hover-background hocus:text-button-hover-foreground transition-colors" href="{{ cta.url }}">{{ cta.title }}</a>
     {% endif %}
   </div>
 
