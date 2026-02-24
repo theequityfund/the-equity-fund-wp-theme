@@ -23,12 +23,7 @@
       </div>
 
       {% if cta_link %}
-        <a
-          href="{{ cta_link.url }}"
-          class="text-sm md:text-base font-sans whitespace-nowrap px-1 -mx-1 bg-foreground text-background hocus:bg-yellow hocus:text-foreground transition-colors"
-        >
-          {{ cta_link.title }}
-        </a>
+        <a class="w-fit button" href="{{ cta_link.url }}">{{ cta_link.title }}</a>
       {% endif %}
     </div>
 
