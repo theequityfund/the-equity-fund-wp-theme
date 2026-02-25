@@ -18,7 +18,9 @@
     {% endif %}
 
     {% if cta %}
-        <a class="w-fit button text-sm lg:text-base" href="{{ cta.url }}">{{ cta.title }}</a>
+        <a class="uppercase leading-[1] text-sm lg:text-base font-bold tracking-wide px-4 pb-2 pt-3 
+        text-button-hover-foreground bg-button-hover-background hocus:bg-button-background hocus:text-button-foreground 
+        transition-all" href="{{ cta.url }}">{{ cta.title }}</a>
     {% endif %}
   </div>
 
