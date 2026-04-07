@@ -41,6 +41,27 @@
       "append": ""
     },
     {
+      "key": "field_696af4a3a660d",
+      "label": "Description",
+      "name": "description",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "(Recommended)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 1,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
       "key": "field_66f1e78810739",
       "label": "States",
       "name": "states",
@@ -123,7 +144,9 @@
       "allow_null": 0,
       "ui": 1,
       "ajax": 0,
-      "placeholder": ""
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
     },
     {
       "key": "field_66ff080c6b17d",
@@ -164,5 +187,6 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730930929
+  "display_title": "",
+  "modified": 1768617156
 }

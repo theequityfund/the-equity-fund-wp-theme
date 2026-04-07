@@ -181,15 +181,19 @@
         "teal": "Teal",
         "coral": "Coral",
         "yellow": "Yellow",
-        "lavender": "Lavender"
+        "lavender": "Lavender",
+        "lavender-light": "Lavender Light"
       },
       "default_value": "cream",
       "return_format": "value",
       "multiple": 0,
       "allow_null": 0,
+      "allow_in_bindings": 1,
       "ui": 1,
       "ajax": 0,
-      "placeholder": ""
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
     },
     {
       "key": "field_66fc2c10cd662",
@@ -215,7 +219,30 @@
       "allow_null": 0,
       "ui": 1,
       "ajax": 0,
-      "placeholder": ""
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
+    },
+    {
+      "key": "field_69842a22ecee5",
+      "label": "Remove Top Padding",
+      "name": "remove_top_padding",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "Use this toggle when the banner and statistics component use the same backgound",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "allow_in_bindings": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -236,5 +263,6 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729112456
+  "display_title": "",
+  "modified": 1770270800
 }

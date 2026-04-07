@@ -6,9 +6,9 @@
   {% include 'templates/components/toppers/homepage-topper.twig' with {
     headline: page.meta('headline'),
     image: page.meta('image'),
+    image_mobile: page.meta('image_mobile') ?: page.meta('image'),
     introduction: page.meta('introduction'),
-    description: page.meta('description'),
-    size: page.meta('size')
+    hero_video: page.meta('video')
   } %}
 
   <div class="gutenberg rich-text">
