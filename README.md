@@ -54,7 +54,7 @@ See below for troubleshooting steps.
 
 ## 🛠 Installation
 
-1.  Run `nvm install` to ensure you're using the correct version of Node.
+1.  Run `nvm install` to ensure you are using the correct version of Node.
 
 2.  Duplicate the contents of `.env.sample` into a new `.env` file.
 

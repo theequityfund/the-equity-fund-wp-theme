@@ -1,0 +1,70 @@
+{% if cta_items|length %}
+<section
+  class="palette-{{ palette|default('cream') }} bg-background text-foreground mx-breakout-site-paddding"
+  {% if headline %}aria-label="{{ headline }}"{% endif %}
+  data-block="cta"
+>
+  <div class="px-site-padding py-5 md:py-10 lg:py-15">
+
+    {# HEADER #}
+    <div class="border-b border-foreground pb-5 md:pb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div class="max-w-[80vw]">
+        {% if headline %}
+          <h2 class="font-display font-medium text-h2 uppercase mb-2">
+            {{ headline }}
+          </h2>
+        {% endif %}
+
+        {% if introduction %}
+          <p class="font-serif text-base md:text-2xl leading-[1.4]">
+            {{ introduction }}
+          </p>
+        {% endif %}
+      </div>
+
+      {% if cta_link %}
+        <a class="uppercase leading-[1] text-sm lg:text-base font-bold tracking-wide px-4 pb-2 pt-3 
+        text-button-hover-foreground bg-button-hover-background hocus:bg-button-background hocus:text-button-foreground 
+        transition-all" href="{{ cta_link.url }}">{{ cta_link.title }}</a>
+      {% endif %}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-5 md:pt-8 lg:pt-10">
+      {% for item in cta_items %}
+        <article class="flex flex-col gap-3">
+
+          {% if item.image %}
+            <a href="{{ item.link }}" class="block">
+              <figure class="w-full">
+                {% include 'templates/components/lazy-img.twig' with {
+                  class: 'w-full',
+                  img: get_image(item.image),
+                  aspectRatio: 'wide'
+                } %}
+              </figure>
+            </a>
+          {% endif %}
+
+          <h3 class="font-display font-medium uppercase tracking-wide text-h3">
+            {% if item.link %}
+              <a href="{{ item.link }}" class="hocus:underline">
+                {{ item.title }}
+              </a>
+            {% else %}
+              {{ item.title }}
+            {% endif %}
+          </h3>
+
+          {% if item.description %}
+            <p class="rich-text text-body-text">
+              {{ item.description }}
+            </p>
+          {% endif %}
+
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
