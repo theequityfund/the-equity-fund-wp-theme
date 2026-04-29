@@ -47,7 +47,6 @@
     "timber/timber": "^2.3",
     "wpengine/advanced-custom-fields-pro": "^6.8.0.1",
     "wpackagist-plugin/duplicate-post": "^4.6",
-    "wpackagist-plugin/forms-for-campaign-monitor": "^2.9.0",
     "wpackagist-plugin/redirection": "^5.7.5",
     "wpackagist-plugin/wordpress-seo": "^27.3",
     "wpackagist-plugin/microsoft-clarity": "^0.10"
