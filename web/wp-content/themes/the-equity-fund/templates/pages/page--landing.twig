@@ -1,13 +1,16 @@
 {% extends "layouts/base.twig" %}
 
-{% set palette = 'maroon' %}
-
 {% block pageBody %}
   {% include 'templates/components/toppers/landing-topper.twig' with {
+    layout: page.meta('layout'),
+    subtitle: page.meta('subtitle'),
     headline: page.meta('headline'),
     introduction: page.meta('introduction'),
+    cta: page.meta('cta'),
     images: page.meta('images'),
-    palette: palette
+    images_dual: page.meta('images_dual'),
+    image_single: page.meta('image_single'),
+    palette: page.meta('palette')
   } %}
 
   <article class="gutenberg rich-text">
