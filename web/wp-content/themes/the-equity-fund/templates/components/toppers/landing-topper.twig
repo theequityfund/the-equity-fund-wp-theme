@@ -2,110 +2,11 @@
 {% set layout = layout|default('image_grid') %}
 
 <header class="landing-topper landing-topper--{{ layout }} palette-{{ palette }} bg-background text-foreground">
-
   {% if layout == 'image_grid' %}
-
-    <div class="grid md:grid-cols-3 items-start gap-gutter px-site-padding pt-[100px] md:pt-topper-margin pb-[30px] md:pb-[50px]">
-
-      <div class="landing-topper__content flex flex-col gap-6 md:gap-8">
-        <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.78] tracking-[-1.2px]">{{ headline }}</h1>
-        {% if introduction %}
-          <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px]">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
-        {% endif %}
-      </div>
-
-      {% if images|length %}
-        <div class="landing-topper__images grid grid-cols-1 min-[425px]:grid-cols-2 gap-6 md:gap-[2.25em] md:col-span-2">
-
-          <div class="flex flex-col gap-6 md:gap-[2.25em]">
-            {% set img = get_image(images[0]) %}
-            <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
-              <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
-            </div>
-            {% set img = get_image(images[1]) %}
-            <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
-              <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-6 md:gap-[2.25em]">
-            {% set img = get_image(images[2]) %}
-            <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
-              <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
-            </div>
-            {% set img = get_image(images[3]) %}
-            <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
-              <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
-            </div>
-          </div>
-
-        </div>
-      {% endif %}
-
-    </div>
-
+    {% include 'templates/components/toppers/landing-topper--image-grid.twig' %}
   {% elseif layout == 'dual_image' %}
-
-    <div class="grid md:grid-cols-3 items-start gap-gutter px-site-padding pt-[100px] md:pt-topper-margin pb-[30px] md:pb-[50px]">
-
-      <div class="landing-topper__content flex flex-col gap-6 md:gap-8">
-        <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.78] tracking-[-1.2px]">{{ headline }}</h1>
-        {% if introduction %}
-          <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px]">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
-        {% endif %}
-      </div>
-
-      {% if images_dual|length %}
-        <div class="landing-topper__images grid grid-cols-1 min-[425px]:grid-cols-2 gap-6 md:gap-[2.25em] md:col-span-2">
-          {% for image in images_dual %}
-            {% set img = get_image(image) %}
-            <div class="landing-topper__image relative overflow-hidden aspect-[426/380]">
-              <img
-                class="absolute inset-0 w-full h-full object-cover"
-                src="{{ img.src }}"
-                srcset="{{ img.srcset }}"
-                sizes="auto"
-                {% if img.alt %}alt="{{ img.alt }}"{% endif %}
-                loading="lazy"
-              />
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-    </div>
-
+    {% include 'templates/components/toppers/landing-topper--dual-image.twig' %}
   {% elseif layout == 'single_image' %}
-
-    <div class="landing-topper__content flex flex-col items-center text-center gap-6 md:gap-10 px-site-padding pt-[100px] md:pt-topper-margin pb-[50px] md:pb-[100px]">
-
-      {% if subtitle %}
-        <p class="landing-topper__subtitle font-sans font-medium text-[18px] leading-[1] tracking-[0.36px] uppercase">{{ subtitle }}</p>
-      {% endif %}
-
-      <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.78] tracking-[-1.2px]">{{ headline }}</h1>
-
-      {% if introduction %}
-        <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px] max-w-2xl">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
-      {% endif %}
-
-      {% if cta %}
-        <a
-          class="landing-topper__cta inline-block font-sans font-medium text-[16px] leading-[1.1] tracking-[-0.32px] uppercase px-[28px] pt-[15px] pb-[12px] text-button-foreground bg-button-background hocus:bg-button-hover-background hocus:text-button-hover-foreground transition-all"
-          href="{{ cta.url }}"
-          target="{{ cta.target }}"
-          {% if cta.target == '_blank' %}rel="noopener noreferrer"{% endif %}
-        >{{ cta.title }}</a>
-      {% endif %}
-
-    </div>
-
-    {% if image_single %}
-      <div class="landing-topper__image w-full">
-        {% include 'templates/components/lazy-img.twig' with { img: get_image(image_single) } %}
-      </div>
-    {% endif %}
-
+    {% include 'templates/components/toppers/landing-topper--single-image.twig' %}
   {% endif %}
-
 </header>

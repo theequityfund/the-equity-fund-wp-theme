@@ -1,0 +1,28 @@
+<div class="grid md:grid-cols-3 items-start gap-gutter px-site-padding pt-[100px] md:pt-topper-margin pb-[30px] md:pb-[50px]">
+
+  <div class="landing-topper__content flex flex-col gap-6 md:gap-8">
+    <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.78] tracking-[-1.2px]">{{ headline }}</h1>
+    {% if introduction %}
+      <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px]">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+    {% endif %}
+  </div>
+
+  {% if images_dual|length %}
+    <div class="landing-topper__images grid grid-cols-1 min-[425px]:grid-cols-2 gap-6 md:gap-[2.25em] md:col-span-2">
+      {% for image in images_dual %}
+        {% set img = get_image(image) %}
+        <div class="landing-topper__image relative overflow-hidden aspect-[426/380]">
+          <img
+            class="absolute inset-0 w-full h-full object-cover"
+            src="{{ img.src }}"
+            srcset="{{ img.srcset }}"
+            sizes="auto"
+            {% if img.alt %}alt="{{ img.alt }}"{% endif %}
+            loading="lazy"
+          />
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>
