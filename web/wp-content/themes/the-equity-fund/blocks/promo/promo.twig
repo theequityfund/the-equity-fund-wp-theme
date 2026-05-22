@@ -1,3 +1,4 @@
+{% set show_line = line_above is null or line_above %}
 <section
   class="palette-cream text-foreground"
   data-block="promo"
@@ -9,7 +10,7 @@
       } %}
     {% endif %}
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-gutter {{ overline == false ? 'border-t border-foreground pt-4' }} {{ overline == true ? 'pt-4' }}">
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-4 md:gap-gutter pt-4 {{ overline == false and show_line ? 'border-t border-foreground' }}">
     <div class="flex flex-col gap-4 xl:col-span-5">
       {% if headline %}
         <p class="rich-text font-serif text-h3 leading-[1.1]">{{ headline|striptags('<em><strong><a>')|raw }}</p>

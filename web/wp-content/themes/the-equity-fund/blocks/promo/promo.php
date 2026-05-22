@@ -15,5 +15,6 @@ $context['headline']    = get_field( 'headline' );
 $context['description'] = get_field( 'description' );
 $context['images']      = get_field( 'images' );
 $context['cta']         = get_field( 'cta' );
+$context['line_above']  = get_field( 'line_above' );
 
 Timber::render( basename( __DIR__ ) . '/promo.twig', $context );
