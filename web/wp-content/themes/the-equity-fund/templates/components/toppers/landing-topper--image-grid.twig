@@ -1,33 +1,33 @@
 <div class="grid md:grid-cols-3 items-start gap-gutter px-site-padding pt-[100px] md:pt-topper-margin pb-[30px] md:pb-[50px]">
 
-  <div class="landing-topper__content flex flex-col gap-6 md:gap-8">
-    <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.8] tracking-[-0.125px]">{{ headline }}</h1>
+  <div class="flex flex-col gap-6 md:gap-8">
+    <h1 class="font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.8] tracking-[-0.125px]">{{ headline }}</h1>
     {% if introduction %}
-      <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px]">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
+      <p class="font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px]">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
     {% endif %}
   </div>
 
   {% if images|length %}
-    <div class="landing-topper__images grid grid-cols-1 min-[425px]:grid-cols-2 gap-6 md:gap-[2.25em] md:col-span-2">
+    <div class="grid grid-cols-1 min-[425px]:grid-cols-2 gap-6 md:gap-[2.25em] md:col-span-2">
 
       <div class="flex flex-col gap-6 md:gap-[2.25em]">
         {% set img = get_image(images[0]) %}
-        <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
+        <div class="relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
           <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
         </div>
         {% set img = get_image(images[1]) %}
-        <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
+        <div class="relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
           <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
         </div>
       </div>
 
       <div class="flex flex-col gap-6 md:gap-[2.25em]">
         {% set img = get_image(images[2]) %}
-        <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
+        <div class="relative overflow-hidden h-[200px] min-[425px]:h-[clamp(180px,26.4vw,380px)]">
           <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
         </div>
         {% set img = get_image(images[3]) %}
-        <div class="landing-topper__image relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
+        <div class="relative overflow-hidden h-[200px] min-[425px]:h-[clamp(130px,20.8vw,300px)]">
           <img class="absolute inset-0 w-full h-full object-cover" src="{{ img.src }}" srcset="{{ img.srcset }}" sizes="auto" {% if img.alt %}alt="{{ img.alt }}"{% endif %} loading="lazy"/>
         </div>
       </div>

@@ -1,7 +1,7 @@
 {% set palette = palette|default('lavender-light') %}
 {% set layout = layout|default('image_grid') %}
 
-<header class="landing-topper landing-topper--{{ layout }} palette-{{ palette }} bg-background text-foreground">
+<header class="palette-{{ palette }} bg-background text-foreground">
   {% if layout == 'image_grid' %}
     {% include 'templates/components/toppers/landing-topper--image-grid.twig' %}
   {% elseif layout == 'dual_image' %}
