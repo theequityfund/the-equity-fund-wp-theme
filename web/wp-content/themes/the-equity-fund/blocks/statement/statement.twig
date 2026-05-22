@@ -1,8 +1,8 @@
 {% set variant = variant|default('standalone') %}
-
+{% set show_line = line_above_statement is null or line_above_statement %}
 {% if variant == 'standalone' %}
 <section
-  class="palette-cream text-foreground"
+  class="palette-cream text-foreground statement"
   data-block="statement"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
@@ -13,7 +13,7 @@
     } %}
   {% endif %}
 
-  <div class="grid lg:grid-cols-12 md:gap-gutter {{ overline == false ? 'border-t border-foreground pt-4' }} {{ overline == true ? 'pt-4' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
+  <div class="grid lg:grid-cols-12 md:gap-gutter pt-4 {{ overline == false and show_line ? 'border-t border-foreground' }} {{ description == true ? 'gap-4 md:grid-cols-2' }}">
     <p class="rich-text font-serif text-h3 leading-[1.2] {{ description == true ? 'lg:col-span-6' : 'lg:col-span-12 xl:col-span-6 text-h4' }}">
       {{ statement|striptags('<em><strong><a>')|raw }}
     </p>
@@ -35,7 +35,7 @@
 {% elseif variant == 'stack' %}
 
 <section
-  class="palette-cream text-foreground grid md:grid-cols-12 md:gap-gutter border-t border-foreground pt-4"
+  class="palette-cream text-foreground grid md:grid-cols-12 md:gap-gutter pt-4 {{ show_line ? 'border-t border-foreground' }}"
   data-block="statement"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
