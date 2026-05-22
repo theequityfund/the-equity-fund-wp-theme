@@ -1,5 +1,7 @@
 {% extends "layouts/base.twig" %}
 
+{% set palette = page.meta('palette')|default('lavender-light') %}
+
 {% block pageBody %}
   {% include 'templates/components/toppers/landing-topper.twig' with {
     layout: page.meta('layout'),

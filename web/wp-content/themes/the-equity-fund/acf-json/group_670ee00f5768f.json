@@ -138,7 +138,30 @@
       "allow_null": 0,
       "ui": 1,
       "ajax": 0,
-      "placeholder": ""
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
+    },
+    {
+      "key": "field_6a0fcb4018cc5",
+      "label": "Line above statement",
+      "name": "line_above_statement",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "The border line above statement text will be not shown if Overline is empty and this is set to \"No\"",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "allow_in_bindings": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -159,5 +182,8 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1730222993
+  "display_title": "",
+  "allow_ai_access": false,
+  "ai_description": "",
+  "modified": 1779421664
 }

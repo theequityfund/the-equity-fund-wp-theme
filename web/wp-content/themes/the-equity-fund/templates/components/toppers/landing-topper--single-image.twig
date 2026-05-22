@@ -1,10 +1,10 @@
 <div class="landing-topper__content flex flex-col items-center text-center gap-6 md:gap-10 px-site-padding pt-[100px] md:pt-topper-margin pb-[50px] md:pb-[100px]">
 
   {% if subtitle %}
-    <p class="landing-topper__subtitle font-sans font-medium text-[18px] leading-[1] tracking-[0.36px] uppercase">{{ subtitle }}</p>
+    <p class="landing-topper__subtitle font-sans font-bold text-[18px] leading-[1] tracking-[0.36px] uppercase mt-[20px] md:mt-[50px]">{{ subtitle }}</p>
   {% endif %}
 
-  <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.78] tracking-[-1.2px]">{{ headline }}</h1>
+  <h1 class="landing-topper__headline font-display font-medium uppercase text-[clamp(4rem,8.33vw,7.5rem)] leading-[0.8] tracking-[-0.125px]">{{ headline }}</h1>
 
   {% if introduction %}
     <p class="landing-topper__introduction font-serif font-normal text-[24px] leading-[1.2] tracking-[-0.72px] max-w-2xl">{{ introduction|striptags('<em><strong><a>')|raw }}</p>
@@ -12,7 +12,7 @@
 
   {% if cta %}
     <a
-      class="landing-topper__cta inline-block font-sans font-medium text-[16px] leading-[1.1] tracking-[-0.32px] uppercase px-[28px] pt-[15px] pb-[12px] text-button-foreground bg-button-background hocus:bg-button-hover-background hocus:text-button-hover-foreground transition-all"
+      class="landing-topper__cta inline-block font-sans font-bold text-[16px] leading-[1.1] tracking-[-0.32px] uppercase px-[28px] pt-[15px] pb-[12px] text-button-foreground bg-button-background hocus:bg-button-hover-background hocus:text-button-hover-foreground transition-all"
       href="{{ cta.url }}"
       target="{{ cta.target }}"
       {% if cta.target == '_blank' %}rel="noopener noreferrer"{% endif %}
