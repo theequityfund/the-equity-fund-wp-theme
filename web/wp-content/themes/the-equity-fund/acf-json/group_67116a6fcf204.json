@@ -3,12 +3,71 @@
   "title": "Topper: Landing Page",
   "fields": [
     {
+      "key": "field_67116b0000817",
+      "label": "Layout",
+      "name": "layout",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Select the layout style for the topper.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "image_grid": "Image Grid",
+        "dual_image": "Dual Image",
+        "single_image": "Single Image"
+      },
+      "default_value": "image_grid",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "allow_in_bindings": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
+    },
+    {
+      "key": "field_67116b0000818",
+      "label": "Subtitle",
+      "name": "subtitle",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_67116b0000817",
+            "operator": "==",
+            "value": "single_image"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
       "key": "field_67116a6f00814",
       "label": "Headline",
       "name": "headline",
       "aria-label": "",
       "type": "text",
-      "instructions": "Keep headline very short to fit the size of the topper.",
+      "instructions": "(Required)",
       "required": 1,
       "conditional_logic": 0,
       "wrapper": {
@@ -28,8 +87,8 @@
       "name": "introduction",
       "aria-label": "",
       "type": "text",
-      "instructions": "(Recommended)",
-      "required": 0,
+      "instructions": "(Required)",
+      "required": 1,
       "conditional_logic": 0,
       "wrapper": {
         "width": "",
@@ -43,14 +102,47 @@
       "append": ""
     },
     {
+      "key": "field_67116b0000819",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_67116b0000817",
+            "operator": "==",
+            "value": "single_image"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "allow_in_bindings": 0
+    },
+    {
       "key": "field_67116aeb00816",
       "label": "Images",
       "name": "images",
       "aria-label": "",
       "type": "gallery",
-      "instructions": "(Recommended) Add 4 images. The images will be placed around the topper.",
-      "required": 0,
-      "conditional_logic": 0,
+      "instructions": "(Required) Add 4 images. The images will be placed around the topper.",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_67116b0000817",
+            "operator": "==",
+            "value": "image_grid"
+          }
+        ]
+      ],
       "wrapper": {
         "width": "",
         "class": "",
@@ -69,6 +161,110 @@
       "mime_types": "",
       "insert": "append",
       "preview_size": "medium"
+    },
+    {
+      "key": "field_67116b0000820",
+      "label": "Images",
+      "name": "images_dual",
+      "aria-label": "",
+      "type": "gallery",
+      "instructions": "(Required) Add 2 images.",
+      "required": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_67116b0000817",
+            "operator": "==",
+            "value": "dual_image"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min": 2,
+      "max": 2,
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "insert": "append",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_67116b0000821",
+      "label": "Image",
+      "name": "image_single",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "Optional. If no image is selected it will not be rendered.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_67116b0000817",
+            "operator": "==",
+            "value": "single_image"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "id",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "allow_in_bindings": 0,
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_67116b0000822",
+      "label": "Palette",
+      "name": "palette",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "Select the color scheme for the topper. Controls foreground, background, and button colors.",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "lavender-light": "Light Lavender",
+        "maroon": "Maroon",
+        "yellow": "Yellow",
+        "lavender": "Lavender",
+        "cream": "Cream",
+        "teal": "Teal",
+        "coral": "Coral"
+      },
+      "default_value": "lavender-light",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "allow_in_bindings": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
     }
   ],
   "location": [
@@ -89,5 +285,6 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1729555726
+  "display_title": "",
+  "modified": 1779321600
 }

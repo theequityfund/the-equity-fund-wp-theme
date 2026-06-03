@@ -10,10 +10,11 @@ use Timber\Timber;
 
 $context = Timber::context();
 
-$context['overline']    = get_field( 'overline' );
-$context['statement']   = get_field( 'statement' );
-$context['description'] = get_field( 'description' );
-$context['cta']         = get_field( 'cta' );
-$context['variant']     = get_field( 'variant' );
+$context['overline']              = get_field( 'overline' );
+$context['statement']             = get_field( 'statement' );
+$context['description']           = get_field( 'description' );
+$context['cta']                   = get_field( 'cta' );
+$context['variant']               = get_field( 'variant' );
+$context['line_above_statement']  = get_field( 'line_above_statement' );
 
 Timber::render( basename( __DIR__ ) . '/statement.twig', $context );
