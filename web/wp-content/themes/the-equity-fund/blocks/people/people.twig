@@ -8,7 +8,7 @@
     title: headline
   } %}
 
-  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-{{ columns|default(4) }} gap-8 md:gap-gutter mt-gutter">
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 {% if columns == 5 %}xl:grid-cols-5{% else %}xl:grid-cols-4{% endif %} gap-8 md:gap-gutter mt-gutter">
     {% for person in people %}
       {% set position = person.meta('position') %}
 
