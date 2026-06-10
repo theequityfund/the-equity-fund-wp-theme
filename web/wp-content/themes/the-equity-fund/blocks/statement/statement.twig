@@ -3,7 +3,7 @@
 {% set full_width = full_width_statement is null or full_width_statement %}
 {% if variant == 'standalone' %}
 <section
-  class="palette-cream text-foreground statement {{ full_width ? 'max-w-article mx-auto' : '' }}"
+  class="palette-cream text-foreground statement {{ full_width ? '' : 'max-w-article mx-auto' }}"
   data-block="statement"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >
