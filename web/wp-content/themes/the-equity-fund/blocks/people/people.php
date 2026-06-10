@@ -12,6 +12,7 @@ use Timber\Timber;
 $context = Timber::context();
 
 $context['headline'] = get_field( 'headline' );
+$context['columns'] = get_field( 'use_5_columns_per_row' ) ? 5 : 4;
 
 $people_ids = get_field( 'people' );
 
