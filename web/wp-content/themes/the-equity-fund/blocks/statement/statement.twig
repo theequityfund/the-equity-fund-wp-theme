@@ -1,8 +1,9 @@
 {% set variant = variant|default('standalone') %}
 {% set show_line = line_above_statement is null or line_above_statement %}
+{% set full_width = full_width_statement is null or full_width_statement %}
 {% if variant == 'standalone' %}
 <section
-  class="palette-cream text-foreground statement"
+  class="palette-cream text-foreground statement {{ full_width ? 'max-w-article mx-auto' }}"
   data-block="statement"
   {% if overline %}aria-label="{{ overline }}"{% endif %}
 >

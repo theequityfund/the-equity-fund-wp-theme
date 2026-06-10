@@ -162,6 +162,27 @@
       "ui_on_text": "",
       "ui_off_text": "",
       "ui": 1
+    },
+    {
+      "key": "field_6a29a6c264143",
+      "label": "Full Width",
+      "name": "full_width_statement",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "This component will appear full width unless this option is toggled off. When toggled off the component will have a max width of 800 px.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "allow_in_bindings": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
     }
   ],
   "location": [
@@ -185,5 +206,5 @@
   "display_title": "",
   "allow_ai_access": false,
   "ai_description": "",
-  "modified": 1779421664
+  "modified": 1781115114
 }
