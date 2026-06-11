@@ -4,6 +4,7 @@ Thumbs.db
 
 # IDE and local environment
 /.vscode/
+/.idea/
 
 # Packages
 /vendor/
