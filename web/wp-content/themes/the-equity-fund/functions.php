@@ -23,6 +23,8 @@ define( 'THE_EQUITY_FUND_DOMAIN', get_site_url() );
 define( 'THE_EQUITY_FUND_SITE_NAME', get_bloginfo( 'name' ) );
 define( 'THE_EQUITY_FUND_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 
+require_once THE_EQUITY_FUND_THEME_PATH . 'includes/disable-auto-updates.php';
+
 /**
  * Use Dotenv to set required environment variables and load .env file when present.
  */
