@@ -6,9 +6,15 @@
   <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
   <link rel="preload" href="/wp-content/themes/the-equity-fund/static/fonts/judge/F37Judge-MediumCondensed.woff" as="font" type="font/woff" crossorigin="anonymous">
 
-  <link rel="icon" href="{{ theme.link }}/static/img/favicon.ico" sizes="any">
-  <link rel="icon" href="{{ theme.link }}/static/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ theme.link }}/static/img/apple-touch-icon.png">
+  {% if function('has_site_icon') %}
+    <link rel="icon" href="{{ function('get_site_icon_url', 32) }}" sizes="32x32">
+    <link rel="icon" href="{{ function('get_site_icon_url', 192) }}" sizes="192x192">
+    <link rel="apple-touch-icon" href="{{ function('get_site_icon_url', 180) }}">
+  {% else %}
+    <link rel="icon" href="{{ theme.link }}/static/img/favicon.ico" sizes="any">
+    <link rel="icon" href="{{ theme.link }}/static/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ theme.link }}/static/img/apple-touch-icon.png">
+  {% endif %}
   <link rel="manifest" href="{{ theme.link }}/static/img/site.webmanifest">
   <meta name="theme-color" content="#C4B3E0">
 
