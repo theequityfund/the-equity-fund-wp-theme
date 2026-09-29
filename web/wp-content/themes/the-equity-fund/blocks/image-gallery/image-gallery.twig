@@ -1,0 +1,107 @@
+{% if gallery_slides|length %}
+<section
+  class="palette-{{ palette|default('cream') }} bg-background text-foreground mx-breakout-site-paddding"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="{{ gallery_title|default('Image gallery') }}"
+  data-block="image-gallery"
+  x-data="imageGallery({{ gallery_slides|length }})"
+  @keydown.left="prev()"
+  @keydown.right="next()"
+>
+  <div class="px-site-padding py-5 md:py-10 lg:py-15">
+
+    {# HEADER: title + arrows #}
+    <div class="border-b border-foreground pb-1 flex items-end justify-between gap-4">
+      {% if gallery_title %}
+        <h2 class="font-display font-medium text-h3 uppercase">{{ gallery_title }}</h2>
+      {% else %}
+        <span></span>
+      {% endif %}
+
+      {% if gallery_slides|length > 1 %}
+        <div class="flex gap-2 shrink-0">
+          <button
+            type="button"
+            class="flex items-center justify-center w-6 h-6 border border-foreground hocus:bg-foreground hocus:text-background transition-colors"
+            aria-label="Previous image"
+            aria-controls="{{ gallery_id }}-track"
+            @click="prev()"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3 5 8l5 5"/></svg>
+          </button>
+          <button
+            type="button"
+            class="flex items-center justify-center w-6 h-6 border border-foreground hocus:bg-foreground hocus:text-background transition-colors"
+            aria-label="Next image"
+            aria-controls="{{ gallery_id }}-track"
+            @click="next()"
+          >
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 3 5 5-5 5"/></svg>
+          </button>
+        </div>
+      {% endif %}
+    </div>
+
+    {# SLIDES #}
+    <div class="overflow-hidden pt-3 md:pt-5">
+      <div
+        id="{{ gallery_id }}-track"
+        class="flex"
+        :class="$isReducedMotion() ? '' : 'transition-transform duration-500'"
+        :style="`transform: translateX(-${current * 100}%)`"
+        aria-live="polite"
+      >
+        {% for slide in gallery_slides %}
+          <figure
+            class="w-full shrink-0"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="{{ loop.index }} of {{ loop.length }}"
+            :aria-hidden="current !== {{ loop.index0 }}"
+            :inert="current !== {{ loop.index0 }}"
+          >
+            {% include 'templates/components/lazy-img.twig' with {
+              class: 'w-full',
+              img: get_image(slide.image),
+              alt: slide.caption,
+              aspectRatio: 'horizontal'
+            } %}
+
+            {% if slide.caption or slide.credit %}
+              <figcaption class="pt-2 flex flex-col gap-1">
+                {% if slide.caption %}
+                  <span class="font-serif text-basic-text">{{ slide.caption }}</span>
+                {% endif %}
+                {% if slide.credit %}
+                  <span class="font-sans-narrow text-sm uppercase tracking-wide">Credit: {{ slide.credit }}</span>
+                {% endif %}
+              </figcaption>
+            {% endif %}
+          </figure>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# DOTS #}
+    {% if gallery_slides|length > 1 %}
+      <ul class="flex justify-center gap-2 pt-4 list-none p-0 m-0">
+        {% for slide in gallery_slides %}
+          <li class="m-0 p-0">
+            <button
+              type="button"
+              class="block w-2 h-2 rounded-full border border-foreground transition-colors hocus:bg-foreground"
+              :class="current === {{ loop.index0 }} ? 'bg-foreground' : 'bg-transparent'"
+              :aria-current="current === {{ loop.index0 }} ? 'true' : 'false'"
+              aria-label="Go to image {{ loop.index }}"
+              aria-controls="{{ gallery_id }}-track"
+              @click="goTo({{ loop.index0 }})"
+            ></button>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

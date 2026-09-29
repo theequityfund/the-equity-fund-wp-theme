@@ -1,0 +1,176 @@
+{
+  "key": "group_6a1b2c3d4e5f1",
+  "title": "Block: Image Gallery",
+  "fields": [
+    {
+      "key": "field_6a1b2c3d4e5f0",
+      "label": "Title",
+      "name": "gallery_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Optional.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_6a1b2c3d4e5fa",
+      "label": "Palette",
+      "name": "palette",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "cream": "Cream",
+        "maroon": "Maroon",
+        "teal": "Teal",
+        "coral": "Coral",
+        "yellow": "Yellow",
+        "lavender": "Lavender"
+      },
+      "default_value": "cream",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "allow_in_bindings": 1,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "",
+      "create_options": 0,
+      "save_options": 0
+    },
+    {
+      "key": "field_6a1b2c3d4e5f2",
+      "label": "Slides",
+      "name": "gallery_slides",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "pagination": 0,
+      "min": 1,
+      "max": 0,
+      "collapsed": "field_6a1b2c3d4e5f3",
+      "button_label": "Add Image",
+      "rows_per_page": 20,
+      "allow_in_bindings": 0,
+      "sub_fields": [
+        {
+          "key": "field_6a1b2c3d4e5f3",
+          "label": "Image",
+          "name": "image",
+          "aria-label": "",
+          "type": "image",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "return_format": "array",
+          "library": "all",
+          "min_width": "",
+          "min_height": "",
+          "min_size": "",
+          "max_width": "",
+          "max_height": "",
+          "max_size": "",
+          "mime_types": "",
+          "allow_in_bindings": 0,
+          "preview_size": "medium",
+          "parent_repeater": "field_6a1b2c3d4e5f2"
+        },
+        {
+          "key": "field_6a1b2c3d4e5f4",
+          "label": "Caption",
+          "name": "caption",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Shown under the image and used as the image's alt text. Describe what the image shows.",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "allow_in_bindings": 0,
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_6a1b2c3d4e5f2"
+        },
+        {
+          "key": "field_6a1b2c3d4e5f5",
+          "label": "Credit",
+          "name": "credit",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Optional photographer or source.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "maxlength": "",
+          "allow_in_bindings": 0,
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "parent_repeater": "field_6a1b2c3d4e5f2"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/image-gallery"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "display_title": "",
+  "modified": 1790707028
+}

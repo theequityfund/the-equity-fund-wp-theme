@@ -1,0 +1,14 @@
+{
+  "name": "acf/image-gallery",
+  "title": "Image Gallery",
+  "description": "A carousel of images with captions and credits.",
+  "category": "widgets",
+  "icon": {
+    "src": "format-gallery"
+  },
+  "keywords": ["gallery", "images", "carousel", "slider"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "image-gallery.php"
+  }
+}

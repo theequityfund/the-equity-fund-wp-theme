@@ -59,7 +59,8 @@
     src="{{ img.src }}"
     srcset="{{ img.srcset }}"
     sizes="auto"
-    {% if img.alt %}alt="{{ img.alt }}"{% endif %}
+    {% set imgAlt = alt ?? img.alt %}
+    {% if imgAlt %}alt="{{ imgAlt }}"{% endif %}
     loading="lazy"
   />
 </div>
