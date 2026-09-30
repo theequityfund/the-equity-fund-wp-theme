@@ -1,6 +1,6 @@
 {% if gallery_slides|length %}
 <section
-  class="palette-{{ palette|default('cream') }} bg-background text-foreground mx-breakout-site-paddding"
+  class="palette-{{ palette|default('cream') }} bg-background text-foreground max-w-article mx-auto"
   role="region"
   aria-roledescription="carousel"
   aria-label="{{ gallery_title|default('Image gallery') }}"
@@ -8,10 +8,10 @@
   x-data="imageGallery({{ gallery_slides|length }})"
   @keydown.left="prev()"
   @keydown.right="next()"
+  @resize.window.debounce.150ms="measure()"
 >
-  <div class="px-site-padding py-5 md:py-10 lg:py-15">
+  <div class="py-5 md:py-10">
 
-    {# HEADER: title + arrows #}
     <div class="border-b border-foreground pb-1 flex items-end justify-between gap-4">
       {% if gallery_title %}
         <h2 class="font-display font-medium text-h3 uppercase">{{ gallery_title }}</h2>
@@ -43,30 +43,35 @@
       {% endif %}
     </div>
 
-    {# SLIDES #}
     <div class="overflow-hidden pt-3 md:pt-5">
       <div
         id="{{ gallery_id }}-track"
-        class="flex"
+        x-ref="track"
+        class="flex items-start gap-3 md:gap-4"
         :class="$isReducedMotion() ? '' : 'transition-transform duration-500'"
-        :style="`transform: translateX(-${current * 100}%)`"
+        :style="`transform: translateX(-${offset}px)`"
         aria-live="polite"
       >
         {% for slide in gallery_slides %}
+          {% set img = get_image(slide.image) %}
           <figure
-            class="w-full shrink-0"
+            class="shrink-0 max-w-[85%] transition-opacity duration-500"
+            :class="current === {{ loop.index0 }} ? 'opacity-100' : 'opacity-40'"
             role="group"
             aria-roledescription="slide"
             aria-label="{{ loop.index }} of {{ loop.length }}"
             :aria-hidden="current !== {{ loop.index0 }}"
             :inert="current !== {{ loop.index0 }}"
           >
-            {% include 'templates/components/lazy-img.twig' with {
-              class: 'w-full',
-              img: get_image(slide.image),
-              alt: slide.caption,
-              aspectRatio: 'horizontal'
-            } %}
+            <img
+              class="block w-auto max-w-full h-[240px] md:h-[320px] lg:h-[400px] object-cover bg-background"
+              src="{{ img.src }}"
+              srcset="{{ img.srcset }}"
+              sizes="auto"
+              {% if img.width and img.height %}width="{{ img.width }}" height="{{ img.height }}"{% endif %}
+              alt="{{ slide.caption }}"
+              {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+            />
 
             {% if slide.caption or slide.credit %}
               <figcaption class="pt-2 flex flex-col gap-1">
@@ -83,7 +88,6 @@
       </div>
     </div>
 
-    {# DOTS #}
     {% if gallery_slides|length > 1 %}
       <ul class="flex justify-center gap-2 pt-4 list-none p-0 m-0">
         {% for slide in gallery_slides %}
