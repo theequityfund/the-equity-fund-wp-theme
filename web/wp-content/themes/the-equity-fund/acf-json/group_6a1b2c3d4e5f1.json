@@ -112,8 +112,8 @@
           "name": "caption",
           "aria-label": "",
           "type": "text",
-          "instructions": "Shown under the image and used as the image's alt text. Describe what the image shows.",
-          "required": 1,
+          "instructions": "Optional. Shown under the image. If left blank, the image's alt text from the media library is used.",
+          "required": 0,
           "conditional_logic": 0,
           "wrapper": {
             "width": "",

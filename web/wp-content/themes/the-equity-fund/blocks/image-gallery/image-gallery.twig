@@ -69,17 +69,17 @@
               srcset="{{ img.srcset }}"
               sizes="auto"
               {% if img.width and img.height %}width="{{ img.width }}" height="{{ img.height }}"{% endif %}
-              alt="{{ slide.caption }}"
+              alt="{{ slide.caption|default(img.alt) }}"
               {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
             />
 
             {% if slide.caption or slide.credit %}
               <figcaption class="pt-2 flex flex-col gap-1">
                 {% if slide.caption %}
-                  <span class="font-serif text-basic-text">{{ slide.caption }}</span>
+                  <span class="font-sans text-xl leading-[1.3]">{{ slide.caption }}</span>
                 {% endif %}
                 {% if slide.credit %}
-                  <span class="font-sans-narrow text-sm uppercase tracking-wide">Credit: {{ slide.credit }}</span>
+                  <span class="font-sans text-base font-bold leading-[1.3]">Credit: {{ slide.credit }}</span>
                 {% endif %}
               </figcaption>
             {% endif %}
