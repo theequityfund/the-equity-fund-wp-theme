@@ -45,6 +45,7 @@ class BlockManager {
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/related-articles' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/detail-list' );
 		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/cta' );
+		register_block_type( THE_EQUITY_FUND_THEME_PATH . 'blocks/image-gallery' );
 	}
 
 	/**
@@ -123,6 +124,7 @@ class BlockManager {
 			'acf/promo',
 			'acf/detail-list',
 			'acf/cta',
+			'acf/image-gallery',
 		);
 	}
 }

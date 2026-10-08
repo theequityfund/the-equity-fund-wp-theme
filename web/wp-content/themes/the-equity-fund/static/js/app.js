@@ -7,6 +7,7 @@ import { onDocumentReady } from '@src/utils';
 
 // Components
 import Links from '@src/components/links';
+import imageGallery from '@src/components/image-gallery';
 
 onDocumentReady(() => {
   new Links();
@@ -18,6 +19,8 @@ onDocumentReady(() => {
     const prefers = window.matchMedia('(prefers-reduced-motion: reduce)');
     return prefers.matches;
   });
+
+  Alpine.data('imageGallery', imageGallery);
 
   Alpine.start();
 
