@@ -72,4 +72,49 @@ class Issue extends TimberPost {
 
 		return $grantees;
 	}
+
+	/**
+	 * Get issues that are tagged on at least one published item.
+	 *
+	 * @param string $post_type Post type of the tagged items.
+	 * @param string $meta_key  Meta key storing the issue IDs on those items.
+	 *
+	 * @return PostCollectionInterface|iterable
+	 */
+	public static function with_items( string $post_type, string $meta_key ) {
+		global $wpdb;
+
+		// One query for all issues instead of a count query per issue.
+		$rows = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT pm.meta_value FROM {$wpdb->postmeta} pm
+				INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+				WHERE pm.meta_key = %s AND p.post_type = %s AND p.post_status = 'publish'",
+				$meta_key,
+				$post_type
+			)
+		);
+
+		$issue_ids = array();
+		foreach ( $rows as $row ) {
+			// ACF stores relationship values as serialized arrays; a single value may be a plain ID.
+			$value     = maybe_unserialize( $row );
+			$issue_ids = array_merge( $issue_ids, (array) $value );
+		}
+		$issue_ids = array_values( array_unique( array_filter( array_map( 'absint', $issue_ids ) ) ) );
+
+		if ( empty( $issue_ids ) ) {
+			return array();
+		}
+
+		return Timber::get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post__in'       => $issue_ids,
+				'posts_per_page' => -1,
+				'orderby'        => 'title',
+				'order'          => 'ASC',
+			)
+		);
+	}
 }
