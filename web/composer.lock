@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ebfce97b11c6954781b5f5f1a4f771c",
+    "content-hash": "4e87aabee157f821c776ee8ab9348c5d",
     "packages": [
         {
             "name": "composer/installers",
@@ -795,16 +795,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.7.0",
+            "version": "v5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpdotenv/phpdotenv.git",
-                "reference": "301c07936b16d88628b126b01d082ba153cf4c40"
+                "reference": "96149103e62ac67e915f6d2ef59b72dee2e011e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpdotenv/phpdotenv/zipball/301c07936b16d88628b126b01d082ba153cf4c40",
-                "reference": "301c07936b16d88628b126b01d082ba153cf4c40",
+                "url": "https://api.github.com/repos/phpdotenv/phpdotenv/zipball/96149103e62ac67e915f6d2ef59b72dee2e011e0",
+                "reference": "96149103e62ac67e915f6d2ef59b72dee2e011e0",
                 "shasum": ""
             },
             "require": {
@@ -831,7 +831,7 @@
                     "forward-command": false
                 },
                 "branch-alias": {
-                    "dev-master": "5.6-dev"
+                    "dev-master": "5.8-dev"
                 }
             },
             "autoload": {
@@ -862,8 +862,8 @@
                 "environment"
             ],
             "support": {
-                "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.7.0"
+                "issues": "https://github.com/phpdotenv/phpdotenv/issues",
+                "source": "https://github.com/phpdotenv/phpdotenv/tree/v5.8.0"
             },
             "funding": [
                 {
@@ -875,7 +875,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-24T18:07:49+00:00"
+            "time": "2026-10-25T16:26:19+00:00"
         },
         {
             "name": "wpackagist-plugin/duplicate-post",
@@ -894,24 +894,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/duplicate-post/"
-        },
-        {
-            "name": "wpackagist-plugin/microsoft-clarity",
-            "version": "0.10.35",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/microsoft-clarity/",
-                "reference": "tags/0.10.35"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/microsoft-clarity.0.10.35.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/microsoft-clarity/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -933,15 +915,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "28.7",
+            "version": "28.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/28.7"
+                "reference": "tags/28.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.8.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1112,16 +1094,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "528948210cc46f967a4b98e83b19e76f2b504993"
+                "reference": "9dfce66f1e97360ea5e6d3e38ab14277e4cc591e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/528948210cc46f967a4b98e83b19e76f2b504993",
-                "reference": "528948210cc46f967a4b98e83b19e76f2b504993",
+                "url": "https://api.github.com/repos/composer/semver/zipball/9dfce66f1e97360ea5e6d3e38ab14277e4cc591e",
+                "reference": "9dfce66f1e97360ea5e6d3e38ab14277e4cc591e",
                 "shasum": ""
             },
             "require": {
@@ -1173,7 +1155,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.5.1"
+                "source": "https://github.com/composer/semver/tree/3.5.2"
             },
             "funding": [
                 {
@@ -1185,7 +1167,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-05T13:12:12+00:00"
+            "time": "2026-10-22T15:37:26+00:00"
         },
         {
             "name": "composer/xdebug-handler",

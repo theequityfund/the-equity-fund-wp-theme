@@ -5,6 +5,7 @@
  * @package TheEquityFund
  */
 
+use TheEquityFund\Models\Issue;
 use Timber\Timber;
 
 $context = Timber::context();
@@ -73,14 +74,7 @@ if ( post_password_required( $_page->ID ) ) {
 		);
 	}
 
-	$issues = Timber::get_posts(
-		array(
-			'post_type'      => 'issue',
-			'posts_per_page' => -1,
-			'orderby'        => 'title',
-			'order'          => 'ASC',
-		)
-	);
+	$issues = Issue::with_items( 'post', 'issue' );
 
 	$context['issues'] = $issues;
 
