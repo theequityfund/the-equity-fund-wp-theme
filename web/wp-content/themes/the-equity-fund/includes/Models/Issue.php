@@ -51,6 +51,33 @@ class Issue extends TimberPost {
 	}
 
 	/**
+	 * Whether this issue has a public page. Tag-only issues (e.g. "Past Events") do not.
+	 *
+	 * @return bool
+	 */
+	public function has_page(): bool {
+		return ! $this->meta( 'no_display_page' );
+	}
+
+	/**
+	 * IDs of issues that have no public page.
+	 *
+	 * @return int[]
+	 */
+	public static function page_less_ids(): array {
+		return get_posts(
+			array(
+				'post_type'      => self::POST_TYPE,
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'meta_key'       => 'no_display_page', // phpcs:ignore WordPress.DB.SlowDBQuery
+				'meta_value'     => '1', // phpcs:ignore WordPress.DB.SlowDBQuery
+			)
+		);
+	}
+
+	/**
 	 * Get the grantees related to this issue.
 	 *
 	 * @return int

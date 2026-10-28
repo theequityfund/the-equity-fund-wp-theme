@@ -26,5 +26,12 @@ $context['issues'] = Timber::get_posts(
 	)
 );
 
+// Tag-only issues have no page to link the card to.
+$context['issues'] = array_values(
+	array_filter(
+		iterator_to_array( $context['issues'] ),
+		fn( $issue ) => $issue->has_page()
+	)
+);
 
 Timber::render( basename( __DIR__ ) . '/issues.twig', $context );
