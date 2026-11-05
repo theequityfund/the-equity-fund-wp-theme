@@ -48,8 +48,7 @@
     "wpengine/advanced-custom-fields-pro": "^6.8.6",
     "wpackagist-plugin/duplicate-post": "^4.6",
     "wpackagist-plugin/redirection": "^5.9.0",
-    "wpackagist-plugin/wordpress-seo": "^28.0",
-    "wpackagist-plugin/microsoft-clarity": "^0.10"
+    "wpackagist-plugin/wordpress-seo": "^28.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6",
