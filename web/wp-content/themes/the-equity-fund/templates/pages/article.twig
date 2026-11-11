@@ -6,7 +6,7 @@
 
   {% include 'templates/components/toppers/article-topper.twig' with {
     title: post.title,
-    image: post.thumbnail,
+    image: post.meta('hide_featured_image') ? null : post.thumbnail,
     bylines: bylines,
     date: post.date|date("F j, Y"),
     palette: palette,
