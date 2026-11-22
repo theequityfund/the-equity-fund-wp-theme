@@ -3,6 +3,26 @@
   "title": "Blog",
   "fields": [
     {
+      "key": "field_6730b2c3d4e5f",
+      "label": "Hide featured image on page",
+      "name": "hide_featured_image",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "When on, the featured image still appears in promos and listings but is not shown on this post's page.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
+    },
+    {
       "key": "field_66ecfb87357cd",
       "label": "Authors",
       "name": "authors",
@@ -66,5 +86,5 @@
   "active": true,
   "description": "",
   "show_in_rest": 0,
-  "modified": 1726807176
+  "modified": 1794367296
 }
