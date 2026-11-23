@@ -64,15 +64,24 @@
             :aria-hidden="current !== {{ loop.index0 }}"
             :inert="current !== {{ loop.index0 }}"
           >
-            <img
-              class="block w-full h-auto"
-              src="{{ img.src }}"
-              srcset="{{ img.srcset }}"
-              sizes="auto"
-              {% if img.width and img.height %}width="{{ img.width }}" height="{{ img.height }}"{% endif %}
-              alt="{{ slide.caption|default(img.alt) }}"
-              {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
-            />
+            <button
+              type="button"
+              class="block w-full cursor-zoom-in"
+              aria-label="View full image {{ loop.index }} of {{ loop.length }}"
+              data-full-src="{{ img.src }}"
+              data-alt="{{ (slide.caption|default(img.alt))|e('html_attr') }}"
+              @click="openLightbox($el)"
+            >
+              <img
+                class="block w-full h-auto"
+                src="{{ img.src }}"
+                srcset="{{ img.srcset }}"
+                sizes="auto"
+                {% if img.width and img.height %}width="{{ img.width }}" height="{{ img.height }}"{% endif %}
+                alt="{{ slide.caption|default(img.alt) }}"
+                {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+              />
+            </button>
 
             {% if slide.caption or slide.credit %}
               <figcaption class="pt-2 flex flex-col gap-1">
@@ -106,6 +115,32 @@
         {% endfor %}
       </ul>
     {% endif %}
+
+    {# Native <dialog> renders in the top layer, so the carousel's overflow-hidden/transform can't clip it #}
+    <dialog
+      x-ref="lightbox"
+      class="fixed inset-0 m-0 p-0 w-screen h-screen max-w-none max-h-none bg-cream text-black overflow-hidden"
+      aria-label="Enlarged image"
+      @click.self="closeLightbox()"
+      @close="lightbox.src = ''"
+    >
+      <div class="relative w-full h-full flex items-center justify-center" @click.self="closeLightbox()">
+        <img
+          class="block w-auto h-auto max-w-full max-h-full object-contain"
+          :src="lightbox.src"
+          :alt="lightbox.alt"
+        />
+
+        <button
+          type="button"
+          class="absolute top-4 right-4 md:top-6 md:right-6 flex items-center justify-center w-12 h-12 rounded-full bg-cream text-black border border-black hocus:bg-black hocus:text-cream transition-colors"
+          aria-label="Close"
+          @click="closeLightbox()"
+        >
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 3 10 10M13 3 3 13"/></svg>
+        </button>
+      </div>
+    </dialog>
 
   </div>
 </section>
