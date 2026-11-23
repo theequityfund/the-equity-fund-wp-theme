@@ -919,3 +919,8 @@
     max-height: 70vh;
   }
 }
+
+/* Prevent the page scrolling behind an open lightbox */
+body:has(dialog[open]) {
+  overflow: hidden;
+}

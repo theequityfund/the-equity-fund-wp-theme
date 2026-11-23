@@ -3,11 +3,14 @@ export default function imageGallery(count) {
     current: 0,
     offset: 0,
     count,
+    lightbox: { src: '', alt: '' },
 
     init() {
       this.$nextTick(() => this.measure());
       this.$refs.track.querySelectorAll('img').forEach(img => {
-        if (!img.complete) {img.addEventListener('load', () => this.measure());}
+        if (!img.complete) {
+          img.addEventListener('load', () => this.measure());
+        }
       });
     },
 
@@ -27,6 +30,16 @@ export default function imageGallery(count) {
     goTo(index) {
       this.current = index;
       this.measure();
+    },
+
+    openLightbox(trigger) {
+      const { fullSrc, alt } = trigger.dataset;
+      this.lightbox = { src: fullSrc, alt };
+      this.$refs.lightbox.showModal();
+    },
+
+    closeLightbox() {
+      this.$refs.lightbox.close();
     },
   };
 }
