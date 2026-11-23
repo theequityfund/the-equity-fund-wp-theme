@@ -906,3 +906,16 @@
     }
   }
 }
+
+/*
+ * Image gallery
+ * Uniform 3:2 frame: the width/height attributes would otherwise give each
+ * image its native ratio, so portrait photos become extremely tall.
+ */
+@layer components {
+  [data-block='image-gallery'] figure img {
+    @apply w-full object-cover;
+    aspect-ratio: 3 / 2;
+    max-height: 70vh;
+  }
+}
