@@ -1,6 +1,6 @@
 {% if gallery_slides|length %}
 <section
-  class="palette-{{ palette|default('cream') }} bg-background text-foreground max-w-article mx-auto"
+  class="palette-{{ palette|default('cream') }} bg-background text-foreground mx-breakout-site-paddding"
   role="region"
   aria-roledescription="carousel"
   aria-label="{{ gallery_title|default('Image gallery') }}"
@@ -10,7 +10,8 @@
   @keydown.right="next()"
   @resize.window.debounce.150ms="measure()"
 >
-  <div class="py-5 md:py-10">
+  {# Colored backgrounds need breathing room; cream blends into the page so it keeps the compact spacing #}
+  <div class="{{ palette|default('cream') == 'cream' ? 'px-site-padding py-5 md:py-10' : 'px-10 md:px-24 lg:px-44 py-10 md:py-16 lg:py-20' }}">
 
     <div class="border-b border-foreground pb-1 flex items-end justify-between gap-4">
       {% if gallery_title %}
@@ -55,7 +56,7 @@
         {% for slide in gallery_slides %}
           {% set img = get_image(slide.image) %}
           <figure
-            class="shrink-0 max-w-[85%] transition-opacity duration-500"
+            class="shrink-0 w-[85%] md:w-[70%] transition-opacity duration-500"
             :class="current === {{ loop.index0 }} ? 'opacity-100' : 'opacity-40'"
             role="group"
             aria-roledescription="slide"
@@ -64,7 +65,7 @@
             :inert="current !== {{ loop.index0 }}"
           >
             <img
-              class="block w-auto max-w-full h-[240px] md:h-[320px] lg:h-[400px] object-cover bg-background"
+              class="block w-full h-auto"
               src="{{ img.src }}"
               srcset="{{ img.srcset }}"
               sizes="auto"
